@@ -2,6 +2,8 @@
 
 Aplikasi belajar Bahasa Inggris statis, mobile-first, tanpa backend/database.
 
+🔗 **Buka aplikasi: [ikbalyuliyanto.github.io/english-90-hari](https://ikbalyuliyanto.github.io/english-90-hari/)**
+
 ## Fitur
 - 1 hari = 15 kalimat
 - Cara baca gaya Indonesia
@@ -30,8 +32,8 @@ Lalu buka `http://localhost:8080`.
 4. Pada **Build and deployment**, pilih **GitHub Actions**.
 5. Workflow `.github/workflows/deploy-pages.yml` otomatis deploy.
 
-Setelah sukses, URL biasanya:
-`https://USERNAME.github.io/NAMA-REPO/`
+Setelah sukses, aplikasi bisa diakses di:
+https://ikbalyuliyanto.github.io/english-90-hari/
 
 ## Menambah Hari 16–90
 Edit `data/lessons.js`. Ikuti struktur lesson yang sudah ada. UI otomatis membuat card baru.
