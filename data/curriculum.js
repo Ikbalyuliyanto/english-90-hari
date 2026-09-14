@@ -13,7 +13,8 @@ E90.CURRICULUM = {
   AVAILABLE_DAYS: [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
     11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-    21, 22, 23, 24, 25, 26, 27, 28, 29, 30
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45
   ],
 
   phases: [
@@ -29,14 +30,17 @@ E90.CURRICULUM = {
       title: 'Work English',
       titleId: 'Bahasa Inggris di Kantor',
       target: 'Bisa daily standup dan komunikasi kantor sederhana.',
-      translation: 'shown'
+      translation: 'shown',
+      // Mulai English-oriented: arti pertanyaan speaking dilipat (tetap bisa dibuka).
+      questionTranslation: 'collapsed'
     },
     {
       id: 3, from: 61, to: 90,
       title: 'Software Engineering English',
       titleId: 'Bahasa Inggris Software Engineer',
       target: 'Bisa menjelaskan sistem, bug, API, dan keputusan teknis.',
-      translation: 'shown'
+      translation: 'shown',
+      questionTranslation: 'collapsed'
     },
     {
       id: 4, from: 91, to: 120,
@@ -82,21 +86,21 @@ E90.CURRICULUM = {
     'Phone, Chat & Remote Communication',
     'Foundation Checkpoint',
     // Phase 2 — Day 31–60
-    'Talking About Your Job',
-    'Tasks & To-Dos',
+    'Your Job & Responsibilities',
+    'Tasks & Priorities',
+    'Deadlines & Estimates',
     'Work Progress',
-    'Deadlines',
-    'Priorities',
-    'Asking for Help',
-    'Offering Help',
-    'Giving Instructions',
-    'Following Instructions',
-    'Scheduling Meetings',
-    'Opening a Meeting',
+    'Daily Standup: Basic',
+    'Asking for Help at Work',
+    'Giving Simple Instructions',
     'Clarification at Work',
-    'Agreeing',
-    'Disagreeing Politely',
-    'Explaining Problems',
+    'Meeting Basics',
+    'Giving Opinions at Work',
+    'Agreeing & Disagreeing Politely',
+    'Problems & Blockers',
+    'Decisions & Next Steps',
+    'Work Chat & Follow-up',
+    'Work English Checkpoint 1',
     'Daily Standup: Yesterday',
     'Daily Standup: Today',
     'Daily Standup: Blockers',

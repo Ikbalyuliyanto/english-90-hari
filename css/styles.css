@@ -389,6 +389,9 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
 .topic { font-size: 1.2rem; font-weight: 700; margin: 6px 0; }
 .timer { font-size: 3rem; font-weight: 800; font-variant-numeric: tabular-nums; margin: 12px 0 4px; color: var(--muted); }
 .timer.running { color: var(--primary); }
+.q-timer { margin-top: 10px; }
+.q-timer summary { color: var(--primary); font-weight: 600; cursor: pointer; font-size: .9rem; }
+.timer-small { font-size: 2rem; text-align: center; margin: 6px 0 0; }
 
 /* ---------- Vocab / search / settings ---------- */
 .practice-grid { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 8px; }

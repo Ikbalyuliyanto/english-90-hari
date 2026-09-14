@@ -108,11 +108,14 @@ E90.activities = E90.activities || {};
             <p class="example-text">${esc(q.example)}</p>
             <p class="warn small">Hanya referensi. Jawab sesuai kondisimu sendiri.</p>
           </details>
+          ${q.timers?.length ? `<details class="q-timer"><summary>⏱️ Timer (opsional)</summary>${timerHtml(q.timers, { big: false })}</details>` : ''}
           <label class="confirm"><input type="checkbox" data-spoken="${i}" ${spoken[i] ? 'checked' : ''}> Sudah saya jawab dengan suara</label>
         </section>`).join('')}
       ${doneButton('✓ Selesai Speaking', !spoken.every(Boolean))}`;
 
     const btn = el.querySelector('[data-done]');
+    // Timer opsional per pertanyaan: tidak memengaruhi completion.
+    el.querySelectorAll('.q-timer').forEach((t) => bindTimer(t));
     el.querySelectorAll('[data-spoken]').forEach((cb) => cb.addEventListener('change', () => {
       spoken[Number(cb.dataset.spoken)] = cb.checked;
       if (dayNo) store.setDayData(dayNo, 'spoken', { ...spoken });
@@ -121,31 +124,19 @@ E90.activities = E90.activities || {};
     btn.addEventListener('click', () => onDone?.());
   };
 
-  // ---------- 3-2-1 SPEAKING ----------
-  E90.activities.talk321 = (el, topic, { onDone } = {}) => {
+  // ---------- TIMER (dipakai 3-2-1 Speaking dan pertanyaan speaking dengan `timers`) ----------
+  const timerHtml = (minutesList, { big = true } = {}) => `
+    <div class="timer ${big ? '' : 'timer-small'}" aria-live="polite">0:00</div>
+    <div class="btn-row ${big ? 'big' : ''}">
+      ${minutesList.map((m) => `<button class="btn" data-min="${m}">${m} Minute${m > 1 ? 's' : ''}</button>`).join('')}
+      <button class="btn" data-stop disabled>■ Stop</button>
+    </div>`;
+
+  function bindTimer(root, { onFinish } = {}) {
     let timer = null;
     let remaining = 0;
-    const finished = new Set();
-
-    el.innerHTML = `
-      <div class="tip card">
-        <strong>3-2-1 Speaking.</strong> Jelaskan topik yang sama selama 3 menit, lalu 2 menit, lalu 1 menit.
-        Setiap putaran, sampaikan inti yang sama dengan lebih ringkas dan lancar.
-      </div>
-      <section class="card timer-card">
-        <div class="eyebrow">Topic</div>
-        <div class="topic">${esc(topic)}</div>
-        <button class="chip-btn" data-act="speak" data-text="${esc(topic)}">🔊 Listen</button>
-        <div class="timer" aria-live="polite">0:00</div>
-        <div class="btn-row big">
-          ${[3, 2, 1].map((m) => `<button class="btn" data-min="${m}">${m} Minute${m > 1 ? 's' : ''}</button>`).join('')}
-        </div>
-        <button class="btn btn-block" data-stop disabled>■ Stop</button>
-      </section>
-      ${doneButton('✓ Selesai 3-2-1', true)}`;
-
-    const display = el.querySelector('.timer');
-    const stopBtn = el.querySelector('[data-stop]');
+    const display = root.querySelector('.timer');
+    const stopBtn = root.querySelector('[data-stop]');
     const fmt = (sec) => `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, '0')}`;
 
     function stop() {
@@ -155,7 +146,7 @@ E90.activities = E90.activities || {};
       display.classList.remove('running');
     }
 
-    el.querySelectorAll('[data-min]').forEach((b) => b.addEventListener('click', () => {
+    root.querySelectorAll('[data-min]').forEach((b) => b.addEventListener('click', () => {
       stop();
       const minutes = Number(b.dataset.min);
       remaining = minutes * 60;
@@ -167,18 +158,43 @@ E90.activities = E90.activities || {};
         display.textContent = fmt(Math.max(remaining, 0));
         if (remaining <= 0) {
           stop();
-          finished.add(minutes);
           b.classList.add('is-on');
           display.textContent = "Time's up!";
           try { navigator.vibrate?.(300); } catch { /* tidak didukung */ }
-          el.querySelector('[data-done]').disabled = finished.size < 3;
+          onFinish?.(minutes);
         }
       }, 1000);
     }));
     stopBtn.addEventListener('click', stop);
-    el.querySelector('[data-done]').addEventListener('click', () => { stop(); onDone?.(); });
-
     // Hentikan timer jika user pindah halaman.
     window.addEventListener('hashchange', stop, { once: true });
+    return { stop };
+  }
+
+  // ---------- 3-2-1 SPEAKING ----------
+  E90.activities.talk321 = (el, topic, { onDone } = {}) => {
+    const finished = new Set();
+
+    el.innerHTML = `
+      <div class="tip card">
+        <strong>3-2-1 Speaking.</strong> Jelaskan topik yang sama selama 3 menit, lalu 2 menit, lalu 1 menit.
+        Setiap putaran, sampaikan inti yang sama dengan lebih ringkas dan lancar.
+      </div>
+      <section class="card timer-card">
+        <div class="eyebrow">Topic</div>
+        <div class="topic">${esc(topic)}</div>
+        <button class="chip-btn" data-act="speak" data-text="${esc(topic)}">🔊 Listen</button>
+        ${timerHtml([3, 2, 1])}
+      </section>
+      ${doneButton('✓ Selesai 3-2-1', true)}`;
+
+    const doneBtn = el.querySelector('[data-done]');
+    const { stop } = bindTimer(el.querySelector('.timer-card'), {
+      onFinish: (minutes) => {
+        finished.add(minutes);
+        doneBtn.disabled = finished.size < 3;
+      }
+    });
+    doneBtn.addEventListener('click', () => { stop(); onDone?.(); });
   };
 })();

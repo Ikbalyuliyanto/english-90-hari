@@ -101,7 +101,12 @@ for (const d of days.sort((a, b) => a.day - b.day)) {
   if (sh.length < 3 || sh.length > 5) err(`${tag}: shadowing harus 3–5 kalimat (sekarang ${sh.length})`);
   const sp = d.speaking || [];
   if (sp.length < 3 || sp.length > 5) err(`${tag}: speaking harus 3–5 pertanyaan (sekarang ${sp.length})`);
-  sp.forEach((q, i) => { if (!q.q || !q.hint || !q.example) err(`${tag}: speaking #${i + 1} butuh q, hint, example`); });
+  sp.forEach((q, i) => {
+    if (!q.q || !q.hint || !q.example) err(`${tag}: speaking #${i + 1} butuh q, hint, example`);
+    if (q.timers !== undefined && (!Array.isArray(q.timers) || !q.timers.length || !q.timers.every((m) => Number.isInteger(m) && m >= 1 && m <= 10))) {
+      err(`${tag}: speaking #${i + 1} timers harus array menit 1–10`);
+    }
+  });
   if (d.talk321 && !d.talk321.topic) err(`${tag}: talk321 butuh topic`);
   if (d.talk321 && d.day < 31) warn(`${tag}: 3-2-1 Speaking direncanakan mulai sekitar Day 31`);
   const dayRefs = (d.review || []).filter((r) => r.ref).map((r) => r.ref);
