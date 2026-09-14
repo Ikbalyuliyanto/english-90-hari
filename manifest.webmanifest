@@ -1,9 +1,9 @@
 {
-  "name":"English 90 Hari",
-  "short_name":"English90",
-  "start_url":"./",
-  "display":"standalone",
-  "background_color":"#f5f7fb",
-  "theme_color":"#2563eb",
-  "description":"Belajar bahasa Inggris 90 hari dengan 15 kalimat per hari."
+  "name": "English Trainer · Program 120 Hari",
+  "short_name": "English Trainer",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f7f9",
+  "theme_color": "#1d4ed8",
+  "description": "Personal English trainer: Listen, Understand, Recall, Speak, Modify, Respond — dari dasar sampai English untuk kerja dan interview."
 }
