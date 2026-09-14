@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="description" content="Belajar bahasa Inggris 90 hari: cara baca, arti per kata, arti natural, audio, dan progres harian." />
+  <title>English 90 Hari</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-badge">90</div>
+      <div>
+        <h1>English 90 Hari</h1>
+        <p>15 kalimat per hari • arti per kata • audio</p>
+      </div>
+    </div>
+    <button id="themeBtn" class="icon-btn" aria-label="Ganti tema">☾</button>
+  </header>
+
+  <main class="shell">
+    <section id="homeView">
+      <div class="hero card">
+        <div>
+          <span class="eyebrow">PROGRAM 3 BULAN</span>
+          <h2>Belajar sedikit, tetapi setiap hari.</h2>
+          <p>Target awal tersedia <strong>Hari 1–15</strong>. Setiap hari berisi 15 kalimat yang bisa dibaca, didengar, dan ditandai selesai.</p>
+        </div>
+        <div class="progress-box">
+          <div class="progress-ring" id="progressRing"><span id="progressPct">0%</span></div>
+          <small id="progressText">0 / 15 hari selesai</small>
+        </div>
+      </div>
+
+      <div class="toolbar card">
+        <label class="search-wrap">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Cari: arah, makan, meeting..." autocomplete="off" />
+        </label>
+        <button id="reviewBtn" class="secondary-btn">🎲 Review Acak</button>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">FOLDER 01</span>
+          <h2>Hari 01–15</h2>
+        </div>
+        <span class="pill">225 kalimat</span>
+      </div>
+      <div id="dayGrid" class="day-grid"></div>
+    </section>
+
+    <section id="lessonView" class="hidden">
+      <div class="lesson-head card">
+        <button id="backBtn" class="secondary-btn">← Semua Hari</button>
+        <div class="lesson-title-wrap">
+          <span id="lessonDay" class="eyebrow"></span>
+          <h2 id="lessonTitle"></h2>
+          <p id="lessonSubtitle"></p>
+        </div>
+        <div class="lesson-actions">
+          <button id="fontBtn" class="icon-btn" title="Ukuran tulisan">Aa</button>
+          <button id="completeBtn" class="primary-btn">✓ Tandai Selesai</button>
+        </div>
+      </div>
+
+      <div class="study-tip card">
+        <strong>Cara belajar:</strong> baca English → dengarkan audio → baca cara pengucapan → buka arti per kata → tutup terjemahan dan ulangi tanpa melihat.
+      </div>
+
+      <div id="phraseList" class="phrase-list"></div>
+
+      <div class="lesson-nav card">
+        <button id="prevBtn" class="secondary-btn">← Hari Sebelumnya</button>
+        <button id="nextBtn" class="primary-btn">Hari Berikutnya →</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>English 90 Hari • progres tersimpan di browser perangkatmu</p>
+  </footer>
+
+  <script src="data/lessons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

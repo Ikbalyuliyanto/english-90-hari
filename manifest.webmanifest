@@ -1,0 +1,9 @@
+{
+  "name":"English 90 Hari",
+  "short_name":"English90",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f5f7fb",
+  "theme_color":"#2563eb",
+  "description":"Belajar bahasa Inggris 90 hari dengan 15 kalimat per hari."
+}
