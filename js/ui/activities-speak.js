@@ -26,6 +26,7 @@ E90.activities = E90.activities || {};
           <li>Dengarkan.</li><li>Pause.</li><li>Ucapkan ulang dengan suara.</li>
           <li>Tirukan rhythm dan pronunciation.</li><li>Ulangi 3 kali.</li>
         </ol>
+        ${ui.pronHelp()}
       </div>
       ${ui.speechNotice()}
       <div class="card-list">

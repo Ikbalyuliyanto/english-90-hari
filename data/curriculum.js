@@ -10,7 +10,11 @@ E90.CURRICULUM = {
   totalDays: 120,
 
   // Hari yang file kontennya sudah tersedia.
-  AVAILABLE_DAYS: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+  AVAILABLE_DAYS: [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+    11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+    21, 22, 23, 24, 25, 26, 27, 28, 29, 30
+  ],
 
   phases: [
     {
@@ -67,16 +71,16 @@ E90.CURRICULUM = {
     'Plans & Future (going to / will)',
     'Can & Could: Ability and Requests',
     'Asking for Clarification',
-    'Have / Has: Things and People',
-    'Do / Does Questions',
-    'Want, Need & Like',
-    'Family & People Around You',
-    'Past Experiences',
-    'Giving Opinions',
-    'Suggestions & Invitations',
-    'Phone & Chat Conversation',
-    'Simple Office Conversation',
-    'Basic Conversation Check',
+    'Daily Routines & Frequency',
+    'Time, Schedule & Appointments',
+    'Asking Follow-up Questions',
+    'Describing People, Places & Things',
+    'Directions & Getting Around',
+    'Requests, Offers & Permission',
+    'Opinions & Preferences',
+    'Problems & Asking for Help',
+    'Phone, Chat & Remote Communication',
+    'Foundation Checkpoint',
     // Phase 2 — Day 31–60
     'Talking About Your Job',
     'Tasks & To-Dos',
@@ -170,12 +174,11 @@ E90.CURRICULUM = {
     'Singapore Workplace Communication',
     'Full Mock Interview',
     'Final Check: Respond in English'
-  ],
+  ]
 
-  // Latihan 3-2-1 Speaking (mulai Phase 2). Dipakai jika Day tidak punya talk321 sendiri.
-  talk321Topics: {
-    2: ['Explain your current project.', 'Describe your typical workday.', 'Explain a problem you had at work.'],
-    3: ['Explain how your API works.', 'Describe a bug you fixed.', 'Explain a technical problem you solved.'],
-    4: ['Tell me about yourself.', 'Explain the architecture of your last project.', 'Describe a time you disagreed with a teammate.']
-  }
+  /*
+   * 3-2-1 Speaking tidak diatur di sini. Tambahkan `talk321: { topic }` langsung di file Day
+   * yang cocok (mulai sekitar Day 31, 2–3 kali per minggu). Latihan ini opsional dan
+   * tidak memengaruhi Daily Completion.
+   */
 };

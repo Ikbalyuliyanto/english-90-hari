@@ -89,7 +89,7 @@ E90.registerDay({
     {
       id: 'D04-S11',
       english: 'Put your shoes away.',
-      pronunciation: 'put yor syuz e-wei',
+      pronunciation: 'put yor shuz e-wei',
       translation: 'Simpan sepatumu.',
       words: [['Put', 'taruh / letakkan'], ['your', 'milikmu'], ['shoes', 'sepatu (jamak)', 'shoe'], ['away', 'ke tempatnya / menjauh']],
       phrases: [['put ... away', 'menyimpan / membereskan ke tempatnya']]

@@ -130,6 +130,30 @@ E90.ui = (() => {
     toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
   }
 
+  // Konvensi penulisan cara baca. Sumber utama pronunciation tetap audio English.
+  const PRON_RULES = [
+    ['-', 'pemisah suku kata', 'de-ve-lo-per'],
+    ['ai', 'bunyi "I", "my"', 'ai, mai, laik'],
+    ['ei', 'bunyi "a" di name/day', 'neim, dei'],
+    ['ou', 'bunyi "o" di go/phone', 'gou, foun'],
+    ['au', 'bunyi "ow"/"ou"', 'nau, aut'],
+    ['e', 'bunyi lemah (pepet) atau "a" pendek di cat/have', 'e (a), hev'],
+    ['th', 'lidah di antara gigi, tanpa suara', 'thingk, thengk'],
+    ['d', 'untuk "th" bersuara di the/this/that', 'de, dis, det'],
+    ['sh / ch / j', 'bunyi sh, ch, j English', 'shur, lanch, me-ne-jer'],
+    ['zh', 'bunyi "s" di pleasure', 'ple-zher'],
+    ['-ed', 'dibaca t / d / id', 'werkt, steid, star-tid'],
+    ['de → di', '"the" sebelum bunyi vokal', 'di o-fis']
+  ];
+
+  const pronHelp = () => `<details class="pron-help">
+      <summary>Konvensi cara baca</summary>
+      <p class="small">Cara baca hanya alat bantu pemula. <b>Audio 🔊 adalah referensi utama</b>, jadi selalu dengarkan dan tirukan audionya.</p>
+      <table>
+        ${PRON_RULES.map(([k, m, ex]) => `<tr><td><b>${esc(k)}</b></td><td>${esc(m)}<br><span class="s-pron">${esc(ex)}</span></td></tr>`).join('')}
+      </table>
+    </details>`;
+
   const speechNotice = () =>
     E90.speech.supported ? '' : '<div class="notice">🔇 Browser ini tidak mendukung audio otomatis. Latihan tetap bisa dilakukan dengan membaca cara baca.</div>';
 
@@ -172,6 +196,6 @@ E90.ui = (() => {
 
   return {
     personalize, dayLabel, sentenceCard, wordsPanel, patternBlock, formatFormula,
-    ratingButtons, pageHead, progressBar, toast, speechNotice, bindGlobalActions
+    ratingButtons, pageHead, progressBar, toast, speechNotice, pronHelp, bindGlobalActions
   };
 })();

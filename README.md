@@ -15,12 +15,12 @@ Metode: **Understand → Listen → Recall → Speak → Modify → Respond → 
 | 3 | 61–90 | Software Engineering English |
 | 4 | 91–120 | Speaking, Real Work & Job Interview (terjemahan disembunyikan secara default) |
 
-Konten yang sudah tersedia: **Day 1–20**. Day lain tampil di roadmap sebagai "segera hadir".
+Konten yang sudah tersedia: **Day 1–30** (Phase 1 lengkap). Day lain tampil di roadmap sebagai "segera hadir".
 
 ## Fitur
 - **Dashboard**: Day saat ini, progress program, streak, active study days, menit belajar, kalimat learned/mastered/weak, review due, vocabulary.
 - **3 mode belajar per Day**
-  - Normal (±2 jam): Vocabulary Review → Learn → Active Recall → Listening → Shadowing → Sentence Variation → Speaking Challenge → 3-2-1 Speaking (mulai Phase 2) → Review.
+  - Normal (±2 jam): Vocabulary Review → Learn → Active Recall → Listening → Shadowing → Sentence Variation → Speaking Challenge → Review. 3-2-1 Speaking hanya muncul di Day yang punya `talk321` (mulai sekitar Day 31, 2–3 kali per minggu), bersifat opsional, dan tidak memengaruhi Daily Completion.
   - Quick (±30 menit) dan Emergency (±10 menit): tetap dihitung sebagai hari aktif agar tidak ada zero-day.
 - **Daily completion**: Day selesai jika Learn, Recall, Listening, Shadowing, dan Speaking sudah dikerjakan.
 - **Sentence card**: English, cara baca ala Indonesia, arti natural, arti per kata sesuai konteks, frasa, pola, 🔊 Listen / 🐢 Slow, sembunyikan English/arti, ⭐ Mastered, ↺ Reset progress.
@@ -79,7 +79,23 @@ Format satu kalimat:
 ```
 Setiap Day juga punya `review` (kalimat variasi baru atau `{ ref: 'D18-S05' }`), `patterns`, `shadowing` (3–5 id), `speaking` (3–5 pertanyaan), dan `talk321` (opsional).
 
-Validator memeriksa: setiap kata punya arti, cara baca tidak kosong, id unik, referensi valid, jumlah shadowing/speaking, dan memastikan 225 kalimat versi lama tidak ada yang hilang.
+Validator memeriksa: setiap kata punya arti, cara baca tidak kosong, id unik, kalimat tidak duplikat (pakai `{ ref }` untuk review), referensi valid, jumlah shadowing/speaking, dan memastikan 225 kalimat versi lama tidak ada yang hilang.
+
+### Aturan konten
+- **Arti per kata ditulis sesuai konteks.** Kata fungsi yang tidak punya arti langsung (do/does/did, to, the, a) dijelaskan fungsinya, misalnya `did` = "(kata bantu pertanyaan bentuk lampau, tidak diterjemahkan)".
+- **Cara baca** adalah alat bantu pemula; audio adalah referensi utama. Konvensi (juga tampil di aplikasi, menu "Konvensi cara baca" di Learn/Shadowing):
+
+| Tulisan | Bunyi | Contoh |
+|---|---|---|
+| `-` | pemisah suku kata | de-ve-lo-per |
+| ai / ei / ou / au | I · name · go · now | mai, neim, gou, nau |
+| e | bunyi lemah atau "a" pendek | e (a), hev (have) |
+| th / d | th tak bersuara / th bersuara | thingk / de, dis, det |
+| sh, ch, j, zh | sh, ch, j, s di pleasure | shur, lanch, me-ne-jer, ple-zher |
+| -ed | t / d / id | werkt, steid, star-tid |
+| de → di | "the" sebelum vokal | di o-fis |
+
+- Setiap Day membawa kembali pattern lama di konteks baru (field `pattern` boleh menunjuk pattern hari sebelumnya).
 
 ## Deploy
 Push ke branch `main`. GitHub Actions (`.github/workflows/deploy-pages.yml`) menjalankan validator lalu deploy ke GitHub Pages.

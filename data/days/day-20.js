@@ -88,7 +88,7 @@ E90.registerDay({
     {
       id: 'D20-S11',
       english: "I'm not sure what you mean.",
-      pronunciation: 'aim not syur wat yu min',
+      pronunciation: 'aim not shur wat yu min',
       translation: 'Saya tidak yakin apa maksud Anda.',
       words: [["I'm", 'saya (I am)', 'be'], ['not', 'tidak'], ['sure', 'yakin'], ['what', 'apa (yang)'], ['you', 'Anda'], ['mean', 'maksudkan']],
       pattern: 'D14-P3'

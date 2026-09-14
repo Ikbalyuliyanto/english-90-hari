@@ -82,7 +82,7 @@ E90.registerDay({
     {
       id: 'D19-S10',
       english: 'Sure, I can do that.',
-      pronunciation: 'syur, ai ken du det',
+      pronunciation: 'shur, ai ken du det',
       translation: 'Tentu, saya bisa melakukannya.',
       words: [['Sure', 'tentu'], ['I', 'saya'], ['can', 'bisa'], ['do', 'melakukan'], ['that', 'itu / hal itu']],
       pattern: 'D19-P1'

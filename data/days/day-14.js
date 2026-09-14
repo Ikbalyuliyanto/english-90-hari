@@ -71,7 +71,7 @@ E90.registerDay({
     {
       id: 'D14-S09',
       english: 'Sure.',
-      pronunciation: 'syur',
+      pronunciation: 'shur',
       translation: 'Tentu.',
       words: [['Sure', 'tentu / boleh']]
     },
@@ -94,7 +94,7 @@ E90.registerDay({
     {
       id: 'D14-S12',
       english: "I'm not sure.",
-      pronunciation: 'aim not syur',
+      pronunciation: 'aim not shur',
       translation: 'Saya tidak yakin.',
       words: [["I'm", 'saya (I am)', 'be'], ['not', 'tidak'], ['sure', 'yakin']],
       pattern: 'D14-P3'

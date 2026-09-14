@@ -72,7 +72,14 @@ function checkSentence(s, day, where) {
     if (!Array.isArray(ph) || ph.length < 2) err(`${tag}: format phrases harus [phrase, arti]`);
   }
   if (/[a-z]\s*=\s*/i.test(s.pronunciation)) warn(`${tag}: pronunciation terlihat seperti arti`);
+  if (/\bsy/.test(s.pronunciation)) warn(`${tag}: konvensi cara baca memakai "sh", bukan "sy"`);
+
+  // Kalimat yang sama persis tidak boleh ditulis ulang; pakai { ref } untuk review.
+  const key = tokens(s.english).join(' ');
+  if (englishSeen.has(key)) err(`${tag}: kalimat duplikat dengan ${englishSeen.get(key)} — gunakan { ref: '${englishSeen.get(key)}' }`);
+  else englishSeen.set(key, s.id);
 }
+const englishSeen = new Map();
 
 const refs = [];
 for (const d of days.sort((a, b) => a.day - b.day)) {
@@ -95,6 +102,10 @@ for (const d of days.sort((a, b) => a.day - b.day)) {
   const sp = d.speaking || [];
   if (sp.length < 3 || sp.length > 5) err(`${tag}: speaking harus 3–5 pertanyaan (sekarang ${sp.length})`);
   sp.forEach((q, i) => { if (!q.q || !q.hint || !q.example) err(`${tag}: speaking #${i + 1} butuh q, hint, example`); });
+  if (d.talk321 && !d.talk321.topic) err(`${tag}: talk321 butuh topic`);
+  if (d.talk321 && d.day < 31) warn(`${tag}: 3-2-1 Speaking direncanakan mulai sekitar Day 31`);
+  const dayRefs = (d.review || []).filter((r) => r.ref).map((r) => r.ref);
+  if (new Set(dayRefs).size !== dayRefs.length) err(`${tag}: review ref duplikat dalam satu Day`);
 }
 
 // Validasi setelah semua id terkumpul.

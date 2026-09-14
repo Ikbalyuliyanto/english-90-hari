@@ -36,7 +36,7 @@ E90.registerDay({
     {
       id: 'D06-S05',
       english: 'Put on your shoes.',
-      pronunciation: 'put on yor syuz',
+      pronunciation: 'put on yor shuz',
       translation: 'Pakai sepatumu.',
       words: [['Put', 'taruh / letakkan'], ['on', 'pada badan (dalam "put on")'], ['your', 'milikmu'], ['shoes', 'sepatu (jamak)', 'shoe']],
       phrases: [['put on', 'memakai (baju, sepatu, jam) — lawannya "take off"']]

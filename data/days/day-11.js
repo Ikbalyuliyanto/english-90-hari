@@ -71,7 +71,7 @@ E90.registerDay({
     {
       id: 'D11-S09',
       english: 'I should see a doctor.',
-      pronunciation: 'ai syud si e dok-ter',
+      pronunciation: 'ai shud si e dok-ter',
       translation: 'Sebaiknya saya periksa ke dokter.',
       words: [['I', 'saya'], ['should', 'sebaiknya'], ['see', 'menemui / periksa ke'], ['a', 'seorang'], ['doctor', 'dokter']],
       phrases: [['see a doctor', 'periksa ke dokter']],

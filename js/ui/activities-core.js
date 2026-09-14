@@ -16,6 +16,7 @@ E90.activities = E90.activities || {};
     el.innerHTML = `
       <div class="tip card">
         <strong>Understand → Listen.</strong> Baca English, dengarkan, buka arti per kata, lalu tutup English (🙈 EN) dan coba ucapkan dari artinya.
+        ${ui.pronHelp()}
       </div>
       ${ui.speechNotice()}
       <div class="toolbar-inline">

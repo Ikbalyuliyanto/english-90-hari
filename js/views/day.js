@@ -20,23 +20,18 @@ E90.views = E90.views || {};
     { key: 'shadowing', icon: '🗣️', title: 'Shadowing', desc: 'Tirukan audio 3 kali.', minutes: 15, required: true },
     { key: 'patterns', icon: '🧩', title: 'Sentence Variation', desc: 'Ubah pola jadi kalimatmu sendiri.', minutes: 15 },
     { key: 'speaking', icon: '💬', title: 'Speaking Challenge', desc: 'Jawab pertanyaan dengan situasimu sendiri.', minutes: 15, required: true },
-    { key: 'talk', icon: '⏱️', title: '3-2-1 Speaking', desc: 'Topik sama: 3, 2, lalu 1 menit.', minutes: 10, fromPhase: 2 },
+    // Opsional, hanya muncul di Day yang punya talk321 (mulai sekitar Day 31, 2–3 kali per minggu).
+    { key: 'talk', icon: '⏱️', title: '3-2-1 Speaking', desc: 'Latihan fluency tambahan: topik sama, 3 → 2 → 1 menit.', minutes: 10, onlyIfTalk: true },
     { key: 'review', icon: '🔁', title: 'Review', desc: 'Kalimat yang jatuh tempo dari hari-hari sebelumnya.', minutes: 10 }
   ];
 
   const hideTranslation = (dayNo) => content.phaseOf(dayNo).translation === 'hidden';
   const sentencesOf = (dayNo) => content.daySentences(dayNo).map(({ s }) => s);
 
-  function talkTopic(dayNo) {
-    const d = content.getDay(dayNo);
-    if (d?.talk321?.topic) return d.talk321.topic;
-    const topics = C.talk321Topics[content.phaseOf(dayNo).id];
-    return topics ? topics[dayNo % topics.length] : null;
-  }
+  const talkTopic = (dayNo) => content.getDay(dayNo)?.talk321?.topic || null;
 
   function stepsFor(dayNo) {
-    const phase = content.phaseOf(dayNo).id;
-    return NORMAL_STEPS.filter((s) => !s.fromPhase || phase >= s.fromPhase || content.getDay(dayNo)?.talk321);
+    return NORMAL_STEPS.filter((s) => !s.onlyIfTalk || talkTopic(dayNo));
   }
 
   // Kosakata untuk Vocabulary Review: jatuh tempo → dari kalimat yang sudah dipelajari → pratinjau kata hari ini.
@@ -143,7 +138,7 @@ E90.views = E90.views || {};
       case 'talk': {
         const topic = talkTopic(dayNo);
         if (!topic) {
-          el.innerHTML = '<div class="card empty">3-2-1 Speaking dimulai di Phase 2 (Day 31).</div>';
+          el.innerHTML = '<div class="card empty">Day ini tidak punya latihan 3-2-1 Speaking.</div>';
           return;
         }
         return A.talk321(el, topic, { onDone });

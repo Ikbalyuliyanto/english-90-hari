@@ -185,6 +185,12 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
 .tip { background: var(--primary-soft); border-color: transparent; font-size: .92rem; }
 .notice { background: var(--warn-soft); color: var(--warn); border-radius: var(--radius-sm); padding: 10px 12px; font-size: .88rem; margin-bottom: 10px; }
 .warn { color: var(--warn); font-weight: 600; margin-top: 6px; }
+.pron-help { margin-top: 8px; }
+.pron-help summary { cursor: pointer; font-weight: 600; color: var(--primary); font-size: .88rem; }
+.pron-help p { margin: 6px 0; }
+.pron-help table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+.pron-help td { padding: 4px 6px; border-top: 1px solid var(--line); vertical-align: top; }
+.pron-help td:first-child { white-space: nowrap; width: 1%; }
 .flow { margin: 6px 0 0; padding-left: 20px; }
 .flow li { margin: 2px 0; }
 
