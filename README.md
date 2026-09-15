@@ -15,7 +15,7 @@ Metode: **Understand → Listen → Recall → Speak → Modify → Respond → 
 | 3 | 61–90 | Software Engineering English |
 | 4 | 91–120 | Speaking, Real Work & Job Interview (terjemahan disembunyikan secara default) |
 
-Konten yang sudah tersedia: **Day 1–45** (Phase 1 lengkap + Work English batch 1). Day lain tampil di roadmap sebagai "segera hadir".
+Konten yang sudah tersedia: **Day 1–60** (Phase 1 dan Phase 2 Work English lengkap). Day lain tampil di roadmap sebagai "segera hadir".
 
 ## Fitur
 - **Dashboard**: Day saat ini, progress program, streak, active study days, menit belajar, kalimat learned/mastered/weak, review due, vocabulary.
@@ -79,7 +79,7 @@ Format satu kalimat:
 ```
 Setiap Day juga punya `review` (kalimat variasi baru atau `{ ref: 'D18-S05' }`), `patterns`, `shadowing` (3–5 id), `speaking` (3–5 pertanyaan; tambahkan `timers: [3, 5]` untuk timer opsional), dan `talk321` (opsional).
 
-Mulai Phase 2, arti pertanyaan speaking dilipat secara default (`questionTranslation: 'collapsed'` di `data/curriculum.js`) agar latihan semakin English-oriented.
+Mulai Phase 2, arti pertanyaan speaking dilipat secara default (`questionTranslation: 'collapsed'` di `data/curriculum.js`) agar latihan semakin English-oriented. Mulai Day 46, kolom `meaning` pada pattern ditulis dalam English sederhana; catatan untuk hal yang mudah disalahpahami tetap berbahasa Indonesia.
 
 Validator memeriksa: setiap kata punya arti, cara baca tidak kosong, id unik, kalimat tidak duplikat (pakai `{ ref }` untuk review), referensi valid, jumlah shadowing/speaking, dan memastikan 225 kalimat versi lama tidak ada yang hilang.
 

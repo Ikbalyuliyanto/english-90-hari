@@ -47,9 +47,8 @@ E90.ui = (() => {
 
   // Menyorot bagian slot (huruf kapital seperti KATA KERJA, BENDA) dalam formula.
   function formatFormula(formula) {
-    return esc(formula).replace(/\b([A-Z][A-Z\-]+(?:\s[A-Z][A-Z\-]+)*)\b/g, (m) =>
-      m.length > 1 && m !== 'I' ? `<span class="slot">${m}</span>` : m
-    );
+    // Slot = kata kapital 2+ huruf (boleh beberapa kata); tanda hubung setelahnya (mis. "-ing") tidak ikut disorot.
+    return esc(formula).replace(/\b[A-Z]{2,}(?:\s[A-Z]{2,})*\b/g, (m) => `<span class="slot">${m}</span>`);
   }
 
   /*
