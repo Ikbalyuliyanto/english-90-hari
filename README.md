@@ -15,7 +15,7 @@ Metode: **Understand → Listen → Recall → Speak → Modify → Respond → 
 | 3 | 61–90 | Software Engineering English |
 | 4 | 91–120 | Speaking, Real Work & Job Interview (terjemahan disembunyikan secara default) |
 
-Konten yang sudah tersedia: **Day 1–60** (Phase 1 dan Phase 2 Work English lengkap). Day lain tampil di roadmap sebagai "segera hadir".
+Konten yang sudah tersedia: **Day 1–90** (Phase 1 Foundation, Phase 2 Work English, dan Phase 3 Software Engineering English lengkap). Day lain tampil di roadmap sebagai "segera hadir".
 
 ## Fitur
 - **Dashboard**: Day saat ini, progress program, streak, active study days, menit belajar, kalimat learned/mastered/weak, review due, vocabulary.
@@ -77,7 +77,7 @@ Format satu kalimat:
   pattern: 'D21-P1'                            // id pola di bagian patterns
 }
 ```
-Setiap Day juga punya `review` (kalimat variasi baru atau `{ ref: 'D18-S05' }`), `patterns`, `shadowing` (3–5 id), `speaking` (3–5 pertanyaan; tambahkan `timers: [3, 5]` untuk timer opsional), dan `talk321` (opsional).
+Setiap Day juga punya `review` (kalimat variasi baru atau `{ ref: 'D18-S05' }`), `patterns`, `shadowing` (3–5 id), `speaking` (3–5 pertanyaan; tambahkan `timers: [3, 5]` untuk timer opsional; instruksi Speaking otomatis menyesuaikan bila ada soal bertimer), dan `talk321` (opsional).
 
 Mulai Phase 2, arti pertanyaan speaking dilipat secara default (`questionTranslation: 'collapsed'` di `data/curriculum.js`) agar latihan semakin English-oriented. Mulai Day 46, kolom `meaning` pada pattern ditulis dalam English sederhana; catatan untuk hal yang mudah disalahpahami tetap berbahasa Indonesia.
 
@@ -98,6 +98,8 @@ Validator memeriksa: setiap kata punya arti, cara baca tidak kosong, id unik, ka
 | de → di | "the" sebelum vokal | di o-fis |
 
 - Setiap Day membawa kembali pattern lama di konteks baru (field `pattern` boleh menunjuk pattern hari sebelumnya).
+- Istilah teknis diberi arti singkat yang menjelaskan konteksnya (mis. `endpoint` = "endpoint: alamat URL tertentu di API"), bukan sekadar disalin, agar tetap masuk Vocabulary Bank.
+- "root cause" hanya dipakai untuk penyebab yang sudah dipastikan; jika belum, pakai "possible cause" atau "may be related to".
 
 ## Deploy
 Push ke branch `main`. GitHub Actions (`.github/workflows/deploy-pages.yml`) menjalankan validator lalu deploy ke GitHub Pages.

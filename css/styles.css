@@ -381,7 +381,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
 .q-id summary { cursor: pointer; }
 .hint-line { margin: 10px 0 6px; font-size: .9rem; }
 .example summary { color: var(--primary); font-weight: 600; cursor: pointer; font-size: .9rem; }
-.example-text { margin: 6px 0 0; padding: 8px 10px; border-radius: 8px; background: var(--surface-2); }
+.example-text { margin: 6px 0 0; padding: 8px 10px; border-radius: 8px; background: var(--surface-2); white-space: pre-line; }
 .confirm { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: .92rem; }
 .confirm input { width: 20px; height: 20px; accent-color: var(--primary); }
 

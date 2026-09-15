@@ -89,7 +89,10 @@ E90.activities = E90.activities || {};
 
     el.innerHTML = `
       <div class="tip card">
-        <strong>Respond.</strong> Jawab dengan suara, tanpa membaca script. Usahakan 2–3 kalimat.
+        <strong>Respond.</strong> Jawab dengan suara, tanpa membaca script.
+        ${questions.some((q) => q.timers?.length)
+          ? 'Usahakan 2–3 kalimat per pertanyaan. Untuk soal dengan ⏱️ timer, bicara sesuai durasi yang disebutkan di soal.'
+          : 'Usahakan 2–3 kalimat.'}
         <div class="warn">Don't memorize the example. Answer with your own situation.</div>
       </div>
       ${questions.map((q, i) => `
