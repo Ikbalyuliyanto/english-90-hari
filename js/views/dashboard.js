@@ -96,6 +96,7 @@ E90.views = E90.views || {};
           <div class="streak" title="Current streak"><b>🔥 ${s.streak}</b><span>streak</span></div>
         </div>
         ${ui.progressBar(s.completedDays, C.totalDays)}
+        ${s.completedDays >= C.totalDays ? `<p class="today-note">🎉 Program ${C.totalDays} hari selesai. Pertahankan dengan Review, Vocabulary, dan mengulang simulasi Day 105, 119, dan 120.</p>` : ''}
         ${today.modes.length ? `<p class="today-note">Hari ini: ${today.modes.map((m) => `<span class="badge">${esc(m)}</span>`).join(' ')} ✓ tercatat sebagai hari aktif</p>` : ''}
       </section>
 

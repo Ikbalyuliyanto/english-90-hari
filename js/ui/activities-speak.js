@@ -83,7 +83,7 @@ E90.activities = E90.activities || {};
   };
 
   // ---------- SPEAKING CHALLENGE ----------
-  E90.activities.speaking = (el, questions, { dayNo, hideTranslation = false, onDone } = {}) => {
+  E90.activities.speaking = (el, questions, { dayNo, hideTranslation = false, helpLabel = 'Arti pertanyaan', onDone } = {}) => {
     const saved = (dayNo && store.raw().days[dayNo]?.spoken) || {};
     const spoken = questions.map((_, i) => !!saved[i]);
 
@@ -93,6 +93,9 @@ E90.activities = E90.activities || {};
         ${questions.some((q) => q.timers?.length)
           ? 'Usahakan 2–3 kalimat per pertanyaan. Untuk soal dengan ⏱️ timer, bicara sesuai durasi yang disebutkan di soal.'
           : 'Usahakan 2–3 kalimat.'}
+        ${questions.some((q) => q.followUps?.length)
+          ? '<div>Setelah menjawab, buka <b>follow-up question</b> satu per satu dan jawab masing-masing — seperti di interview atau meeting sungguhan.</div>'
+          : ''}
         <div class="warn">Don't memorize the example. Answer with your own situation.</div>
       </div>
       ${questions.map((q, i) => `
@@ -101,14 +104,27 @@ E90.activities = E90.activities || {};
             <span class="q-no">Q${i + 1}</span>
             <div>
               <div class="q-en">${esc(q.q)}</div>
-              ${q.qId ? `<details class="q-id" ${hideTranslation ? '' : 'open'}><summary>Arti pertanyaan</summary>${esc(q.qId)}</details>` : ''}
+              ${q.qId ? `<details class="q-id" ${hideTranslation ? '' : 'open'}><summary>${esc(helpLabel)}</summary>${esc(q.qId)}</details>` : ''}
             </div>
             <button class="mini-btn" data-act="speak" data-text="${esc(q.q)}" aria-label="Dengarkan pertanyaan">🔊</button>
           </div>
           <div class="hint-line">💬 Hint: <b>${esc(q.hint)}</b></div>
+          ${q.followUps?.length ? `
+            <div class="followups" data-fu="${i}">
+              <ol class="fu-list"></ol>
+              <button class="chip-btn" data-fu-next>➕ Follow-up question (0/${q.followUps.length})</button>
+            </div>` : ''}
+          ${q.outline?.length ? `
+            <details class="outline">
+              <summary>Show Answer Outline</summary>
+              <ol class="outline-list">${q.outline.map((o) => `<li>${esc(o)}</li>`).join('')}</ol>
+              <p class="small muted">Pakai kerangka ini, lalu isi dengan pengalamanmu sendiri.</p>
+            </details>` : ''}
           <details class="example">
-            <summary>Show Example</summary>
-            <p class="example-text">${esc(q.example)}</p>
+            <summary>${q.outline?.length ? 'Show Full Example' : 'Show Example'}</summary>
+            ${Array.isArray(q.example)
+              ? `<div class="example-text">${q.example.map((p) => `<p>${esc(p)}</p>`).join('')}</div>`
+              : `<p class="example-text">${esc(q.example)}</p>`}
             <p class="warn small">Hanya referensi. Jawab sesuai kondisimu sendiri.</p>
           </details>
           ${q.timers?.length ? `<details class="q-timer"><summary>⏱️ Timer (opsional)</summary>${timerHtml(q.timers, { big: false })}</details>` : ''}
@@ -119,6 +135,20 @@ E90.activities = E90.activities || {};
     const btn = el.querySelector('[data-done]');
     // Timer opsional per pertanyaan: tidak memengaruhi completion.
     el.querySelectorAll('.q-timer').forEach((t) => bindTimer(t));
+    // Follow-up question muncul satu per satu (tidak memengaruhi completion).
+    el.querySelectorAll('[data-fu]').forEach((box) => {
+      const items = questions[Number(box.dataset.fu)].followUps;
+      const list = box.querySelector('.fu-list');
+      const next = box.querySelector('[data-fu-next]');
+      let shown = 0;
+      next.addEventListener('click', () => {
+        if (shown >= items.length) return;
+        list.insertAdjacentHTML('beforeend', `<li><span>${esc(items[shown])}</span><button class="mini-btn" data-act="speak" data-text="${esc(items[shown])}" aria-label="Dengarkan">🔊</button></li>`);
+        shown++;
+        next.textContent = shown < items.length ? `➕ Follow-up question (${shown}/${items.length})` : `✓ Semua follow-up sudah muncul (${items.length}/${items.length})`;
+        next.disabled = shown >= items.length;
+      });
+    });
     el.querySelectorAll('[data-spoken]').forEach((cb) => cb.addEventListener('change', () => {
       spoken[Number(cb.dataset.spoken)] = cb.checked;
       if (dayNo) store.setDayData(dayNo, 'spoken', { ...spoken });

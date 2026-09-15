@@ -28,6 +28,8 @@ E90.views = E90.views || {};
   const hideTranslation = (dayNo) => content.phaseOf(dayNo).translation === 'hidden';
   // Arti pertanyaan speaking dilipat mulai Phase 2 (atau disembunyikan jika seluruh terjemahan disembunyikan).
   const hideQuestionTranslation = (dayNo) => hideTranslation(dayNo) || content.phaseOf(dayNo).questionTranslation === 'collapsed';
+  // Fase interview (Phase 4 akhir): bantuan Indonesia hanya petunjuk singkat, bukan terjemahan.
+  const questionHelpLabel = (dayNo) => dayNo >= (content.phaseOf(dayNo).englishOnlyFrom || Infinity) ? 'Bantuan (Bahasa Indonesia)' : 'Arti pertanyaan';
   const sentencesOf = (dayNo) => content.daySentences(dayNo).map(({ s }) => s);
 
   const talkTopic = (dayNo) => content.getDay(dayNo)?.talk321?.topic || null;
@@ -117,7 +119,8 @@ E90.views = E90.views || {};
 
     const onDone = () => {
       const justCompleted = store.completeStep(dayNo, key, 'normal');
-      if (justCompleted) ui.toast(`DAY ${dayNo} COMPLETED ✅`);
+      if (justCompleted && store.raw().days && Object.keys(store.raw().days).filter((n) => store.isDayComplete(n)).length >= C.totalDays) ui.toast(`🎉 PROGRAM ${C.totalDays} HARI SELESAI`);
+      else if (justCompleted) ui.toast(`DAY ${dayNo} COMPLETED ✅`);
       else ui.toast(`✓ ${meta.title} selesai`);
       location.hash = `#/day/${dayNo}`;
     };
@@ -136,7 +139,7 @@ E90.views = E90.views || {};
       case 'patterns':
         return A.patterns(el, d.patterns, { onDone });
       case 'speaking':
-        return A.speaking(el, d.speaking, { dayNo, hideTranslation: hideQuestionTranslation(dayNo), onDone });
+        return A.speaking(el, d.speaking, { dayNo, hideTranslation: hideQuestionTranslation(dayNo), helpLabel: questionHelpLabel(dayNo), onDone });
       case 'talk': {
         const topic = talkTopic(dayNo);
         if (!topic) {
@@ -175,7 +178,7 @@ E90.views = E90.views || {};
           { title: 'Core Sentences', run: (el, next) => A.learn(el, coreFive.map((s) => ({ s, review: false })), { hideTranslation: hideTranslation(dayNo), doneLabel: 'Lanjut →', onDone: next }) },
           { title: 'Listening', run: (el, next) => A.listening(el, shuffle(sentencesOf(dayNo)).slice(0, 5), { onDone: next }) },
           { title: 'Recall', run: (el, next) => A.recall(el, shuffle(coreFive), { direction: 'id-en', onDone: next }) },
-          { title: 'Speaking', run: (el, next) => A.speaking(el, d.speaking.slice(0, 2), { hideTranslation: hideQuestionTranslation(dayNo), onDone: next }) }
+          { title: 'Speaking', run: (el, next) => A.speaking(el, d.speaking.slice(0, 2), { hideTranslation: hideQuestionTranslation(dayNo), helpLabel: questionHelpLabel(dayNo), onDone: next }) }
         ]
       },
       emergency: {

@@ -13,9 +13,9 @@ Metode: **Understand → Listen → Recall → Speak → Modify → Respond → 
 | 1 | 1–30 | Foundation & Basic Conversation |
 | 2 | 31–60 | Work English (standup, meeting, deadline) |
 | 3 | 61–90 | Software Engineering English |
-| 4 | 91–120 | Speaking, Real Work & Job Interview (terjemahan disembunyikan secara default) |
+| 4 | 91–120 | Speaking, International Workplace & Job Interview (terjemahan disembunyikan secara default) |
 
-Konten yang sudah tersedia: **Day 1–90** (Phase 1 Foundation, Phase 2 Work English, dan Phase 3 Software Engineering English lengkap). Day lain tampil di roadmap sebagai "segera hadir".
+Konten **lengkap Day 1–120**. Phase 4 terdiri dari Day 91–105 (komunikasi di tim internasional: perkenalan, proyek, manager, stakeholder, meeting, disagreement, presentasi, Q&A, checkpoint 8–10 menit) dan Day 106–120 (job interview: tell me about yourself, motivasi, STAR, problem-solving, technical interview, system design, pertanyaan sulit, mock interview 15–20 menit, dan simulasi final 10 tahap). Contoh proyek sebagian besar dari Hospital Information System (pendaftaran, rawat jalan/inap, lab, farmasi, billing, rekam medis).
 
 ## Fitur
 - **Dashboard**: Day saat ini, progress program, streak, active study days, menit belajar, kalimat learned/mastered/weak, review due, vocabulary.
@@ -77,9 +77,23 @@ Format satu kalimat:
   pattern: 'D21-P1'                            // id pola di bagian patterns
 }
 ```
-Setiap Day juga punya `review` (kalimat variasi baru atau `{ ref: 'D18-S05' }`), `patterns`, `shadowing` (3–5 id), `speaking` (3–5 pertanyaan; tambahkan `timers: [3, 5]` untuk timer opsional; instruksi Speaking otomatis menyesuaikan bila ada soal bertimer), dan `talk321` (opsional).
+Setiap Day juga punya `review` (kalimat variasi baru atau `{ ref: 'D18-S05' }`), `patterns`, `shadowing` (3–5 id), `speaking` (3–5 pertanyaan, atau sampai 12 jika Day diberi `checkpoint: true`), dan `talk321` (opsional).
 
-Mulai Phase 2, arti pertanyaan speaking dilipat secara default (`questionTranslation: 'collapsed'` di `data/curriculum.js`) agar latihan semakin English-oriented. Mulai Day 46, kolom `meaning` pada pattern ditulis dalam English sederhana; catatan untuk hal yang mudah disalahpahami tetap berbahasa Indonesia.
+Field pertanyaan speaking:
+```js
+{
+  q: 'Tell me about yourself.',
+  qId: 'Bantuan / arti pertanyaan (dilipat)',
+  hint: "Sure. I'm a ... For the past ...",
+  example: 'Satu paragraf' atau ['paragraf 1', 'paragraf 2'],  // tersembunyi: Show Example / Show Full Example
+  outline: ['Present', 'Highlights', 'Why this role'],    // opsional, tersembunyi: Show Answer Outline
+  followUps: ['Why healthcare?', '...'],                  // opsional, dibuka satu per satu
+  timers: [1, 2]                                            // opsional, menit (1–20)
+}
+```
+Instruksi Speaking otomatis menyesuaikan bila ada soal bertimer atau follow-up.
+
+Mulai Phase 2, arti pertanyaan speaking dilipat secara default (`questionTranslation: 'collapsed'` di `data/curriculum.js`) agar latihan semakin English-oriented. Di Phase 4 terjemahan kalimat juga disembunyikan (`translation: 'hidden'`, tetap bisa dibuka dengan tombol ID), dan mulai Day 106 (`englishOnlyFrom`) bantuan pertanyaan hanya berupa petunjuk singkat berbahasa Indonesia. Mulai Day 46, kolom `meaning` pada pattern ditulis dalam English sederhana; catatan untuk hal yang mudah disalahpahami tetap berbahasa Indonesia.
 
 Validator memeriksa: setiap kata punya arti, cara baca tidak kosong, id unik, kalimat tidak duplikat (pakai `{ ref }` untuk review), referensi valid, jumlah shadowing/speaking, dan memastikan 225 kalimat versi lama tidak ada yang hilang.
 

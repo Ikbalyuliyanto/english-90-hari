@@ -100,11 +100,17 @@ for (const d of days.sort((a, b) => a.day - b.day)) {
   const sh = d.shadowing || [];
   if (sh.length < 3 || sh.length > 5) err(`${tag}: shadowing harus 3–5 kalimat (sekarang ${sh.length})`);
   const sp = d.speaking || [];
-  if (sp.length < 3 || sp.length > 5) err(`${tag}: speaking harus 3–5 pertanyaan (sekarang ${sp.length})`);
+  // Day checkpoint (mis. simulasi bertahap) boleh punya sampai 12 pertanyaan.
+  const maxSpeaking = d.checkpoint ? 12 : 5;
+  if (sp.length < 3 || sp.length > maxSpeaking) err(`${tag}: speaking harus 3–${maxSpeaking} pertanyaan (sekarang ${sp.length})`);
+  const isTextList = (v) => Array.isArray(v) && v.length > 0 && v.every((x) => typeof x === 'string' && x.trim());
   sp.forEach((q, i) => {
-    if (!q.q || !q.hint || !q.example) err(`${tag}: speaking #${i + 1} butuh q, hint, example`);
-    if (q.timers !== undefined && (!Array.isArray(q.timers) || !q.timers.length || !q.timers.every((m) => Number.isInteger(m) && m >= 1 && m <= 10))) {
-      err(`${tag}: speaking #${i + 1} timers harus array menit 1–10`);
+    const exampleOk = (typeof q.example === 'string' && q.example.trim()) || isTextList(q.example);
+    if (!q.q || !q.hint || !exampleOk) err(`${tag}: speaking #${i + 1} butuh q, hint, example (teks atau daftar paragraf)`);
+    if (q.outline !== undefined && !isTextList(q.outline)) err(`${tag}: speaking #${i + 1} outline harus daftar teks`);
+    if (q.followUps !== undefined && !isTextList(q.followUps)) err(`${tag}: speaking #${i + 1} followUps harus daftar teks`);
+    if (q.timers !== undefined && (!Array.isArray(q.timers) || !q.timers.length || !q.timers.every((m) => Number.isInteger(m) && m >= 1 && m <= 20))) {
+      err(`${tag}: speaking #${i + 1} timers harus array menit 1–20`);
     }
   });
   if (d.talk321 && !d.talk321.topic) err(`${tag}: talk321 butuh topic`);

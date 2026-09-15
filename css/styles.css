@@ -382,6 +382,17 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
 .hint-line { margin: 10px 0 6px; font-size: .9rem; }
 .example summary { color: var(--primary); font-weight: 600; cursor: pointer; font-size: .9rem; }
 .example-text { margin: 6px 0 0; padding: 8px 10px; border-radius: 8px; background: var(--surface-2); white-space: pre-line; }
+div.example-text { white-space: normal; }
+div.example-text p { margin: 0 0 8px; }
+div.example-text p:last-child { margin-bottom: 0; }
+.outline summary { color: var(--primary); font-weight: 600; cursor: pointer; font-size: .9rem; margin-bottom: 6px; }
+.outline-list { margin: 6px 0; padding: 8px 10px 8px 28px; border-radius: 8px; background: var(--surface-2); }
+.outline-list li { margin: 2px 0; }
+.followups { margin: 8px 0; }
+.fu-list { margin: 0 0 6px; padding-left: 22px; }
+.fu-list li { margin: 6px 0; font-weight: 600; }
+.fu-list li span { margin-right: 6px; }
+.fu-list .mini-btn { vertical-align: middle; }
 .confirm { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: .92rem; }
 .confirm input { width: 20px; height: 20px; accent-color: var(--primary); }
 

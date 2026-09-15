@@ -17,7 +17,9 @@ E90.CURRICULUM = {
     31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45,
     46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
     61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75,
-    76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90
+    76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
+    91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105,
+    106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120
   ],
 
   phases: [
@@ -49,9 +51,11 @@ E90.CURRICULUM = {
       id: 4, from: 91, to: 120,
       title: 'Speaking, Real Work & Job Interview',
       titleId: 'Simulasi Kerja & Interview',
-      target: 'English → Understand → Respond in English.',
+      target: 'Bisa kerja di tim internasional dan menjalani interview dalam English.',
       // Terjemahan disembunyikan secara default agar terbiasa berpikir langsung dalam English.
-      translation: 'hidden'
+      translation: 'hidden',
+      // Mulai Day ini (fase interview), bantuan Indonesia untuk pertanyaan speaking hanya berupa petunjuk singkat.
+      englishOnlyFrom: 106
     }
   ],
 
@@ -151,36 +155,36 @@ E90.CURRICULUM = {
     'Technical Presentation & Q&A',
     'Final Software Engineering English Checkpoint',
     // Phase 4 — Day 91–120
-    'Tell Me About Yourself',
-    'Your Experience & Projects',
-    'Why This Company, Why Singapore',
+    'Professional Self-Introduction',
+    'Explaining Your Experience',
+    'Explaining Your Current Project',
+    'A Project from Start to Finish',
+    'Working with a Team',
+    'Communicating with Your Manager',
+    'Client & Stakeholder Communication',
+    'Explaining Technical Things Simply',
+    'Meeting Participation',
+    'Leading a Small Meeting',
+    'Professional Disagreement',
+    'Handling Misunderstandings',
+    'Giving a Technical Presentation',
+    'Answering Questions After a Presentation',
+    'International Workplace Checkpoint',
+    'Interview: Tell Me About Yourself',
+    'Why Are You Looking for a New Job?',
+    'Why Do You Want to Work Here?',
     'Strengths & Weaknesses',
     'Behavioral Interview: STAR Method',
-    'Behavioral: Handling Conflict',
-    'Behavioral: Failure & Learning',
-    'Behavioral: Leadership',
-    'Technical Interview: Thinking Out Loud',
-    'Technical Interview: Explaining Complexity',
-    'System Design: Requirements',
-    'System Design: High-Level Design',
-    'System Design: Scaling & Trade-offs',
-    'Questions for the Interviewer',
-    'Offer & Salary Conversation',
-    'First Week at a New Job',
-    'Standup Simulation',
-    'Meeting Simulation',
-    'Technical Disagreement',
-    'Explaining Decisions to Stakeholders',
-    'Code Review Discussion',
-    'Client Communication',
-    'Production Incident Communication',
-    'Post-mortem',
-    'Leading a Team',
-    'Mentoring',
-    'Presentation: Product Demo',
-    'Singapore Workplace Communication',
+    'Problem-Solving Interview',
+    'Technical Interview: Project Deep Dive',
+    'Technical Interview: Backend & API',
+    'Technical Interview: Database',
+    'Technical Interview: Frontend & Integration',
+    'System Design English: Basics',
+    'System Design Discussion',
+    'Difficult Interview Questions',
     'Full Mock Interview',
-    'Final Check: Respond in English'
+    'Final International Software Engineer Simulation'
   ]
 
   /*
