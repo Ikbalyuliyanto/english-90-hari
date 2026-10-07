@@ -8,5 +8,5 @@ window.E90 = window.E90 || {};
 
 E90.CONFIG = {
   WORKER_BASE_URL: 'https://english-90-hari-push.ikbaly94.workers.dev',
-  VAPID_PUBLIC_KEY: ''
+  VAPID_PUBLIC_KEY: 'BP1Ew-aX4rrfTLQJVuaYkb_CkLBq1XBqeB9f4QGzmokSswPLDUEaVV5rp7f6PlqVBTqrn5SvACf-Va2_ELJWAew'
 };

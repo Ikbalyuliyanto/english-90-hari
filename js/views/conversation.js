@@ -131,11 +131,11 @@ window.E90 = window.E90 || {};
   const pwa = E90.pwa;
 
   const SUB_LABEL = {
-    saved: '✓ Subscription tersimpan',
-    'save-failed': '✗ Subscription ada, tapi gagal dikirim ke server',
+    saved: '✓ Subscription aktif',
+    'save-failed': 'Subscription aktif di browser, tapi gagal dikirim ke server',
     'no-vapid': 'Subscription belum aktif — Push server belum diaktifkan.',
     'no-permission': 'Subscription belum aktif (notification belum diizinkan)',
-    'subscribe-failed': '✗ Gagal membuat subscription',
+    'subscribe-failed': '✗ Gagal subscribe',
     'no-sw': 'Subscription belum aktif (service worker belum aktif)',
     unsupported: '✗ Browser ini tidak mendukung push'
   };

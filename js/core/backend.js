@@ -78,7 +78,15 @@ E90.backend = (() => {
 
   // Status: 'unsupported' | 'no-permission' | 'no-sw' | 'saved' | 'save-failed' | 'no-vapid' | 'subscribe-failed'
   // Tidak pernah membuat subscription palsu. subscribe() baru dipanggil jika applicationServerKey tersedia.
-  async function ensureSubscription({ applicationServerKey = E90.CONFIG?.VAPID_PUBLIC_KEY } = {}) {
+  // Single-flight: pemanggilan bersamaan (aktifkan notification + render Settings) memakai proses yang sama,
+  // supaya subscribe() tidak dipanggil dua kali dan menggantikan subscription pertama.
+  let inflight = null;
+  function ensureSubscription(opts) {
+    if (!inflight) inflight = runEnsureSubscription(opts).finally(() => { inflight = null; });
+    return inflight;
+  }
+
+  async function runEnsureSubscription({ applicationServerKey = E90.CONFIG?.VAPID_PUBLIC_KEY } = {}) {
     const set = (state, extra = {}) => (status.subscription = { state, at: new Date().toISOString(), ...extra });
     if (!('serviceWorker' in navigator) || !('PushManager' in window)) return set('unsupported');
     if (!('Notification' in window) || Notification.permission !== 'granted') return set('no-permission');
@@ -87,6 +95,15 @@ E90.backend = (() => {
     if (!reg.pushManager) return set('unsupported');
 
     let sub = await reg.pushManager.getSubscription();
+    // Subscription lama dibuat dengan key lain (mis. key diganti): buat ulang dengan key sekarang.
+    if (sub && applicationServerKey && sub.options?.applicationServerKey) {
+      const current = new Uint8Array(sub.options.applicationServerKey);
+      const wanted = urlBase64ToUint8Array(applicationServerKey);
+      if (current.length !== wanted.length || current.some((b, i) => b !== wanted[i])) {
+        await sub.unsubscribe().catch(() => {});
+        sub = null;
+      }
+    }
     if (!sub) {
       if (!applicationServerKey) return set('no-vapid');
       try {
