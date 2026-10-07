@@ -2,7 +2,8 @@
 /*
  * Validator bank pertanyaan conversation (data/conversation/questions.js).
  * Jalankan: node tools/validate-conversation.js — exit code 1 jika ada error.
- * Cek: id unik, konteks valid, minDay dalam rentang, ref ada di materi dan tidak lebih baru dari minDay.
+ * Cek: id unik, konteks valid, minDay dalam rentang, ref ada di materi dan tidak lebih baru dari minDay,
+ * answerPatterns valid, dan setiap sampleAnswers dinilai benar oleh js/core/answer-check.js.
  */
 const fs = require('fs');
 const path = require('path');
@@ -22,6 +23,9 @@ const sentenceIds = new Set();
 sandbox.E90.registerDay = (d) => [...(d.learn || []), ...(d.review || [])].forEach((s) => s.id && sentenceIds.add(s.id));
 for (const d of C.AVAILABLE_DAYS) run(`data/days/day-${String(d).padStart(2, '0')}.js`);
 run('data/conversation/questions.js');
+sandbox.globalThis = sandbox;
+run('js/core/answer-check.js');
+const { check } = sandbox.E90.answerCheck;
 
 const { contexts, questions } = sandbox.E90.CONVERSATION;
 const ctxIds = new Set(contexts.map((c) => c.id));
@@ -37,6 +41,14 @@ for (const q of questions) {
   if (q.ref) {
     if (!sentenceIds.has(q.ref)) errors.push(`${where}: ref ${q.ref} tidak ditemukan di materi`);
     else if (Number(q.ref.match(/^D(\d+)/)[1]) > q.minDay) errors.push(`${where}: ref ${q.ref} lebih baru dari minDay ${q.minDay}`);
+  }
+  if (!(q.answerPatterns || []).length) errors.push(`${where}: answerPatterns wajib diisi`);
+  if (!(q.sampleAnswers || []).length) errors.push(`${where}: sampleAnswers wajib diisi`);
+  for (const a of q.sampleAnswers || []) {
+    try {
+      const r = check(q, a, q.minDay);
+      if (r.verdict !== 'correct') errors.push(`${where}: sampleAnswer "${a}" dinilai ${r.verdict}`);
+    } catch (e) { errors.push(`${where}: pola tidak valid (${e.message})`); }
   }
   perCtx[q.context] = (perCtx[q.context] || 0) + 1;
 }

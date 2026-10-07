@@ -7,7 +7,7 @@
  * - push: kerangka untuk Web Push dari backend (belum dipakai di tahap ini).
  * Naikkan VERSION jika daftar SHELL berubah.
  */
-const VERSION = 'e90-v2';
+const VERSION = 'e90-v3';
 const SHELL = [
   './',
   'index.html',
@@ -19,6 +19,7 @@ const SHELL = [
   'js/core/store.js',
   'js/core/speech.js',
   'js/core/content.js',
+  'js/core/answer-check.js',
   'js/core/conversation.js',
   'js/core/pwa.js',
   'js/ui/components.js',

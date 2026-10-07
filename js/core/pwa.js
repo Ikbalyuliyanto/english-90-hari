@@ -81,11 +81,22 @@ E90.pwa = (() => {
     });
   }
 
+  // Satu active question: jika masih ada pertanyaan yang belum dijawab, notification mengulang
+  // pertanyaan yang sama (tag sama -> menggantikan, tidak menumpuk). Pertanyaan baru hanya dibuat
+  // setelah pertanyaan sebelumnya dijawab.
   async function sendConversationTest() {
-    const q = E90.conversation.pick();
-    if (!q) throw new Error('empty');
-    await notify(E90.conversation.notificationPayload(q));
-    return q;
+    const conv = E90.conversation;
+    let active = conv.getActive();
+    let reused = true;
+    if (conv.canCreateNext()) {
+      const res = conv.createActive({ source: 'notification' });
+      if (!res.ok) throw new Error(res.reason);
+      active = res.active;
+      reused = false;
+    }
+    const q = conv.byId(active.questionId);
+    await notify(conv.notificationPayload(q));
+    return { q, reused };
   }
 
   // Cek update: ambil sw.js terbaru; jika ada versi baru, aktifkan (SKIP_WAITING) lalu reload sekali

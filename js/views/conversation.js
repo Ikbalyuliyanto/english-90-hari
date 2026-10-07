@@ -1,8 +1,8 @@
 /*
- * View #/conversation — latihan jawab pertanyaan singkat (lokal, belum AI).
- *   #/conversation              pertanyaan acak sesuai waktu sekarang
- *   #/conversation?q=C-WORK-03  pertanyaan tertentu (dari notification)
- *   #/conversation?ctx=lunch    pertanyaan acak dari satu konteks
+ * View #/conversation — satu active question seperti chat (lokal, belum AI).
+ *   #/conversation              tampilkan active question; buat baru jika belum ada
+ *   #/conversation?q=C-WORK-03  dari notification: dipakai hanya jika tidak ada pertanyaan yang belum dijawab
+ *   #/conversation?ctx=lunch    pertanyaan berikutnya dari satu konteks (setelah pertanyaan sebelumnya selesai)
  */
 window.E90 = window.E90 || {};
 
@@ -11,58 +11,116 @@ window.E90 = window.E90 || {};
   const ui = E90.ui;
   const conv = E90.conversation;
 
-  E90.views.conversation = (root, params = {}) => {
-    const limit = conv.maxDay();
-    const requested = params.q ? conv.byId(params.q) : null;
-    // Pertanyaan dari notification lama yang belum boleh dipakai tetap diabaikan.
-    const q = requested && requested.minDay <= limit ? requested : conv.pick({ context: params.ctx, exclude: params.next });
-    const ctx = q ? conv.contextOf(q.context) : null;
-    const total = conv.eligible().length;
+  const VERDICT = {
+    correct: '✅ Benar',
+    almost: '⚠️ Hampir benar',
+    wrong: '❌ Perlu diperbaiki'
+  };
 
-    const chips = conv.bank().contexts
+  function resultHtml(r) {
+    const lines = [`<b>${VERDICT[r.verdict] || ''}</b>`];
+    if (r.verdict === 'almost' && r.correction) lines.push(`Lebih tepat: <b>${esc(r.correction)}</b>`);
+    if (r.verdict === 'wrong') {
+      if (r.hint) lines.push(esc(r.hint));
+      if (r.sample) lines.push(`Contoh: <b>${esc(r.sample)}</b>`);
+    }
+    return lines.join('<br>');
+  }
+
+  const bubble = (who, html, cls = '') => `<div class="chat-msg ${cls}"><small>${who}</small><div>${html}</div></div>`;
+
+  function contextChips(current) {
+    return conv.bank().contexts
       .filter((c) => conv.eligible({ context: c.id }).length)
-      .map((c) => `<a class="btn ${params.ctx === c.id ? 'btn-primary' : ''}" href="#/conversation?ctx=${c.id}">${esc(c.label)}</a>`)
+      .map((c) => `<a class="btn ${current === c.id ? 'btn-primary' : ''}" href="#/conversation?ctx=${c.id}">${esc(c.label)}</a>`)
       .join('');
+  }
 
-    root.innerHTML = `
-      ${ui.pageHead({ title: 'Conversation', eyebrow: 'English Time', sub: `Pertanyaan dari materi Day 1–${limit} · ${total} pertanyaan tersedia` })}
-      ${q ? `
-      <section class="card">
-        <div class="eyebrow">${esc(ctx?.label || '')}</div>
-        <p class="muted" style="margin:.4em 0 0">${esc(ctx?.greeting || 'English Time')}</p>
-        <h2 style="margin:.2em 0 .4em">${esc(q.en)}</h2>
-        <p id="convIdn" class="muted" hidden>${esc(q.idn)}</p>
+  function resolveActive(params) {
+    const active = conv.getActive();
+    // Ada pertanyaan yang belum dijawab: selalu tampilkan itu (tidak membuat pertanyaan baru).
+    if (active && active.status === 'pending') return { active, blocked: !!(params.q && params.q !== active.questionId) || !!params.ctx };
+    if (params.q && active?.questionId === params.q) return { active };
+    if (params.q || params.ctx) {
+      const res = conv.createActive({ questionId: params.q, context: params.ctx, source: params.q ? 'notification' : 'app' });
+      if (res.ok) return { active: res.active };
+    }
+    return { active: active || conv.ensureActive() };
+  }
+
+  function render(root, params = {}) {
+    const limit = conv.maxDay();
+    const head = ui.pageHead({ title: 'Conversation', eyebrow: 'English Time', sub: `Pertanyaan dari materi Day 1–${limit} · ${conv.eligible().length} pertanyaan tersedia` });
+    const { active, blocked } = params.done ? { active: null } : resolveActive(params);
+    const q = active && conv.byId(active.questionId);
+
+    if (!q) {
+      root.innerHTML = `${head}
+        <section class="card ${params.done ? '' : 'empty'}">${params.done
+          ? '<b>Selesai 👍</b><p class="small muted">Pertanyaan berikutnya akan muncul di notification berikutnya, atau mulai sekarang.</p><a class="btn btn-primary btn-block" href="#/conversation">Pertanyaan berikutnya →</a>'
+          : `Belum ada pertanyaan untuk materi Day 1–${limit}. Lanjutkan belajar dulu ya.`}</section>
+        <section class="card"><b>Pilih konteks</b><div class="btn-row">${contextChips()}</div></section>`;
+      return;
+    }
+
+    const ctx = conv.contextOf(q.context);
+    const pending = active.status === 'pending';
+    const attempts = active.attempts || [];
+
+    root.innerHTML = `${head}
+      ${blocked ? '<p class="card small">Jawab pertanyaan ini dulu ya. Pertanyaan baru muncul setelah yang ini selesai.</p>' : ''}
+      <section class="card chat">
+        ${bubble(esc(ctx?.label || 'App'), `<span class="muted">${esc(ctx?.greeting || 'English Time')}</span><br><b class="chat-q">${esc(q.en)}</b><br><span id="convIdn" class="muted small" hidden>${esc(q.idn)}</span>`, 'is-app')}
         <div class="btn-row">
           <button class="btn" data-act="speak" data-text="${esc(q.en)}">🔊 Dengar</button>
           <button class="btn" data-act="speak-slow" data-text="${esc(q.en)}">🐢 Pelan</button>
           <button class="btn" id="convShowIdn">Arti</button>
         </div>
+        ${attempts.map((t) => bubble('You', esc(t.answer), 'is-user') + bubble('App', resultHtml(t.result), `is-app is-${t.result.verdict}`)).join('')}
       </section>
+      ${pending ? `
       <section class="card form">
-        <label for="convAnswer"><b>Jawabanmu</b><small>Ucapkan dengan suara, lalu tulis singkat. Belum dinilai otomatis.</small></label>
-        <textarea id="convAnswer" rows="3" placeholder="contoh: I woke up at six."></textarea>
+        <label for="convAnswer"><b>Jawabanmu</b><small>Ucapkan dengan suara, lalu tulis singkat.</small></label>
+        <textarea id="convAnswer" rows="2" placeholder="Tulis jawaban dalam English"></textarea>
         <div class="btn-row">
           <button class="btn" id="convSpeakAnswer">🔊 Dengar jawabanku</button>
-          <a class="btn btn-primary" href="#/conversation?${params.ctx ? `ctx=${esc(params.ctx)}&` : ''}next=${esc(q.id)}">Pertanyaan lain →</a>
+          <button class="btn btn-primary" id="convSend">Kirim</button>
         </div>
-        <p class="small muted">Materi: Day ${q.minDay}${q.ref ? ` · ${esc(q.ref)}` : ''}</p>
-      </section>`
-      : `<section class="card empty">Belum ada pertanyaan untuk materi Day 1–${limit}. Lanjutkan belajar dulu ya.</section>`}
-      <section class="card">
-        <b>Pilih konteks</b>
-        <div class="btn-row">${chips}</div>
-      </section>
-      <p class="muted small center"><a href="#/settings">Atur notification di Settings</a></p>`;
+      </section>` : `
+      <div class="btn-row big">
+        <button class="btn" id="convRetry">Coba lagi</button>
+        <button class="btn btn-primary" id="convNext">Lanjut →</button>
+      </div>`}
+      <p class="small muted center">Materi: Day ${q.minDay}${q.ref ? ` · ${esc(q.ref)}` : ''} · <a href="#/settings">Notification</a></p>`;
 
-    root.querySelector('#convShowIdn')?.addEventListener('click', () => {
-      root.querySelector('#convIdn').hidden = false;
-    });
+    root.querySelector('#convShowIdn').addEventListener('click', () => { root.querySelector('#convIdn').hidden = false; });
+    const input = root.querySelector('#convAnswer');
     root.querySelector('#convSpeakAnswer')?.addEventListener('click', () => {
-      const text = root.querySelector('#convAnswer').value.trim();
+      const text = input.value.trim();
       if (!text) return ui.toast('Tulis jawabanmu dulu');
       if (!E90.speech.speak(text)) ui.toast('Audio tidak didukung di browser ini.');
     });
-  };
+    const send = () => {
+      if (!input.value.trim()) return ui.toast('Tulis jawabanmu dulu');
+      conv.submitAnswer(input.value);
+      render(root, {});
+    };
+    root.querySelector('#convSend')?.addEventListener('click', send);
+    input?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
+    });
+    root.querySelector('#convRetry')?.addEventListener('click', () => {
+      conv.retry();
+      render(root, {});
+      root.querySelector('#convAnswer')?.focus();
+    });
+    root.querySelector('#convNext')?.addEventListener('click', () => {
+      conv.close();
+      render(root, { done: true });
+    });
+  }
+
+  E90.views.conversation = render;
 })();
 
 /*
@@ -126,8 +184,8 @@ window.E90 = window.E90 || {};
     });
     box.querySelector('#testNotifyBtn').addEventListener('click', async () => {
       try {
-        const q = await pwa.sendConversationTest();
-        ui.toast(`🔔 Terkirim: ${q.en}`);
+        const { q, reused } = await pwa.sendConversationTest();
+        ui.toast(reused ? `🔔 Pertanyaan aktif dikirim ulang: ${q.en}` : `🔔 Terkirim: ${q.en}`);
       } catch (err) {
         console.warn(err);
         ui.toast('Gagal mengirim notification');
