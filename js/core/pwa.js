@@ -64,6 +64,7 @@ E90.pwa = (() => {
     if (!supported.notify) return 'unsupported';
     const result = await Notification.requestPermission();
     setPrefs({ enabled: result === 'granted' });
+    if (result === 'granted') await E90.backend?.ensureSubscription().catch(() => {});
     return result;
   }
 

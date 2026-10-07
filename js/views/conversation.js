@@ -130,6 +130,30 @@ window.E90 = window.E90 || {};
   const ui = E90.ui;
   const pwa = E90.pwa;
 
+  const SUB_LABEL = {
+    saved: '✓ Subscription tersimpan',
+    'save-failed': '✗ Subscription ada, tapi gagal dikirim ke server',
+    'no-vapid': 'Subscription belum aktif — Push server belum diaktifkan.',
+    'no-permission': 'Subscription belum aktif (notification belum diizinkan)',
+    'subscribe-failed': '✗ Gagal membuat subscription',
+    'no-sw': 'Subscription belum aktif (service worker belum aktif)',
+    unsupported: '✗ Browser ini tidak mendukung push'
+  };
+
+  async function renderBackendStatus(el) {
+    if (!el || !E90.backend) return;
+    const [h, sub] = await Promise.all([
+      E90.backend.health(),
+      E90.backend.ensureSubscription().catch(() => ({ state: 'subscribe-failed' }))
+    ]);
+    const st = await E90.backend.postState(true);
+    if (!el.isConnected) return;
+    el.innerHTML = `<b>Backend Notification</b><br>
+      ${h.ok ? '✓ Online' : '✗ Gagal terhubung (aplikasi tetap berjalan lokal)'}<br>
+      ${SUB_LABEL[sub.state] || sub.state}<br>
+      <span class="muted">${st?.ok ? `State tersinkron · Day ${st.sent.currentDay}` : 'State belum tersinkron'}</span>`;
+  }
+
   E90.views.notifySettings = async (box) => {
     if (!box) return;
     const perm = pwa.permission();
@@ -152,7 +176,10 @@ window.E90 = window.E90 || {};
         <a class="btn" href="#/conversation">💬 Buka Conversation</a>
       </div>
       <button class="btn btn-block" id="updateBtn">🔄 Cek Update</button>
-      <p class="small muted">Tahap ini: notification dikirim dari aplikasi (tes). Pengingat terjadwal saat app tertutup butuh server push.</p>`;
+      <p class="small muted">Tahap ini: notification dikirim dari aplikasi (tes). Pengingat terjadwal saat app tertutup butuh server push.</p>
+      <p class="small" id="backendStatus"><b>Backend Notification</b><br>… mengecek</p>`;
+
+    renderBackendStatus(box.querySelector('#backendStatus'));
 
     box.querySelector('#installBtn')?.addEventListener('click', async () => {
       await pwa.install();

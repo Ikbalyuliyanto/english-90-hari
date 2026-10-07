@@ -116,6 +116,7 @@ window.E90 = window.E90 || {};
     window.addEventListener('hashchange', render);
     render();
     trackMinutes();
+    E90.backend?.init();
   }
 
   boot();

@@ -51,6 +51,7 @@ E90.conversation = (() => {
   }
   function save(state) {
     try { localStorage.setItem(KEY, JSON.stringify(state)); } catch { /* storage penuh / diblokir */ }
+    E90.backend?.syncState(); // best-effort ke Worker; tidak memblokir alur lokal
   }
 
   const getActive = () => load().activeQuestion;
