@@ -29,7 +29,7 @@ E90.pwa = (() => {
   function register() {
     if (!supported.sw) return;
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js').catch((err) => console.warn('[E90] SW gagal', err));
+      navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).catch((err) => console.warn('[E90] SW gagal', err));
     });
     // Klik notification saat app sudah terbuka: SW mengirim route via postMessage.
     navigator.serviceWorker.addEventListener('message', (e) => {
@@ -88,7 +88,36 @@ E90.pwa = (() => {
     return q;
   }
 
+  // Cek update: ambil sw.js terbaru; jika ada versi baru, aktifkan (SKIP_WAITING) lalu reload sekali
+  // setelah controllerchange. Hanya reload halaman — localStorage/progress tidak disentuh.
+  // Hasil: 'updating' (reload otomatis menyusul) atau 'latest'.
+  let reloading = false;
+  function reloadOnce() {
+    if (reloading) return;
+    reloading = true;
+    location.reload();
+  }
+
+  async function checkForUpdate() {
+    if (!supported.sw) return 'latest';
+    const reg = await navigator.serviceWorker.getRegistration();
+    if (!reg) return 'latest';
+    await reg.update();
+    const worker = reg.waiting || reg.installing;
+    if (!worker) return 'latest';
+
+    navigator.serviceWorker.addEventListener('controllerchange', reloadOnce, { once: true });
+    const activate = () => worker.postMessage({ type: 'SKIP_WAITING' });
+    if (worker.state === 'installed') activate();
+    worker.addEventListener('statechange', () => {
+      if (worker.state === 'installed') activate();
+      if (worker.state === 'redundant') reloadOnce();
+    });
+    setTimeout(reloadOnce, 10000); // cadangan bila controllerchange tidak terjadi
+    return 'updating';
+  }
+
   register();
 
-  return { supported, prefs, permission, isStandalone, canInstall, install, swActive, enableNotifications, disableNotifications, notify, sendConversationTest };
+  return { supported, prefs, permission, isStandalone, canInstall, install, swActive, enableNotifications, disableNotifications, notify, checkForUpdate, reloadOnce, sendConversationTest };
 })();

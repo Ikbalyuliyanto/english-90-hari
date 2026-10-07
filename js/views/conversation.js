@@ -93,6 +93,7 @@ window.E90 = window.E90 || {};
         <button class="btn" id="testNotifyBtn" ${enabled ? '' : 'disabled'}>🔔 Tes notification</button>
         <a class="btn" href="#/conversation">💬 Buka Conversation</a>
       </div>
+      <button class="btn btn-block" id="updateBtn">🔄 Cek Update</button>
       <p class="small muted">Tahap ini: notification dikirim dari aplikasi (tes). Pengingat terjadwal saat app tertutup butuh server push.</p>`;
 
     box.querySelector('#installBtn')?.addEventListener('click', async () => {
@@ -110,6 +111,18 @@ window.E90 = window.E90 || {};
         ui.toast('Notification dimatikan');
       }
       E90.views.notifySettings(box);
+    });
+    box.querySelector('#updateBtn').addEventListener('click', async (e) => {
+      e.currentTarget.disabled = true;
+      ui.toast('Mengecek update...');
+      try {
+        if (await pwa.checkForUpdate() === 'updating') return ui.toast('Update ditemukan, memuat ulang aplikasi...');
+        ui.toast('Aplikasi sudah versi terbaru');
+      } catch (err) {
+        console.warn(err);
+        ui.toast('Gagal mengecek update, memuat ulang...');
+      }
+      setTimeout(pwa.reloadOnce, 1200);
     });
     box.querySelector('#testNotifyBtn').addEventListener('click', async () => {
       try {

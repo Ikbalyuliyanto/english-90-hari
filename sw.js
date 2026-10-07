@@ -3,10 +3,11 @@
  * - Cache app shell agar bisa di-install & dibuka offline.
  * - Strategi network-first: selalu ambil versi terbaru dari GitHub Pages, cache hanya cadangan offline.
  * - notificationclick: buka/fokuskan app di route dari data.url (mis. #/conversation?q=C-WORK-03).
+ * - message SKIP_WAITING: dipakai tombol "Cek Update" di Settings (tidak menyentuh localStorage).
  * - push: kerangka untuk Web Push dari backend (belum dipakai di tahap ini).
  * Naikkan VERSION jika daftar SHELL berubah.
  */
-const VERSION = 'e90-v1';
+const VERSION = 'e90-v2';
 const SHELL = [
   './',
   'index.html',
@@ -45,6 +46,10 @@ self.addEventListener('activate', (event) => {
       .then((keys) => Promise.all(keys.filter((k) => k !== VERSION).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
+});
+
+self.addEventListener('message', (event) => {
+  if (event.data?.type === 'SKIP_WAITING') self.skipWaiting();
 });
 
 self.addEventListener('fetch', (event) => {
