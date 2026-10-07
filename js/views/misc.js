@@ -72,6 +72,8 @@ E90.views = E90.views || {};
         <button class="btn" data-act="speak" data-text="Could you explain that again?">🔊 Tes audio</button>
       </section>
 
+      <section class="card form" id="notifySettings"></section>
+
       <section class="card form">
         <b>Backup progress</b>
         <p class="small muted">Progress hanya tersimpan di browser ini. Salin kode backup untuk dipindahkan ke HP/browser lain.</p>
@@ -83,6 +85,8 @@ E90.views = E90.views || {};
       </section>
 
       <p class="muted small center">English 120 Days · static app, tanpa backend. Data lama (Day 1–15 versi pertama) sudah dimigrasikan.</p>`;
+
+    E90.views.notifySettings?.(root.querySelector('#notifySettings'));
 
     root.querySelector('#nameInput').addEventListener('change', (e) => {
       store.setSetting('name', e.target.value.trim());

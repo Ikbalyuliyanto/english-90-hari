@@ -8,6 +8,7 @@
  *   #/review, #/review/run?type=..&n=..
  *   #/vocab,  #/vocab/run?type=..&n=..
  *   #/search?q=..   #/settings
+ *   #/conversation?q=..|ctx=..   Latihan conversation (dibuka juga dari notification)
  */
 window.E90 = window.E90 || {};
 
@@ -62,6 +63,10 @@ window.E90 = window.E90 || {};
         case 'search':
           views.search(root, params);
           setActiveNav('search');
+          break;
+        case 'conversation':
+          views.conversation(root, params);
+          setActiveNav('conversation');
           break;
         case 'settings':
           views.settings(root);

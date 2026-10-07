@@ -1,0 +1,94 @@
+/*
+ * PWA: registrasi service worker, prompt install, dan notification lokal.
+ * Preferensi notification disimpan terpisah (key: english90:notify) agar store progress tidak berubah.
+ * Catatan: tanpa backend, notification hanya bisa dipicu dari aplikasi (tes / saat app dibuka).
+ * Push terjadwal sungguhan butuh server Web Push (lihat README).
+ */
+window.E90 = window.E90 || {};
+
+E90.pwa = (() => {
+  const KEY = 'english90:notify';
+  const ICON = 'assets/icons/icon-192.png';
+  let installEvent = null;
+
+  const supported = {
+    sw: 'serviceWorker' in navigator,
+    notify: 'Notification' in window && 'serviceWorker' in navigator
+  };
+
+  function prefs() {
+    try { return { enabled: false, ...JSON.parse(localStorage.getItem(KEY) || '{}') }; } catch { return { enabled: false }; }
+  }
+  function setPrefs(patch) {
+    try { localStorage.setItem(KEY, JSON.stringify({ ...prefs(), ...patch })); } catch { /* storage diblokir */ }
+  }
+
+  const permission = () => (supported.notify ? Notification.permission : 'unsupported');
+  const isStandalone = () => window.matchMedia?.('(display-mode: standalone)').matches || navigator.standalone === true;
+
+  function register() {
+    if (!supported.sw) return;
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch((err) => console.warn('[E90] SW gagal', err));
+    });
+    // Klik notification saat app sudah terbuka: SW mengirim route via postMessage.
+    navigator.serviceWorker.addEventListener('message', (e) => {
+      if (e.data?.type === 'open-route' && typeof e.data.hash === 'string' && e.data.hash.startsWith('#/')) {
+        location.hash = e.data.hash;
+      }
+    });
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      installEvent = e;
+      document.dispatchEvent(new CustomEvent('e90:installable'));
+    });
+    window.addEventListener('appinstalled', () => { installEvent = null; });
+  }
+
+  const canInstall = () => !!installEvent;
+  async function install() {
+    if (!installEvent) return false;
+    installEvent.prompt();
+    const { outcome } = await installEvent.userChoice;
+    installEvent = null;
+    return outcome === 'accepted';
+  }
+
+  async function swActive() {
+    if (!supported.sw) return false;
+    const reg = await navigator.serviceWorker.getRegistration();
+    return !!reg?.active;
+  }
+
+  async function enableNotifications() {
+    if (!supported.notify) return 'unsupported';
+    const result = await Notification.requestPermission();
+    setPrefs({ enabled: result === 'granted' });
+    return result;
+  }
+
+  function disableNotifications() {
+    setPrefs({ enabled: false });
+  }
+
+  // Tampilkan notification lewat service worker agar notificationclick ditangani sw.js.
+  async function notify({ title, body, url, tag }) {
+    if (permission() !== 'granted') throw new Error('permission');
+    const reg = await navigator.serviceWorker.ready;
+    await reg.showNotification(title, {
+      body, tag, icon: ICON, badge: ICON, renotify: true,
+      data: { url }
+    });
+  }
+
+  async function sendConversationTest() {
+    const q = E90.conversation.pick();
+    if (!q) throw new Error('empty');
+    await notify(E90.conversation.notificationPayload(q));
+    return q;
+  }
+
+  register();
+
+  return { supported, prefs, permission, isStandalone, canInstall, install, swActive, enableNotifications, disableNotifications, notify, sendConversationTest };
+})();
