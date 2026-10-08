@@ -117,6 +117,11 @@ E90.conversation = (() => {
     const q = a && byId(a.questionId);
     if (!q) return null;
     const result = E90.answerCheck.check(q, answer, maxDay());
+    // Kisi-kisi bertahap: level naik setiap jawaban salah untuk pertanyaan ini (tersimpan di attempts).
+    if (result.verdict === 'wrong') {
+      const wrongBefore = (a.attempts || []).filter((t) => t.result?.verdict === 'wrong').length;
+      Object.assign(result, E90.answerCheck.hintFor(q, wrongBefore + 1, maxDay()));
+    }
     const at = new Date().toISOString();
     a.userAnswer = String(answer).trim();
     a.validationResult = result;

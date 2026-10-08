@@ -100,6 +100,8 @@
   const alt = (obj) => Object.keys(obj).sort((a, b) => b.length - a.length).join('|');
   const ADJ = 'busy|tired|hungry|sleepy|ready|fine|good|ok|okay|awake|happy|sick|full|late|free|at home|at work|at the office|on the train|on the way|not';
 
+  const FRAME_STOP = /\b(yes|yeah|no|nope|not|i|you|we|they|he|she|am|is|are|do|does|did|can|could|will|maybe|tomorrow|yesterday)\b/;
+
   // Setiap fixer: minDay = Day materi yang mengajarkan koreksi tersebut.
   const FIXERS = [
     { id: 'be', minDay: 1, hint: 'Pakai am: I am ...',
@@ -112,7 +114,8 @@
       } },
     { id: 'frame', minDay: 1, hint: 'Jawab dengan kalimat lengkap.',
       fix: (n, q) => {
-        if (!q.frame || n.split(' ').length > 4 || /^(i|it|we|my|the|this) /.test(n)) return n;
+        // Hanya untuk isian pendek ("5", "Bandung"), bukan kalimat/jawaban lain ("Yes I do", "I like cooking").
+        if (!q.frame || n.split(' ').length > 4 || /^(i|it|we|my|the|this) /.test(n) || FRAME_STOP.test(n)) return n;
         return q.frame.replace('{X}', n).replace(/\b(\w+) \1\b/g, '$1');
       } },
     { id: 'past', minDay: 17, hint: 'Pakai bentuk lampau (past).',
@@ -182,7 +185,46 @@
     return { verdict: 'wrong', correction: '', hint: q.correctionHint || '', sample };
   }
 
-  const api = { normalize, check, matches: (q, a) => matches(q, normalize(a)), FIXERS };
+  // ---------- Kisi-kisi bertahap untuk jawaban salah ----------
+  // Level = jumlah jawaban salah untuk pertanyaan aktif (1, 2, 3, 4+):
+  //   1 Kisi-kisi (materi grammar)  2 Kata bantu (hintKeywords)  3 Pola (correctionHint)  4 Contoh (sampleAnswers[0])
+  // Materi grammar hanya disebut jika minDay-nya <= current day; jawaban pendek "Yes, I am." baru dari Day 14.
+  const GRAMMAR = {
+    be:         { minDay: 1,  text: 'gunakan I am / It is + keadaan.' },
+    present:    { minDay: 2,  text: 'gunakan present simple: I + verb dasar.' },
+    time:       { minDay: 5,  text: 'sebut waktunya dengan jelas, misalnya at + jam.' },
+    continuous: { minDay: 16, text: 'gunakan present continuous: I am + verb-ing.' },
+    past:       { minDay: 17, text: 'gunakan past simple: I + verb lampau.' },
+    future:     { minDay: 18, text: 'gunakan going to / will: I am going to + verb.' },
+    can:        { minDay: 19, text: 'gunakan can + verb dasar.' },
+    frequency:  { minDay: 21, text: 'gunakan kata frekuensi: usually / always / often / never.' }
+  };
+  const SHORT_ANSWER_DAY = 14;
+  const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1).replace(/\bi\b/g, 'I');
+
+  function frameFor(q, limitDay) {
+    const frame = String(q.correctionHint || '').replace(/^Pola:\s*/, '');
+    if (limitDay >= SHORT_ANSWER_DAY || !/^(Yes|No),/.test(frame)) return frame;
+    const full = frame.split(' / ').filter((p) => !/^(Yes|No),/.test(p));
+    if (full.length) return full.join(' / ');
+    return q.yesNo ? `${cap(q.yesNo)} ... / ${cap(q.yesNo)} not ...` : frame;
+  }
+
+  function hintFor(q, wrongCount, limitDay = 120) {
+    const level = Math.max(1, Math.min(4, wrongCount || 1));
+    if (level === 1) {
+      const g = GRAMMAR[q.grammar];
+      return { hintLevel: 1, hintLabel: 'Kisi-kisi', hintText: g && g.minDay <= limitDay ? g.text : 'jawab dengan kalimat lengkap, mulai dengan I ...' };
+    }
+    if (level === 2 && (q.hintKeywords || []).length) return { hintLevel: 2, hintLabel: 'Kata bantu', hintText: q.hintKeywords.join(' / ') };
+    if (level <= 3) {
+      const frame = frameFor(q, limitDay);
+      if (frame) return { hintLevel: 3, hintLabel: 'Pola', hintText: frame };
+    }
+    return { hintLevel: 4, hintLabel: 'Contoh', hintText: (q.sampleAnswers || [])[0] || '' };
+  }
+
+  const api = { normalize, check, hintFor, GRAMMAR, matches: (q, a) => matches(q, normalize(a)), FIXERS };
   root.E90 = root.E90 || {};
   root.E90.answerCheck = api;
   if (typeof module !== 'undefined') module.exports = api;

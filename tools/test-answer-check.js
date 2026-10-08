@@ -79,6 +79,8 @@ const CASES = {
     ['C-WAKE-03', '5', A],
     ['C-WAKE-03', 'I am happy', W],
     ['C-WAKE-03', 'I woke up', W],
+    ['C-BREAK-03', 'Yes I do', W],          // kerangka kalimat tidak dipakai untuk jawaban yes/no
+    ['C-BREAK-03', 'Tomorrow maybe', W],
     ['C-AFTER-02', 'I went to work and had a meeting.', C],
     ['C-AFTER-02', 'I go to work.', A],
     ['C-AFTER-02', 'Work', W]

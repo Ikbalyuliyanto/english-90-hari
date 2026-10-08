@@ -44,6 +44,8 @@ for (const q of questions) {
   }
   if (!(q.answerPatterns || []).length) errors.push(`${where}: answerPatterns wajib diisi`);
   if (!(q.sampleAnswers || []).length) errors.push(`${where}: sampleAnswers wajib diisi`);
+  if (!sandbox.E90.answerCheck.GRAMMAR[q.grammar]) errors.push(`${where}: grammar "${q.grammar}" tidak dikenal`);
+  if (!(q.hintKeywords || []).length) errors.push(`${where}: hintKeywords wajib diisi`);
   for (const a of q.sampleAnswers || []) {
     try {
       const r = check(q, a, q.minDay);

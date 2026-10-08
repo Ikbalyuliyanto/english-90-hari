@@ -1,5 +1,6 @@
 /*
- * View #/conversation — satu active question seperti chat (lokal, belum AI).
+ * View #/conversation — tampilan chat: bubble kiri (app/koreksi), kanan (jawaban), composer di bawah.
+ * Satu active question (lokal, belum AI); jawaban salah mendapat kisi-kisi bertahap.
  *   #/conversation              tampilkan active question; buat baru jika belum ada
  *   #/conversation?q=C-WORK-03  dari notification: dipakai hanya jika tidak ada pertanyaan yang belum dijawab
  *   #/conversation?ctx=lunch    pertanyaan berikutnya dari satu konteks (setelah pertanyaan sebelumnya selesai)
@@ -17,22 +18,25 @@ window.E90 = window.E90 || {};
     wrong: '❌ Perlu diperbaiki'
   };
 
+  // Isi bubble feedback. Jawaban salah hanya menampilkan satu kisi-kisi (sesuai level percobaan).
   function resultHtml(r) {
     const lines = [`<b>${VERDICT[r.verdict] || ''}</b>`];
     if (r.verdict === 'almost' && r.correction) lines.push(`Lebih tepat: <b>${esc(r.correction)}</b>`);
     if (r.verdict === 'wrong') {
-      if (r.hint) lines.push(esc(r.hint));
-      if (r.sample) lines.push(`Contoh: <b>${esc(r.sample)}</b>`);
+      if (r.hintLabel) lines.push(`💡 ${esc(r.hintLabel)}: <b>${esc(r.hintText)}</b>`);
+      else if (r.hint) lines.push(`💡 ${esc(r.hint)}`); // percobaan lama sebelum kisi-kisi bertahap
     }
     return lines.join('<br>');
   }
 
-  const bubble = (who, html, cls = '') => `<div class="chat-msg ${cls}"><small>${who}</small><div>${html}</div></div>`;
+  const left = (html, cls = '') => `<div class="bubble is-app ${cls}">${html}</div>`;
+  const right = (html) => `<div class="bubble is-user">${html}</div>`;
+  const chip = (attrs, label, cls = '') => `<button type="button" class="chip ${cls}" ${attrs}>${label}</button>`;
 
   function contextChips(current) {
     return conv.bank().contexts
       .filter((c) => conv.eligible({ context: c.id }).length)
-      .map((c) => `<a class="btn ${current === c.id ? 'btn-primary' : ''}" href="#/conversation?ctx=${c.id}">${esc(c.label)}</a>`)
+      .map((c) => `<a class="chip ${current === c.id ? 'is-on' : ''}" href="#/conversation?ctx=${c.id}">${esc(c.label)}</a>`)
       .join('');
   }
 
@@ -48,18 +52,29 @@ window.E90 = window.E90 || {};
     return { active: active || conv.ensureActive() };
   }
 
+  // Gulir ke pesan terbaru setelah render (router memanggil scrollTo(0,0) setelah view dirender).
+  function scrollToLatest() {
+    requestAnimationFrame(() => setTimeout(() => window.scrollTo({ top: document.documentElement.scrollHeight }), 0));
+  }
+
   function render(root, params = {}) {
     const limit = conv.maxDay();
-    const head = ui.pageHead({ title: 'Conversation', eyebrow: 'English Time', sub: `Pertanyaan dari materi Day 1–${limit} · ${conv.eligible().length} pertanyaan tersedia` });
+    const head = `<header class="chat-head">
+        <a class="back-btn" href="#/" aria-label="Kembali">←</a>
+        <div><h1>English Practice</h1><small>Day ${limit}</small></div>
+      </header>`;
     const { active, blocked } = params.done ? { active: null } : resolveActive(params);
     const q = active && conv.byId(active.questionId);
 
     if (!q) {
-      root.innerHTML = `${head}
-        <section class="card ${params.done ? '' : 'empty'}">${params.done
-          ? '<b>Selesai 👍</b><p class="small muted">Pertanyaan berikutnya akan muncul di notification berikutnya, atau mulai sekarang.</p><a class="btn btn-primary btn-block" href="#/conversation">Pertanyaan berikutnya →</a>'
-          : `Belum ada pertanyaan untuk materi Day 1–${limit}. Lanjutkan belajar dulu ya.`}</section>
-        <section class="card"><b>Pilih konteks</b><div class="btn-row">${contextChips()}</div></section>`;
+      root.innerHTML = `<div class="chat-page">${head}
+        <div class="chat-log">
+          ${params.done
+            ? left(`<b>Selesai 👍</b><br>Pertanyaan berikutnya akan datang lewat notification, atau mulai sekarang.<div class="chips"><a class="chip is-on" href="#/conversation">Pertanyaan berikutnya →</a></div>`)
+            : left(`Belum ada pertanyaan untuk materi Day 1–${limit}. Lanjutkan belajar dulu ya.`)}
+          <div class="chips chips-wrap">${contextChips()}</div>
+        </div></div>`;
+      scrollToLatest();
       return;
     }
 
@@ -67,48 +82,41 @@ window.E90 = window.E90 || {};
     const pending = active.status === 'pending';
     const attempts = active.attempts || [];
 
-    root.innerHTML = `${head}
-      ${blocked ? '<p class="card small">Jawab pertanyaan ini dulu ya. Pertanyaan baru muncul setelah yang ini selesai.</p>' : ''}
-      <section class="card chat">
-        ${bubble(esc(ctx?.label || 'App'), `<span class="muted">${esc(ctx?.greeting || 'English Time')}</span><br><b class="chat-q">${esc(q.en)}</b><br><span id="convIdn" class="muted small" hidden>${esc(q.idn)}</span>`, 'is-app')}
-        <div class="btn-row">
-          <button class="btn" data-act="speak" data-text="${esc(q.en)}">🔊 Dengar</button>
-          <button class="btn" data-act="speak-slow" data-text="${esc(q.en)}">🐢 Pelan</button>
-          <button class="btn" id="convShowIdn">Arti</button>
-        </div>
-        ${attempts.map((t) => bubble('You', esc(t.answer), 'is-user') + bubble('App', resultHtml(t.result), `is-app is-${t.result.verdict}`)).join('')}
-      </section>
-      ${pending ? `
-      <section class="card form">
-        <label for="convAnswer"><b>Jawabanmu</b><small>Ucapkan dengan suara, lalu tulis singkat.</small></label>
-        <textarea id="convAnswer" rows="2" placeholder="Tulis jawaban dalam English"></textarea>
-        <div class="btn-row">
-          <button class="btn" id="convSpeakAnswer">🔊 Dengar jawabanku</button>
-          <button class="btn btn-primary" id="convSend">Kirim</button>
-        </div>
-      </section>` : `
-      <div class="btn-row big">
-        <button class="btn" id="convRetry">Coba lagi</button>
-        <button class="btn btn-primary" id="convNext">Lanjut →</button>
-      </div>`}
-      <p class="small muted center">Materi: Day ${q.minDay}${q.ref ? ` · ${esc(q.ref)}` : ''} · <a href="#/settings">Notification</a></p>`;
+    root.innerHTML = `<div class="chat-page">${head}
+      <div class="chat-log" aria-live="polite">
+        ${blocked ? '<p class="chat-note">Jawab pertanyaan ini dulu ya. Pertanyaan baru muncul setelah yang ini selesai.</p>' : ''}
+        ${left(`<small class="bubble-meta">${esc(ctx?.label || '')} · ${esc(ctx?.greeting || 'English Time')}</small>
+          <span class="chat-q">${esc(q.en)}</span>
+          <span id="convIdn" class="bubble-sub" hidden>${esc(q.idn)}</span>
+          <div class="chips">${chip(`data-act="speak" data-text="${esc(q.en)}"`, '🔊 Dengar')}${chip('id="convShowIdn"', 'Arti')}</div>`, 'is-question')}
+        ${attempts.map((t) => right(esc(t.answer)) + left(resultHtml(t.result), `is-${t.result.verdict}`)).join('')}
+      </div>
+      <div class="chat-composer">
+        ${pending ? `
+        <textarea id="convAnswer" rows="1" placeholder="Tulis jawaban dalam English..." aria-label="Jawaban" enterkeyhint="send"></textarea>
+        <button type="button" class="btn btn-primary" id="convSend">Kirim</button>` : `
+        <div class="chips">${chip('id="convRetry"', 'Coba lagi')}${chip('id="convNext"', 'Lanjut →', 'is-on')}</div>`}
+      </div></div>`;
 
     root.querySelector('#convShowIdn').addEventListener('click', () => { root.querySelector('#convIdn').hidden = false; });
     const input = root.querySelector('#convAnswer');
-    root.querySelector('#convSpeakAnswer')?.addEventListener('click', () => {
-      const text = input.value.trim();
-      if (!text) return ui.toast('Tulis jawabanmu dulu');
-      if (!E90.speech.speak(text)) ui.toast('Audio tidak didukung di browser ini.');
-    });
+    const grow = () => { input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 120) + 'px'; };
     const send = () => {
       if (!input.value.trim()) return ui.toast('Tulis jawabanmu dulu');
       conv.submitAnswer(input.value);
       render(root, {});
     };
-    root.querySelector('#convSend')?.addEventListener('click', send);
+    const sendBtn = root.querySelector('#convSend');
+    sendBtn?.addEventListener('click', send);
+    // Tekan Kirim tanpa melepas fokus textarea: keyboard tetap terbuka dan composer tidak bergeser di tengah klik.
+    sendBtn?.addEventListener('pointerdown', (e) => { if (document.activeElement === input) e.preventDefault(); });
+    input?.addEventListener('input', grow);
     input?.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
     });
+    // Saat mengetik, sembunyikan bottom nav agar composer tidak tertutup keyboard.
+    input?.addEventListener('focus', () => { document.body.classList.add('is-composing'); scrollToLatest(); });
+    input?.addEventListener('blur', () => document.body.classList.remove('is-composing'));
     root.querySelector('#convRetry')?.addEventListener('click', () => {
       conv.retry();
       render(root, {});
@@ -118,6 +126,7 @@ window.E90 = window.E90 || {};
       conv.close();
       render(root, { done: true });
     });
+    scrollToLatest();
   }
 
   E90.views.conversation = render;
