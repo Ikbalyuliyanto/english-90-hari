@@ -1,0 +1,28 @@
+# Cloudflare Worker english-90-hari-push.
+# Secret TIDAK ditulis di sini. Set lewat: npx wrangler secret put <NAMA>
+#   VAPID_PRIVATE_KEY  (sudah ada)   ADMIN_TOKEN  (baru)
+name = "english-90-hari-push"
+main = "src/index.js"
+compatibility_date = "2026-10-07"
+
+# Tidak ada [triggers] crons: scheduler belum diaktifkan.
+
+# Sama dengan pengaturan dashboard production sebelumnya.
+preview_urls = false
+
+[observability]
+enabled = true
+
+[observability.logs]
+enabled = true
+
+[vars]
+ALLOWED_ORIGIN = "https://ikbalyuliyanto.github.io"
+VAPID_PUBLIC_KEY = "BP1Ew-aX4rrfTLQJVuaYkb_CkLBq1XBqeB9f4QGzmokSswPLDUEaVV5rp7f6PlqVBTqrn5SvACf-Va2_ELJWAew"
+# Kontak VAPID (RFC 8292).
+VAPID_SUBJECT = "mailto:ikbalyuliyanto7@gmail.com"
+
+[[kv_namespaces]]
+binding = "PUSH_KV"
+# Namespace PUSH_KV production (terverifikasi dari binding Worker). Id ini bukan secret.
+id = "ba21ea9dee8049f589364b4bc94f081f"
