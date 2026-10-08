@@ -3,7 +3,7 @@
  *   GET  /health     status Worker
  *   POST /subscribe  subscription.toJSON() dari pushManager
  *   GET  /state      state server (pertanyaan pending dari scheduler diadopsi saat boot)
- *   POST /state      { currentDay, activeStatus, activeQuestionId }
+ *   POST /state      { currentDay, activeStatus, activeQuestionId, lastVerdict, answeredAt }
  *
  * Semua request best-effort: timeout, try/catch, tidak pernah melempar error ke UI.
  * Jika Worker offline, aplikasi tetap berjalan lokal seperti biasa.
@@ -54,7 +54,10 @@ E90.backend = (() => {
     return {
       currentDay: conv ? conv.maxDay() : null,
       activeStatus: active?.status || null,
-      activeQuestionId: active?.questionId || null
+      activeQuestionId: active?.questionId || null,
+      // Scheduler hanya membuka pertanyaan berikutnya setelah jawaban BENAR (+ cooldown dari answeredAt).
+      lastVerdict: active?.status === 'answered' ? active.validationResult?.verdict || null : null,
+      answeredAt: active?.status === 'answered' ? active.answeredAt || null : null
     };
   }
 
