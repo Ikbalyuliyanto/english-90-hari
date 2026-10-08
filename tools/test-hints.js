@@ -14,7 +14,7 @@ sandbox.globalThis = sandbox;
 vm.createContext(sandbox);
 vm.runInContext(fs.readFileSync(path.join(root, 'data/conversation/questions.js'), 'utf8'), sandbox);
 vm.runInContext(fs.readFileSync(path.join(root, 'js/core/answer-check.js'), 'utf8'), sandbox);
-const { hintFor, check, GRAMMAR } = sandbox.window.E90.answerCheck;
+const { hintFor, check, GRAMMAR, translate, meaningFor } = sandbox.window.E90.answerCheck;
 const Q = Object.fromEntries(sandbox.window.E90.CONVERSATION.questions.map((q) => [q.id, q]));
 
 let fail = 0, total = 0;
@@ -80,6 +80,38 @@ console.log('\n# Validator existing tidak berubah');
 expect('benar', check(Q['C-WAKE-03'], 'I woke up at 5.', 21).verdict, 'correct');
 expect('hampir', check(Q['C-WAKE-03'], 'I wake up at 5 this morning.', 21).verdict, 'almost');
 expect('salah', check(Q['C-WAKE-03'], 'I am happy', 21).verdict, 'wrong');
+
+console.log('\n# Arti Indonesia (hanya dari translations di bank pertanyaan)');
+const run = (id, answer, day = 21) => { const r = check(Q[id], answer, day); return { ...r, ...meaningFor(Q[id], r, answer) }; };
+let r = run('C-BREAK-03', 'I ate bread.');
+expect('correct, kalimat dikenal -> arti jawaban user', `${r.verdict} | ${r.meaningSource} | ${r.meaningIdn}`, 'correct | answer | Saya makan roti.');
+r = run('C-BREAK-03', 'i ate rice and chicken');
+expect('correct, beda huruf/tanda baca -> tetap dikenal', r.meaningIdn, 'Saya makan nasi dan ayam.');
+r = run('C-WORK-03', 'Yes, I am working now.');
+expect('yes/no correct -> arti', r.meaningIdn, 'Ya, saya sedang bekerja sekarang.');
+r = run('C-WAKE-03', 'I woke up at 5');
+expect('angka 5 = five -> arti dikenal', r.meaningIdn, 'Saya bangun jam lima.');
+r = run('C-BREAK-03', 'I ate noodles with my friend.');
+expect('correct, kalimat bebas -> contoh + arti (tanpa terjemahan palsu)', `${r.meaningSource} | ${r.meaningEn} | ${r.meaningIdn}`, 'sample | I ate bread. | Saya makan roti.');
+r = run('C-WAKE-03', 'I wake up at 5 this morning.');
+expect('almost -> arti kalimat koreksi', `${r.verdict} | ${r.correction} | ${r.meaningSource} | ${r.meaningIdn}`, 'almost | I woke up at 5 this morning. | correction | Saya bangun jam lima pagi ini.');
+r = run('C-BREAK-03', 'I eat rice');
+expect('almost "I eat rice" -> I ate rice. + arti', `${r.correction} | ${r.meaningIdn}`, 'I ate rice. | Saya makan nasi.');
+r = run('C-BREAK-03', 'I eat noodles');
+expect('almost, koreksi tidak dikenal -> contoh + arti', `${r.meaningSource} | ${r.meaningEn}`, 'sample | I ate bread.');
+r = run('C-BREAK-03', 'I am happy');
+expect('wrong -> tidak ada arti jawaban', r.meaningIdn, undefined);
+for (let l = 1; l <= 3; l++) expect(`wrong level ${l} -> arti contoh tidak bocor`, hintFor(Q['C-BREAK-03'], l, 21).hintIdn, undefined);
+const h4 = hintFor(Q['C-BREAK-03'], 4, 21);
+expect('wrong level 4 -> contoh + arti', `${h4.hintText} | ${h4.hintIdn}`, 'I ate bread. | Saya makan roti.');
+expect('future', translate(Q['C-BED-04'], 'I am going to work tomorrow.'), 'Saya akan bekerja besok.');
+expect('can', translate(Q['C-WORK-06'], 'Yes, I can speak a little English.'), 'Ya, saya bisa berbicara sedikit bahasa Inggris.');
+let missing = 0;
+for (const q of Object.values(Q)) {
+  for (const a of q.sampleAnswers) if (!translate(q, a)) missing++;
+  if (!hintFor(q, 4, 120).hintIdn) missing++;
+}
+expect('coverage sampleAnswers + kisi-kisi level 4', `${Object.keys(Q).length} pertanyaan, ${missing} tanpa arti`, '55 pertanyaan, 0 tanpa arti');
 
 console.log(`\n${total - fail}/${total} lulus`);
 process.exit(fail ? 1 : 0);

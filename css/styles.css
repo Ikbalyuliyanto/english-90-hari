@@ -444,6 +444,7 @@ div.example-text p:last-child { margin-bottom: 0; }
 .bubble.is-wrong { border-left: 3px solid var(--danger); }
 .bubble-meta { display: block; color: var(--muted); font-size: .75rem; margin-bottom: 2px; }
 .bubble-sub { display: block; color: var(--muted); margin-top: 2px; }
+.bubble-idn { color: var(--muted); }
 .chat-q { display: block; font-size: 1.15rem; font-weight: 700; }
 .chat-note { align-self: center; margin: 0; padding: 6px 10px; border-radius: 10px; background: var(--warn-soft); color: var(--warn); font-size: .85rem; text-align: center; }
 .chips { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }

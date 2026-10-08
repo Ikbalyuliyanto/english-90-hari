@@ -122,6 +122,8 @@ E90.conversation = (() => {
       const wrongBefore = (a.attempts || []).filter((t) => t.result?.verdict === 'wrong').length;
       Object.assign(result, E90.answerCheck.hintFor(q, wrongBefore + 1, maxDay()));
     }
+    // Arti Indonesia untuk jawaban benar / kalimat koreksi (disimpan di attempt, tetap ada setelah reload).
+    Object.assign(result, E90.answerCheck.meaningFor(q, result, answer));
     const at = new Date().toISOString();
     a.userAnswer = String(answer).trim();
     a.validationResult = result;

@@ -7,7 +7,7 @@
  * - push: kerangka untuk Web Push dari backend (belum dipakai di tahap ini).
  * Naikkan VERSION jika daftar SHELL berubah.
  */
-const VERSION = 'e90-v7';
+const VERSION = 'e90-v8';
 const SHELL = [
   './',
   'index.html',

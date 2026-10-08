@@ -47,6 +47,12 @@ for (const q of questions) {
   if (!sandbox.E90.answerCheck.GRAMMAR[q.grammar]) errors.push(`${where}: grammar "${q.grammar}" tidak dikenal`);
   if (!(q.hintKeywords || []).length) errors.push(`${where}: hintKeywords wajib diisi`);
   for (const a of q.sampleAnswers || []) {
+    if (!sandbox.E90.answerCheck.translate(q, a)) errors.push(`${where}: sampleAnswer "${a}" belum punya arti di translations`);
+  }
+  for (const en of Object.keys(q.translations || {})) {
+    if (check(q, en, 120).verdict !== 'correct') errors.push(`${where}: translations "${en}" bukan jawaban benar menurut validator`);
+  }
+  for (const a of q.sampleAnswers || []) {
     try {
       const r = check(q, a, q.minDay);
       if (r.verdict !== 'correct') errors.push(`${where}: sampleAnswer "${a}" dinilai ${r.verdict}`);

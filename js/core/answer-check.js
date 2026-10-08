@@ -221,10 +221,32 @@
       const frame = frameFor(q, limitDay);
       if (frame) return { hintLevel: 3, hintLabel: 'Pola', hintText: frame };
     }
-    return { hintLevel: 4, hintLabel: 'Contoh', hintText: (q.sampleAnswers || [])[0] || '' };
+    const sample = (q.sampleAnswers || [])[0] || '';
+    return { hintLevel: 4, hintLabel: 'Contoh', hintText: sample, hintIdn: translate(q, sample) };
   }
 
-  const api = { normalize, check, hintFor, GRAMMAR, matches: (q, a) => matches(q, normalize(a)), FIXERS };
+  // ---------- Arti Indonesia ----------
+  // Hanya dari q.translations (bank pertanyaan yang kita kontrol); tidak ada terjemahan bebas.
+  function translate(q, english) {
+    const n = normalize(english);
+    if (!n || !q.translations) return null;
+    for (const [en, idn] of Object.entries(q.translations)) if (normalize(en) === n) return idn;
+    return null;
+  }
+
+  // Arti untuk hasil ✅/⚠️: arti jawaban user / kalimat koreksi jika dikenal; jika tidak,
+  // contoh jawaban + artinya (meaningSource 'sample'). Jawaban ❌ tidak mendapat arti di sini.
+  function meaningFor(q, result, answer) {
+    const own = result.verdict === 'correct' ? answer : result.verdict === 'almost' ? result.correction : null;
+    if (own == null) return {};
+    const idn = translate(q, own);
+    if (idn) return { meaningSource: result.verdict === 'correct' ? 'answer' : 'correction', meaningEn: own, meaningIdn: idn };
+    const sample = (q.sampleAnswers || [])[0] || '';
+    const sampleIdn = translate(q, sample);
+    return sampleIdn ? { meaningSource: 'sample', meaningEn: sample, meaningIdn: sampleIdn } : {};
+  }
+
+  const api = { normalize, check, hintFor, translate, meaningFor, GRAMMAR, matches: (q, a) => matches(q, normalize(a)), FIXERS };
   root.E90 = root.E90 || {};
   root.E90.answerCheck = api;
   if (typeof module !== 'undefined') module.exports = api;

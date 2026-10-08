@@ -22,9 +22,15 @@ window.E90 = window.E90 || {};
   function resultHtml(r) {
     const lines = [`<b>${VERDICT[r.verdict] || ''}</b>`];
     if (r.verdict === 'almost' && r.correction) lines.push(`Lebih tepat: <b>${esc(r.correction)}</b>`);
+    if (r.meaningIdn) {
+      // Arti jawaban user / koreksi; jika kalimatnya tidak dikenal, tampilkan contoh yang benar + artinya.
+      if (r.meaningSource === 'sample') lines.push(`Contoh yang benar: <b>${esc(r.meaningEn)}</b>`);
+      lines.push(`<span class="bubble-idn">🇮🇩 ${esc(r.meaningIdn)}</span>`);
+    }
     if (r.verdict === 'wrong') {
       if (r.hintLabel) lines.push(`💡 ${esc(r.hintLabel)}: <b>${esc(r.hintText)}</b>`);
       else if (r.hint) lines.push(`💡 ${esc(r.hint)}`); // percobaan lama sebelum kisi-kisi bertahap
+      if (r.hintLevel === 4 && r.hintIdn) lines.push(`<span class="bubble-idn">🇮🇩 ${esc(r.hintIdn)}</span>`);
     }
     return lines.join('<br>');
   }
