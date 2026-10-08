@@ -5,7 +5,6 @@ name = "english-90-hari-push"
 main = "src/index.js"
 compatibility_date = "2026-10-07"
 
-# Tidak ada [triggers] crons: scheduler belum diaktifkan.
 
 # Sama dengan pengaturan dashboard production sebelumnya.
 preview_urls = false
@@ -30,3 +29,12 @@ id = "ba21ea9dee8049f589364b4bc94f081f"
 # Bank pertanyaan scheduler dibuat dari data/conversation/questions.js setiap deploy.
 [build]
 command = "node scripts/build-questions.mjs"
+
+# Scheduler: 06:00, 07:15, 08:00, 12:00, 16:40, 20:00 WIB (UTC+7), Senin-Jumat. Cron dalam UTC.
+[triggers]
+crons = [
+  "0 23 * * SUN-THU",
+  "15 0 * * MON-FRI",
+  "0 1,5,13 * * MON-FRI",
+  "40 9 * * MON-FRI"
+]
