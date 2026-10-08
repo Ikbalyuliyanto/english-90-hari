@@ -4,7 +4,10 @@
  *   GET  /health      status Worker + KV
  *   POST /subscribe   simpan PushSubscription (subscription.toJSON()) ke KV subscription:primary
  *   POST /state       simpan { currentDay, activeStatus, activeQuestionId } ke KV state:primary
+ *   GET  /state       baca state ringkas (dipakai app saat boot untuk mengadopsi pertanyaan pending dari scheduler)
  *   POST /send-test   kirim 1 Web Push sungguhan ke subscription:primary (butuh Authorization: Bearer ADMIN_TOKEN)
+ *   POST /scheduler/preview  keputusan scheduler untuk slot berikutnya, dry-run (butuh ADMIN_TOKEN)
+ *   scheduled()       Cron Trigger -> runScheduler() (lihat scheduler.js). Cron belum dipasang di wrangler.toml.
  *
  * Web Push memakai @block65/webcrypto-web-push (WebCrypto, kompatibel Workers):
  *   - VAPID JWT ES256 (RFC 8292) ditandatangani VAPID_PRIVATE_KEY,
@@ -12,9 +15,12 @@
  *
  * Env: PUSH_KV (KV binding), VAPID_PUBLIC_KEY, VAPID_SUBJECT, ALLOWED_ORIGIN (vars),
  *      VAPID_PRIVATE_KEY, ADMIN_TOKEN (secret). Nilai secret tidak pernah ditulis ke response atau log.
- * Belum ada scheduler (Cron Trigger).
+ *
+ * Pending dari scheduler bersifat authoritative: POST /state berisi activeStatus null tidak menimpa
+ * state pending source "scheduler"; hanya jawaban (answered) atau pending lain yang menggantinya.
  */
 import { buildPushPayload } from '@block65/webcrypto-web-push';
+import { runScheduler, nextSlotTime } from './scheduler.js';
 
 export const KEYS = { subscription: 'subscription:primary', state: 'state:primary' };
 
@@ -84,11 +90,55 @@ function scrub(message, env) {
   return out.slice(0, 300);
 }
 
-export async function sendTest(request, env, cors, fetchImpl = fetch) {
+// Hanya field yang dibutuhkan app; tidak ada data subscription/secret.
+export function publicState(s) {
+  if (!s || typeof s !== 'object') return { currentDay: null, activeStatus: null, activeQuestionId: null, source: null, updatedAt: null };
+  return {
+    currentDay: Number.isInteger(s.currentDay) ? s.currentDay : null,
+    activeStatus: ACTIVE_STATUSES.includes(s.activeStatus) ? s.activeStatus : null,
+    activeQuestionId: typeof s.activeQuestionId === 'string' ? s.activeQuestionId : null,
+    source: typeof s.source === 'string' ? s.source : null,
+    updatedAt: typeof s.updatedAt === 'string' ? s.updatedAt : null
+  };
+}
+
+// Pending dari scheduler tidak boleh hilang hanya karena app mengirim activeStatus null
+// (mis. app dibuka dari ikon sebelum sempat mengadopsi). currentDay tetap diperbarui.
+export function mergeState(prev, next) {
+  if (prev?.activeStatus === 'pending' && prev.source === 'scheduler' && prev.activeQuestionId) {
+    if (next.activeStatus === null) {
+      return { state: { ...next, activeStatus: 'pending', activeQuestionId: prev.activeQuestionId, source: 'scheduler' }, kept: 'scheduler-pending' };
+    }
+    if (next.activeStatus === 'pending' && next.activeQuestionId === prev.activeQuestionId) {
+      return { state: { ...next, source: 'scheduler' } };
+    }
+  }
+  return { state: next };
+}
+
+async function requireAdmin(request, env, cors) {
   const auth = request.headers.get('Authorization') || '';
   const token = auth.startsWith('Bearer ') ? auth.slice(7).trim() : '';
   if (!env.ADMIN_TOKEN) return json({ success: false, error: 'ADMIN_TOKEN belum dikonfigurasi di Worker' }, 503, cors);
   if (!(await tokenMatches(token, env.ADMIN_TOKEN))) return json({ success: false, error: 'Unauthorized' }, 401, cors);
+  return null;
+}
+
+// Dry-run scheduler untuk slot berikutnya (atau ?at=<ISO>). Tidak mengirim push dan tidak menulis KV.
+export async function schedulerPreview(request, env, cors) {
+  const denied = await requireAdmin(request, env, cors);
+  if (denied) return denied;
+  const at = new URL(request.url).searchParams.get('at');
+  const atMs = at ? Date.parse(at) : nextSlotTime(Date.now());
+  if (!Number.isFinite(atMs)) return json({ success: false, error: 'Parameter at tidak valid' }, 400, cors);
+  const decision = await runScheduler(env, atMs, { dryRun: true });
+  const state = publicState(await env.PUSH_KV.get(KEYS.state, 'json'));
+  return json({ success: true, dryRun: true, state, decision }, 200, cors);
+}
+
+export async function sendTest(request, env, cors, fetchImpl = fetch) {
+  const denied = await requireAdmin(request, env, cors);
+  if (denied) return denied;
 
   const missing = ['VAPID_PRIVATE_KEY', 'VAPID_PUBLIC_KEY', 'VAPID_SUBJECT'].filter((k) => !env[k]);
   if (missing.length) return json({ success: false, error: `Konfigurasi belum lengkap: ${missing.join(', ')}` }, 500, cors);
@@ -128,6 +178,13 @@ export async function sendTest(request, env, cors, fetchImpl = fetch) {
 }
 
 export default {
+  // Cron Trigger. Satu run = paling banyak satu push (lihat scheduler.js).
+  async scheduled(controller, env, ctx) {
+    ctx.waitUntil(runScheduler(env, controller.scheduledTime).then((r) => {
+      console.log('scheduler', JSON.stringify({ action: r.action, reason: r.reason, slotId: r.slotId, questionId: r.questionId, providerStatus: r.providerStatus }));
+    }));
+  },
+
   async fetch(request, env) {
     const cors = corsHeaders(env, request);
     const { pathname } = new URL(request.url);
@@ -151,13 +208,21 @@ export default {
         return json({ success: true, message: 'Push subscription saved' }, 200, cors);
       }
 
+      if (method === 'GET' && pathname === '/state') {
+        const saved = await env.PUSH_KV.get(KEYS.state, 'json');
+        return json({ success: true, state: publicState(saved) }, 200, cors);
+      }
+
       if (method === 'POST' && pathname === '/state') {
         const s = await readJson(request);
         if (!s || typeof s !== 'object') return json({ success: false, message: 'Invalid state' }, 400, cors);
-        const state = normalizeState(s);
+        const prev = await env.PUSH_KV.get(KEYS.state, 'json');
+        const { state, kept } = mergeState(prev, normalizeState(s));
         await env.PUSH_KV.put(KEYS.state, JSON.stringify(state));
-        return json({ success: true, state }, 200, cors);
+        return json({ success: true, state, ...(kept ? { kept } : {}) }, 200, cors);
       }
+
+      if (method === 'POST' && pathname === '/scheduler/preview') return schedulerPreview(request, env, cors);
 
       if (method === 'POST' && pathname === '/send-test') return sendTest(request, env, cors);
 

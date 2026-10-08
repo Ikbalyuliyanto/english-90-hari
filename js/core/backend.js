@@ -2,6 +2,7 @@
  * Komunikasi ke Cloudflare Worker (E90.CONFIG.WORKER_BASE_URL).
  *   GET  /health     status Worker
  *   POST /subscribe  subscription.toJSON() dari pushManager
+ *   GET  /state      state server (pertanyaan pending dari scheduler diadopsi saat boot)
  *   POST /state      { currentDay, activeStatus, activeQuestionId }
  *
  * Semua request best-effort: timeout, try/catch, tidak pernah melempar error ke UI.
@@ -16,6 +17,9 @@ E90.backend = (() => {
   const status = { health: null, lastState: null, subscription: null };
   let lastSent = '';
   let syncTimer = null;
+  // Sinkron state ditahan sampai adopsi pending dari server selesai (saat boot / kembali ke depan),
+  // supaya state lokal yang belum diadopsi tidak menimpa pertanyaan pending dari scheduler.
+  let adoption = Promise.resolve();
 
   async function request(path, { method = 'GET', body } = {}) {
     if (!base() || !navigator.onLine) return { ok: false, error: 'offline' };
@@ -55,6 +59,7 @@ E90.backend = (() => {
   }
 
   async function postState(force = false) {
+    await adoption;
     const state = currentState();
     const key = JSON.stringify(state);
     if (!force && key === lastSent) return status.lastState;
@@ -116,16 +121,41 @@ E90.backend = (() => {
     return set(r.ok ? 'saved' : 'save-failed', { endpoint: sub.endpoint });
   }
 
-  // Sinkron saat app dibuka, kembali ke depan, dan saat pindah halaman (menangkap perubahan current day).
-  function init() {
+  async function getServerState() {
+    const r = await request('/state');
+    return r.ok ? r.data?.state || null : null;
+  }
+
+  // Server pending (dari scheduler) -> jadikan active question lokal. Gagal jaringan = tidak ada perubahan.
+  async function adoptServerPending() {
+    const conv = E90.conversation;
+    if (!conv) return { adopted: false, reason: 'no-conversation' };
+    const s = await getServerState();
+    status.serverState = s;
+    if (!s || s.activeStatus !== 'pending' || !s.activeQuestionId) return { adopted: false, reason: 'no-server-pending' };
+    const result = conv.adoptQuestion(s.activeQuestionId, { source: s.source || 'server', serverUpdatedAt: s.updatedAt });
+    // Halaman Conversation yang sedang terbuka dirender ulang dengan pertanyaan yang diadopsi.
+    if (result.adopted && /^#\/conversation/.test(location.hash)) window.dispatchEvent(new HashChangeEvent('hashchange'));
+    return result;
+  }
+
+  function adoptThenSync() {
+    adoption = adoptServerPending().catch(() => ({ adopted: false, reason: 'error' })).then((r) => { status.adoption = r; });
     syncState();
+    return adoption;
+  }
+
+  // Saat app dibuka & kembali ke depan: adopsi pending server dulu, lalu sinkron.
+  // Saat pindah halaman: sinkron saja (menangkap perubahan current day).
+  function init() {
+    adoptThenSync();
     window.addEventListener('hashchange', syncState);
-    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') syncState(); });
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') adoptThenSync(); });
     window.addEventListener('online', syncState);
     if ('Notification' in window && Notification.permission === 'granted' && E90.pwa?.prefs().enabled) {
       ensureSubscription().catch(() => {});
     }
   }
 
-  return { status, health, postState, syncState, ensureSubscription, currentState, init };
+  return { status, health, postState, syncState, ensureSubscription, currentState, getServerState, adoptServerPending, init };
 })();

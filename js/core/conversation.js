@@ -127,6 +127,32 @@ E90.conversation = (() => {
     return result;
   }
 
+  // Adopsi pertanyaan pending dari server (dikirim scheduler lewat push) supaya hanya ada satu
+  // pertanyaan aktif. Tidak membuat duplikat dan tidak membuang jawaban user:
+  // - local sudah pending dengan pertanyaan yang sama -> tidak ada perubahan;
+  // - local sudah menjawab pertanyaan itu (aktif/riwayat) -> tidak diadopsi ulang;
+  // - local pending lain yang sudah ada percobaan jawaban -> local dipertahankan;
+  // - local pending lain yang belum disentuh -> diganti dengan pertanyaan server.
+  // -> { adopted: boolean, reason }
+  function adoptQuestion(questionId, { source = 'scheduler', serverUpdatedAt = null } = {}) {
+    const state = load();
+    const a = state.activeQuestion;
+    const q = byId(questionId);
+    if (!q) return { adopted: false, reason: 'unknown-question' };
+    if (q.minDay > maxDay()) return { adopted: false, reason: 'not-eligible' };
+    if (a && a.questionId === questionId) return { adopted: false, reason: a.status === 'pending' ? 'same-pending' : 'already-answered' };
+    const answeredLater = state.history.some((h) => h.questionId === questionId && h.answeredAt && (!serverUpdatedAt || h.answeredAt >= serverUpdatedAt));
+    if (answeredLater) return { adopted: false, reason: 'already-answered' };
+    if (a && a.status === 'pending' && (a.attempts || []).length) return { adopted: false, reason: 'local-pending-in-use' };
+    if (a && a.status === 'answered') closeInto(state);
+    state.activeQuestion = {
+      questionId: q.id, createdAt: new Date().toISOString(), answeredAt: null, status: 'pending',
+      userAnswer: '', validationResult: null, attempts: [], source
+    };
+    save(state);
+    return { adopted: true, reason: a ? 'replaced-untouched' : 'adopted' };
+  }
+
   // "Coba lagi": buka kembali pertanyaan yang sama (riwayat percobaan tetap disimpan).
   function retry() {
     const state = load();
@@ -161,6 +187,6 @@ E90.conversation = (() => {
 
   return {
     eligible, pick, byId, contextOf, contextsForNow, maxDay, routeFor, notificationPayload, bank,
-    getActive, history, createActive, ensureActive, submitAnswer, retry, close, canCreateNext
+    getActive, history, createActive, ensureActive, submitAnswer, retry, close, canCreateNext, adoptQuestion
   };
 })();

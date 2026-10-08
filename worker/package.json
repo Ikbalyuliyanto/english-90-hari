@@ -4,6 +4,8 @@
   "type": "module",
   "description": "Cloudflare Worker: push subscription, state sync, dan Web Push test sender untuk English 90 Hari.",
   "scripts": {
+    "build:questions": "node scripts/build-questions.mjs",
+    "pretest": "node scripts/build-questions.mjs",
     "test": "node --test test/",
     "deploy": "wrangler deploy"
   },

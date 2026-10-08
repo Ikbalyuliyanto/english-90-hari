@@ -218,6 +218,10 @@ test('endpoint lama tetap sama: /health, /subscribe, /state, 404, CORS', async (
   assert.equal(r.status, 200, 'seperti production: nilai tidak valid jadi null');
   assert.deepEqual([r.body.state.currentDay, r.body.state.activeStatus, r.body.state.activeQuestionId], [null, null, null]);
   r = await call('GET', '/state');
+  assert.equal(r.status, 200);
+  assert.deepEqual(Object.keys(r.body.state).sort(), ['activeQuestionId', 'activeStatus', 'currentDay', 'source', 'updatedAt']);
+  assert.equal(r.headers.get('access-control-allow-origin'), 'https://ikbalyuliyanto.github.io');
+  r = await call('GET', '/nope');
   assert.deepEqual(r.body, { success: false, message: 'Endpoint not found' });
   r = await call('POST', '/send-test');
   assert.equal(r.status, 401, '/send-test lewat router juga butuh token');
@@ -230,4 +234,67 @@ test('private key dan ADMIN_TOKEN tidak pernah muncul di response/log', () => {
   const all = outputs.join('\n');
   assert.ok(!all.includes(vapid.privateKey), 'VAPID private key bocor');
   assert.ok(!all.includes(ADMIN_TOKEN), 'ADMIN_TOKEN bocor');
+});
+
+// ---------- Pending dari scheduler bersifat authoritative ----------
+const post = async (env, path, body, headers = {}) => {
+  const res = await worker.fetch(new Request('https://worker.test' + path, {
+    method: 'POST', headers: { 'Content-Type': 'application/json', Origin: 'https://ikbalyuliyanto.github.io', ...headers },
+    body: body === undefined ? undefined : JSON.stringify(body)
+  }), env);
+  const text = await res.text();
+  outputs.push(text);
+  return { status: res.status, body: JSON.parse(text) };
+};
+const schedulerPending = { currentDay: 21, activeStatus: 'pending', activeQuestionId: 'C-WAKE-03', source: 'scheduler', updatedAt: '2026-10-05T23:00:00Z' };
+
+test('POST /state null tidak menimpa pending scheduler (currentDay tetap diperbarui)', async () => {
+  const env = makeEnv({ [KEYS.state]: schedulerPending });
+  const r = await post(env, '/state', { currentDay: 22, activeStatus: null, activeQuestionId: null });
+  assert.equal(r.body.kept, 'scheduler-pending');
+  const saved = JSON.parse(env.PUSH_KV.map.get(KEYS.state));
+  assert.deepEqual([saved.currentDay, saved.activeStatus, saved.activeQuestionId, saved.source], [22, 'pending', 'C-WAKE-03', 'scheduler']);
+});
+
+test('POST /state pending pertanyaan yang sama (app adopt) -> source scheduler tetap', async () => {
+  const env = makeEnv({ [KEYS.state]: schedulerPending });
+  await post(env, '/state', { currentDay: 21, activeStatus: 'pending', activeQuestionId: 'C-WAKE-03' });
+  assert.equal(JSON.parse(env.PUSH_KV.map.get(KEYS.state)).source, 'scheduler');
+});
+
+test('POST /state answered -> pending scheduler dilepas; lalu null boleh', async () => {
+  const env = makeEnv({ [KEYS.state]: schedulerPending });
+  let r = await post(env, '/state', { currentDay: 21, activeStatus: 'answered', activeQuestionId: 'C-WAKE-03' });
+  assert.equal(r.body.state.activeStatus, 'answered');
+  assert.equal(r.body.kept, undefined);
+  r = await post(env, '/state', { currentDay: 21, activeStatus: null, activeQuestionId: null });
+  assert.equal(r.body.state.activeStatus, null);
+});
+
+test('POST /state null tetap menimpa pending yang bukan dari scheduler (flow app lama)', async () => {
+  const env = makeEnv({ [KEYS.state]: { ...schedulerPending, source: undefined } });
+  const r = await post(env, '/state', { currentDay: 21, activeStatus: null, activeQuestionId: null });
+  assert.equal(r.body.state.activeStatus, null);
+});
+
+test('GET /state hanya field publik', async () => {
+  const env = makeEnv({ [KEYS.state]: { ...schedulerPending, secretish: 'x' }, [KEYS.subscription]: subscription });
+  const res = await worker.fetch(new Request('https://worker.test/state', { headers: { Origin: 'https://ikbalyuliyanto.github.io' } }), env);
+  const body = await res.json();
+  outputs.push(JSON.stringify(body));
+  assert.deepEqual(body.state, { currentDay: 21, activeStatus: 'pending', activeQuestionId: 'C-WAKE-03', source: 'scheduler', updatedAt: '2026-10-05T23:00:00Z' });
+  assert.ok(!JSON.stringify(body).includes(subscription.endpoint));
+});
+
+test('/scheduler/preview: butuh token, dry-run tanpa kirim/tulis KV', async () => {
+  const env = makeEnv({ [KEYS.state]: { currentDay: 21, activeStatus: 'answered', activeQuestionId: 'C-WAKE-03' }, [KEYS.subscription]: subscription });
+  let r = await post(env, '/scheduler/preview', undefined, { Authorization: 'Bearer salah' });
+  assert.equal(r.status, 401);
+  const before = [...env.PUSH_KV.map.entries()];
+  r = await post(env, '/scheduler/preview?at=2026-10-05T05:00:00Z', undefined, { Authorization: `Bearer ${ADMIN_TOKEN}` });
+  assert.equal(r.status, 200);
+  assert.equal(r.body.decision.action, 'would-send');
+  assert.equal(r.body.decision.slotId, 'siang');
+  assert.ok(r.body.decision.minDay <= 21);
+  assert.deepEqual([...env.PUSH_KV.map.entries()], before);
 });
