@@ -7,10 +7,6 @@ compatibility_date = "2026-10-07"
 
 # Tidak ada [triggers] crons: scheduler belum diaktifkan.
 
-# Bank pertanyaan scheduler dibuat dari data/conversation/questions.js setiap deploy.
-[build]
-command = "node scripts/build-questions.mjs"
-
 # Sama dengan pengaturan dashboard production sebelumnya.
 preview_urls = false
 
@@ -30,3 +26,7 @@ VAPID_SUBJECT = "mailto:ikbalyuliyanto7@gmail.com"
 binding = "PUSH_KV"
 # Namespace PUSH_KV production (terverifikasi dari binding Worker). Id ini bukan secret.
 id = "ba21ea9dee8049f589364b4bc94f081f"
+
+# Bank pertanyaan scheduler dibuat dari data/conversation/questions.js setiap deploy.
+[build]
+command = "node scripts/build-questions.mjs"
