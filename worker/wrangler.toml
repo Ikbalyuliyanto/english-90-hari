@@ -20,6 +20,9 @@ ALLOWED_ORIGIN = "https://ikbalyuliyanto.github.io"
 VAPID_PUBLIC_KEY = "BP1Ew-aX4rrfTLQJVuaYkb_CkLBq1XBqeB9f4QGzmokSswPLDUEaVV5rp7f6PlqVBTqrn5SvACf-Va2_ELJWAew"
 # Kontak VAPID (RFC 8292).
 VAPID_SUBJECT = "mailto:ikbalyuliyanto7@gmail.com"
+# Review mode: scheduler hanya memakai materi Day 1..REVIEW_MAX_DAY. Set "false" untuk lanjut ke Day 21+.
+REVIEW_MODE = "true"
+REVIEW_MAX_DAY = "20"
 
 [[kv_namespaces]]
 binding = "PUSH_KV"
@@ -30,11 +33,10 @@ id = "ba21ea9dee8049f589364b4bc94f081f"
 [build]
 command = "node scripts/build-questions.mjs"
 
-# Scheduler: 06:00, 07:15, 08:00, 12:00, 16:40, 20:00 WIB (UTC+7), Senin-Jumat. Cron dalam UTC.
+# Scheduler kontinu: cek tiap 10 menit, keputusan (weekday, learning window, kuota) di kode berdasarkan WIB.
+# 23:00-23:50 UTC Min-Kam = 06:00-06:50 WIB Sen-Jum; 00:00-14:50 UTC Sen-Jum = 07:00-21:50 WIB.
 [triggers]
 crons = [
-  "0 23 * * SUN-THU",
-  "15 0 * * MON-FRI",
-  "0 1,5,13 * * MON-FRI",
-  "40 9 * * MON-FRI"
+  "*/10 23 * * SUN-THU",
+  "*/10 0-14 * * MON-FRI"
 ]

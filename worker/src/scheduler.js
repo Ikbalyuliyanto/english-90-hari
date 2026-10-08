@@ -1,45 +1,58 @@
 /*
- * Scheduler conversation (Cron Trigger) — satu pertanyaan aktif, tanpa spam.
+ * Scheduler conversation kontinu (Cron Trigger tiap 10 menit) — satu pertanyaan aktif, tanpa spam.
  *
- * Setiap cron berjalan, runScheduler():
- *  1. Ubah waktu cron ke Asia/Jakarta (UTC+7, tanpa DST). Hanya Senin–Jumat.
- *  2. Cari slot WIB yang sedang berjalan (jendela SLOT_WINDOW_MIN menit). Di luar slot -> skip.
- *  3. Slot yang sama di hari yang sama sudah diproses -> skip (tidak pernah kirim dua kali).
- *  4. state:primary.activeStatus === 'pending' -> skip. Slot itu dicatat selesai (dilewati),
- *     jadi tidak dikejar di run berikutnya.
- *  5. Pilih 1 pertanyaan dengan minDay <= state.currentDay dari konteks slot (fallback: semua yang eligible),
- *     hindari pertanyaan yang baru saja dikirim.
- *  6. Kirim 1 Web Push. Sukses -> state:primary ditandai pending dengan pertanyaan itu, supaya slot berikutnya
- *     menunggu jawaban. 404/410 -> subscription:primary dihapus, berhenti.
+ * Setiap run, runScheduler():
+ *  1. Waktu cron -> Asia/Jakarta (UTC+7, tanpa DST). Sabtu/Minggu -> skip.
+ *  2. Harus berada di learning window aktif (WINDOWS). Di luar window -> skip.
+ *  3. Pertanyaan masih terbuka -> skip:
+ *       activeStatus 'pending', atau 'answered' dengan lastVerdict selain 'correct' (almost/wrong).
+ *  4. Cooldown: minimal COOLDOWN_MIN menit sejak jawaban benar terakhir (answeredAt) dan sejak push terakhir.
+ *  5. Kuota: maksimal window.limit push per window (tidak dibawa ke window berikutnya) dan DAILY_LIMIT per
+ *     tanggal WIB. sched:daily (termasuk hitungan per window) reset otomatis saat tanggal WIB berganti.
+ *  6. Pilih 1 pertanyaan: minDay <= batas Day (review mode: min(currentDay, REVIEW_MAX_DAY)),
+ *     utamakan konteks window, lalu yang pernah salah, lalu yang lama tidak muncul; hindari RECENT_AVOID terakhir.
+ *  7. Kirim 1 Web Push. Sukses -> state:primary pending (source scheduler). 404/410 -> hapus subscription, berhenti.
  *
- * KV tambahan:
- *   sched:last    { date, slotId, action, questionId?, at }   slot terakhir yang sudah diproses
- *   sched:recent  [questionId, ...] (maks 10)                  untuk menghindari pengulangan
- *   sched:lastRun { at, date, time, slotId, action, reason, ... }  hasil run terakhir (diagnostik)
+ * KV:
+ *   sched:daily   { date, sentCount, answeredCount, windows: { [windowId]: n } }  hitungan per tanggal WIB
+ *   sched:recent  [questionId, ...] (maks RECENT_MAX)             urutan push terakhir
+ *   sched:stats   { [questionId]: { sent, wrong, lastSentAt } }   prioritas pertanyaan
+ *   sched:lastRun { ...keputusan run terakhir }                  diagnostik
+ *   sched:lastSentAt  ISO                                         pengaman duplikat / cooldown
  */
 import { buildPushPayload } from '@block65/webcrypto-web-push';
 import BANK from './questions.json' with { type: 'json' };
 
 export const TZ_OFFSET_MIN = 7 * 60; // Asia/Jakarta, tidak ada DST
-export const SLOT_WINDOW_MIN = 20;
+export const COOLDOWN_MIN = 10;
+export const DAILY_LIMIT = 10;
 export const RECENT_MAX = 10;
+export const RECENT_AVOID = 8;
 
-// Slot rutinitas weekday (WIB) -> konteks pertanyaan.
-export const SLOTS = [
-  { id: 'pagi',      time: '06:00', contexts: ['wake', 'breakfast'] },
-  { id: 'berangkat', time: '07:15', contexts: ['prepare', 'breakfast'] },
-  { id: 'perjalanan', time: '08:00', contexts: ['station', 'train'] },
-  { id: 'siang',     time: '12:00', contexts: ['lunch'] },
-  { id: 'pulang',    time: '16:40', contexts: ['afterwork', 'home'] },
-  { id: 'malam',     time: '20:00', contexts: ['evening', 'bedtime'] }
+// Review mode default (bisa diganti lewat env REVIEW_MODE / REVIEW_MAX_DAY di wrangler.toml).
+export const REVIEW_MODE = true;
+export const REVIEW_MAX_DAY = 20;
+
+// Learning window weekday (WIB). Konteks memakai id konteks di bank pertanyaan:
+// commute -> station/train/home, lunch break -> lunch, family -> evening.
+// limit = kuota push per window per hari (total 1+2+2+2+3 = DAILY_LIMIT).
+export const WINDOWS = [
+  { id: 'morning',        start: '06:00', end: '07:00', limit: 1, contexts: ['wake', 'breakfast', 'prepare'] },
+  { id: 'commuteMorning', start: '07:00', end: '09:30', limit: 2, contexts: ['prepare', 'station', 'train'] },
+  { id: 'lunch',          start: '11:30', end: '13:30', limit: 2, contexts: ['lunch'] },
+  { id: 'commuteHome',    start: '16:30', end: '19:00', limit: 2, contexts: ['afterwork', 'home'] },
+  { id: 'evening',        start: '19:00', end: '21:30', limit: 3, contexts: ['evening', 'bedtime'] }
 ];
 
-const KV = { subscription: 'subscription:primary', state: 'state:primary', last: 'sched:last', recent: 'sched:recent', lastRun: 'sched:lastRun' };
+export const KV = {
+  subscription: 'subscription:primary', state: 'state:primary', daily: 'sched:daily',
+  recent: 'sched:recent', stats: 'sched:stats', lastRun: 'sched:lastRun', lastSentAt: 'sched:lastSentAt'
+};
 const toMin = (hhmm) => { const [h, m] = hhmm.split(':').map(Number); return h * 60 + m; };
+const MIN = 60000;
 
-// Waktu Jakarta dari timestamp (ms). Tidak bergantung pada timezone server.
 export function jakartaTime(ms) {
-  const d = new Date(ms + TZ_OFFSET_MIN * 60000);
+  const d = new Date(ms + TZ_OFFSET_MIN * MIN);
   const pad = (n) => String(n).padStart(2, '0');
   return {
     date: `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}`,
@@ -48,33 +61,47 @@ export function jakartaTime(ms) {
     weekday: d.getUTCDay() // 0 = Minggu
   };
 }
+const WEEKDAY_NAMES = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
 
-export function slotAt(minutes) {
-  return SLOTS.find((s) => minutes >= toMin(s.time) && minutes < toMin(s.time) + SLOT_WINDOW_MIN) || null;
+export function windowAt(minutes) {
+  return WINDOWS.find((w) => minutes >= toMin(w.start) && minutes < toMin(w.end)) || null;
 }
 
-// Waktu (ms) slot weekday berikutnya mulai dari nowMs (termasuk slot yang sedang berjalan).
-export function nextSlotTime(nowMs) {
-  const start = jakartaTime(nowMs);
-  for (let d = 0; d < 8; d++) {
-    const dayStart = Date.parse(start.date + 'T00:00:00Z') - TZ_OFFSET_MIN * 60000 + d * 86400000;
-    const j = jakartaTime(dayStart);
-    if (j.weekday === 0 || j.weekday === 6) continue;
-    for (const s of SLOTS) {
-      const ms = dayStart + toMin(s.time) * 60000;
-      if (ms + SLOT_WINDOW_MIN * 60000 > nowMs) return Math.max(ms, nowMs);
-    }
-  }
-  return nowMs;
+export function reviewConfig(env = {}) {
+  const mode = env.REVIEW_MODE == null ? REVIEW_MODE : String(env.REVIEW_MODE).toLowerCase() === 'true';
+  const max = Number.parseInt(env.REVIEW_MAX_DAY, 10);
+  return { reviewMode: mode, reviewMaxDay: Number.isInteger(max) && max > 0 ? max : REVIEW_MAX_DAY };
 }
 
-export function pickQuestion({ currentDay, contexts, recent = [], random = Math.random }) {
-  const eligible = BANK.questions.filter((q) => Number.isInteger(q.minDay) && q.minDay <= currentDay);
-  const inSlot = eligible.filter((q) => contexts.includes(q.context));
-  let pool = inSlot.length ? inSlot : eligible;
-  const fresh = pool.filter((q) => !recent.includes(q.id));
+export function dayLimit(currentDay, env) {
+  const { reviewMode, reviewMaxDay } = reviewConfig(env);
+  return reviewMode ? Math.min(currentDay, reviewMaxDay) : currentDay;
+}
+
+// Pertanyaan masih terbuka (belum dijawab benar)?
+export function isOpen(state) {
+  if (!state) return false;
+  if (state.activeStatus === 'pending') return true;
+  return state.activeStatus === 'answered' && !!state.lastVerdict && state.lastVerdict !== 'correct';
+}
+
+// Skor prioritas: pernah salah > lama tidak muncul; pertanyaan terbaru dihindari.
+export function pickQuestion({ maxDay, contexts, recent = [], stats = {}, nowMs = Date.now(), random = Math.random }) {
+  const eligible = BANK.questions.filter((q) => Number.isInteger(q.minDay) && q.minDay <= maxDay);
+  const inWindow = eligible.filter((q) => contexts.includes(q.context));
+  let pool = inWindow.length ? inWindow : eligible;
+  const avoid = new Set(recent.slice(-RECENT_AVOID));
+  const fresh = pool.filter((q) => !avoid.has(q.id));
   if (fresh.length) pool = fresh;
-  return pool.length ? pool[Math.floor(random() * pool.length)] : null;
+  if (!pool.length) return null;
+  const scored = pool.map((q) => {
+    const s = stats[q.id] || {};
+    const wrong = Math.min(s.wrong || 0, 5);
+    const daysSince = s.lastSentAt ? Math.min((nowMs - Date.parse(s.lastSentAt)) / 86400000, 14) : 14;
+    // 1x salah (15) selalu lebih kuat dari faktor lama-tidak-muncul (maks 14 hari).
+    return { q, score: wrong * 15 + daysSince + random() };
+  });
+  return scored.reduce((best, x) => (x.score > best.score ? x : best)).q;
 }
 
 export function payloadFor(q) {
@@ -82,7 +109,6 @@ export function payloadFor(q) {
   return { title: ctx?.greeting || 'English Time', body: `${q.en}\n${q.idn}`, url: `#/conversation?q=${encodeURIComponent(q.id)}` };
 }
 
-// Kirim satu Web Push. -> { ok, providerStatus, stale, error }
 export async function deliverPush(env, subscription, payload, fetchImpl = fetch) {
   const push = await buildPushPayload(
     { data: payload, options: { ttl: 3600, urgency: 'high', topic: 'conversation' } },
@@ -96,66 +122,84 @@ export async function deliverPush(env, subscription, payload, fetchImpl = fetch)
   return { ok: false, providerStatus: res.status, error: detail.slice(0, 200) || res.statusText };
 }
 
+// Hitungan harian per tanggal WIB (reset otomatis jika tanggal berbeda).
+export function dailyFor(saved, date) {
+  return saved && saved.date === date
+    ? { date, sentCount: saved.sentCount || 0, answeredCount: saved.answeredCount || 0, windows: { ...(saved.windows || {}) } }
+    : { date, sentCount: 0, answeredCount: 0, windows: {} };
+}
+
 export async function runScheduler(env, nowMs, { fetchImpl = fetch, random = Math.random, dryRun = false } = {}) {
   const jkt = jakartaTime(nowMs);
-  const base = { at: new Date(nowMs).toISOString(), date: jkt.date, time: jkt.time };
-  const finish = async (result, { markSlot = false } = {}) => {
-    const out = { ...base, ...result };
-    if (!dryRun) {
-      if (markSlot) await env.PUSH_KV.put(KV.last, JSON.stringify({ date: jkt.date, slotId: out.slotId, action: out.action, questionId: out.questionId || null, at: out.at }));
-      await env.PUSH_KV.put(KV.lastRun, JSON.stringify(out));
-    }
+  const win = windowAt(jkt.minutes);
+  const { reviewMode, reviewMaxDay } = reviewConfig(env);
+  const [state, savedDaily, lastSentAt] = await Promise.all([
+    env.PUSH_KV.get(KV.state, 'json'), env.PUSH_KV.get(KV.daily, 'json'), env.PUSH_KV.get(KV.lastSentAt)
+  ]);
+  const daily = dailyFor(savedDaily, jkt.date);
+  const lastEvent = Math.max(state?.answeredAt ? Date.parse(state.answeredAt) || 0 : 0, lastSentAt ? Date.parse(lastSentAt) || 0 : 0);
+  const cooldownRemaining = lastEvent ? Math.max(0, Math.ceil((lastEvent + COOLDOWN_MIN * MIN - nowMs) / MIN)) : 0;
+
+  const windowSent = win ? daily.windows[win.id] || 0 : 0;
+  const info = {
+    at: new Date(nowMs).toISOString(), localTime: `${jkt.date} ${jkt.time} WIB`, weekday: WEEKDAY_NAMES[jkt.weekday],
+    activeWindow: win ? `${win.id} ${win.start}-${win.end} (${win.contexts.join('/')})` : null,
+    windowId: win?.id ?? null, windowSent, windowLimit: win?.limit ?? null, dailySent: daily.sentCount,
+    activeStatus: state?.activeStatus ?? null, lastVerdict: state?.lastVerdict ?? null, activeQuestionId: state?.activeQuestionId ?? null,
+    answeredAt: state?.answeredAt ?? null, cooldownRemaining, sentToday: daily.sentCount, answeredToday: daily.answeredCount,
+    dailyLimit: DAILY_LIMIT, reviewMode, reviewMaxDay, currentDay: Number.isInteger(state?.currentDay) ? state.currentDay : null
+  };
+  const finish = async (decision, reason, extra = {}) => {
+    const out = { ...info, decision, reason, ...extra };
+    if (!dryRun) await env.PUSH_KV.put(KV.lastRun, JSON.stringify(out));
     return out;
   };
 
-  if (jkt.weekday === 0 || jkt.weekday === 6) return finish({ action: 'skip', reason: 'weekend' });
-  const slot = slotAt(jkt.minutes);
-  if (!slot) return finish({ action: 'skip', reason: 'no-slot' });
-
-  const last = await env.PUSH_KV.get(KV.last, 'json');
-  if (last && last.date === jkt.date && last.slotId === slot.id) {
-    return finish({ action: 'skip', reason: 'slot-already-processed', slotId: slot.id });
-  }
-
-  const state = await env.PUSH_KV.get(KV.state, 'json');
-  if (state?.activeStatus === 'pending') {
-    // Slot dilewati dan dicatat: tidak dikejar nanti, tidak menumpuk.
-    return finish({ action: 'skip', reason: 'pending-question', slotId: slot.id, pendingQuestionId: state.activeQuestionId || null }, { markSlot: true });
-  }
-  if (!state || !Number.isInteger(state.currentDay)) return finish({ action: 'skip', reason: 'no-state', slotId: slot.id });
+  if (jkt.weekday === 0 || jkt.weekday === 6) return finish('skip', 'weekend');
+  if (!win) return finish('skip', 'outside-window');
+  if (isOpen(state)) return finish('skip', state.activeStatus === 'pending' ? 'pending-question' : 'answer-not-correct-yet');
+  if (!state || !Number.isInteger(state.currentDay)) return finish('skip', 'no-state');
+  if (cooldownRemaining > 0) return finish('skip', 'cooldown');
+  if (windowSent >= win.limit) return finish('skip', 'window-limit');
+  if (daily.sentCount >= DAILY_LIMIT) return finish('skip', 'daily-limit');
 
   const subscription = await env.PUSH_KV.get(KV.subscription, 'json');
-  if (!subscription?.endpoint || !subscription.keys?.p256dh || !subscription.keys?.auth) {
-    return finish({ action: 'skip', reason: 'no-subscription', slotId: slot.id });
-  }
+  if (!subscription?.endpoint || !subscription.keys?.p256dh || !subscription.keys?.auth) return finish('skip', 'no-subscription');
   const missing = ['VAPID_PRIVATE_KEY', 'VAPID_PUBLIC_KEY', 'VAPID_SUBJECT'].filter((k) => !env[k]);
-  if (missing.length) return finish({ action: 'error', reason: 'config-missing', missing, slotId: slot.id });
+  if (missing.length) return finish('error', 'config-missing', { missing });
 
-  const recent = (await env.PUSH_KV.get(KV.recent, 'json')) || [];
-  const q = pickQuestion({ currentDay: state.currentDay, contexts: slot.contexts, recent, random });
-  if (!q) return finish({ action: 'skip', reason: 'no-eligible-question', slotId: slot.id, currentDay: state.currentDay });
-
+  const [recent, stats] = await Promise.all([env.PUSH_KV.get(KV.recent, 'json'), env.PUSH_KV.get(KV.stats, 'json')]);
+  const maxDay = dayLimit(state.currentDay, env);
+  const q = pickQuestion({ maxDay, contexts: win.contexts, recent: recent || [], stats: stats || {}, nowMs, random });
+  if (!q) return finish('skip', 'no-eligible-question', { maxDay });
+  const candidateQuestion = { id: q.id, context: q.context, minDay: q.minDay, en: q.en, idn: q.idn };
   const payload = payloadFor(q);
-  if (dryRun) return finish({ action: 'would-send', slotId: slot.id, questionId: q.id, minDay: q.minDay, currentDay: state.currentDay, payload });
+  if (dryRun) return finish('would-send', 'ready', { maxDay, candidateQuestion, payload });
 
   let result;
   try {
     result = await deliverPush(env, subscription, payload, fetchImpl);
   } catch (err) {
-    return finish({ action: 'error', reason: 'push-exception', error: String(err?.message || err).slice(0, 200), slotId: slot.id });
+    return finish('error', 'push-exception', { candidateQuestion, error: String(err?.message || err).slice(0, 200) });
   }
-
   if (result.stale) {
     await env.PUSH_KV.delete(KV.subscription);
-    return finish({ action: 'stale', reason: 'subscription-deleted', providerStatus: result.providerStatus, slotId: slot.id }, { markSlot: true });
+    return finish('stale', 'subscription-deleted', { providerStatus: result.providerStatus });
   }
-  if (!result.ok) {
-    return finish({ action: 'error', reason: 'provider-error', providerStatus: result.providerStatus, error: result.error, slotId: slot.id });
-  }
+  if (!result.ok) return finish('error', 'provider-error', { providerStatus: result.providerStatus, error: result.error, candidateQuestion });
 
-  await env.PUSH_KV.put(KV.state, JSON.stringify({
-    currentDay: state.currentDay, activeStatus: 'pending', activeQuestionId: q.id, updatedAt: new Date(nowMs).toISOString(), source: 'scheduler'
-  }));
-  await env.PUSH_KV.put(KV.recent, JSON.stringify([...recent.filter((id) => id !== q.id), q.id].slice(-RECENT_MAX)));
-  return finish({ action: 'sent', slotId: slot.id, questionId: q.id, minDay: q.minDay, currentDay: state.currentDay, providerStatus: result.providerStatus }, { markSlot: true });
+  const sentAt = new Date(nowMs).toISOString();
+  const st = stats || {};
+  st[q.id] = { ...(st[q.id] || {}), sent: ((st[q.id] || {}).sent || 0) + 1, lastSentAt: sentAt };
+  await Promise.all([
+    env.PUSH_KV.put(KV.state, JSON.stringify({
+      currentDay: state.currentDay, activeStatus: 'pending', activeQuestionId: q.id, lastVerdict: null,
+      answeredAt: state.answeredAt ?? null, updatedAt: sentAt, source: 'scheduler'
+    })),
+    env.PUSH_KV.put(KV.daily, JSON.stringify({ ...daily, sentCount: daily.sentCount + 1, windows: { ...daily.windows, [win.id]: windowSent + 1 } })),
+    env.PUSH_KV.put(KV.recent, JSON.stringify([...(recent || []).filter((id) => id !== q.id), q.id].slice(-RECENT_MAX))),
+    env.PUSH_KV.put(KV.stats, JSON.stringify(st)),
+    env.PUSH_KV.put(KV.lastSentAt, sentAt)
+  ]);
+  return finish('sent', 'ok', { maxDay, candidateQuestion, providerStatus: result.providerStatus, sentToday: daily.sentCount + 1, dailySent: daily.sentCount + 1, windowSent: windowSent + 1 });
 }

@@ -219,7 +219,7 @@ test('endpoint lama tetap sama: /health, /subscribe, /state, 404, CORS', async (
   assert.deepEqual([r.body.state.currentDay, r.body.state.activeStatus, r.body.state.activeQuestionId], [null, null, null]);
   r = await call('GET', '/state');
   assert.equal(r.status, 200);
-  assert.deepEqual(Object.keys(r.body.state).sort(), ['activeQuestionId', 'activeStatus', 'currentDay', 'source', 'updatedAt']);
+  assert.deepEqual(Object.keys(r.body.state).sort(), ['activeQuestionId', 'activeStatus', 'answeredAt', 'currentDay', 'lastVerdict', 'source', 'updatedAt']);
   assert.equal(r.headers.get('access-control-allow-origin'), 'https://ikbalyuliyanto.github.io');
   r = await call('GET', '/nope');
   assert.deepEqual(r.body, { success: false, message: 'Endpoint not found' });
@@ -262,10 +262,14 @@ test('POST /state pending pertanyaan yang sama (app adopt) -> source scheduler t
   assert.equal(JSON.parse(env.PUSH_KV.map.get(KEYS.state)).source, 'scheduler');
 });
 
-test('POST /state answered -> pending scheduler dilepas; lalu null boleh', async () => {
+test('POST /state answered wrong/almost -> pending scheduler tetap; correct -> dilepas; lalu null boleh', async () => {
   const env = makeEnv({ [KEYS.state]: schedulerPending });
-  let r = await post(env, '/state', { currentDay: 21, activeStatus: 'answered', activeQuestionId: 'C-WAKE-03' });
-  assert.equal(r.body.state.activeStatus, 'answered');
+  let r = await post(env, '/state', { currentDay: 21, activeStatus: 'answered', activeQuestionId: 'C-WAKE-03', lastVerdict: 'wrong' });
+  assert.deepEqual([r.body.state.activeStatus, r.body.kept], ['pending', 'answer-not-correct']);
+  r = await post(env, '/state', { currentDay: 21, activeStatus: 'answered', activeQuestionId: 'C-WAKE-03', lastVerdict: 'almost' });
+  assert.equal(r.body.state.activeStatus, 'pending');
+  r = await post(env, '/state', { currentDay: 21, activeStatus: 'answered', activeQuestionId: 'C-WAKE-03', lastVerdict: 'correct', answeredAt: '2026-10-05T00:10:00.000Z' });
+  assert.deepEqual([r.body.state.activeStatus, r.body.state.lastVerdict, r.body.state.answeredAt], ['answered', 'correct', '2026-10-05T00:10:00.000Z']);
   assert.equal(r.body.kept, undefined);
   r = await post(env, '/state', { currentDay: 21, activeStatus: null, activeQuestionId: null });
   assert.equal(r.body.state.activeStatus, null);
@@ -282,7 +286,7 @@ test('GET /state hanya field publik', async () => {
   const res = await worker.fetch(new Request('https://worker.test/state', { headers: { Origin: 'https://ikbalyuliyanto.github.io' } }), env);
   const body = await res.json();
   outputs.push(JSON.stringify(body));
-  assert.deepEqual(body.state, { currentDay: 21, activeStatus: 'pending', activeQuestionId: 'C-WAKE-03', source: 'scheduler', updatedAt: '2026-10-05T23:00:00Z' });
+  assert.deepEqual(body.state, { currentDay: 21, activeStatus: 'pending', activeQuestionId: 'C-WAKE-03', lastVerdict: null, answeredAt: null, source: 'scheduler', updatedAt: '2026-10-05T23:00:00Z' });
   assert.ok(!JSON.stringify(body).includes(subscription.endpoint));
 });
 
@@ -293,8 +297,9 @@ test('/scheduler/preview: butuh token, dry-run tanpa kirim/tulis KV', async () =
   const before = [...env.PUSH_KV.map.entries()];
   r = await post(env, '/scheduler/preview?at=2026-10-05T05:00:00Z', undefined, { Authorization: `Bearer ${ADMIN_TOKEN}` });
   assert.equal(r.status, 200);
-  assert.equal(r.body.decision.action, 'would-send');
-  assert.equal(r.body.decision.slotId, 'siang');
-  assert.ok(r.body.decision.minDay <= 21);
+  assert.equal(r.body.decision, 'would-send');
+  assert.deepEqual([r.body.windowId, r.body.windowSent, r.body.windowLimit, r.body.dailySent, r.body.dailyLimit], ['lunch', 0, 2, 0, 10]);
+  assert.ok(r.body.candidateQuestion.minDay <= 20, 'review mode Day 1-20');
+  assert.equal(r.body.reviewMode, true);
   assert.deepEqual([...env.PUSH_KV.map.entries()], before);
 });

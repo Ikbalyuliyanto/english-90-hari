@@ -6,8 +6,8 @@
  *   POST /state       simpan { currentDay, activeStatus, activeQuestionId } ke KV state:primary
  *   GET  /state       baca state ringkas (dipakai app saat boot untuk mengadopsi pertanyaan pending dari scheduler)
  *   POST /send-test   kirim 1 Web Push sungguhan ke subscription:primary (butuh Authorization: Bearer ADMIN_TOKEN)
- *   POST /scheduler/preview  keputusan scheduler untuk slot berikutnya, dry-run (butuh ADMIN_TOKEN)
- *   scheduled()       Cron Trigger -> runScheduler() (lihat scheduler.js). Cron belum dipasang di wrangler.toml.
+ *   POST /scheduler/preview  keputusan scheduler saat ini (atau ?at=<ISO>), dry-run (butuh ADMIN_TOKEN)
+ *   scheduled()       Cron Trigger -> runScheduler() (lihat scheduler.js).
  *
  * Web Push memakai @block65/webcrypto-web-push (WebCrypto, kompatibel Workers):
  *   - VAPID JWT ES256 (RFC 8292) ditandatangani VAPID_PRIVATE_KEY,
@@ -17,10 +17,11 @@
  *      VAPID_PRIVATE_KEY, ADMIN_TOKEN (secret). Nilai secret tidak pernah ditulis ke response atau log.
  *
  * Pending dari scheduler bersifat authoritative: POST /state berisi activeStatus null tidak menimpa
- * state pending source "scheduler"; hanya jawaban (answered) atau pending lain yang menggantinya.
+ * state pending source "scheduler"; hanya jawaban BENAR (answered + lastVerdict "correct") yang melepasnya.
+ * Jawaban almost/wrong untuk pertanyaan scheduler tetap disimpan sebagai pending.
  */
 import { buildPushPayload } from '@block65/webcrypto-web-push';
-import { runScheduler, nextSlotTime } from './scheduler.js';
+import { runScheduler, KV as SCHED_KV, dailyFor, jakartaTime } from './scheduler.js';
 
 export const KEYS = { subscription: 'subscription:primary', state: 'state:primary' };
 
@@ -31,6 +32,8 @@ export const TEST_PAYLOAD = {
 };
 
 const ACTIVE_STATUSES = [null, 'pending', 'answered'];
+const VERDICTS = ['correct', 'almost', 'wrong'];
+const isIso = (v) => typeof v === 'string' && v.length <= 40 && Number.isFinite(Date.parse(v));
 
 function corsHeaders(env, request) {
   const allowed = env.ALLOWED_ORIGIN || 'https://ikbalyuliyanto.github.io';
@@ -58,12 +61,19 @@ export function isValidSubscription(s) {
 }
 
 // Sama dengan Worker production sebelumnya: nilai tidak valid diubah jadi null (bukan ditolak).
-export function normalizeState(s) {
+export function normalizeState(s, nowMs = Date.now()) {
+  const activeStatus = ACTIVE_STATUSES.includes(s.activeStatus) ? s.activeStatus : null;
+  const lastVerdict = activeStatus === 'answered' && VERDICTS.includes(s.lastVerdict) ? s.lastVerdict : null;
+  // answeredAt dari app dipakai jika valid dan tidak di masa depan; jawaban tanpa waktu memakai waktu server.
+  let answeredAt = isIso(s.answeredAt) && Date.parse(s.answeredAt) <= nowMs + 60000 ? new Date(s.answeredAt).toISOString() : null;
+  if (activeStatus === 'answered' && !answeredAt) answeredAt = new Date(nowMs).toISOString();
   return {
     currentDay: Number.isInteger(s.currentDay) ? s.currentDay : null,
-    activeStatus: ACTIVE_STATUSES.includes(s.activeStatus) ? s.activeStatus : null,
+    activeStatus,
     activeQuestionId: typeof s.activeQuestionId === 'string' ? s.activeQuestionId.slice(0, 64) : null,
-    updatedAt: new Date().toISOString()
+    lastVerdict,
+    answeredAt,
+    updatedAt: new Date(nowMs).toISOString()
   };
 }
 
@@ -97,6 +107,8 @@ export function publicState(s) {
     currentDay: Number.isInteger(s.currentDay) ? s.currentDay : null,
     activeStatus: ACTIVE_STATUSES.includes(s.activeStatus) ? s.activeStatus : null,
     activeQuestionId: typeof s.activeQuestionId === 'string' ? s.activeQuestionId : null,
+    lastVerdict: VERDICTS.includes(s.lastVerdict) ? s.lastVerdict : null,
+    answeredAt: isIso(s.answeredAt) ? s.answeredAt : null,
     source: typeof s.source === 'string' ? s.source : null,
     updatedAt: typeof s.updatedAt === 'string' ? s.updatedAt : null
   };
@@ -105,15 +117,40 @@ export function publicState(s) {
 // Pending dari scheduler tidak boleh hilang hanya karena app mengirim activeStatus null
 // (mis. app dibuka dari ikon sebelum sempat mengadopsi). currentDay tetap diperbarui.
 export function mergeState(prev, next) {
+  // answeredAt jawaban benar terakhir tetap disimpan (cooldown scheduler) walau app mengirim null.
+  const answeredAt = next.answeredAt ?? prev?.answeredAt ?? null;
+  const merged = { ...next, answeredAt };
   if (prev?.activeStatus === 'pending' && prev.source === 'scheduler' && prev.activeQuestionId) {
-    if (next.activeStatus === null) {
-      return { state: { ...next, activeStatus: 'pending', activeQuestionId: prev.activeQuestionId, source: 'scheduler' }, kept: 'scheduler-pending' };
-    }
-    if (next.activeStatus === 'pending' && next.activeQuestionId === prev.activeQuestionId) {
-      return { state: { ...next, source: 'scheduler' } };
+    const keep = { ...merged, activeStatus: 'pending', activeQuestionId: prev.activeQuestionId, source: 'scheduler', answeredAt: prev.answeredAt ?? null };
+    if (next.activeStatus === null) return { state: { ...keep, lastVerdict: prev.lastVerdict ?? null }, kept: 'scheduler-pending' };
+    if (next.activeQuestionId === prev.activeQuestionId) {
+      if (next.activeStatus === 'pending') return { state: { ...keep, lastVerdict: prev.lastVerdict ?? null } };
+      if (next.activeStatus === 'answered' && next.lastVerdict !== 'correct') {
+        return { state: { ...keep, lastVerdict: next.lastVerdict }, kept: 'answer-not-correct' };
+      }
     }
   }
-  return { state: next };
+  return { state: merged };
+}
+
+// Catat statistik jawaban: answeredCount harian (benar) dan jumlah salah per pertanyaan (prioritas scheduler).
+async function recordAnswer(env, prev, next, nowMs = Date.now()) {
+  if (next.activeStatus !== 'answered' || !next.activeQuestionId || !next.lastVerdict) return;
+  const isNewAttempt = !(prev?.activeQuestionId === next.activeQuestionId && prev?.answeredAt === next.answeredAt && prev?.lastVerdict === next.lastVerdict);
+  if (!isNewAttempt) return;
+  if (next.lastVerdict === 'correct') {
+    // Tanggal WIB dari waktu jawaban; jangan pernah menimpa hitungan hari yang lebih baru.
+    const date = jakartaTime(Date.parse(next.answeredAt) || nowMs).date;
+    const saved = await env.PUSH_KV.get(SCHED_KV.daily, 'json');
+    if (saved?.date && saved.date > date) return;
+    const daily = dailyFor(saved, date);
+    await env.PUSH_KV.put(SCHED_KV.daily, JSON.stringify({ ...daily, answeredCount: daily.answeredCount + 1 }));
+  } else {
+    const stats = (await env.PUSH_KV.get(SCHED_KV.stats, 'json')) || {};
+    const s = stats[next.activeQuestionId] || {};
+    stats[next.activeQuestionId] = { ...s, wrong: (s.wrong || 0) + 1 };
+    await env.PUSH_KV.put(SCHED_KV.stats, JSON.stringify(stats));
+  }
 }
 
 async function requireAdmin(request, env, cors) {
@@ -129,11 +166,10 @@ export async function schedulerPreview(request, env, cors) {
   const denied = await requireAdmin(request, env, cors);
   if (denied) return denied;
   const at = new URL(request.url).searchParams.get('at');
-  const atMs = at ? Date.parse(at) : nextSlotTime(Date.now());
+  const atMs = at ? Date.parse(at) : Date.now();
   if (!Number.isFinite(atMs)) return json({ success: false, error: 'Parameter at tidak valid' }, 400, cors);
   const decision = await runScheduler(env, atMs, { dryRun: true });
-  const state = publicState(await env.PUSH_KV.get(KEYS.state, 'json'));
-  return json({ success: true, dryRun: true, state, decision }, 200, cors);
+  return json({ success: true, dryRun: true, ...decision }, 200, cors);
 }
 
 export async function sendTest(request, env, cors, fetchImpl = fetch) {
@@ -181,7 +217,7 @@ export default {
   // Cron Trigger. Satu run = paling banyak satu push (lihat scheduler.js).
   async scheduled(controller, env, ctx) {
     ctx.waitUntil(runScheduler(env, controller.scheduledTime).then((r) => {
-      console.log('scheduler', JSON.stringify({ action: r.action, reason: r.reason, slotId: r.slotId, questionId: r.questionId, providerStatus: r.providerStatus }));
+      console.log('scheduler', JSON.stringify({ decision: r.decision, reason: r.reason, window: r.activeWindow, questionId: r.candidateQuestion?.id, providerStatus: r.providerStatus }));
     }));
   },
 
@@ -217,8 +253,10 @@ export default {
         const s = await readJson(request);
         if (!s || typeof s !== 'object') return json({ success: false, message: 'Invalid state' }, 400, cors);
         const prev = await env.PUSH_KV.get(KEYS.state, 'json');
-        const { state, kept } = mergeState(prev, normalizeState(s));
+        const next = normalizeState(s);
+        const { state, kept } = mergeState(prev, next);
         await env.PUSH_KV.put(KEYS.state, JSON.stringify(state));
+        await recordAnswer(env, prev, next);
         return json({ success: true, state, ...(kept ? { kept } : {}) }, 200, cors);
       }
 
