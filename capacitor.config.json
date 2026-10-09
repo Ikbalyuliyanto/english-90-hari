@@ -1,0 +1,9 @@
+{
+  "appId": "id.ikbal.english90",
+  "appName": "English Trainer",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false,
+    "captureInput": true
+  }
+}

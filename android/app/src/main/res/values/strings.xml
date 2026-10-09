@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">English Trainer</string>
+    <string name="title_activity_main">English Trainer</string>
+    <string name="package_name">id.ikbal.english90</string>
+    <string name="custom_url_scheme">id.ikbal.english90</string>
+</resources>

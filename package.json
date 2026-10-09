@@ -1,0 +1,19 @@
+{
+  "name": "english-90-hari",
+  "private": true,
+  "description": "English Trainer 120 hari: web (GitHub Pages) + APK Android (Capacitor).",
+  "scripts": {
+    "build:www": "node scripts/build-www.mjs",
+    "cap:sync": "node scripts/build-www.mjs && npx cap sync android",
+    "apk:debug": "node scripts/build-www.mjs && npx cap sync android && cd android && gradlew.bat assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor-community/text-to-speech": "8.0.2",
+    "@capacitor/android": "8.5.3",
+    "@capacitor/app": "8.1.2",
+    "@capacitor/core": "8.5.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.5.3"
+  }
+}

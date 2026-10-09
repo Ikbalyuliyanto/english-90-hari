@@ -1,3 +1,10 @@
 .DS_Store
 Thumbs.db
 *.log
+
+# Capacitor / Android
+node_modules/
+www/
+*.jks
+*.keystore
+keystore.properties

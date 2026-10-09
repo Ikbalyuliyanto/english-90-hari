@@ -1,17 +1,19 @@
 /*
- * Audio memakai Web Speech API bawaan browser.
+ * Audio memakai Web Speech API bawaan browser; di APK Android memakai TTS native (E90.voice).
  * Selalu membaca teks English asli, bukan teks pronunciation.
  * Jika browser tidak mendukung, fungsi speak() mengembalikan false tanpa error.
  */
 window.E90 = window.E90 || {};
 
 E90.speech = (() => {
-  const supported = typeof window.speechSynthesis !== 'undefined' && typeof window.SpeechSynthesisUtterance !== 'undefined';
+  const native = !!E90.voice?.available;
+  const webSupported = typeof window.speechSynthesis !== 'undefined' && typeof window.SpeechSynthesisUtterance !== 'undefined';
+  const supported = native || webSupported;
   const RATES = { normal: 0.95, slow: 0.65 };
   let voice = null;
 
   function pickVoice() {
-    if (!supported) return;
+    if (!webSupported) return;
     const voices = window.speechSynthesis.getVoices();
     const english = voices.filter((v) => /^en[-_]/i.test(v.lang));
     voice =
@@ -22,7 +24,7 @@ E90.speech = (() => {
       null;
   }
 
-  if (supported) {
+  if (webSupported && !native) {
     pickVoice();
     window.speechSynthesis.addEventListener?.('voiceschanged', pickVoice);
   }
@@ -31,7 +33,8 @@ E90.speech = (() => {
   const clean = (text) => String(text).replace(/\{[^}]+\}/g, '').replace(/\s+([.,?!])/g, '$1').trim();
 
   function speak(text, { slow = false, onend } = {}) {
-    if (!supported) return false;
+    if (native) return E90.voice.speak(clean(text), { rate: slow ? 'slow' : 'normal', onend });
+    if (!webSupported) return false;
     try {
       window.speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(clean(text));
@@ -51,10 +54,11 @@ E90.speech = (() => {
   }
 
   function stop() {
-    if (supported) {
+    if (native) return E90.voice.stop();
+    if (webSupported) {
       try { window.speechSynthesis.cancel(); } catch { /* abaikan */ }
     }
   }
 
-  return { supported, speak, stop };
+  return { supported, native, speak, stop };
 })();

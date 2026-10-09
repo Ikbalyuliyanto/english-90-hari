@@ -68,7 +68,7 @@ E90.views = E90.views || {};
         </div>
 
         <label><b>Audio</b></label>
-        <p class="small muted">${E90.speech.supported ? '✓ Browser mendukung audio (Web Speech API).' : '✗ Browser ini tidak mendukung audio otomatis.'}</p>
+        <p class="small muted">${E90.speech.native ? '✓ Audio memakai Text-to-Speech Android.' : E90.speech.supported ? '✓ Browser mendukung audio (Web Speech API).' : '✗ Browser ini tidak mendukung audio otomatis.'}</p>
         <button class="btn" data-act="speak" data-text="Could you explain that again?">🔊 Tes audio</button>
       </section>
 

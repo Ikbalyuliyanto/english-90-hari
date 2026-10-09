@@ -27,7 +27,8 @@ E90.pwa = (() => {
   const isStandalone = () => window.matchMedia?.('(display-mode: standalone)').matches || navigator.standalone === true;
 
   function register() {
-    if (!supported.sw) return;
+    // APK memuat file dari dalam paket; service worker & Web Push hanya untuk versi web.
+    if (!supported.sw || E90.platform?.isNative) return;
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).catch((err) => console.warn('[E90] SW gagal', err));
     });

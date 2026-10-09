@@ -12,7 +12,8 @@
 window.E90 = window.E90 || {};
 
 E90.backend = (() => {
-  const base = () => (E90.CONFIG?.WORKER_BASE_URL || '').replace(/\/+$/, '');
+  // Fase 1 APK: belum sync ke Worker agar state APK tidak menimpa state HP yang dipakai scheduler production.
+  const base = () => (E90.platform?.isNative ? '' : (E90.CONFIG?.WORKER_BASE_URL || '').replace(/\/+$/, ''));
   const TIMEOUT = 8000;
   const status = { health: null, lastState: null, subscription: null };
   let lastSent = '';
