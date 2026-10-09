@@ -1,39 +1,119 @@
-# English 90 Hari
+# English 90 Hari · Personal English Trainer
 
-Aplikasi belajar Bahasa Inggris statis, mobile-first, tanpa backend/database.
+Aplikasi latihan bahasa Inggris statis, mobile-first, tanpa backend/database/API key.
+Programnya 120 hari: dari dasar sampai bisa memakai English untuk kerja dan interview sebagai Software Engineer.
 
 🔗 **Buka aplikasi: [ikbalyuliyanto.github.io/english-90-hari](https://ikbalyuliyanto.github.io/english-90-hari/)**
 
+Metode: **Understand → Listen → Recall → Speak → Modify → Respond → Use**, bukan sekadar hafal kalimat.
+
+## Program
+| Phase | Day | Fokus |
+|---|---|---|
+| 1 | 1–30 | Foundation & Basic Conversation |
+| 2 | 31–60 | Work English (standup, meeting, deadline) |
+| 3 | 61–90 | Software Engineering English |
+| 4 | 91–120 | Speaking, International Workplace & Job Interview (terjemahan disembunyikan secara default) |
+
+Konten **lengkap Day 1–120**. Phase 4 terdiri dari Day 91–105 (komunikasi di tim internasional: perkenalan, proyek, manager, stakeholder, meeting, disagreement, presentasi, Q&A, checkpoint 8–10 menit) dan Day 106–120 (job interview: tell me about yourself, motivasi, STAR, problem-solving, technical interview, system design, pertanyaan sulit, mock interview 15–20 menit, dan simulasi final 10 tahap). Contoh proyek sebagian besar dari Hospital Information System (pendaftaran, rawat jalan/inap, lab, farmasi, billing, rekam medis).
+
 ## Fitur
-- 1 hari = 15 kalimat
-- Cara baca gaya Indonesia
-- Arti natural Bahasa Indonesia
-- Arti per kata yang bisa dibuka/tutup
-- Audio menggunakan Web Speech API browser
-- Tandai hari selesai; progres tersimpan di `localStorage`
-- Pencarian materi
-- Review acak
-- Dark mode & ukuran teks
-- Siap GitHub Pages, tanpa proses build
+- **Dashboard**: Day saat ini, progress program, streak, active study days, menit belajar, kalimat learned/mastered/weak, review due, vocabulary.
+- **3 mode belajar per Day**
+  - Normal (±2 jam): Vocabulary Review → Learn → Active Recall → Listening → Shadowing → Sentence Variation → Speaking Challenge → Review. 3-2-1 Speaking hanya muncul di Day yang punya `talk321` (mulai sekitar Day 31, 2–3 kali per minggu), bersifat opsional, dan tidak memengaruhi Daily Completion.
+  - Quick (±30 menit) dan Emergency (±10 menit): tetap dihitung sebagai hari aktif agar tidak ada zero-day.
+- **Daily completion**: Day selesai jika Learn, Recall, Listening, Shadowing, dan Speaking sudah dikerjakan.
+- **Sentence card**: English, cara baca ala Indonesia, arti natural, arti per kata sesuai konteks, frasa, pola, 🔊 Listen / 🐢 Slow, sembunyikan English/arti, ⭐ Mastered, ↺ Reset progress.
+- **SRS sederhana** (Again / Hard / Good / Easy) untuk kalimat dan kosakata.
+- **Review**: Random, Due, Weak, Mastered, Listening, Indonesia → English, English → Indonesia (5/10/20).
+- **Vocabulary Bank** otomatis dari kalimat yang dipelajari, dengan arti per konteks (mis. *cold* = pilek / dingin); latihan EN→ID, ID→EN, fill in the blank.
+- **Search** kalimat, arti, kata, dan topik.
+- **Settings**: nama (untuk kalimat "My name is ..."), tema, ukuran teks, backup/restore progress.
+- Audio memakai Web Speech API bawaan browser. Jika tidak didukung, aplikasi tetap berjalan.
+
+## Struktur
+```
+index.html
+css/styles.css
+data/
+  curriculum.js        roadmap Day 1–120, fase, AVAILABLE_DAYS
+  days/day-01.js ...   konten per hari
+  legacy/lessons-v1.js data versi pertama (arsip, tidak dimuat aplikasi)
+js/
+  core/   util, store (localStorage + SRS), speech, content (loader, search, vocab bank)
+  ui/     components, activities-core (learn/recall/listening),
+          activities-speak (shadowing/variation/speaking/3-2-1), activities-vocab
+  views/  dashboard, day, review, vocab, misc (search & settings)
+  app.js  router berbasis hash
+tools/validate-content.js
+```
 
 ## Menjalankan lokal
-Cukup buka `index.html`, atau lebih aman gunakan server sederhana:
+Buka `index.html` langsung di browser, atau jalankan server sederhana:
 
 ```bash
+npx serve .
+# atau
 python -m http.server 8080
 ```
 
-Lalu buka `http://localhost:8080`.
+## Menambah batch Day baru
+1. Salin salah satu file, misalnya `data/days/day-20.js`, menjadi `day-21.js`, lalu isi kontennya.
+2. Tambahkan nomor harinya ke `AVAILABLE_DAYS` di `data/curriculum.js`.
+3. Jalankan validator:
+   ```bash
+   node tools/validate-content.js
+   ```
 
-## Publish ke GitHub Pages
-1. Buat repository GitHub baru.
-2. Push seluruh isi folder ini ke branch `main`.
-3. GitHub → **Settings → Pages**.
-4. Pada **Build and deployment**, pilih **GitHub Actions**.
-5. Workflow `.github/workflows/deploy-pages.yml` otomatis deploy.
+Format satu kalimat:
+```js
+{
+  id: 'D21-S01',                               // unik: D<hari>-S<nomor>
+  english: "I'm currently working on the backend.",
+  pronunciation: 'aim ker-ren-li wer-king on de bek-end',
+  translation: 'Saat ini saya sedang mengerjakan backend.',
+  words: [["I'm", 'saya sedang', 'be'], ['currently', 'saat ini'], ...], // [kata, arti di konteks ini, bentuk dasar?]
+  phrases: [['work on', 'mengerjakan']],
+  pattern: 'D21-P1'                            // id pola di bagian patterns
+}
+```
+Setiap Day juga punya `review` (kalimat variasi baru atau `{ ref: 'D18-S05' }`), `patterns`, `shadowing` (3–5 id), `speaking` (3–5 pertanyaan, atau sampai 12 jika Day diberi `checkpoint: true`), dan `talk321` (opsional).
 
-Setelah sukses, aplikasi bisa diakses di:
-https://ikbalyuliyanto.github.io/english-90-hari/
+Field pertanyaan speaking:
+```js
+{
+  q: 'Tell me about yourself.',
+  qId: 'Bantuan / arti pertanyaan (dilipat)',
+  hint: "Sure. I'm a ... For the past ...",
+  example: 'Satu paragraf' atau ['paragraf 1', 'paragraf 2'],  // tersembunyi: Show Example / Show Full Example
+  outline: ['Present', 'Highlights', 'Why this role'],    // opsional, tersembunyi: Show Answer Outline
+  followUps: ['Why healthcare?', '...'],                  // opsional, dibuka satu per satu
+  timers: [1, 2]                                            // opsional, menit (1–20)
+}
+```
+Instruksi Speaking otomatis menyesuaikan bila ada soal bertimer atau follow-up.
 
-## Menambah Hari 16–90
-Edit `data/lessons.js`. Ikuti struktur lesson yang sudah ada. UI otomatis membuat card baru.
+Mulai Phase 2, arti pertanyaan speaking dilipat secara default (`questionTranslation: 'collapsed'` di `data/curriculum.js`) agar latihan semakin English-oriented. Di Phase 4 terjemahan kalimat juga disembunyikan (`translation: 'hidden'`, tetap bisa dibuka dengan tombol ID), dan mulai Day 106 (`englishOnlyFrom`) bantuan pertanyaan hanya berupa petunjuk singkat berbahasa Indonesia. Mulai Day 46, kolom `meaning` pada pattern ditulis dalam English sederhana; catatan untuk hal yang mudah disalahpahami tetap berbahasa Indonesia.
+
+Validator memeriksa: setiap kata punya arti, cara baca tidak kosong, id unik, kalimat tidak duplikat (pakai `{ ref }` untuk review), referensi valid, jumlah shadowing/speaking, dan memastikan 225 kalimat versi lama tidak ada yang hilang.
+
+### Aturan konten
+- **Arti per kata ditulis sesuai konteks.** Kata fungsi yang tidak punya arti langsung (do/does/did, to, the, a) dijelaskan fungsinya, misalnya `did` = "(kata bantu pertanyaan bentuk lampau, tidak diterjemahkan)".
+- **Cara baca** adalah alat bantu pemula; audio adalah referensi utama. Konvensi (juga tampil di aplikasi, menu "Konvensi cara baca" di Learn/Shadowing):
+
+| Tulisan | Bunyi | Contoh |
+|---|---|---|
+| `-` | pemisah suku kata | de-ve-lo-per |
+| ai / ei / ou / au | I · name · go · now | mai, neim, gou, nau |
+| e | bunyi lemah atau "a" pendek | e (a), hev (have) |
+| th / d | th tak bersuara / th bersuara | thingk / de, dis, det |
+| sh, ch, j, zh | sh, ch, j, s di pleasure | shur, lanch, me-ne-jer, ple-zher |
+| -ed | t / d / id | werkt, steid, star-tid |
+| de → di | "the" sebelum vokal | di o-fis |
+
+- Setiap Day membawa kembali pattern lama di konteks baru (field `pattern` boleh menunjuk pattern hari sebelumnya).
+- Istilah teknis diberi arti singkat yang menjelaskan konteksnya (mis. `endpoint` = "endpoint: alamat URL tertentu di API"), bukan sekadar disalin, agar tetap masuk Vocabulary Bank.
+- "root cause" hanya dipakai untuk penyebab yang sudah dipastikan; jika belum, pakai "possible cause" atau "may be related to".
+
+## Deploy
+Push ke branch `main`. GitHub Actions (`.github/workflows/deploy-pages.yml`) menjalankan validator lalu deploy ke GitHub Pages.
