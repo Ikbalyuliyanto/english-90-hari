@@ -9,7 +9,7 @@ E90.speech = (() => {
   const native = !!E90.voice?.available;
   const webSupported = typeof window.speechSynthesis !== 'undefined' && typeof window.SpeechSynthesisUtterance !== 'undefined';
   const supported = native || webSupported;
-  const RATES = { normal: 0.95, slow: 0.65 };
+  const RATES = { normal: 0.95, slow: 0.65, fast: 1.15 };
   let voice = null;
 
   function pickVoice() {
@@ -32,15 +32,17 @@ E90.speech = (() => {
   // Membersihkan placeholder seperti "{name}" agar tidak ikut dibaca.
   const clean = (text) => String(text).replace(/\{[^}]+\}/g, '').replace(/\s+([.,?!])/g, '$1').trim();
 
-  function speak(text, { slow = false, onend } = {}) {
-    if (native) return E90.voice.speak(clean(text), { rate: slow ? 'slow' : 'normal', onend });
+  // rate: 'slow' | 'normal' | 'fast' (opsional; `slow: true` tetap didukung untuk tombol 🐢).
+  function speak(text, { slow = false, rate, onend } = {}) {
+    const r = rate || (slow ? 'slow' : 'normal');
+    if (native) return E90.voice.speak(clean(text), { rate: r, onend });
     if (!webSupported) return false;
     try {
       window.speechSynthesis.cancel();
       const u = new SpeechSynthesisUtterance(clean(text));
       u.lang = voice?.lang || 'en-US';
       if (voice) u.voice = voice;
-      u.rate = slow ? RATES.slow : RATES.normal;
+      u.rate = RATES[r] || RATES.normal;
       if (onend) {
         u.onend = onend;
         u.onerror = onend;

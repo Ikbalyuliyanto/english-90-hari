@@ -462,3 +462,8 @@ div.example-text p:last-child { margin-bottom: 0; }
 .chat-composer .chips { margin: 0; }
 body.is-composing .bottom-nav { display: none; }
 body.is-composing .chat-composer { bottom: env(safe-area-inset-bottom); }
+.chat-composer .mic-btn { min-width: 44px; padding: 0; font-size: 1.2rem; }
+.chat-composer .mic-btn.is-listening { background: var(--danger); border-color: var(--danger); color: #fff; animation: mic-pulse 1.2s ease-in-out infinite; }
+@keyframes mic-pulse { 50% { opacity: .65; } }
+.mic-status { position: fixed; left: 0; right: 0; bottom: calc(var(--nav-h) + env(safe-area-inset-bottom) + 64px); margin: 0 auto; max-width: 720px; padding: 4px 16px; font-size: .85rem; color: var(--danger); text-align: center; }
+body.is-composing .mic-status { bottom: calc(env(safe-area-inset-bottom) + 64px); }
