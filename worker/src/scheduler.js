@@ -2,7 +2,7 @@
  * Scheduler conversation kontinu (Cron Trigger tiap 10 menit) — satu pertanyaan aktif, tanpa spam.
  *
  * Setiap run, runScheduler():
- *  1. Waktu cron -> Asia/Jakarta (UTC+7, tanpa DST). Sabtu/Minggu -> skip.
+ *  1. Waktu cron -> Asia/Jakarta (UTC+7, tanpa DST). Senin-Jumat memakai WINDOWS, Sabtu-Minggu WEEKEND_WINDOWS.
  *  2. Harus berada di learning window aktif (WINDOWS). Di luar window -> skip.
  *  3. Pertanyaan masih terbuka -> skip:
  *       activeStatus 'pending', atau 'answered' dengan lastVerdict selain 'correct' (almost/wrong).
@@ -25,7 +25,8 @@ import BANK from './questions.json' with { type: 'json' };
 
 export const TZ_OFFSET_MIN = 7 * 60; // Asia/Jakarta, tidak ada DST
 export const COOLDOWN_MIN = 10;
-export const DAILY_LIMIT = 10;
+export const DAILY_LIMIT = 10;          // Senin-Jumat
+export const WEEKEND_DAILY_LIMIT = 12;  // Sabtu-Minggu (lebih sering)
 export const RECENT_MAX = 10;
 export const RECENT_AVOID = 8;
 
@@ -63,8 +64,20 @@ export function jakartaTime(ms) {
 }
 const WEEKDAY_NAMES = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
 
-export function windowAt(minutes) {
-  return WINDOWS.find((w) => minutes >= toMin(w.start) && minutes < toMin(w.end)) || null;
+// Learning window Sabtu-Minggu (WIB): total 3+3+2+4 = WEEKEND_DAILY_LIMIT.
+export const WEEKEND_WINDOWS = [
+  { id: 'weekendMorning',   start: '08:00', end: '11:00', limit: 3, contexts: ['weekend', 'wake', 'breakfast'] },
+  { id: 'weekendMidday',    start: '11:00', end: '14:00', limit: 3, contexts: ['weekend', 'lunch'] },
+  { id: 'weekendAfternoon', start: '14:00', end: '17:00', limit: 2, contexts: ['weekend', 'evening'] },
+  { id: 'weekendEvening',   start: '17:00', end: '21:00', limit: 4, contexts: ['weekend', 'evening', 'bedtime'] }
+];
+
+const isWeekend = (weekday) => weekday === 0 || weekday === 6;
+export const windowsFor = (weekday) => (isWeekend(weekday) ? WEEKEND_WINDOWS : WINDOWS);
+export const dailyLimitFor = (weekday) => (isWeekend(weekday) ? WEEKEND_DAILY_LIMIT : DAILY_LIMIT);
+
+export function windowAt(minutes, weekday = 1) {
+  return windowsFor(weekday).find((w) => minutes >= toMin(w.start) && minutes < toMin(w.end)) || null;
 }
 
 export function reviewConfig(env = {}) {
@@ -131,7 +144,8 @@ export function dailyFor(saved, date) {
 
 export async function runScheduler(env, nowMs, { fetchImpl = fetch, random = Math.random, dryRun = false } = {}) {
   const jkt = jakartaTime(nowMs);
-  const win = windowAt(jkt.minutes);
+  const win = windowAt(jkt.minutes, jkt.weekday);
+  const dailyLimit = dailyLimitFor(jkt.weekday);
   const { reviewMode, reviewMaxDay } = reviewConfig(env);
   const [state, savedDaily, lastSentAt] = await Promise.all([
     env.PUSH_KV.get(KV.state, 'json'), env.PUSH_KV.get(KV.daily, 'json'), env.PUSH_KV.get(KV.lastSentAt)
@@ -147,7 +161,7 @@ export async function runScheduler(env, nowMs, { fetchImpl = fetch, random = Mat
     windowId: win?.id ?? null, windowSent, windowLimit: win?.limit ?? null, dailySent: daily.sentCount,
     activeStatus: state?.activeStatus ?? null, lastVerdict: state?.lastVerdict ?? null, activeQuestionId: state?.activeQuestionId ?? null,
     answeredAt: state?.answeredAt ?? null, cooldownRemaining, sentToday: daily.sentCount, answeredToday: daily.answeredCount,
-    dailyLimit: DAILY_LIMIT, reviewMode, reviewMaxDay, currentDay: Number.isInteger(state?.currentDay) ? state.currentDay : null
+    dailyLimit, reviewMode, reviewMaxDay, currentDay: Number.isInteger(state?.currentDay) ? state.currentDay : null
   };
   const finish = async (decision, reason, extra = {}) => {
     const out = { ...info, decision, reason, ...extra };
@@ -155,13 +169,12 @@ export async function runScheduler(env, nowMs, { fetchImpl = fetch, random = Mat
     return out;
   };
 
-  if (jkt.weekday === 0 || jkt.weekday === 6) return finish('skip', 'weekend');
   if (!win) return finish('skip', 'outside-window');
   if (isOpen(state)) return finish('skip', state.activeStatus === 'pending' ? 'pending-question' : 'answer-not-correct-yet');
   if (!state || !Number.isInteger(state.currentDay)) return finish('skip', 'no-state');
   if (cooldownRemaining > 0) return finish('skip', 'cooldown');
   if (windowSent >= win.limit) return finish('skip', 'window-limit');
-  if (daily.sentCount >= DAILY_LIMIT) return finish('skip', 'daily-limit');
+  if (daily.sentCount >= dailyLimit) return finish('skip', 'daily-limit');
 
   const subscription = await env.PUSH_KV.get(KV.subscription, 'json');
   if (!subscription?.endpoint || !subscription.keys?.p256dh || !subscription.keys?.auth) return finish('skip', 'no-subscription');

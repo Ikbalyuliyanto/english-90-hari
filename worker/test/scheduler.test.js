@@ -289,12 +289,31 @@ test('provider error lain -> tidak menandai pending, tidak menambah sentCount', 
   assert.equal(env.PUSH_KV.read('sched:daily'), null);
 });
 
-test('weekend skip (Sabtu & Minggu WIB)', async () => {
-  const p = provider(201);
-  for (const [d, t] of [['2026-10-10', '06:30'], ['2026-10-10', '12:00'], ['2026-10-11', '20:00']]) {
-    assert.equal((await runScheduler(makeEnv(base(st(null))), wib(d, t), { fetchImpl: p })).reason, 'weekend');
+test('weekend: Sabtu-Minggu ada window sendiri, kuota 3/3/2/4, maksimal 12/hari', async () => {
+  for (const day of ['2026-10-10', '2026-10-11']) {
+    const { sent, env, log } = await simulateDay(day, 2);
+    const per = sent.reduce((a, l) => ({ ...a, [l.windowId]: (a[l.windowId] || 0) + 1 }), {});
+    assert.deepEqual(per, { weekendMorning: 3, weekendMidday: 3, weekendAfternoon: 2, weekendEvening: 4 }, day + ' ' + JSON.stringify(log.filter((l) => l.decision === 'sent')));
+    assert.equal(env.PUSH_KV.read('sched:daily').sentCount, 12);
+    // pertanyaan bertema weekend / konteks window
+    const ctx = sent.map((l) => BANK.questions.find((q) => q.id === l.q).context);
+    assert.ok(ctx.every((c) => ['weekend', 'wake', 'breakfast', 'lunch', 'evening', 'bedtime'].includes(c)), ctx.join(','));
   }
-  assert.equal(p.calls.length, 0);
+});
+
+test('weekend: di luar window (07:00, 21:30) skip, tidak memakai window hari kerja', async () => {
+  const p = provider(201);
+  for (const t of ['06:30', '07:50', '21:00', '22:00']) {
+    const r = await runScheduler(makeEnv(base(st(null))), wib('2026-10-10', t), { fetchImpl: p });
+    assert.equal(r.reason, 'outside-window', t);
+  }
+  const r = await runScheduler(makeEnv(base(st(null))), wib('2026-10-10', '08:00'), { fetchImpl: p });
+  assert.deepEqual([r.decision, r.windowId, r.windowLimit, r.dailyLimit], ['sent', 'weekendMorning', 3, 12]);
+});
+
+test('weekend: pending tetap menahan push', async () => {
+  const r = await runScheduler(makeEnv(base(st('pending'))), wib('2026-10-11', '12:00'), { fetchImpl: provider(201) });
+  assert.equal(r.reason, 'pending-question');
 });
 
 test('dryRun -> field preview lengkap, tidak kirim, tidak menulis KV', async () => {
