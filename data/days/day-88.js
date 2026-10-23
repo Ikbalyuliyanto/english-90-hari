@@ -122,33 +122,33 @@ E90.registerDay({
     {
       id: 'D88-P1',
       formula: "We're currently experiencing an incident with + BENDA",
-      meaning: 'Announce an incident clearly.',
+      meaning: 'Saat ini kami sedang mengalami insiden pada ...',
       examples: ["We're currently experiencing an outage in the login service.", "We're seeing high error rates on the API.", "We're aware of the issue and working on it."]
     },
     {
       id: 'D88-P2',
       formula: 'The issue affects + ORANG + who + KALIMAT  ·  About + ANGKA + percent of users are affected',
-      meaning: 'Describe the impact precisely.',
+      meaning: 'Masalah ini berdampak pada ... yang ...  ·  Sekitar ... persen user terdampak',
       examples: ['The issue affects customers who pay by bank transfer.', 'About five percent of requests are failing.', 'Mobile users are not affected.']
     },
     {
       id: 'D88-P3',
       formula: "We've mitigated the impact by + KATA KERJA-ing",
-      meaning: 'Explain what reduced the impact.',
+      meaning: 'Kami sudah mengurangi dampaknya dengan ...',
       examples: ["We've mitigated the impact by rolling back the release.", 'We reduced the load by turning off the reports feature.', 'Users can use the web app as a workaround.'],
       note: 'mitigate = mengurangi dampak (belum tentu menyelesaikan tuntas) · workaround = cara sementara agar user tetap bisa bekerja.'
     },
     {
       id: 'D88-P4',
       formula: 'The root cause is still under investigation  ·  It appears to be related to + BENDA',
-      meaning: 'Share what you know without guessing.',
+      meaning: 'Akar penyebabnya masih diselidiki  ·  Tampaknya ini berhubungan dengan ...',
       examples: ['The root cause is still under investigation.', 'It appears to be related to the database upgrade.', "We'll confirm once we have more information."],
       note: '"appears to be" / "may be related to" = belum pasti. "The root cause was ..." = sudah dipastikan.'
     },
     {
       id: 'D88-P5',
       formula: "The next update will be at + WAKTU  ·  The incident is resolved  ·  We'll share a post-mortem",
-      meaning: 'Set expectations and close the incident.',
+      meaning: 'Update berikutnya akan disampaikan jam ...  ·  Insidennya sudah selesai  ·  Kami akan membagikan post-mortem',
       examples: ['The next update will be in thirty minutes.', 'The incident was resolved at 2:40 PM.', "We'll share a post-mortem with the timeline and next steps."],
       note: 'post-mortem = laporan setelah insiden: apa yang terjadi, penyebabnya, dan cara mencegahnya terulang.'
     }

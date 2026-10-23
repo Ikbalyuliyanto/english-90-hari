@@ -9,7 +9,8 @@ E90.registerDay({
       id: 'D90-S01',
       english: 'Let me start with the big picture.',
       pronunciation: 'let mi start with de big pik-cher',
-      translation: 'Saya mulai dari gambaran besarnya.',
+      translation: 'Biar saya mulai dengan gambaran besarnya.',
+      naturalTranslation: 'Saya mulai dari gambaran besarnya.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['start', 'mulai'], ['with', 'dengan / dari'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['big', 'besar'], ['picture', 'gambar / gambaran']],
       phrases: [['the big picture', 'gambaran besar / keseluruhan']],
       pattern: 'D90-P2'
@@ -18,7 +19,8 @@ E90.registerDay({
       id: 'D90-S02',
       english: 'Let me zoom in on the most important part.',
       pronunciation: 'let mi zum in on de moust im-por-tent part',
-      translation: 'Saya fokus ke bagian yang paling penting.',
+      translation: 'Biar saya fokus ke bagian yang paling penting.',
+      naturalTranslation: 'Saya fokus ke bagian yang paling penting.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['zoom', '(bagian dari "zoom in on")'], ['in', '(bagian dari "zoom in on")'], ['on', 'pada'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['most', 'paling'], ['important', 'penting'], ['part', 'bagian']],
       phrases: [['zoom in on', 'membahas lebih dekat / lebih rinci']],
       pattern: 'D90-P2'
@@ -82,27 +84,27 @@ E90.registerDay({
     {
       id: 'D90-P1',
       formula: 'Big picture → Architecture → Frontend → Backend → Data → Security → Decisions → Trade-offs → Bugs → Testing → Deployment → Production → Performance → Questions → Next steps',
-      meaning: 'A structure for a full technical conversation.',
+      meaning: 'Struktur untuk percakapan teknis yang lengkap',
       examples: ['Let me start with the big picture.', 'The request goes through the API before it reaches the service layer.', 'We chose this approach because it is easier to maintain.', 'Happy to go deeper into any part.'],
       note: 'Dalam diskusi nyata, lawan bicara akan menyela dengan pertanyaan. Tidak apa-apa keluar dari urutan, lalu kembali ke struktur.'
     },
     {
       id: 'D90-P2',
       formula: "Let me start with the big picture  ·  Let me zoom in on + BENDA  ·  That's how it works at a high level",
-      meaning: 'Move between a high-level view and the details.',
+      meaning: 'Biar saya mulai dengan gambaran besarnya  ·  Biar saya fokus ke ...  ·  Begitulah cara kerjanya secara garis besar',
       examples: ['Let me start with the big picture, then I will go into the details.', 'Let me zoom in on the payment flow.', "That's the overall design. Now let's look at one request."]
     },
     {
       id: 'D90-P3',
       formula: 'Looking ahead, + KALIMAT  ·  If I had more time, I would + KATA KERJA',
-      meaning: 'Talk about future improvements.',
+      meaning: 'Ke depannya, ...  ·  Kalau saya punya waktu lebih, saya akan ...',
       examples: ['Looking ahead, we want to support more countries.', 'If I had more time, I would rewrite the report module.', 'If we had more people, we would split the service.'],
       note: '"If I had ..., I would ..." = pengandaian tentang sesuatu yang (belum) terjadi.'
     },
     {
       id: 'D90-P4',
       formula: 'Happy to go deeper into + BENDA  ·  What would you like to know more about?',
-      meaning: 'Invite follow-up questions.',
+      meaning: 'Senang membahas lebih dalam soal ...  ·  Apa yang ingin Anda ketahui lebih lanjut?',
       examples: ['Happy to go deeper into the database design.', 'What would you like to know more about?', 'I can show you the code if that helps.']
     }
   ],

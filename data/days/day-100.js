@@ -93,26 +93,26 @@ E90.registerDay({
     {
       id: 'D100-P1',
       formula: 'Open → Goal → Agenda → Discussion → Decisions → Owners → Close',
-      meaning: 'A structure for leading a short meeting.',
+      meaning: 'Struktur memimpin rapat singkat: buka → tujuan → agenda → diskusi → keputusan → penanggung jawab → tutup',
       examples: ["Thanks for joining. Let's get started.", 'The goal today is to agree on the release plan.', "Let's hear from the pharmacy team first.", 'To wrap up, here are the decisions and the owners.'],
       note: 'Pemimpin meeting tidak harus bicara paling banyak. Tugasnya: menjaga tujuan, waktu, giliran bicara, dan memastikan setiap keputusan punya penanggung jawab.'
     },
     {
       id: 'D100-P2',
       formula: 'The goal today is to + KATA KERJA  ·  There are + ANGKA items on the agenda',
-      meaning: 'Open the meeting with a clear goal.',
+      meaning: 'Tujuan hari ini adalah ...  ·  Ada ... topik dalam agenda',
       examples: ['The goal today is to choose a date for the go-live.', 'There are two items on the agenda: the training plan and the data migration.', 'The goal today is to decide who will support the night shift.']
     },
     {
       id: 'D100-P3',
       formula: "Let's hear from + SIAPA  ·  We're running short on time, so + KALIMAT",
-      meaning: 'Give people a turn and manage the time.',
+      meaning: 'Mari kita dengar dari ...  ·  Waktu kita hampir habis, jadi ...',
       examples: ["Let's hear from the QA team.", "We're running short on time, so let's park this topic.", 'Budi, what do you think? We haven\'t heard from you yet.']
     },
     {
       id: 'D100-P4',
       formula: 'To wrap up, + KALIMAT  ·  Does anyone have anything to add before we wrap up?',
-      meaning: 'Close the meeting with decisions and owners.',
+      meaning: 'Untuk menutup, ...  ·  Ada yang ingin menambahkan sesuatu sebelum kita tutup?',
       examples: ['To wrap up, we\'ll go live on Monday, and Maya will prepare the training.', 'Does anyone have anything to add before we wrap up?', 'To wrap up, the open question is the printer, and I\'ll follow up with IT.']
     }
   ],

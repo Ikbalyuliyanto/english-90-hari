@@ -16,7 +16,8 @@ E90.registerDay({
       id: 'D82-S02',
       english: "Let's not guess. Let's look at the data.",
       pronunciation: 'lets not ges. lets luk et de dei-ta',
-      translation: 'Jangan menebak. Mari kita lihat datanya.',
+      translation: 'Ayo jangan menebak. Ayo kita lihat datanya.',
+      naturalTranslation: 'Jangan menebak. Mari kita lihat datanya.',
       words: [["Let's", 'mari kita (let us)', 'let'], ['not', 'tidak / jangan'], ['guess', 'menebak'], ['look', 'melihat'], ['at', '(bagian dari "look at")'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['data', 'data']],
       phrases: [["let's not + kata kerja", 'jangan kita ...']],
       pattern: 'D82-P1'
@@ -58,7 +59,8 @@ E90.registerDay({
       id: 'D82-S07',
       english: "My hypothesis is that the cache isn't working.",
       pronunciation: 'mai hai-po-the-sis iz det de kesh i-zent wer-king',
-      translation: 'Dugaan saya, cache-nya tidak bekerja.',
+      translation: 'Hipotesis saya adalah bahwa cache-nya tidak bekerja.',
+      naturalTranslation: 'Dugaan saya, cache-nya tidak bekerja.',
       words: [['My', 'milik saya'], ['hypothesis', 'hipotesis / dugaan yang perlu diuji (dibaca "hai-po-the-sis")'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['cache', 'cache: penyimpanan data sementara'], ["isn't", 'tidak sedang (is not)', 'be'], ['working', 'berfungsi', 'work']],
       pattern: 'D82-P4'
     },
@@ -123,33 +125,33 @@ E90.registerDay({
     {
       id: 'D82-P1',
       formula: "First, we need to measure + BENDA  ·  Let's not guess.",
-      meaning: 'Start an investigation with data.',
+      meaning: 'Pertama, kita perlu mengukur ...  ·  Jangan menebak.',
       examples: ['First, we need to measure each step.', "Let's check the metrics before we change anything.", "Let's not guess. Let's look at the logs."]
     },
     {
       id: 'D82-P2',
       formula: 'I profiled + BENDA + and found + BENDA  ·  Most of the time is spent in + BENDA',
-      meaning: 'Report where the time is spent.',
+      meaning: 'Saya mem-profile ... dan menemukan ...  ·  Sebagian besar waktunya habis di ...',
       examples: ['I profiled the page and found three slow queries.', 'Most of the time is spent waiting for the external API.', 'About 80 percent of the time is spent in rendering.']
     },
     {
       id: 'D82-P3',
       formula: 'The average + BENDA + is + ANGKA  ·  But some requests take + ANGKA',
-      meaning: 'Describe performance with numbers.',
+      meaning: 'Rata-rata ... adalah ...  ·  Tapi ada request yang butuh ...',
       examples: ['The average load time is two seconds.', 'The slowest requests take ten seconds.', 'Most requests finish in under one second.'],
       note: 'average = rata-rata. Angka rata-rata bisa menyembunyikan beberapa request yang sangat lambat.'
     },
     {
       id: 'D82-P4',
       formula: "My hypothesis is that + KALIMAT  ·  To test this, I'll + KATA KERJA",
-      meaning: 'Investigate step by step.',
+      meaning: 'Hipotesis saya adalah bahwa ...  ·  Untuk mengujinya, saya akan ...',
       examples: ["My hypothesis is that the index isn't being used.", "To test this, I'll compare the two query plans.", "If I'm right, the time should go down."],
       note: '"hypothesis" dibaca hai-po-the-sis.'
     },
     {
       id: 'D82-P5',
       formula: 'We ran a load test with + ANGKA + users  ·  The system handled + BENDA',
-      meaning: 'Report load test results.',
+      meaning: 'Kami menjalankan load test dengan ... user  ·  Sistemnya sanggup menangani ...',
       examples: ['We ran a load test with 500 users.', 'The system handled the traffic well.', 'The API started to fail at about two thousand requests per second.']
     }
   ],

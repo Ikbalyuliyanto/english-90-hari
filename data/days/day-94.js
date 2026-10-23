@@ -91,26 +91,26 @@ E90.registerDay({
     {
       id: 'D94-P1',
       formula: 'Problem → Requirement → Approach → Implementation → Challenge → Result → Lesson',
-      meaning: 'A structure for telling the story of a project.',
+      meaning: 'Struktur cerita proyek: masalah → kebutuhan → pendekatan → implementasi → tantangan → hasil → pelajaran',
       examples: ['The problem was that patients waited too long at the lab.', 'Our approach was to build a simple queue screen first.', 'As a result, the average waiting time dropped by thirty percent.', 'The lesson I learned is to talk to the users early.'],
       note: 'Struktur ini dipakai lagi di Day 103 (presentasi), Day 110 (STAR), dan Day 112 (project deep dive). Satu sampai tiga kalimat per bagian sudah cukup.'
     },
     {
       id: 'D94-P2',
       formula: 'The problem was that + KALIMAT  ·  The requirement was to + KATA KERJA',
-      meaning: 'Explain why the project started.',
+      meaning: 'Masalahnya adalah bahwa ...  ·  Kebutuhannya adalah ...',
       examples: ['The problem was that nurses wrote notes on paper.', 'The requirement was to send lab results to doctors automatically.', 'The problem was that the billing report took two days.']
     },
     {
       id: 'D94-P3',
       formula: 'Our approach was to + KATA KERJA  ·  The biggest challenge was + BENDA',
-      meaning: 'Explain how you solved it and what was hard.',
+      meaning: 'Pendekatan kami adalah ...  ·  Tantangan terbesarnya adalah ...',
       examples: ['Our approach was to release one ward first.', 'The biggest challenge was the data migration.', 'The biggest challenge was getting time with the doctors.']
     },
     {
       id: 'D94-P4',
       formula: 'As a result, + KALIMAT  ·  The lesson I learned is to + KATA KERJA  ·  If I did it again, I would + KATA KERJA',
-      meaning: 'Give the result and the lesson.',
+      meaning: 'Hasilnya, ...  ·  Pelajaran yang saya dapat adalah ...  ·  Kalau saya mengulanginya, saya akan ...',
       examples: ['As a result, the pharmacy got prescriptions two times faster.', 'The lesson I learned is to measure before and after.', 'If I did it again, I would involve the nurses from the start.']
     }
   ],

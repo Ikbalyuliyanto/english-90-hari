@@ -93,26 +93,26 @@ E90.registerDay({
     {
       id: 'D96-P1',
       formula: "Could we talk about + BENDA?  ·  I'd like your advice on + BENDA",
-      meaning: 'Start a topic with your manager politely.',
+      meaning: 'Bisakah kita membahas ...?  ·  Saya ingin saran Anda tentang ...',
       examples: ['Could we talk about the release date?', "I'd like your advice on how to handle the client's new request.", 'Could we talk about my goals for next year?']
     },
     {
       id: 'D96-P2',
       formula: "I'm worried that + KALIMAT  ·  Here is where I need your decision",
-      meaning: 'Raise a concern and ask for a decision.',
+      meaning: 'Saya khawatir bahwa ...  ·  Di sinilah saya butuh keputusan Anda',
       examples: ["I'm worried that the QA team won't have enough time.", 'Here is where I need your decision: do we delay the release or remove the report?', "I'm worried that the integration with the insurance system is still unstable."],
       note: 'Pola yang baik: masalah → dampak → pilihan → minta keputusan. Manager lebih mudah memutuskan kalau kamu membawa pilihan.'
     },
     {
       id: 'D96-P3',
       formula: 'Is there anything I can do better?  ·  Could you give me some feedback on + BENDA?',
-      meaning: 'Ask for feedback.',
+      meaning: 'Apakah ada yang bisa saya lakukan dengan lebih baik?  ·  Bisakah Anda memberi saya masukan tentang ...?',
       examples: ['Could you give me some feedback on my code reviews?', 'Is there anything I can do better in meetings?', 'Could you give me some feedback on how I handled the incident?']
     },
     {
       id: 'D96-P4',
       formula: "I'd like to take on more + BENDA  ·  I'd like to grow in + BENDA",
-      meaning: 'Talk about career growth.',
+      meaning: 'Saya ingin mengambil lebih banyak ...  ·  Saya ingin berkembang di ...',
       examples: ["I'd like to take on more leadership tasks.", "I'd like to grow in cloud architecture.", "I'd like to take on more responsibility for the integrations."]
     }
   ],

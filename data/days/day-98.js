@@ -93,20 +93,20 @@ E90.registerDay({
     {
       id: 'D98-P1',
       formula: 'Think of + BENDA as + BENDA  ·  BENDA is like + BENDA',
-      meaning: 'Use an everyday analogy.',
+      meaning: 'Bayangkan ... sebagai ...  ·  ... itu seperti ...',
       examples: ['Think of the cache as a notebook on your desk. You check it before you go to the library.', 'Authorization is like a hospital badge. It decides which rooms you can enter.', 'A backup is like a copy of your medical file in another building.'],
       note: 'Analogi terbaik memakai hal yang sudah dikenal pendengar. Untuk staf rumah sakit: kartu identitas, lemari arsip, antrean, resep.'
     },
     {
       id: 'D98-P2',
       formula: 'BENDA means + KALIMAT  ·  In other words, + KALIMAT',
-      meaning: 'Define a term, then say what it means in practice.',
+      meaning: '... artinya ...  ·  Dengan kata lain, ...',
       examples: ['An integration means two systems share data automatically.', 'In other words, the lab result appears in the doctor\'s screen without typing.', 'A timeout means the system waited too long for an answer.']
     },
     {
       id: 'D98-P3',
       formula: 'The important thing for you is that + KALIMAT  ·  Without going into too much detail, + KALIMAT',
-      meaning: 'Skip the details and focus on what matters to the listener.',
+      meaning: 'Hal yang penting bagi Anda adalah bahwa ...  ·  Tanpa masuk ke detail yang terlalu banyak, ...',
       examples: ['The important thing for you is that patients can still register.', 'Without going into too much detail, one service stopped responding.', 'The important thing for you is that we fixed it and added a warning system.']
     }
   ],

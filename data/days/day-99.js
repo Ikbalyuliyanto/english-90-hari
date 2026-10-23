@@ -92,20 +92,20 @@ E90.registerDay({
     {
       id: 'D99-P1',
       formula: 'Sorry to interrupt, but + KALIMAT?  ·  Building on what + SIAPA said, + KALIMAT',
-      meaning: 'Join the discussion politely and build on ideas.',
+      meaning: 'Maaf menyela, tapi ...?  ·  Melanjutkan apa yang ... katakan, ...',
       examples: ['Sorry to interrupt, but I think we missed one step.', 'Building on what the product manager said, we could start with one clinic.', "Building on Budi's idea, we could send the reminder by SMS too."],
       note: 'Di meeting internasional, diam terlalu lama sering dianggap tidak punya pendapat. Kalimat pendek dan sopan seperti ini membantu kamu masuk ke diskusi.'
     },
     {
       id: 'D99-P2',
       formula: 'From the + BENDA side, + KALIMAT  ·  I have a quick question about + BENDA',
-      meaning: 'Give input from your area and ask questions.',
+      meaning: 'Dari sisi ..., ...  ·  Saya punya pertanyaan singkat tentang ...',
       examples: ['From the QA side, we need two more days.', 'From the database side, this change is small.', 'I have a quick question about the release date.']
     },
     {
       id: 'D99-P3',
       formula: "Just to recap my action items, + KALIMAT  ·  Sorry, I'll need to drop off in + WAKTU",
-      meaning: 'Confirm your tasks and leave a meeting politely.',
+      meaning: 'Sekadar merangkum action item saya, ...  ·  Maaf, saya harus keluar ... lagi',
       examples: ["Just to recap my action items, I'll check the logs and send a summary.", "Sorry, I'll need to drop off in ten minutes for another call.", "Just to recap my action items, I'll talk to the lab team by Thursday."]
     }
   ],

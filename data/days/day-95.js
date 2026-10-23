@@ -92,19 +92,19 @@ E90.registerDay({
     {
       id: 'D95-P1',
       formula: 'We work closely with + SIAPA  ·  I often pair with + SIAPA on + BENDA',
-      meaning: 'Describe who you work with.',
+      meaning: 'Kami bekerja erat dengan ...  ·  Saya sering bekerja berpasangan dengan ... untuk ...',
       examples: ['We work closely with the nurses in the pilot ward.', 'I often pair with the QA engineer on test cases.', 'We work closely with the pharmacy team every week.']
     },
     {
       id: 'D95-P2',
       formula: 'When + KALIMAT, we + KATA KERJA  ·  I try to + KATA KERJA, not just + KATA KERJA',
-      meaning: 'Describe team habits and your contribution.',
+      meaning: 'Ketika ..., kami ...  ·  Saya berusaha ..., bukan hanya ...',
       examples: ['When a release is close, we review each other\'s code the same day.', 'I try to help the team, not just finish my tickets.', 'When someone is new, we give them a small task first.']
     },
     {
       id: 'D95-P3',
       formula: 'We once had a conflict about + BENDA  ·  We solved it by + KATA KERJA-ing',
-      meaning: 'Tell a short, positive conflict story.',
+      meaning: 'Kami pernah punya konflik soal ...  ·  Kami menyelesaikannya dengan ...',
       examples: ['We once had a conflict about code style.', 'We solved it by adding an automatic formatter.', 'We solved it by talking openly in a short meeting.'],
       note: 'Saat bercerita tentang konflik, fokus pada solusi dan hasil, bukan menyalahkan orang lain.'
     }

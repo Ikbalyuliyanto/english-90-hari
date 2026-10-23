@@ -34,7 +34,8 @@ E90.registerDay({
       id: 'D85-S04',
       english: 'The main disadvantage is that it requires more database queries.',
       pronunciation: 'de mein dis-ed-ven-tij iz det it ri-kwai-erz mor dei-te-beis kwi-riz',
-      translation: 'Kekurangan utamanya, cara ini butuh lebih banyak query ke database.',
+      translation: 'Kekurangan utamanya adalah bahwa itu butuh lebih banyak query ke database.',
+      naturalTranslation: 'Kekurangan utamanya, cara ini butuh lebih banyak query ke database.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['main', 'utama'], ['disadvantage', 'kekurangan'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ['it', 'hal itu'], ['requires', 'membutuhkan; -s karena "it"', 'require'], ['more', 'lebih banyak'], ['database', 'database: tempat data disimpan'], ['queries', 'query (jamak)', 'query']],
       pattern: 'D57-P3'
     },
@@ -76,7 +77,8 @@ E90.registerDay({
       id: 'D85-S09',
       english: "We'll need to refactor this part later.",
       pronunciation: 'wil nid tu ri-fek-ter dis part lei-ter',
-      translation: 'Nanti bagian ini perlu kita refactor.',
+      translation: 'Kita akan perlu me-refactor bagian ini nanti.',
+      naturalTranslation: 'Nanti bagian ini perlu kita refactor.',
       words: [["We'll", 'kita akan (we will)', 'will'], ['need', 'perlu'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['refactor', 'refactor: merapikan struktur kode tanpa mengubah fungsinya'], ['this', 'ini'], ['part', 'bagian'], ['later', 'nanti']],
       pattern: 'D85-P4'
     },
@@ -96,7 +98,8 @@ E90.registerDay({
       id: 'D85-S11',
       english: 'The risk is that we might lose some messages.',
       pronunciation: 'de risk iz det wi mait luz sam me-si-jiz',
-      translation: 'Risikonya, kita mungkin kehilangan sebagian pesan.',
+      translation: 'Risikonya adalah bahwa kita mungkin kehilangan sebagian pesan.',
+      naturalTranslation: 'Risikonya, kita mungkin kehilangan sebagian pesan.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['risk', 'risiko'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ['we', 'kita'], ['might', 'mungkin'], ['lose', 'kehilangan'], ['some', 'sebagian / beberapa'], ['messages', 'pesan (jamak)', 'message']],
       pattern: 'D50-P4'
     },
@@ -104,7 +107,8 @@ E90.registerDay({
       id: 'D85-S12',
       english: "If we skip the tests now, we'll have more bugs later.",
       pronunciation: 'if wi skip de tests nau, wil hev mor bagz lei-ter',
-      translation: 'Kalau sekarang kita lewati test-nya, nanti bug-nya akan lebih banyak.',
+      translation: 'Kalau kita melewati test-nya sekarang, kita akan punya lebih banyak bug nanti.',
+      naturalTranslation: 'Kalau sekarang kita lewati test-nya, nanti bug-nya akan lebih banyak.',
       words: [['If', 'kalau / jika'], ['we', 'kita'], ['skip', 'melewati / tidak mengerjakan'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['tests', 'test (jamak)', 'test'], ['now', 'sekarang'], ["we'll", 'kita akan (we will)', 'will'], ['have', 'punya / mengalami'], ['more', 'lebih banyak'], ['bugs', 'bug (jamak)', 'bug'], ['later', 'nanti']],
       pattern: 'D50-P3'
     },
@@ -124,32 +128,32 @@ E90.registerDay({
     {
       id: 'D85-P1',
       formula: "Every solution has trade-offs  ·  We're trading A for B",
-      meaning: 'Say that every choice has a cost.',
+      meaning: 'Setiap solusi punya untung-rugi  ·  Kami mengorbankan A demi B',
       examples: ["We're trading consistency for speed.", 'We gave up some flexibility to keep things simple.', "We can't have everything at once."]
     },
     {
       id: 'D85-P2',
       formula: 'A makes + BENDA + KATA SIFAT-er, but + KALIMAT',
-      meaning: 'Explain a benefit and its cost in one sentence.',
+      meaning: 'A membuat ... lebih ..., tetapi ...',
       examples: ['Microservices make scaling easier, but deployment becomes more complex.', 'Indexes make reads faster, but writes get slower.', 'Caching reduces the load, but the data might be old.']
     },
     {
       id: 'D85-P3',
       formula: "It's a good trade-off for now  ·  We can accept + BENDA + because + KALIMAT",
-      meaning: 'Justify a trade-off.',
+      meaning: 'Itu trade-off yang bagus untuk saat ini  ·  Kami bisa menerima ... karena ...',
       examples: ["It's an acceptable trade-off for the first version.", 'We can accept a few seconds of delay because the report runs at night.', 'For now, simplicity is more important than flexibility.']
     },
     {
       id: 'D85-P4',
       formula: "We're taking on technical debt to + KATA KERJA  ·  We'll need to + KATA KERJA + later",
-      meaning: 'Be honest about shortcuts.',
+      meaning: 'Kami mengambil utang teknis untuk ...  ·  Kita akan perlu ... nanti',
       examples: ["We're taking on some technical debt to launch on time.", "We'll need to clean this up next sprint.", "Let's create a ticket so we don't forget."],
       note: 'technical debt = "utang teknis": solusi cepat sekarang yang harus dirapikan nanti. "debt" dibaca det (huruf b tidak dibaca).'
     },
     {
       id: 'D85-P5',
       formula: "Is it worth + BENDA?  ·  I don't think it's worth it",
-      meaning: 'Question whether the cost is justified.',
+      meaning: 'Apakah ... sepadan?  ·  Saya rasa itu tidak sepadan',
       examples: ['Is it worth the extra complexity?', "I don't think it's worth adding a new service yet.", "It's worth it if we expect a lot of traffic."]
     }
   ],

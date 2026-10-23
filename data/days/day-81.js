@@ -112,7 +112,8 @@ E90.registerDay({
       id: 'D81-S13',
       english: 'I think we should add rate limiting to the login endpoint.',
       pronunciation: 'ai thingk wi shud ed reit li-mi-ting tu de lo-gin end-point',
-      translation: 'Menurut saya kita perlu menambahkan rate limiting ke endpoint login.',
+      translation: 'Saya pikir kita sebaiknya menambahkan rate limiting ke endpoint login.',
+      naturalTranslation: 'Menurut saya kita perlu menambahkan rate limiting ke endpoint login.',
       words: [['I', 'saya'], ['think', 'berpendapat'], ['we', 'kita'], ['should', 'sebaiknya'], ['add', 'menambahkan'], ['rate', 'tingkat / jumlah per waktu'], ['limiting', 'pembatasan', 'limit'], ['to', 'ke'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['login', 'login: proses masuk ke akun'], ['endpoint', 'endpoint: alamat URL tertentu di API']],
       phrases: [['rate limiting', 'membatasi jumlah request dalam waktu tertentu']],
       pattern: 'D40-P1'
@@ -125,32 +126,32 @@ E90.registerDay({
     {
       id: 'D81-P1',
       formula: 'We always / never + KATA KERJA',
-      meaning: 'State security practices clearly.',
+      meaning: 'Kami selalu / tidak pernah ...',
       examples: ['We always use HTTPS.', 'We never log passwords or tokens.', 'We never commit API keys to Git.']
     },
     {
       id: 'D81-P2',
       formula: 'We use + BENDA + to prevent + BENDA',
-      meaning: 'Explain protection against an attack.',
+      meaning: 'Kami memakai ... untuk mencegah ...',
       examples: ['We use rate limiting to prevent brute-force attacks.', 'We escape user input to prevent XSS.', 'We use short-lived tokens to reduce the risk.'],
       note: 'SQL injection = serangan lewat input yang masuk ke query · XSS = menyisipkan script berbahaya ke halaman web.'
     },
     {
       id: 'D81-P3',
       formula: 'We check + BENDA + on every request  ·  Users can only access + BENDA',
-      meaning: 'Explain access control.',
+      meaning: 'Kami memeriksa ... di setiap request  ·  User hanya bisa mengakses ...',
       examples: ["We check the user's role on every request.", 'Users can only see their own orders.', 'Access to the database is limited to the backend.']
     },
     {
       id: 'D81-P4',
       formula: 'This could be a security risk because + KALIMAT',
-      meaning: 'Raise a security concern.',
+      meaning: 'Ini bisa menjadi risiko keamanan karena ...',
       examples: ['This could be a security risk because the token never expires.', 'This endpoint could expose personal data.', 'Storing the key in the frontend is not safe.']
     },
     {
       id: 'D81-P5',
       formula: 'We found a vulnerability in + BENDA  ·  We need to + KATA KERJA + as soon as possible',
-      meaning: 'Respond to a security issue.',
+      meaning: 'Kami menemukan celah keamanan di ...  ·  Kita perlu ... secepat mungkin',
       examples: ['We found a vulnerability in the image library.', 'We need to patch it as soon as possible.', 'We changed the leaked keys immediately.']
     }
   ],

@@ -16,7 +16,8 @@ E90.registerDay({
       id: 'D87-S02',
       english: 'Let me share some context first.',
       pronunciation: 'let mi sher sam kon-tekst ferst',
-      translation: 'Saya sampaikan latar belakangnya dulu.',
+      translation: 'Biar saya menyampaikan sedikit konteks dulu.',
+      naturalTranslation: 'Saya sampaikan latar belakangnya dulu.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['share', 'membagikan / menyampaikan'], ['some', 'sedikit / beberapa (tidak selalu diterjemahkan)'], ['context', 'konteks / latar belakang'], ['first', 'dulu / terlebih dahulu']],
       pattern: 'D87-P1'
     },
@@ -48,7 +49,8 @@ E90.registerDay({
       id: 'D87-S06',
       english: 'I need to check with the infrastructure team first.',
       pronunciation: 'ai nid tu cek with di in-fre-strak-cher tim ferst',
-      translation: 'Saya perlu cek dulu dengan tim infrastruktur.',
+      translation: 'Saya perlu mengecek dengan tim infrastruktur dulu.',
+      naturalTranslation: 'Saya perlu cek dulu dengan tim infrastruktur.',
       words: [['I', 'saya'], ['need', 'perlu'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['check', 'mengecek / menanyakan'], ['with', 'dengan'], ['the', '(dibaca "di" sebelum vokal, tidak diterjemahkan)'], ['infrastructure', 'infrastruktur: server, jaringan, dan layanan pendukung'], ['team', 'tim'], ['first', 'dulu / terlebih dahulu']],
       pattern: 'D11-P2'
     },
@@ -65,7 +67,8 @@ E90.registerDay({
       id: 'D87-S08',
       english: "Let's park this topic and come back to it later.",
       pronunciation: 'lets park dis to-pik en kam bek tu it lei-ter',
-      translation: 'Topik ini kita tunda dulu, nanti kita bahas lagi.',
+      translation: 'Ayo kita tunda topik ini dan kembali membahasnya nanti.',
+      naturalTranslation: 'Topik ini kita tunda dulu, nanti kita bahas lagi.',
       words: [["Let's", 'mari kita (let us)', 'let'], ['park', 'menunda / menyimpan dulu (topik)'], ['this', 'ini'], ['topic', 'topik'], ['and', 'dan'], ['come', '(bagian dari "come back to")'], ['back', 'kembali'], ['to', 'ke'], ['it', 'itu / -nya'], ['later', 'nanti']],
       phrases: [['park a topic', 'menunda sebuah topik (bukan "parkir")']],
       pattern: 'D87-P3'
@@ -102,7 +105,8 @@ E90.registerDay({
       id: 'D87-S12',
       english: 'Could you walk us through the proposal?',
       pronunciation: 'kud yu wok as thru de pre-pou-zel?',
-      translation: 'Bisa jelaskan usulannya ke kami langkah demi langkah?',
+      translation: 'Bisakah kamu menjelaskan usulannya kepada kami langkah demi langkah?',
+      naturalTranslation: 'Bisa jelaskan usulannya ke kami langkah demi langkah?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu / Anda'], ['walk', '(bagian dari "walk through")'], ['us', 'kami (sebagai objek)'], ['through', '(bagian dari "walk through")'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['proposal', 'usulan / proposal']],
       pattern: 'D19-P2'
     },
@@ -122,26 +126,26 @@ E90.registerDay({
     {
       id: 'D87-P1',
       formula: 'The goal of this meeting is to + KATA KERJA  ·  Let me share some context first',
-      meaning: 'Open a technical discussion with a purpose and background.',
+      meaning: 'Tujuan rapat ini adalah ...  ·  Biar saya menyampaikan konteksnya dulu',
       examples: ['The goal of this meeting is to agree on the database design.', 'Let me give you some background.', "We have thirty minutes, so let's focus on the main issue."]
     },
     {
       id: 'D87-P2',
       formula: 'What are the + risks / requirements?  ·  Do we have any constraints on + BENDA?',
-      meaning: 'Ask questions that shape the solution.',
+      meaning: 'Apa saja risiko / kebutuhannya?  ·  Apakah ada batasan soal ...?',
       examples: ['What are the security requirements?', 'Do we have any constraints on the budget?', 'Are there any dependencies on other teams?'],
       note: 'constraint = batasan (waktu, budget, teknologi) · dependency = ketergantungan pada tim atau sistem lain.'
     },
     {
       id: 'D87-P3',
       formula: "Let's take this offline  ·  Let's park this topic",
-      meaning: 'Keep the meeting focused.',
+      meaning: 'Kita bahas ini di luar rapat  ·  Topik ini kita tunda dulu',
       examples: ["This is getting very detailed. Let's take it offline.", "Let's park this and come back to it at the end.", 'Can we discuss this after the meeting?']
     },
     {
       id: 'D87-P4',
       formula: 'So, we agreed to + KATA KERJA  ·  The open question is + BENDA',
-      meaning: 'Close a technical discussion.',
+      meaning: 'Jadi, kita sepakat untuk ...  ·  Pertanyaan yang belum terjawab adalah ...',
       examples: ['So, we agreed to use the existing service.', 'The open questions are the timeline and the owner.', 'Next step: Rina will write a short proposal.']
     }
   ],

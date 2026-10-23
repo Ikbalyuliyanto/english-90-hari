@@ -93,27 +93,27 @@ E90.registerDay({
     {
       id: 'D92-P1',
       formula: 'I started as + BENDA  ·  Later, I + KATA KERJA-ed  ·  Now I + KATA KERJA',
-      meaning: 'Tell your career story in time order.',
+      meaning: 'Saya memulai sebagai ...  ·  Kemudian, saya ...  ·  Sekarang saya ...',
       examples: ['I started as a support engineer.', 'Later, I moved to the backend team.', 'Now I lead a small team of three developers.'],
       note: 'Penanda waktu (started → later → now) membuat cerita panjang tetap mudah diikuti.'
     },
     {
       id: 'D92-P2',
       formula: 'In my previous role, I was responsible for + BENDA',
-      meaning: 'Describe what you did in an earlier job.',
+      meaning: 'Di peran saya sebelumnya, saya bertanggung jawab atas ...',
       examples: ['In my previous role, I was responsible for the pharmacy module.', 'In my previous role, I was responsible for testing and releases.', 'In my first job, I was responsible for fixing customer bugs.']
     },
     {
       id: 'D92-P3',
       formula: 'One of my biggest achievements was + KATA KERJA-ing',
-      meaning: 'Talk about an achievement. Add a number if possible.',
+      meaning: 'Salah satu pencapaian terbesar saya adalah ... (tambahkan angka kalau bisa)',
       examples: ['One of my biggest achievements was building the lab results page.', 'One of my biggest achievements was cutting the report time from ten minutes to one.', 'One of my biggest achievements was helping two juniors become independent.'],
       note: 'Angka membuat pencapaian lebih meyakinkan: "by thirty percent", "from ten minutes to one".'
     },
     {
       id: 'D92-P4',
       formula: 'I learned a lot about + BENDA/KATA KERJA-ing  ·  That experience taught me to + KATA KERJA',
-      meaning: 'Share what you learned from an experience.',
+      meaning: 'Saya belajar banyak tentang ...  ·  Pengalaman itu mengajari saya untuk ...',
       examples: ['I learned a lot about hospital workflows.', 'That experience taught me to write clear documentation.', 'That project taught me to test with real data.']
     }
   ],

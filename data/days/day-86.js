@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D86-S01',
       english: "This works, but I'm worried about readability.",
       pronunciation: 'dis werks, bat aim wa-rid e-baut ri-de-bi-li-ti',
-      translation: 'Ini sudah jalan, tapi saya khawatir soal keterbacaan kodenya.',
+      translation: 'Ini berfungsi, tapi saya khawatir soal keterbacaan.',
+      naturalTranslation: 'Ini sudah jalan, tapi saya khawatir soal keterbacaan kodenya.',
       words: [['This', 'ini'], ['works', 'berfungsi / jalan; -s karena "this"', 'work'], ['but', 'tetapi'], ["I'm", 'saya (I am)', 'be'], ['worried', 'khawatir', 'worry'], ['about', 'tentang / soal'], ['readability', 'keterbacaan: seberapa mudah kode dibaca']],
       pattern: 'D86-P1'
     },
@@ -16,7 +17,8 @@ E90.registerDay({
       id: 'D86-S02',
       english: 'Could we extract this logic into a separate function?',
       pronunciation: 'kud wi ek-strekt dis lo-jik in-tu e se-pe-ret fangk-shen?',
-      translation: 'Bisakah logika ini kita pisahkan ke fungsi tersendiri?',
+      translation: 'Bisakah kita memindahkan logika ini ke fungsi terpisah?',
+      naturalTranslation: 'Bisakah logika ini kita pisahkan ke fungsi tersendiri?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['we', 'kita'], ['extract', 'memisahkan / mengeluarkan (bagian kode)'], ['this', 'ini'], ['logic', 'logika'], ['into', 'ke dalam / menjadi'], ['a', 'sebuah (tidak diterjemahkan)'], ['separate', 'terpisah / tersendiri'], ['function', 'fungsi (dalam kode)']],
       pattern: 'D86-P2'
     },
@@ -24,7 +26,8 @@ E90.registerDay({
       id: 'D86-S03',
       english: 'Have you considered using a map here?',
       pronunciation: 'hev yu ken-si-derd yu-zing e mep hir?',
-      translation: 'Sudah pertimbangkan memakai map di sini?',
+      translation: 'Apakah kamu sudah mempertimbangkan memakai map di sini?',
+      naturalTranslation: 'Sudah pertimbangkan memakai map di sini?',
       words: [['Have', '(kata bantu pertanyaan "sudah ...?", tidak diterjemahkan)'], ['you', 'kamu'], ['considered', 'mempertimbangkan', 'consider'], ['using', 'memakai', 'use'], ['a', 'sebuah (tidak diterjemahkan)'], ['map', 'map: fungsi untuk mengubah setiap item di daftar'], ['here', 'di sini']],
       pattern: 'D86-P2'
     },
@@ -75,7 +78,8 @@ E90.registerDay({
       id: 'D86-S09',
       english: "Good catch! I'll fix it.",
       pronunciation: 'gud kech! ail fiks it',
-      translation: 'Temuan yang bagus! Akan saya perbaiki.',
+      translation: 'Temuan yang bagus! Saya akan memperbaikinya.',
+      naturalTranslation: 'Temuan yang bagus! Akan saya perbaiki.',
       words: [['Good', 'bagus'], ['catch', 'temuan (kata benda, dalam "good catch")'], ["I'll", 'saya akan (I will)', 'will'], ['fix', 'memperbaiki'], ['it', 'itu / -nya']],
       phrases: [['good catch', 'temuan yang bagus (berterima kasih karena kesalahan ditemukan)']],
       pattern: 'D86-P5'
@@ -84,7 +88,8 @@ E90.registerDay({
       id: 'D86-S10',
       english: 'Can we discuss this in a quick call instead?',
       pronunciation: 'ken wi dis-kas dis in e kwik kol in-sted?',
-      translation: 'Bisa kita bahas lewat call singkat saja?',
+      translation: 'Bisakah kita membahas ini lewat call singkat saja?',
+      naturalTranslation: 'Bisa kita bahas lewat call singkat saja?',
       words: [['Can', 'bisakah'], ['we', 'kita'], ['discuss', 'membahas'], ['this', 'ini'], ['in', 'lewat / dalam'], ['a', 'sebuah (tidak diterjemahkan)'], ['quick', 'singkat / cepat'], ['call', 'panggilan / call'], ['instead', 'sebagai gantinya']],
       pattern: 'D39-P2'
     }
@@ -95,7 +100,8 @@ E90.registerDay({
       id: 'D86-S11',
       english: "One thing I'd suggest is adding error handling here.",
       pronunciation: 'wan thing aid sag-jest iz e-ding e-rer hen-dling hir',
-      translation: 'Satu saran saya: tambahkan error handling di sini.',
+      translation: 'Satu hal yang saya sarankan adalah menambahkan error handling di sini.',
+      naturalTranslation: 'Satu saran saya: tambahkan error handling di sini.',
       words: [['One', 'satu'], ['thing', 'hal'], ["I'd", 'saya akan (I would)', 'will'], ['suggest', 'menyarankan'], ['is', 'adalah', 'be'], ['adding', 'menambahkan', 'add'], ['error', 'error / kesalahan'], ['handling', 'penanganan', 'handle'], ['here', 'di sini']],
       phrases: [['error handling', 'penanganan error']],
       pattern: 'D53-P3'
@@ -104,7 +110,8 @@ E90.registerDay({
       id: 'D86-S12',
       english: "I've addressed your comments and updated the tests.",
       pronunciation: 'aiv e-drest yor ko-ments en ap-dei-tid de tests',
-      translation: 'Komentarmu sudah saya tindak lanjuti dan test-nya sudah saya perbarui.',
+      translation: 'Saya sudah menindaklanjuti komentarmu dan memperbarui test-nya.',
+      naturalTranslation: 'Komentarmu sudah saya tindak lanjuti dan test-nya sudah saya perbarui.',
       words: [["I've", 'saya sudah (I have)', 'have'], ['addressed', 'menindaklanjuti', 'address'], ['your', 'milikmu'], ['comments', 'komentar (jamak)', 'comment'], ['and', 'dan'], ['updated', 'memperbarui', 'update'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['tests', 'test (jamak)', 'test']],
       pattern: 'D68-P5'
     },
@@ -124,33 +131,33 @@ E90.registerDay({
     {
       id: 'D86-P1',
       formula: "This works, but I'm worried about + BENDA",
-      meaning: 'Start a review comment by accepting what is good.',
+      meaning: 'Ini berfungsi, tapi saya khawatir soal ...',
       examples: ["This works, but I'm worried about performance with large lists.", "The logic looks correct, but I'm not sure about the naming.", "Nice solution, but I think we're missing a test."]
     },
     {
       id: 'D86-P2',
       formula: 'Could we + KATA KERJA?  ·  Have you considered + KATA KERJA-ing?',
-      meaning: 'Suggest changes as questions.',
+      meaning: 'Bisakah kita ...?  ·  Apakah kamu sudah mempertimbangkan ...?',
       examples: ['Could we move this to the service layer?', 'Have you considered using a constant here?', 'What do you think about renaming this variable?'],
       note: 'Bertanya ("Could we ...?") terdengar lebih kolaboratif daripada memerintah ("Change this.").'
     },
     {
       id: 'D86-P3',
       formula: "Nitpick: ...  ·  This isn't a blocker, but + KALIMAT",
-      meaning: 'Show how important a comment is.',
+      meaning: 'Komentar kecil: ...  ·  Ini bukan hal wajib, tetapi ...',
       examples: ["Nitpick: there's an extra space here.", "This isn't a blocker, but the name could be clearer.", 'This is a blocker: it will fail if the list is empty.'],
       note: 'nitpick = komentar kecil, tidak wajib diubah · blocker = harus diperbaiki sebelum merge.'
     },
     {
       id: 'D86-P4',
       formula: 'This change could break + BENDA  ·  Is this backward compatible?',
-      meaning: 'Raise a risk in a code review.',
+      meaning: 'Perubahan ini bisa merusak ...  ·  Apakah ini tetap kompatibel dengan versi lama?',
       examples: ['This change could break older clients.', 'Is this database change backward compatible?', 'Did you check where else this function is used?']
     },
     {
       id: 'D86-P5',
       formula: "I did it this way on purpose because ...  ·  Good catch, I'll fix it.",
-      meaning: 'Respond to review comments.',
+      meaning: 'Saya sengaja membuatnya begini karena ...  ·  Temuan yang bagus, saya akan memperbaikinya.',
       examples: ['I did it this way on purpose because the list is always small.', 'Good catch! I missed that case.', "Fair point. I'll update it."]
     }
   ],

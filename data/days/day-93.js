@@ -92,20 +92,20 @@ E90.registerDay({
     {
       id: 'D93-P1',
       formula: 'The system covers + BENDA, from + BENDA to + BENDA',
-      meaning: 'Give the scope of a system in one sentence.',
+      meaning: 'Sistem ini mencakup ..., dari ... sampai ...',
       examples: ['The system covers the whole patient journey, from registration to billing.', 'The app covers the whole order process, from checkout to delivery.', 'Our platform covers hiring, from job posting to the first day.']
     },
     {
       id: 'D93-P2',
       formula: 'At/For + TAHAP, + SIAPA + KATA KERJA + BENDA',
-      meaning: 'Describe what happens at each step of a workflow.',
+      meaning: 'Saat / untuk + TAHAP, + SIAPA + melakukan ...',
       examples: ['At registration, staff create a medical record number.', 'At the lab, technicians enter the test results.', 'For inpatients, nurses record vital signs every few hours.'],
       note: 'Untuk menjelaskan alur kerja, bergerak dari satu tahap ke tahap berikutnya. Setiap tahap cukup satu kalimat: siapa, melakukan apa.'
     },
     {
       id: 'D93-P3',
       formula: 'My part of the project is + BENDA  ·  What I like most about + BENDA is that + KALIMAT',
-      meaning: 'Explain your role and what you enjoy.',
+      meaning: 'Bagian saya di proyek ini adalah ...  ·  Yang paling saya sukai dari ... adalah bahwa ...',
       examples: ['My part of the project is the pharmacy integration.', 'What I like most about this job is that I learn something new every week.', 'What I like most about this project is that the users give fast feedback.']
     }
   ],

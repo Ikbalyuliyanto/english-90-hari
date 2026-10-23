@@ -17,7 +17,8 @@ E90.registerDay({
       id: 'D97-S02',
       english: 'Let me explain what this means for your staff.',
       pronunciation: 'let mi eks-plein wat dis minz for yor staf',
-      translation: 'Saya jelaskan apa artinya ini bagi staf Anda.',
+      translation: 'Biar saya menjelaskan apa artinya ini bagi staf Anda.',
+      naturalTranslation: 'Saya jelaskan apa artinya ini bagi staf Anda.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['explain', 'menjelaskan'], ['what', 'apa'], ['this', 'ini'], ['means', 'berarti', 'mean'], ['for', 'bagi / untuk'], ['your', 'milik Anda'], ['staff', 'staf / petugas']],
       phrases: [['what this means for', 'apa artinya ini bagi']],
       pattern: 'D97-P1'
@@ -92,20 +93,20 @@ E90.registerDay({
     {
       id: 'D97-P1',
       formula: 'In simple terms, + KALIMAT  ·  Let me explain what this means for + SIAPA',
-      meaning: 'Explain the impact without technical words.',
+      meaning: 'Sederhananya, ...  ·  Biar saya menjelaskan apa artinya ini bagi ...',
       examples: ['In simple terms, doctors will see lab results faster.', 'Let me explain what this means for the cashier team.', 'In simple terms, patients will spend less time at the front desk.'],
       note: 'Stakeholder peduli pada dampak: waktu, biaya, risiko, dan keselamatan pasien — bukan nama teknologi.'
     },
     {
       id: 'D97-P2',
       formula: "Before we + KATA KERJA, we'd like to confirm + BENDA",
-      meaning: 'Confirm requirements before starting.',
+      meaning: 'Sebelum kami ..., kami ingin mengonfirmasi ...',
       examples: ["Before we start, we'd like to confirm who will approve the design.", "Before we build the report, we'd like to confirm which data you need.", "Before we go live, we'd like to confirm the training schedule."]
     },
     {
       id: 'D97-P3',
       formula: 'That request is outside the current scope  ·  We can deliver + BENDA by + WAKTU',
-      meaning: 'Handle scope and delivery dates politely.',
+      meaning: 'Permintaan itu di luar cakupan saat ini  ·  Kami bisa menyerahkan ... paling lambat ...',
       examples: ['We understand that this is important. That request is outside the current scope, but we can add it to phase two.', 'We can deliver the billing report by next Friday.', 'We can deliver a simple version first and improve it later.'],
       note: 'Menolak dengan sopan: tunjukkan pengertian → jelaskan batasan → tawarkan alternatif.'
     }

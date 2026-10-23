@@ -43,7 +43,8 @@ E90.registerDay({
       id: 'D89-S05',
       english: 'Let me explain this part in a bit more detail.',
       pronunciation: 'let mi eks-plein dis part in e bit mor di-teil',
-      translation: 'Saya jelaskan bagian ini sedikit lebih rinci.',
+      translation: 'Biar saya menjelaskan bagian ini sedikit lebih rinci.',
+      naturalTranslation: 'Saya jelaskan bagian ini sedikit lebih rinci.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['explain', 'menjelaskan'], ['this', 'ini'], ['part', 'bagian'], ['in', 'dengan (dalam "in detail")'], ['a', '(bagian dari "a bit")'], ['bit', 'sedikit'], ['more', 'lebih'], ['detail', 'rinci / detail']],
       phrases: [['in more detail', 'lebih rinci']],
       pattern: 'D89-P3'
@@ -60,7 +61,8 @@ E90.registerDay({
       id: 'D89-S07',
       english: "That's a great question.",
       pronunciation: 'dets e greit kwes-chen',
-      translation: 'Pertanyaan yang bagus.',
+      translation: 'Itu pertanyaan yang bagus.',
+      naturalTranslation: 'Pertanyaan yang bagus.',
       words: [["That's", 'itu (that is)', 'that'], ['a', 'sebuah (tidak diterjemahkan)'], ['great', 'bagus sekali'], ['question', 'pertanyaan']],
       pattern: 'D89-P4'
     },
@@ -68,7 +70,8 @@ E90.registerDay({
       id: 'D89-S08',
       english: "If I understand your question correctly, you're asking about the cost.",
       pronunciation: 'if ai an-der-stend yor kwes-chen ko-rekt-li, yor es-king e-baut de kost',
-      translation: 'Kalau saya tidak salah menangkap pertanyaannya, Anda menanyakan soal biaya.',
+      translation: 'Kalau saya memahami pertanyaan Anda dengan benar, Anda bertanya soal biaya.',
+      naturalTranslation: 'Kalau saya tidak salah menangkap pertanyaannya, Anda menanyakan soal biaya.',
       words: [['If', 'kalau / jika'], ['I', 'saya'], ['understand', 'paham / menangkap'], ['your', 'milik Anda'], ['question', 'pertanyaan'], ['correctly', 'dengan benar', 'correct'], ["you're", 'Anda sedang (you are)', 'be'], ['asking', 'menanyakan', 'ask'], ['about', 'tentang / soal'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['cost', 'biaya']],
       pattern: 'D89-P4'
     },
@@ -76,7 +79,8 @@ E90.registerDay({
       id: 'D89-S09',
       english: "I'm not sure about that, but I'll find out and get back to you.",
       pronunciation: 'aim not shur e-baut det, bat ail faind aut en get bek tu yu',
-      translation: 'Saya kurang yakin soal itu, tapi akan saya cari tahu dan kabari Anda.',
+      translation: 'Saya tidak yakin soal itu, tapi saya akan mencari tahu dan mengabari Anda.',
+      naturalTranslation: 'Saya kurang yakin soal itu, tapi akan saya cari tahu dan kabari Anda.',
       words: [["I'm", 'saya (I am)', 'be'], ['not', 'tidak'], ['sure', 'yakin'], ['about', 'tentang / soal'], ['that', 'itu'], ['but', 'tetapi'], ["I'll", 'saya akan (I will)', 'will'], ['find', '(bagian dari "find out")'], ['out', '(bagian dari "find out")'], ['and', 'dan'], ['get', '(bagian dari "get back to")'], ['back', '(bagian dari "get back to")'], ['to', 'kepada'], ['you', 'Anda']],
       phrases: [['find out', 'mencari tahu']],
       pattern: 'D89-P5'
@@ -85,7 +89,8 @@ E90.registerDay({
       id: 'D89-S10',
       english: 'Does anyone have any other questions?',
       pronunciation: 'daz e-ni-wan hev e-ni a-der kwes-chenz?',
-      translation: 'Ada yang punya pertanyaan lain?',
+      translation: 'Apakah ada yang punya pertanyaan lain?',
+      naturalTranslation: 'Ada yang punya pertanyaan lain?',
       words: [['Does', '(kata bantu pertanyaan untuk he/she/anyone, tidak diterjemahkan)', 'do'], ['anyone', 'ada yang / siapa pun'], ['have', 'punya'], ['any', '(dalam pertanyaan: ada ...?)'], ['other', 'lain'], ['questions', 'pertanyaan (jamak)', 'question']],
       pattern: 'D89-P5'
     }
@@ -105,7 +110,8 @@ E90.registerDay({
       id: 'D89-S12',
       english: 'The main benefit is that users get results faster.',
       pronunciation: 'de mein be-ne-fit iz det yu-zerz get ri-zalts fes-ter',
-      translation: 'Manfaat utamanya, user mendapat hasil lebih cepat.',
+      translation: 'Manfaat utamanya adalah bahwa user mendapat hasil lebih cepat.',
+      naturalTranslation: 'Manfaat utamanya, user mendapat hasil lebih cepat.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['main', 'utama'], ['benefit', 'manfaat'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ['users', 'pengguna (jamak)', 'user'], ['get', 'mendapat'], ['results', 'hasil (jamak)', 'result'], ['faster', 'lebih cepat', 'fast']],
       pattern: 'D56-P4'
     },
@@ -113,7 +119,8 @@ E90.registerDay({
       id: 'D89-S13',
       english: 'Could you repeat the question, please?',
       pronunciation: 'kud yu ri-pit de kwes-chen, pliz?',
-      translation: 'Bisa diulang pertanyaannya?',
+      translation: 'Bisakah Anda mengulangi pertanyaannya?',
+      naturalTranslation: 'Bisa diulang pertanyaannya?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'Anda'], ['repeat', 'mengulangi'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['question', 'pertanyaan'], ['please', 'tolong']],
       pattern: 'D13-P3'
     },
@@ -125,33 +132,33 @@ E90.registerDay({
     {
       id: 'D89-P1',
       formula: "Today, I'll present + BENDA  ·  I'll cover + ANGKA + things: ...",
-      meaning: 'Open a technical presentation.',
+      meaning: 'Hari ini saya akan mempresentasikan ...  ·  Saya akan membahas ... hal: ...',
       examples: ["Today, I'll talk about our new deployment process.", "I'll cover the background, the design, and the results.", 'This will take about ten minutes.'],
       note: '"present" sebagai kata kerja dibaca pri-zent; sebagai kata benda (hadiah / sekarang) dibaca pre-zent.'
     },
     {
       id: 'D89-P2',
       formula: 'As you can see on this slide, ...  ·  This chart shows + BENDA',
-      meaning: 'Guide the audience through visuals.',
+      meaning: 'Seperti yang bisa Anda lihat di slide ini, ...  ·  Grafik ini menunjukkan ...',
       examples: ['As you can see, the load time went down after March.', 'This diagram shows the main components.', 'On the left, you can see the old version.']
     },
     {
       id: 'D89-P3',
       formula: 'Let me explain + BENDA + in more detail  ·  To summarize, + KALIMAT',
-      meaning: 'Go deeper, then summarize.',
+      meaning: 'Biar saya menjelaskan ... lebih rinci  ·  Singkatnya, ...',
       examples: ['Let me explain the caching layer in more detail.', "Let's look at the database part more closely.", 'To summarize, we made it three times faster.']
     },
     {
       id: 'D89-P4',
       formula: "That's a great question  ·  If I understand your question correctly, ...",
-      meaning: 'Handle questions calmly.',
+      meaning: 'Itu pertanyaan yang bagus  ·  Kalau saya memahami pertanyaan Anda dengan benar, ...',
       examples: ['Good question.', "If I understand correctly, you're asking how we handle failures.", 'Could you repeat the question, please?'],
       note: 'Mengulang pertanyaan dengan kata-katamu sendiri memberi waktu berpikir dan memastikan kamu paham.'
     },
     {
       id: 'D89-P5',
       formula: "I'm not sure, but I'll find out and get back to you  ·  Does anyone have any other questions?",
-      meaning: 'Answer honestly and close the Q&A.',
+      meaning: 'Saya tidak yakin, tapi saya akan mencari tahu dan mengabari Anda  ·  Apakah ada yang punya pertanyaan lain?',
       examples: ["I don't know the exact number, but I'll check and share it later.", "That's a bit outside the topic of this talk, but I'm happy to discuss it after.", 'Any other questions?']
     }
   ],

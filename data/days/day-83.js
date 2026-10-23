@@ -25,7 +25,8 @@ E90.registerDay({
       id: 'D83-S03',
       english: 'The main reason is that our data is very relational.',
       pronunciation: 'de mein ri-zen iz det a-wer dei-ta iz ve-ri ri-lei-she-nel',
-      translation: 'Alasan utamanya karena data kami sangat saling berhubungan.',
+      translation: 'Alasan utamanya adalah bahwa data kami sangat relasional.',
+      naturalTranslation: 'Alasan utamanya karena data kami sangat saling berhubungan.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['main', 'utama'], ['reason', 'alasan'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ['our', 'milik kami'], ['data', 'data'], ['very', 'sangat'], ['relational', 'relasional: data yang saling berhubungan antar tabel']],
       pattern: 'D47-P4'
     },
@@ -76,7 +77,8 @@ E90.registerDay({
       id: 'D83-S09',
       english: 'Looking back, I think it was the right decision.',
       pronunciation: 'lu-king bek, ai thingk it woz de rait di-si-zhen',
-      translation: 'Kalau dilihat lagi sekarang, saya rasa itu keputusan yang tepat.',
+      translation: 'Melihat ke belakang, saya pikir itu keputusan yang tepat.',
+      naturalTranslation: 'Kalau dilihat lagi sekarang, saya rasa itu keputusan yang tepat.',
       words: [['Looking', '(bagian dari "looking back")', 'look'], ['back', 'ke belakang (dalam "looking back")'], ['I', 'saya'], ['think', 'rasa / berpendapat'], ['it', 'itu'], ['was', 'adalah (lampau)', 'be'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['right', 'tepat / benar'], ['decision', 'keputusan (dibaca "di-si-zhen")']],
       phrases: [['looking back', 'kalau dilihat lagi sekarang']],
       pattern: 'D27-P1'
@@ -104,7 +106,8 @@ E90.registerDay({
       id: 'D83-S12',
       english: 'The downside is that we need to pay for another service.',
       pronunciation: 'de daun-said iz det wi nid tu pei for e-na-der ser-vis',
-      translation: 'Kekurangannya, kami perlu membayar satu layanan lagi.',
+      translation: 'Kekurangannya adalah bahwa kami perlu membayar satu layanan lagi.',
+      naturalTranslation: 'Kekurangannya, kami perlu membayar satu layanan lagi.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['downside', 'kekurangan / sisi negatif'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ['we', 'kami'], ['need', 'perlu'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['pay', 'membayar'], ['for', 'untuk'], ['another', 'satu lagi / lain'], ['service', 'layanan / service']],
       pattern: 'D50-P4'
     },
@@ -125,32 +128,32 @@ E90.registerDay({
     {
       id: 'D83-P1',
       formula: 'We chose + BENDA + because + KALIMAT',
-      meaning: 'Explain a decision and its main reason.',
+      meaning: 'Kami memilih ... karena ...',
       examples: ['We chose React because the team already knew it.', 'We chose a monolith because the project was small.', "We picked this library because it's well maintained."]
     },
     {
       id: 'D83-P2',
       formula: 'We decided to use A instead of B',
-      meaning: "Say what you chose and what you didn't choose.",
+      meaning: 'Kami memutuskan memakai A, bukan B',
       examples: ['We decided to use a queue instead of direct calls.', 'We went with REST instead of GraphQL.', 'We render the pages on the server instead of in the browser.']
     },
     {
       id: 'D83-P3',
       formula: 'We considered + BENDA, but + KALIMAT',
-      meaning: 'Show that you compared alternatives.',
+      meaning: 'Kami mempertimbangkan ..., tetapi ...',
       examples: ['We considered GraphQL, but it was too complex for our needs.', 'We looked at three tools before choosing this one.', 'We thought about building it ourselves, but it would take too long.']
     },
     {
       id: 'D83-P4',
       formula: 'At that time, + KALIMAT  ·  Given + BENDA, + KALIMAT',
-      meaning: 'Explain the context of a decision.',
+      meaning: 'Waktu itu, ...  ·  Mengingat ..., ...',
       examples: ['At that time, we only had two developers.', 'Given the budget, a managed service made more sense.', 'Given our deadline, we chose the simpler option.'],
       note: 'Keputusan teknis selalu bergantung pada konteks: waktu, ukuran tim, budget, dan kebutuhan.'
     },
     {
       id: 'D83-P5',
       formula: 'The goal was to + KATA KERJA  ·  If we need ..., we can ... later',
-      meaning: 'Explain the goal and keep future options open.',
+      meaning: 'Tujuannya adalah ...  ·  Kalau nanti kita perlu ..., kita bisa ...',
       examples: ['The goal was to launch quickly.', 'If traffic grows, we can add caching later.', 'We designed it so we can replace the payment provider later.']
     }
   ],

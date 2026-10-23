@@ -94,27 +94,27 @@ E90.registerDay({
     {
       id: 'D91-P1',
       formula: 'Present → Past → Strength → Goal',
-      meaning: 'A simple structure for a professional self-introduction.',
+      meaning: 'Struktur perkenalan profesional: sekarang → dulu → kekuatan → tujuan',
       examples: ['Currently, I work on a hospital information system.', 'Before that, I built web applications for small businesses.', 'My main strength is solving problems step by step.', 'My goal is to grow into a senior engineer.'],
       note: 'Present = pekerjaan sekarang, Past = pengalaman sebelumnya, Strength = kelebihanmu + contoh, Goal = arah karier. Urutan ini membuat perkenalan terdengar rapi walau kalimatnya sederhana.'
     },
     {
       id: 'D91-P2',
       formula: "I'm a/an + PEKERJAAN with + ANGKA years of experience",
-      meaning: 'Say your role and how long you have done it.',
+      meaning: 'Saya seorang ... dengan pengalaman ... tahun',
       examples: ["I'm a backend developer with three years of experience.", "I'm a QA engineer with two years of experience.", 'I have about six years of experience in healthcare software.']
     },
     {
       id: 'D91-P3',
       formula: "My main strength is + KATA KERJA-ing  ·  I'm good at + KATA KERJA-ing",
-      meaning: 'Talk about your strengths.',
+      meaning: 'Kekuatan utama saya adalah ...  ·  Saya pandai ...',
       examples: ['My main strength is learning new tools quickly.', "I'm good at working with users.", "I'm good at finding the cause of a bug."],
       note: 'Setelah menyebut kelebihan, beri satu contoh singkat: "For example, last month I ..."'
     },
     {
       id: 'D91-P4',
       formula: "In the future, I'd like to + KATA KERJA  ·  My goal is to + KATA KERJA",
-      meaning: 'Talk about your career goals.',
+      meaning: 'Ke depannya, saya ingin ...  ·  Tujuan saya adalah ...',
       examples: ["In the future, I'd like to lead a small team.", 'My goal is to become a better system designer.', "In the future, I'd like to work on products used in many countries."]
     }
   ],
