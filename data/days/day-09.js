@@ -84,7 +84,8 @@ E90.registerDay({
       id: 'D09-S11',
       english: 'What do you like?',
       pronunciation: 'wat du yu laik?',
-      translation: 'Kamu suka apa?',
+      translation: 'Apa yang kamu suka?',
+      naturalTranslation: 'Kamu suka apa?',
       words: [['What', 'apa'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu'], ['like', 'suka']]
     },
     {

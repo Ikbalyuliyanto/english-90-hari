@@ -87,7 +87,8 @@ E90.registerDay({
       id: 'D05-S11',
       english: 'How long does it take?',
       pronunciation: 'hau long daz it teik?',
-      translation: 'Berapa lama waktunya?',
+      translation: 'Berapa lama waktu yang dibutuhkan?',
+      naturalTranslation: 'Berapa lama waktunya?',
       words: [['How', 'seberapa'], ['long', 'lama'], ['does', '(kata bantu pertanyaan untuk it/he/she)', 'do'], ['it', 'hal itu'], ['take', 'memakan (waktu)']],
       phrases: [['how long', 'berapa lama'], ['take (time)', 'memakan waktu']],
       pattern: 'D05-P4'

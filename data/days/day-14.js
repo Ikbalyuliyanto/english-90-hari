@@ -80,7 +80,7 @@ E90.registerDay({
       english: 'Of course.',
       pronunciation: 'ov kors',
       translation: 'Tentu saja.',
-      words: [['Of', 'dari (dalam "of course")'], ['course', 'jalur (dalam "of course")']],
+      words: [['Of', '(bagian dari "of course")'], ['course', '(bagian dari "of course" = tentu saja)']],
       phrases: [['of course', 'tentu saja']]
     },
     {

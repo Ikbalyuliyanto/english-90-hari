@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D16-S01',
       english: 'What are you doing now?',
       pronunciation: 'wat ar yu du-ing nau?',
-      translation: 'Kamu sedang apa sekarang?',
+      translation: 'Apa yang sedang kamu lakukan sekarang?',
+      naturalTranslation: 'Kamu sedang apa sekarang?',
       words: [['What', 'apa'], ['are', 'sedang (are + -ing)', 'be'], ['you', 'kamu'], ['doing', 'melakukan', 'do'], ['now', 'sekarang']],
       pattern: 'D16-P1'
     },
@@ -61,7 +62,8 @@ E90.registerDay({
       id: 'D16-S07',
       english: 'Are you busy right now?',
       pronunciation: 'ar yu bi-zi rait nau?',
-      translation: 'Kamu sedang sibuk sekarang?',
+      translation: 'Apakah kamu sedang sibuk sekarang?',
+      naturalTranslation: 'Kamu sedang sibuk sekarang?',
       words: [['Are', 'apakah (are you ...?)', 'be'], ['you', 'kamu'], ['busy', 'sibuk'], ['right', 'tepat (dalam "right now")'], ['now', 'sekarang']],
       phrases: [['right now', 'saat ini juga']]
     },
@@ -86,7 +88,8 @@ E90.registerDay({
       id: 'D16-S10',
       english: 'Is it working now?',
       pronunciation: 'iz it wer-king nau?',
-      translation: 'Sekarang sudah jalan (berfungsi)?',
+      translation: 'Apakah itu sudah berfungsi sekarang?',
+      naturalTranslation: 'Sekarang sudah jalan?',
       words: [['Is', 'apakah (is it ...?)', 'be'], ['it', 'itu / -nya'], ['working', 'berfungsi / jalan (untuk alat/program)', 'work'], ['now', 'sekarang']],
       phrases: [['it is working', 'berfungsi / jalan (bukan "bekerja")']],
       pattern: 'D16-P3'
@@ -116,7 +119,8 @@ E90.registerDay({
       id: 'D16-S13',
       english: 'Where are you going now?',
       pronunciation: 'wer ar yu gou-ing nau?',
-      translation: 'Kamu mau ke mana sekarang?',
+      translation: 'Ke mana kamu pergi sekarang?',
+      naturalTranslation: 'Kamu mau ke mana sekarang?',
       words: [['Where', 'ke mana'], ['are', 'sedang (are + -ing)', 'be'], ['you', 'kamu'], ['going', 'pergi', 'go'], ['now', 'sekarang']],
       pattern: 'D06-P3'
     },

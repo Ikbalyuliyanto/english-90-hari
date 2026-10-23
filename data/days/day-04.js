@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D04-S01',
       english: 'Come here.',
       pronunciation: 'kam hir',
-      translation: 'Sini dulu.',
+      translation: 'Datang ke sini.',
+      naturalTranslation: 'Sini dulu.',
       words: [['Come', 'datang / kemari'], ['here', 'ke sini']]
     },
     {

@@ -31,7 +31,8 @@ E90.registerDay({
       id: 'D03-S04',
       english: 'What do you want to eat?',
       pronunciation: 'wat du yu want tu it?',
-      translation: 'Kamu mau makan apa?',
+      translation: 'Apa yang ingin kamu makan?',
+      naturalTranslation: 'Kamu mau makan apa?',
       words: [['What', 'apa'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu'], ['want', 'ingin / mau'], ['to', 'untuk (penanda kata kerja)'], ['eat', 'makan']],
       phrases: [['want to eat', 'ingin makan']],
       pattern: 'D03-P4'
@@ -73,7 +74,8 @@ E90.registerDay({
       id: 'D03-S09',
       english: "I'll have coffee.",
       pronunciation: 'ail hev ko-fi',
-      translation: 'Saya pesan kopi.',
+      translation: 'Saya akan pesan kopi.',
+      naturalTranslation: 'Saya pesan kopi.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['have', 'pesan / ambil (saat memesan)'], ['coffee', 'kopi']],
       phrases: [["I'll have ...", 'saya pesan ... (saat memesan makanan/minuman)']]
     },
@@ -95,7 +97,8 @@ E90.registerDay({
       id: 'D03-S12',
       english: 'Do you want more?',
       pronunciation: 'du yu want mor?',
-      translation: 'Kamu mau tambah?',
+      translation: 'Apakah kamu mau lagi?',
+      naturalTranslation: 'Kamu mau tambah?',
       words: [['Do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu'], ['want', 'ingin / mau'], ['more', 'lagi / lebih banyak']],
       pattern: 'D03-P4'
     },

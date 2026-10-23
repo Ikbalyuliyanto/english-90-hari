@@ -16,7 +16,8 @@ E90.registerDay({
       id: 'D15-S02',
       english: 'It was great.',
       pronunciation: 'it woz greit',
-      translation: 'Menyenangkan sekali.',
+      translation: 'Itu sangat menyenangkan.',
+      naturalTranslation: 'Menyenangkan sekali.',
       words: [['It', 'itu / hari itu'], ['was', 'adalah (lampau dari is)', 'be'], ['great', 'hebat / menyenangkan']]
     },
     {

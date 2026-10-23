@@ -32,14 +32,16 @@ E90.registerDay({
       id: 'D08-S04',
       english: 'Can you give me a discount?',
       pronunciation: 'ken yu giv mi e dis-kaunt?',
-      translation: 'Bisa beri saya diskon?',
+      translation: 'Bisakah Anda memberi saya diskon?',
+      naturalTranslation: 'Bisa beri saya diskon?',
       words: [['Can', 'bisakah'], ['you', 'Anda'], ['give', 'memberi'], ['me', 'saya (sebagai objek)'], ['a', 'sebuah'], ['discount', 'diskon / potongan harga']]
     },
     {
       id: 'D08-S05',
       english: "I'll take it.",
       pronunciation: 'ail teik it',
-      translation: 'Saya ambil yang ini.',
+      translation: 'Saya akan mengambilnya.',
+      naturalTranslation: 'Saya ambil yang ini.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['take', 'ambil / beli'], ['it', 'itu']],
       pattern: 'D08-P3'
     },
@@ -54,7 +56,8 @@ E90.registerDay({
       id: 'D08-S07',
       english: 'Do you have a bigger size?',
       pronunciation: 'du yu hev e bi-ger saiz?',
-      translation: 'Ada ukuran yang lebih besar?',
+      translation: 'Apakah Anda punya ukuran yang lebih besar?',
+      naturalTranslation: 'Ada ukuran yang lebih besar?',
       words: [['Do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'Anda'], ['have', 'punya'], ['a', 'sebuah'], ['bigger', 'lebih besar', 'big'], ['size', 'ukuran']],
       pattern: 'D08-P2'
     },
@@ -62,7 +65,8 @@ E90.registerDay({
       id: 'D08-S08',
       english: 'Do you have a smaller size?',
       pronunciation: 'du yu hev e smo-ler saiz?',
-      translation: 'Ada ukuran yang lebih kecil?',
+      translation: 'Apakah Anda punya ukuran yang lebih kecil?',
+      naturalTranslation: 'Ada ukuran yang lebih kecil?',
       words: [['Do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'Anda'], ['have', 'punya'], ['a', 'sebuah'], ['smaller', 'lebih kecil', 'small'], ['size', 'ukuran']],
       pattern: 'D08-P2'
     },
@@ -87,7 +91,8 @@ E90.registerDay({
       id: 'D08-S11',
       english: "I'll pay by cash.",
       pronunciation: 'ail pei bai kesh',
-      translation: 'Saya bayar tunai.',
+      translation: 'Saya akan membayar dengan uang tunai.',
+      naturalTranslation: 'Saya bayar tunai.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['pay', 'membayar'], ['by', 'dengan (cara)'], ['cash', 'uang tunai']],
       phrases: [['pay by / pay in cash', 'bayar tunai']],
       pattern: 'D08-P3'
@@ -96,7 +101,8 @@ E90.registerDay({
       id: 'D08-S12',
       english: "I'll pay by card.",
       pronunciation: 'ail pei bai kard',
-      translation: 'Saya bayar dengan kartu.',
+      translation: 'Saya akan membayar dengan kartu.',
+      naturalTranslation: 'Saya bayar dengan kartu.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['pay', 'membayar'], ['by', 'dengan (cara)'], ['card', 'kartu']],
       pattern: 'D08-P3'
     },

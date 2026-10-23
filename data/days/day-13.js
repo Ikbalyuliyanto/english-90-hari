@@ -8,14 +8,16 @@ E90.registerDay({
       id: 'D13-S01',
       english: 'What is this?',
       pronunciation: 'wat iz dis?',
-      translation: 'Ini apa?',
+      translation: 'Apa ini?',
+      naturalTranslation: 'Ini apa?',
       words: [['What', 'apa'], ['is', 'adalah', 'be'], ['this', 'ini']]
     },
     {
       id: 'D13-S02',
       english: 'What are you doing?',
       pronunciation: 'wat ar yu du-ing?',
-      translation: 'Kamu sedang apa?',
+      translation: 'Apa yang sedang kamu lakukan?',
+      naturalTranslation: 'Kamu sedang apa?',
       words: [['What', 'apa'], ['are', 'sedang (are + -ing)', 'be'], ['you', 'kamu'], ['doing', 'melakukan', 'do']],
       pattern: 'D13-P2'
     },
@@ -23,7 +25,8 @@ E90.registerDay({
       id: 'D13-S03',
       english: 'Where are you from?',
       pronunciation: 'wer ar yu from?',
-      translation: 'Kamu berasal dari mana?',
+      translation: 'Dari mana kamu berasal?',
+      naturalTranslation: 'Kamu berasal dari mana?',
       words: [['Where', 'mana / di mana'], ['are', 'adalah (to be untuk "you")', 'be'], ['you', 'kamu'], ['from', 'dari']],
       pattern: 'D13-P2'
     },
@@ -31,7 +34,8 @@ E90.registerDay({
       id: 'D13-S04',
       english: 'Where do you live?',
       pronunciation: 'wer du yu liv?',
-      translation: 'Kamu tinggal di mana?',
+      translation: 'Di mana kamu tinggal?',
+      naturalTranslation: 'Kamu tinggal di mana?',
       words: [['Where', 'di mana'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu'], ['live', 'tinggal']],
       pattern: 'D13-P1'
     },
@@ -39,7 +43,8 @@ E90.registerDay({
       id: 'D13-S05',
       english: 'How old are you?',
       pronunciation: 'hau ould ar yu?',
-      translation: 'Umurmu berapa?',
+      translation: 'Berapa umurmu?',
+      naturalTranslation: 'Umurmu berapa?',
       words: [['How', 'seberapa'], ['old', 'tua / berumur'], ['are', 'adalah (to be untuk "you")', 'be'], ['you', 'kamu']],
       phrases: [['how old', 'berapa umur']],
       pattern: 'D13-P4'
@@ -102,7 +107,8 @@ E90.registerDay({
       id: 'D13-S13',
       english: 'Can you help me?',
       pronunciation: 'ken yu help mi?',
-      translation: 'Bisa bantu saya?',
+      translation: 'Bisakah kamu membantu saya?',
+      naturalTranslation: 'Bisa bantu saya?',
       words: [['Can', 'bisakah'], ['you', 'kamu / Anda'], ['help', 'membantu'], ['me', 'saya (sebagai objek)']]
     },
     {

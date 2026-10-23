@@ -17,7 +17,8 @@ E90.registerDay({
       id: 'D07-S02',
       english: 'How do I get to the office?',
       pronunciation: 'hau du ai get tu di o-fis?',
-      translation: 'Bagaimana cara saya ke kantor?',
+      translation: 'Bagaimana saya sampai ke kantor?',
+      naturalTranslation: 'Bagaimana cara saya ke kantor?',
       words: [['How', 'bagaimana'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['I', 'saya'], ['get', 'sampai / tiba'], ['to', 'ke'], ['the', 'itu / -nya (dibaca "di" sebelum vokal)'], ['office', 'kantor']],
       phrases: [['get to', 'sampai ke / menuju']],
       pattern: 'D07-P2'
@@ -26,7 +27,8 @@ E90.registerDay({
       id: 'D07-S03',
       english: 'Can you tell me the way to the mall?',
       pronunciation: 'ken yu tel mi de wei tu de mol?',
-      translation: 'Bisakah Anda menunjukkan jalan ke mal?',
+      translation: 'Bisakah Anda memberi tahu saya jalan ke mal?',
+      naturalTranslation: 'Bisakah Anda menunjukkan jalan ke mal?',
       words: [['Can', 'bisakah'], ['you', 'Anda'], ['tell', 'memberi tahu'], ['me', 'saya (sebagai objek)'], ['the', 'itu / -nya'], ['way', 'jalan / arah'], ['to', 'ke'], ['mall', 'mal']],
       phrases: [['the way to', 'jalan menuju'], ['can you tell me ...?', 'bisakah Anda memberi tahu saya ...?']]
     },

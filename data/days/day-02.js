@@ -84,7 +84,7 @@ E90.registerDay({
       english: 'I finish work at five.',
       pronunciation: 'ai fi-nish werk et faiv',
       translation: 'Saya selesai bekerja jam lima.',
-      words: [['I', 'saya'], ['finish', 'menyelesaikan'], ['work', 'pekerjaan / kerja'], ['at', 'pada (jam)'], ['five', 'lima']],
+      words: [['I', 'saya'], ['finish', 'selesai / menyelesaikan'], ['work', 'pekerjaan / kerja'], ['at', 'pada (jam)'], ['five', 'lima']],
       phrases: [['finish work', 'selesai bekerja / pulang kerja']],
       pattern: 'D02-P1'
     },

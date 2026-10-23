@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D18-S01',
       english: 'What are you going to do this weekend?',
       pronunciation: 'wat ar yu gou-ing tu du dis wi-kend?',
-      translation: 'Apa rencanamu akhir pekan ini?',
+      translation: 'Apa yang akan kamu lakukan akhir pekan ini?',
+      naturalTranslation: 'Apa rencanamu akhir pekan ini?',
       words: [['What', 'apa'], ['are', '(bagian dari "are going to")', 'be'], ['you', 'kamu'], ['going', 'akan (dalam "going to")', 'go'], ['to', '(bagian dari "going to")'], ['do', 'melakukan'], ['this', 'ini'], ['weekend', 'akhir pekan']],
       phrases: [['be going to', 'akan (rencana)'], ['this weekend', 'akhir pekan ini']],
       pattern: 'D18-P1'
@@ -33,7 +34,8 @@ E90.registerDay({
       id: 'D18-S04',
       english: "I'll send it to you later.",
       pronunciation: 'ail send it tu yu lei-ter',
-      translation: 'Nanti saya kirimkan ke kamu.',
+      translation: 'Saya akan mengirimkannya ke kamu nanti.',
+      naturalTranslation: 'Nanti saya kirimkan ke kamu.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['send', 'mengirim'], ['it', 'itu / -nya'], ['to', 'ke / kepada'], ['you', 'kamu'], ['later', 'nanti']],
       pattern: 'D18-P2'
     },
@@ -41,7 +43,8 @@ E90.registerDay({
       id: 'D18-S05',
       english: "I'll check and let you know.",
       pronunciation: 'ail cek en let yu nou',
-      translation: 'Saya cek dulu, nanti saya kabari.',
+      translation: 'Saya akan memeriksa dan memberi tahu kamu.',
+      naturalTranslation: 'Saya cek dulu, nanti saya kabari.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['check', 'memeriksa'], ['and', 'dan'], ['let', 'membiarkan'], ['you', 'kamu'], ['know', 'tahu']],
       phrases: [['let you know', 'mengabari kamu (membiarkanmu tahu)']],
       pattern: 'D18-P3'
@@ -111,7 +114,8 @@ E90.registerDay({
       id: 'D18-S13',
       english: "It's going to be a busy day.",
       pronunciation: 'its gou-ing tu bi e bi-zi dei',
-      translation: 'Hari ini akan jadi hari yang sibuk.',
+      translation: 'Ini akan menjadi hari yang sibuk.',
+      naturalTranslation: 'Hari ini akan jadi hari yang sibuk.',
       words: [["It's", 'ini (it is)', 'be'], ['going', 'akan (dalam "going to")', 'go'], ['to', '(bagian dari "going to")'], ['be', 'menjadi'], ['a', 'sebuah'], ['busy', 'sibuk'], ['day', 'hari']],
       pattern: 'D10-P3'
     },

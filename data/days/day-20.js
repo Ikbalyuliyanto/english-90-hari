@@ -31,7 +31,8 @@ E90.registerDay({
       id: 'D20-S04',
       english: 'What do you mean?',
       pronunciation: 'wat du yu min?',
-      translation: 'Maksudnya apa?',
+      translation: 'Apa yang kamu maksud?',
+      naturalTranslation: 'Maksudnya apa?',
       words: [['What', 'apa'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu / Anda'], ['mean', 'maksudkan']],
       phrases: [['what do you mean?', 'apa maksudmu?']]
     },
@@ -39,7 +40,8 @@ E90.registerDay({
       id: 'D20-S05',
       english: 'What does this word mean?',
       pronunciation: 'wat daz dis werd min?',
-      translation: 'Kata ini artinya apa?',
+      translation: 'Apa arti kata ini?',
+      naturalTranslation: 'Kata ini artinya apa?',
       words: [['What', 'apa'], ['does', '(kata bantu pertanyaan untuk it/this)', 'do'], ['this', 'ini'], ['word', 'kata'], ['mean', 'berarti']],
       pattern: 'D20-P4'
     },
@@ -79,7 +81,8 @@ E90.registerDay({
       id: 'D20-S10',
       english: 'How do you spell that?',
       pronunciation: 'hau du yu spel det?',
-      translation: 'Bagaimana ejaannya?',
+      translation: 'Bagaimana kamu mengeja itu?',
+      naturalTranslation: 'Bagaimana ejaannya?',
       words: [['How', 'bagaimana'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu / Anda'], ['spell', 'mengeja'], ['that', 'itu']]
     }
   ],

@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D19-S01',
       english: 'Can you speak English?',
       pronunciation: 'ken yu spik ing-glish?',
-      translation: 'Kamu bisa berbahasa Inggris?',
+      translation: 'Bisakah kamu berbicara bahasa Inggris?',
+      naturalTranslation: 'Kamu bisa berbahasa Inggris?',
       words: [['Can', 'bisakah'], ['you', 'kamu'], ['speak', 'berbicara'], ['English', 'bahasa Inggris']]
     },
     {
@@ -32,7 +33,8 @@ E90.registerDay({
       id: 'D19-S04',
       english: 'Can you hear me now?',
       pronunciation: 'ken yu hir mi nau?',
-      translation: 'Sekarang suara saya terdengar?',
+      translation: 'Bisakah kamu mendengar saya sekarang?',
+      naturalTranslation: 'Sekarang suara saya terdengar?',
       words: [['Can', 'bisakah'], ['you', 'kamu'], ['hear', 'mendengar'], ['me', 'saya (sebagai objek)'], ['now', 'sekarang']],
       pattern: 'D19-P2'
     },
@@ -74,7 +76,8 @@ E90.registerDay({
       id: 'D19-S09',
       english: 'Can you share your screen?',
       pronunciation: 'ken yu sher yor skrin?',
-      translation: 'Bisa kamu bagikan layarmu?',
+      translation: 'Bisakah kamu membagikan layarmu?',
+      naturalTranslation: 'Bisa kamu bagikan layarmu?',
       words: [['Can', 'bisakah'], ['you', 'kamu'], ['share', 'membagikan'], ['your', 'milikmu'], ['screen', 'layar']],
       phrases: [['share your screen', 'berbagi layar (di online meeting)']],
       pattern: 'D19-P2'

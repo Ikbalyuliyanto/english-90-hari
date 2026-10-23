@@ -33,7 +33,8 @@ E90.registerDay({
       id: 'D17-S04',
       english: "I didn't have time.",
       pronunciation: 'ai di-dent hev taim',
-      translation: 'Saya tidak sempat.',
+      translation: 'Saya tidak punya waktu.',
+      naturalTranslation: 'Saya tidak sempat.',
       words: [['I', 'saya'], ["didn't", 'tidak (lampau) — did not', 'do'], ['have', 'punya (kembali ke bentuk dasar setelah didn\'t)'], ['time', 'waktu']],
       phrases: [["didn't have time", 'tidak sempat / tidak ada waktu']],
       pattern: 'D17-P2'

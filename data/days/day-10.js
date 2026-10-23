@@ -78,7 +78,8 @@ E90.registerDay({
       id: 'D10-S10',
       english: "It's a beautiful day.",
       pronunciation: 'its e byu-ti-ful dei',
-      translation: 'Hari ini indah.',
+      translation: 'Ini hari yang indah.',
+      naturalTranslation: 'Hari ini indah.',
       words: [["It's", 'ini (adalah) — it is', 'be'], ['a', 'sebuah'], ['beautiful', 'indah'], ['day', 'hari']]
     },
     {
@@ -108,7 +109,8 @@ E90.registerDay({
       id: 'D10-S14',
       english: "It's going to rain.",
       pronunciation: 'its gou-ing tu rein',
-      translation: 'Sepertinya akan hujan.',
+      translation: 'Akan hujan.',
+      naturalTranslation: 'Sepertinya akan hujan.',
       words: [["It's", 'cuacanya (it is)', 'be'], ['going', 'akan (dalam "going to")', 'go'], ['to', '(bagian dari "going to")'], ['rain', 'hujan (kata kerja)']],
       phrases: [['be going to', 'akan (prediksi / rencana) — bukan "pergi"']],
       pattern: 'D10-P3'

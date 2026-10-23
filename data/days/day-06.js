@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D06-S01',
       english: "Let's go.",
       pronunciation: 'lets gou',
-      translation: 'Ayo berangkat.',
+      translation: 'Ayo pergi.',
+      naturalTranslation: 'Ayo berangkat.',
       words: [["Let's", 'mari kita (let us)', 'let'], ['go', 'pergi']]
     },
     {
@@ -101,7 +102,8 @@ E90.registerDay({
       id: 'D06-S13',
       english: 'Where are we going?',
       pronunciation: 'wer ar wi gou-ing?',
-      translation: 'Kita mau ke mana?',
+      translation: 'Ke mana kita pergi?',
+      naturalTranslation: 'Kita mau ke mana?',
       words: [['Where', 'ke mana / di mana'], ['are', 'sedang (are + -ing)', 'be'], ['we', 'kita'], ['going', 'pergi', 'go']],
       pattern: 'D06-P3'
     },
