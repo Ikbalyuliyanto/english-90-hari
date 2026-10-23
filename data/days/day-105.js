@@ -10,7 +10,8 @@ E90.registerDay({
       id: 'D105-S01',
       english: 'Let me walk you through a typical week in my job.',
       pronunciation: 'let mi wok yu thru e ti-pi-kel wik in mai job',
-      translation: 'Saya ceritakan seperti apa minggu yang biasa dalam pekerjaan saya.',
+      translation: 'Biar saya menceritakan minggu yang biasa dalam pekerjaan saya.',
+      naturalTranslation: 'Saya ceritakan seperti apa minggu yang biasa dalam pekerjaan saya.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['walk', '(bagian dari "walk ... through": menjelaskan langkah demi langkah)'], ['you', 'Anda'], ['through', 'melalui'], ['a', 'sebuah (tidak diterjemahkan)'], ['typical', 'biasa / umum'], ['week', 'minggu'], ['in', 'dalam'], ['my', 'milik saya'], ['job', 'pekerjaan']],
       phrases: [['walk you through', 'menjelaskan kepada Anda langkah demi langkah'], ['a typical week', 'minggu yang biasa']],
       pattern: 'D105-P1'
@@ -80,20 +81,20 @@ E90.registerDay({
     {
       id: 'D105-P1',
       formula: 'Introduce → Project → Manager update → Stakeholder → Meeting → Disagreement → Misunderstanding → Presentation → Q&A',
-      meaning: 'The situations in an international workplace simulation.',
+      meaning: 'Situasi dalam simulasi tempat kerja internasional',
       examples: ["I'm a software engineer with five years of experience.", "I'm worried that we can't finish the pharmacy module on time.", 'In simple terms, the new feature saves nurses about ten minutes per shift.', "I don't want to guess, so I'll check and send it to you today."],
       note: 'Tidak perlu sempurna. Targetnya: bisa terus berbicara, memakai struktur, dan pulih saat lupa kata (pakai kata lain atau jelaskan dengan contoh).'
     },
     {
       id: 'D105-P2',
       formula: 'With + SIAPA, I + KATA KERJA  ·  I learned to adjust my message for + SIAPA',
-      meaning: 'Explain how you communicate with different people.',
+      meaning: 'Dengan ..., saya ...  ·  Saya belajar menyesuaikan pesan saya untuk ...',
       examples: ['With the finance team, I focus on cost and dates.', 'With nurses, I show the screen instead of explaining.', 'I learned to adjust my message for non-technical people.']
     },
     {
       id: 'D105-P3',
       formula: 'On the + BENDA side, + KALIMAT  ·  Overall, I feel confident + KATA KERJA-ing',
-      meaning: 'Reflect on your work and your progress.',
+      meaning: 'Dari sisi ..., ...  ·  Secara keseluruhan, saya merasa percaya diri ...',
       examples: ['On the technical side, the main challenge is the old lab software.', 'Overall, I feel confident leading short meetings.', 'On the people side, I still need to practice disagreeing politely.']
     }
   ],

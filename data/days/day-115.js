@@ -87,26 +87,26 @@ E90.registerDay({
     {
       id: 'D115-P1',
       formula: 'UI state → API call → Errors → Contract → External systems → Testing → Accessibility',
-      meaning: 'A checklist for frontend and integration questions.',
+      meaning: 'Checklist pertanyaan frontend & integrasi: state UI → panggilan API → error → kontrak → sistem luar → testing → aksesibilitas',
       examples: ['The frontend shows a loading state while it waits for the API.', "If the network fails, the form keeps the data, so nurses don't lose their work.", 'We agreed on a shared contract before building both sides.', 'We test the integration with a mock server on staging.'],
       note: 'Di rumah sakit, pengguna sering sibuk, memakai tablet, dan Wi-Fi tidak selalu stabil. Jawaban yang menyebut kondisi nyata ini terdengar lebih senior.'
     },
     {
       id: 'D115-P2',
       formula: 'The frontend + KATA KERJA while + KALIMAT  ·  If + KALIMAT, the form + KATA KERJA',
-      meaning: 'Describe UI behavior in different states.',
+      meaning: 'Frontend ... selama ...  ·  Kalau ..., form-nya ...',
       examples: ['The frontend disables the button while the request is running.', 'If the session expires, the form saves a draft first.', 'On slow Wi-Fi, we show the patient name before loading the full history.']
     },
     {
       id: 'D115-P3',
       formula: 'We built an adapter that converts + BENDA to + BENDA  ·  Webhooks let + SIAPA + KATA KERJA',
-      meaning: 'Explain how you integrate with external systems.',
+      meaning: 'Kami membuat adapter yang mengubah ... ke ...  ·  Webhook membuat ... bisa ...',
       examples: ['We built an adapter that converts the lab codes to our test codes.', 'Webhooks let the payment provider tell us when a payment succeeds.', 'We agreed on a shared contract with the pharmacy vendor.']
     },
     {
       id: 'D115-P4',
       formula: 'We test the integration with + BENDA  ·  BENDA matters because + KALIMAT',
-      meaning: 'Talk about testing and quality.',
+      meaning: 'Kami menguji integrasinya dengan ...  ·  ... itu penting karena ...',
       examples: ['We test the integration with recorded responses from the real system.', 'Accessibility matters because doctors often use the system on small tablets.', 'Contract tests matter because the vendor changes their API without warning.']
     }
   ],

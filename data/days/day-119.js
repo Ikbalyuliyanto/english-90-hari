@@ -79,20 +79,20 @@ E90.registerDay({
     {
       id: 'D119-P1',
       formula: 'Opening → About you → Motivation → Behavioral → Project → Technical → System design → Difficult → Your questions → Closing',
-      meaning: 'The flow of a full software engineer interview.',
+      meaning: 'Alur interview software engineer lengkap',
       examples: ['Thank you for having me today.', "Sure. I'm a backend engineer focused on healthcare systems.", 'The situation was that the go-live date was only two weeks away.', 'Thank you for your time. I really enjoyed our conversation.'],
       note: 'Interview sungguhan jarang berjalan sesuai urutan. Kalau interviewer melompat ke topik lain, ikuti saja, lalu pakai struktur yang cocok untuk pertanyaan itu.'
     },
     {
       id: 'D119-P2',
       formula: "Could I take a moment to + KATA KERJA?  ·  I'll answer in + ANGKA parts",
-      meaning: 'Organize your answer before you speak.',
+      meaning: 'Boleh saya ambil waktu sebentar untuk ...?  ·  Saya akan menjawab dalam ... bagian',
       examples: ['Could I take a moment to think about a good example?', "I'll answer in two parts: the technical side and the team side.", "I'll answer in three parts: the problem, what I did, and the result."]
     },
     {
       id: 'D119-P3',
       formula: 'Would you like me to + KATA KERJA, or should I + KATA KERJA?  ·  What are the next steps in + BENDA?',
-      meaning: 'Check with the interviewer and close professionally.',
+      meaning: 'Apakah Anda ingin saya ..., atau saya ...?  ·  Apa langkah selanjutnya dalam ...?',
       examples: ['Would you like me to explain the database design, or should I move on?', 'What are the next steps in the hiring process?', 'Is there anything else you need from me?']
     }
   ],

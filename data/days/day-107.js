@@ -91,26 +91,26 @@ E90.registerDay({
     {
       id: 'D107-P1',
       formula: 'Grateful → Growth reason → Link to this role',
-      meaning: 'A positive answer to "Why are you looking for a new job?"',
+      meaning: 'Jawaban positif untuk "Kenapa Anda mencari pekerjaan baru?": bersyukur → alasan berkembang → hubungkan ke posisi ini',
       examples: ["I've learned a lot in my current company.", "Our product is stable now, so there's less new development.", "I'm looking for an opportunity to work on a larger scale.", 'This role is a natural next step for me.'],
       note: 'Hindari: "My manager is bad", "The company is a mess", atau hanya "The salary is low". Fokus pada apa yang kamu cari, bukan apa yang kamu hindari.'
     },
     {
       id: 'D107-P2',
       formula: "I'm grateful for + BENDA, but I'm ready for + BENDA  ·  It's less about + KATA KERJA-ing and more about + KATA KERJA-ing",
-      meaning: 'Show respect for your current job while explaining the change.',
+      meaning: 'Saya bersyukur atas ..., tapi saya siap untuk ...  ·  Ini bukan soal ..., tapi lebih soal ...',
       examples: ["I'm grateful for my team, but I'm ready for bigger technical problems.", "It's less about the company and more about the type of work.", "I've learned a lot in my current company, but I've done most of what I can there."]
     },
     {
       id: 'D107-P3',
       formula: "I'm looking for an opportunity to + KATA KERJA  ·  I want to grow in + BENDA",
-      meaning: 'Explain what you want next.',
+      meaning: 'Saya mencari kesempatan untuk ...  ·  Saya ingin berkembang di ...',
       examples: ["I'm looking for an opportunity to work with an international team.", 'I want to grow in an environment where code reviews are taken seriously.', "I'm looking for an opportunity to design systems, not only build features."]
     },
     {
       id: 'D107-P4',
       formula: "BENDA matters, but it isn't my main reason  ·  This role is a natural next step for me",
-      meaning: 'Handle salary questions honestly and close with the new role.',
+      meaning: '... itu penting, tapi bukan alasan utama saya  ·  Posisi ini adalah langkah berikutnya yang wajar untuk saya',
       examples: ["Compensation matters, but it isn't my main reason.", 'Location matters too, but the main reason is the work itself.', 'This role is a natural next step after five years in healthcare software.']
     }
   ],

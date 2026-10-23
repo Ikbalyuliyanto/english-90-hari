@@ -92,26 +92,26 @@ E90.registerDay({
     {
       id: 'D112-P1',
       formula: 'Overview → My role → Architecture → Hardest problem → Decision & trade-off → Result → What I would change',
-      meaning: 'A structure for a project deep dive.',
+      meaning: 'Struktur pembahasan proyek mendalam: gambaran → peran saya → arsitektur → masalah tersulit → keputusan & trade-off → hasil → yang akan saya ubah',
       examples: ["I'll give you the high-level picture first, then go deeper.", 'I owned the design of the integration layer.', 'The hardest technical problem was keeping data consistent between systems.', 'If I could redesign it, I would add better monitoring from the start.'],
       note: 'Interviewer akan terus menggali ("Why?", "What else did you consider?", "How did you know?"). Bagian yang bukan kamu kerjakan: katakan terus terang, jangan mengaku-aku.'
     },
     {
       id: 'D112-P2',
       formula: 'I owned + BENDA  ·  That decision was made by + SIAPA, but I + KATA KERJA-ed',
-      meaning: 'Make your personal contribution clear.',
+      meaning: 'Saya yang bertanggung jawab penuh atas ...  ·  Keputusan itu diambil oleh ..., tapi saya yang ...',
       examples: ['I owned the billing API and its tests.', 'That decision was made by the architect, but I built the first prototype.', 'I owned the migration from the old lab system.']
     },
     {
       id: 'D112-P3',
       formula: 'The hardest technical problem was + KATA KERJA-ing  ·  We solved it with + BENDA',
-      meaning: 'Describe the hardest problem and the solution.',
+      meaning: 'Masalah teknis tersulitnya adalah ...  ·  Kami menyelesaikannya dengan ...',
       examples: ['The hardest technical problem was handling duplicate lab messages.', 'We solved it with an idempotency key on every message.', 'The hardest technical problem was migrating ten years of records without downtime.']
     },
     {
       id: 'D112-P4',
       formula: "We measured success by + BENDA  ·  If I could redesign it, I would + KATA KERJA  ·  I wasn't involved in that part, so + KALIMAT",
-      meaning: 'Show results, reflect, and be honest about your scope.',
+      meaning: 'Kami mengukur keberhasilan dari ...  ·  Kalau bisa merancang ulang, saya akan ...  ·  Saya tidak terlibat di bagian itu, jadi ...',
       examples: ['We measured success by the average time from lab order to result.', 'If I could redesign it, I would use events from the beginning.', "I wasn't involved in that part, so I don't know the exact numbers."]
     }
   ],

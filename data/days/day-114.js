@@ -90,26 +90,26 @@ E90.registerDay({
     {
       id: 'D114-P1',
       formula: 'Entities → Relationships → Keys & indexes → Transactions → Performance → Scaling → Retention',
-      meaning: 'A checklist for database design questions.',
+      meaning: 'Checklist pertanyaan desain database: entitas → relasi → key & index → transaction → performa → scaling → retensi',
       examples: ["I'd model it with three tables: patients, visits, and prescriptions.", 'A patient has many visits, and each visit has many prescriptions.', "I'd add an index on the medical record number because we search by it often.", 'We use a transaction, so the payment and the bill are saved together.'],
       note: 'Data kesehatan punya aturan khusus: jangan dihapus sembarangan, simpan riwayat perubahan (audit trail), dan batasi siapa yang boleh melihat.'
     },
     {
       id: 'D114-P2',
       formula: "I'd model it with + ANGKA tables: ...  ·  A + BENDA has many + BENDA",
-      meaning: 'Describe tables and relationships.',
+      meaning: 'Saya akan memodelkannya dengan ... tabel: ...  ·  Satu ... punya banyak ...',
       examples: ["I'd model it with four tables: lab orders, tests, samples, and results.", 'A doctor has many appointments, but each appointment belongs to one doctor.', 'A bill has many items, and each item can be a medicine or a service.']
     },
     {
       id: 'D114-P3',
       formula: "I'd add an index on + BENDA because + KALIMAT  ·  We use a transaction, so + KALIMAT",
-      meaning: 'Explain indexes and transactions with a reason.',
+      meaning: 'Saya akan menambahkan index pada ... karena ...  ·  Kami memakai transaction, supaya ...',
       examples: ["I'd add an index on the visit date because most reports filter by date.", 'We use a transaction, so the stock and the prescription are updated together.', "I'd check the query plan before adding more indexes, because indexes also slow down writes."]
     },
     {
       id: 'D114-P4',
       formula: 'BENDA reduces + BENDA, but it can mean + BENDA  ·  For + BENDA, we + KATA KERJA',
-      meaning: 'Talk about trade-offs and scaling.',
+      meaning: '... mengurangi ..., tapi bisa berarti ...  ·  Untuk ..., kami ...',
       examples: ['Caching reduces database load, but it can mean old data.', 'For analytics, we copy the data to a separate database every night.', 'We never delete lab results; we archive them after ten years.']
     }
   ],

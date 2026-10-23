@@ -91,26 +91,26 @@ E90.registerDay({
     {
       id: 'D113-P1',
       formula: 'Resources → Endpoints → Validation → Errors → Security → Performance',
-      meaning: 'A checklist for answering API design questions.',
+      meaning: 'Checklist menjawab pertanyaan desain API: resource → endpoint → validasi → error → keamanan → performa',
       examples: ["I'd design it as a REST API with resources for patients and appointments.", "I'd return a 409 error if the time slot is already taken.", 'We check permissions on every request.', "We use pagination so the response doesn't get too big."],
       note: 'Di technical interview, sebut alasan di setiap keputusan: "..., so ...", "..., because ...". Jawaban tanpa alasan terdengar seperti hafalan.'
     },
     {
       id: 'D113-P2',
       formula: "I'd design it as + BENDA  ·  The endpoint should be + KATA SIFAT, so + KALIMAT",
-      meaning: 'Propose a design and give the reason.',
+      meaning: 'Saya akan merancangnya sebagai ...  ·  Endpoint-nya harus ..., supaya ...',
       examples: ["I'd design it as two endpoints: one to create an order and one to check its status.", 'The endpoint should be idempotent, so the mobile app can retry safely.', "I'd design the lab result as a sub-resource of the lab order."]
     },
     {
       id: 'D113-P3',
       formula: 'For + BENDA, the API + KATA KERJA  ·  We use + BENDA so + KALIMAT',
-      meaning: 'Explain how the API handles common problems.',
+      meaning: 'Untuk ..., API ...  ·  Kami memakai ... supaya ...',
       examples: ['For large reports, the API returns a job ID, and the client checks the status later.', 'We use rate limiting so one client cannot overload the server.', 'We version the API to avoid breaking the mobile app.']
     },
     {
       id: 'D113-P4',
       formula: "I'd return a + KODE error if + KALIMAT  ·  The trade-off is between + BENDA and + BENDA",
-      meaning: 'Talk about error codes and trade-offs.',
+      meaning: 'Saya akan mengembalikan error ... kalau ...  ·  Trade-off-nya adalah antara ... dan ...',
       examples: ["I'd return a 400 error if the birth date is in the future.", "I'd return a 403 error if a nurse tries to approve a prescription.", 'The trade-off is between consistency and speed.']
     }
   ],

@@ -91,27 +91,27 @@ E90.registerDay({
     {
       id: 'D104-P1',
       formula: 'Thank → Check the question → Answer briefly → Check again',
-      meaning: 'A simple structure for answering a question.',
+      meaning: 'Struktur menjawab pertanyaan: terima kasih → pastikan pertanyaannya → jawab singkat → cek lagi',
       examples: ['Thanks for the question.', 'So your question is whether the checklist works at night, right?', 'Yes, the night nurses use the same screen.', 'Does that answer your question?'],
       note: 'Jawaban Q&A yang baik biasanya 2–4 kalimat. Kalau penanya ingin lebih, mereka akan bertanya lagi.'
     },
     {
       id: 'D104-P2',
       formula: 'So your question is whether + KALIMAT, right?  ·  If I understand correctly, you\'re asking about + BENDA',
-      meaning: 'Repeat the question to check it and gain thinking time.',
+      meaning: 'Jadi pertanyaan Anda adalah apakah ..., benar?  ·  Kalau saya paham dengan benar, Anda bertanya soal ...',
       examples: ['So your question is whether patients can see the checklist, right?', "If I understand correctly, you're asking about the cost of the servers.", 'So your question is how we handle weekends, right?']
     },
     {
       id: 'D104-P3',
       formula: "I don't want to guess, so I'll + KATA KERJA  ·  That's outside my area, but + KALIMAT",
-      meaning: 'Be honest when you do not know. Do not invent information.',
+      meaning: 'Saya tidak mau menebak, jadi saya akan ...  ·  Itu di luar bidang saya, tetapi ... (jangan mengarang informasi)',
       examples: ["I don't want to guess, so I'll check the logs and send you the exact number.", "That's outside my area, but I can connect you with the security team.", "I don't have that number with me right now, but I'll email it after the meeting."],
       note: 'Do not invent information. Mengarang angka di depan manager atau klien jauh lebih berbahaya daripada berkata "I\'ll check".'
     },
     {
       id: 'D104-P4',
       formula: "That's a fair point, and + KALIMAT  ·  Short answer: ... Long answer: ...",
-      meaning: 'Accept criticism and handle complex questions.',
+      meaning: 'Poin itu masuk akal, dan ...  ·  Jawaban singkatnya: ... Jawaban panjangnya: ...',
       examples: ["That's a fair point, and it's on our list for next quarter.", 'Short answer: no. Long answer: we can, but it needs another server.', "That's a fair point. We tested it with only two wards so far."]
     }
   ],

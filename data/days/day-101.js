@@ -27,6 +27,7 @@ E90.registerDay({
       english: "Based on the test results, I don't think we're ready yet.",
       pronunciation: 'beist on de test ri-zalts, ai dount thingk wir re-di yet',
       translation: 'Berdasarkan hasil tes, saya rasa kita belum siap.',
+      naturalTranslation: 'Berdasarkan hasil tes, menurut saya kita belum siap.',
       words: [['Based', '(bagian dari "based on": berdasarkan)', 'base'], ['on', '(bagian dari "based on")'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['test', 'tes / pengujian'], ['results', 'hasil', 'result'], ['I', 'saya'], ["don't", 'tidak (do not)', 'do'], ['think', 'berpikir / merasa'], ["we're", 'kita (we are)', 'be'], ['ready', 'siap'], ['yet', 'belum (dalam kalimat negatif)']],
       phrases: [['based on', 'berdasarkan'], ["I don't think", 'saya rasa tidak / menurut saya belum']],
       pattern: 'D101-P3'
@@ -93,26 +94,26 @@ E90.registerDay({
     {
       id: 'D101-P1',
       formula: 'Acknowledge → Concern → Reason or data → Alternative → Support the decision',
-      meaning: 'A structure for disagreeing professionally.',
+      meaning: 'Struktur tidak setuju secara profesional: akui → kekhawatiran → alasan/data → alternatif → dukung keputusan',
       examples: ['I understand why you want to release on Monday, but I have a concern.', "Based on the test results, I don't think we're ready yet.", 'What if we released it to one ward first?', "I still have some doubts, but I'll support the decision."],
       note: 'Yang ditolak adalah idenya, bukan orangnya. Jangan langsung bilang "You\'re wrong". Akui dulu tujuan mereka, lalu bawa data dan alternatif.'
     },
     {
       id: 'D101-P2',
       formula: 'I understand why + KALIMAT, but + KALIMAT  ·  I see it a bit differently  ·  I may be wrong, but + KALIMAT',
-      meaning: 'Soften your disagreement.',
+      meaning: 'Saya paham kenapa ..., tetapi ...  ·  Saya melihatnya sedikit berbeda  ·  Mungkin saya salah, tetapi ...',
       examples: ['I understand why the client wants this, but it adds two weeks.', 'I see it a bit differently. I think the problem is the process, not the tool.', 'I may be wrong, but I think the nurses need more training first.']
     },
     {
       id: 'D101-P3',
       formula: "Based on + BENDA, I don't think + KALIMAT  ·  What if we + KATA KERJA-ed?",
-      meaning: 'Support your view with data and offer an alternative.',
+      meaning: 'Berdasarkan ..., saya rasa ... tidak ...  ·  Bagaimana kalau kita ...?',
       examples: ["Based on last month's incidents, I don't think the cache is the problem.", 'What if we tested it with the night shift first?', 'Could we look at the error logs together?']
     },
     {
       id: 'D101-P4',
       formula: "I still have some doubts, but I'll + KATA KERJA  ·  Can we find an option that works for + SIAPA?",
-      meaning: 'Find a middle ground or commit to the final decision.',
+      meaning: 'Saya masih punya sedikit keraguan, tapi saya akan ...  ·  Bisakah kita mencari pilihan yang cocok untuk ...?',
       examples: ["I still have some doubts, but I'll do my best to make it work.", 'Can we find an option that works for the lab and the pharmacy?', "It's not my first choice, but I'll support the decision."]
     }
   ],

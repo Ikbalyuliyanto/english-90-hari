@@ -81,26 +81,26 @@ E90.registerDay({
     {
       id: 'D120-P1',
       formula: 'Introduction → Project → Standup → Deep dive → Production issue → System design → Disagreement → Behavioral → Technical interview → Your questions',
-      meaning: 'The 10 stages of the final simulation.',
+      meaning: '10 tahap simulasi akhir',
       examples: ["I'm a software engineer with five years of experience.", "Before we dive in, here's a quick update from my side.", "Here's what we know so far, and here's what we don't know yet.", 'What would you say is the biggest challenge for the team right now?'],
       note: 'Setiap tahap memakai struktur yang sudah kamu latih: Day 91 (perkenalan), 93 (proyek), 35/46 (standup), 112 (deep dive), 73/88 (insiden), 116–117 (system design), 101 (disagreement), 110 (STAR), 113–115 (technical), 108/119 (pertanyaan untuk interviewer).'
     },
     {
       id: 'D120-P2',
       formula: "Before we dive in, + KALIMAT  ·  Here's what we know so far, and here's what we don't know yet",
-      meaning: 'Give updates clearly, including uncertainty.',
+      meaning: 'Sebelum kita masuk ke pembahasan, ...  ·  Ini yang sudah kita ketahui sejauh ini, dan ini yang belum kita ketahui',
       examples: ["Before we dive in, here's a quick update on the release.", "Here's what we know so far: the error started at 9 AM. Here's what we don't know yet: the root cause.", "Before we dive in, I'd like to share one risk."]
     },
     {
       id: 'D120-P3',
       formula: 'What would you say is + BENDA?  ·  How do + SIAPA + KATA KERJA here?',
-      meaning: 'Ask thoughtful questions at the end of an interview.',
+      meaning: 'Menurut Anda, apa ...?  ·  Bagaimana ... di sini ...?',
       examples: ['What would you say is the most important skill for this role?', 'How do teams here make technical decisions?', 'How do new engineers get feedback in their first months?']
     },
     {
       id: 'D120-P4',
       formula: "BENDA ago, I couldn't + KATA KERJA  ·  I'm ready to keep + KATA KERJA-ing",
-      meaning: 'Reflect on your progress.',
+      meaning: '... yang lalu, saya tidak bisa ...  ·  Saya siap untuk terus ...',
       examples: ["A year ago, I couldn't lead a meeting in English.", "I'm ready to keep improving my system design skills.", 'Four months ago, I was nervous. Now I can explain my work clearly.']
     }
   ],

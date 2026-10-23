@@ -70,7 +70,8 @@ E90.registerDay({
       id: 'D103-S08',
       english: 'That brings me to the end of my presentation.',
       pronunciation: 'det bringz mi tu di end ov mai pre-zen-tei-shen',
-      translation: 'Sampai di sini presentasi saya.',
+      translation: 'Itu membawa saya ke akhir presentasi saya.',
+      naturalTranslation: 'Sampai di sini presentasi saya.',
       words: [['That', 'itu'], ['brings', 'membawa', 'bring'], ['me', 'saya (sebagai objek)'], ['to', 'ke'], ['the', '(penanda kata benda, tidak diterjemahkan; dibaca "di" sebelum vokal)'], ['end', 'akhir'], ['of', 'dari'], ['my', 'milik saya'], ['presentation', 'presentasi']],
       phrases: [['that brings me to the end of', 'sampai di sini ... saya (penutup presentasi)']],
       pattern: 'D103-P4'
@@ -92,26 +93,26 @@ E90.registerDay({
     {
       id: 'D103-P1',
       formula: 'Context → Problem → Solution → Architecture → Result → Next Step',
-      meaning: 'A structure for a technical presentation.',
+      meaning: 'Struktur presentasi teknis: konteks → masalah → solusi → arsitektur → hasil → langkah berikutnya',
       examples: ['Some context first: the hospital has four hundred beds.', 'The problem we wanted to solve was slow discharge.', 'On this diagram, you can see the main components.', 'Our next step is to roll it out to all wards.'],
       note: 'Siapkan satu slide per bagian, masing-masing dengan 3–5 kata kunci. Bicara dari kata kunci, jangan membaca slide.'
     },
     {
       id: 'D103-P2',
       formula: 'Some context first: + KALIMAT  ·  The problem we wanted to solve was + BENDA  ·  Our solution was + BENDA',
-      meaning: 'Open with context, problem, and solution.',
+      meaning: 'Sedikit konteks dulu: ...  ·  Masalah yang ingin kami selesaikan adalah ...  ·  Solusi kami adalah ...',
       examples: ['Some context first: our lab processes two thousand samples a day.', 'The problem we wanted to solve was duplicate patient records.', 'Our solution was a matching service that checks name, birth date, and ID number.']
     },
     {
       id: 'D103-P3',
       formula: 'On this diagram, you can see + BENDA  ·  The key idea is that + KALIMAT',
-      meaning: 'Explain a diagram and the main idea.',
+      meaning: 'Di diagram ini, Anda bisa melihat ...  ·  Ide utamanya adalah bahwa ...',
       examples: ['On this diagram, you can see how the lab system talks to our API.', 'The key idea is that the doctor never has to type the result.', 'On the left, you can see the frontend. On the right, you can see the database.']
     },
     {
       id: 'D103-P4',
       formula: 'After + WAKTU, + BENDA went down/up from + ANGKA to + ANGKA  ·  Our next step is to + KATA KERJA',
-      meaning: 'Show the result and the next step.',
+      meaning: 'Setelah ..., ... turun / naik dari ... menjadi ...  ·  Langkah kami berikutnya adalah ...',
       examples: ['After two months, duplicate records went down from three hundred to twenty.', 'Our next step is to add the same check to the emergency department.', 'That brings me to the end of my presentation. Thank you.']
     }
   ],

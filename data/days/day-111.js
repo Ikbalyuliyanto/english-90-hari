@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D111-S01',
       english: 'Let me think out loud for a moment.',
       pronunciation: 'let mi thingk aut laud for e mou-ment',
-      translation: 'Saya berpikir sambil bersuara sebentar, ya.',
+      translation: 'Biar saya berpikir sambil bersuara sebentar.',
+      naturalTranslation: 'Saya berpikir sambil bersuara sebentar, ya.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['think', 'berpikir'], ['out', '(bagian dari "out loud": dengan bersuara)'], ['loud', 'keras / bersuara'], ['for', 'selama'], ['a', 'sebuah (tidak diterjemahkan)'], ['moment', 'saat / sebentar']],
       phrases: [['think out loud', 'berpikir sambil diucapkan'], ['for a moment', 'sebentar']],
       pattern: 'D111-P2'
@@ -60,7 +61,8 @@ E90.registerDay({
       id: 'D111-S07',
       english: 'Let me walk through an example to check my logic.',
       pronunciation: 'let mi wok thru en eg-zem-pel tu chek mai lo-jik',
-      translation: 'Saya coba jalankan satu contoh untuk mengecek logika saya.',
+      translation: 'Biar saya menjalankan satu contoh untuk mengecek logika saya.',
+      naturalTranslation: 'Saya coba jalankan satu contoh untuk mengecek logika saya.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['walk', '(bagian dari "walk through": menelusuri langkah demi langkah)'], ['through', 'melalui'], ['an', 'sebuah (dipakai sebelum bunyi vokal)'], ['example', 'contoh'], ['to', '(penanda kata kerja: untuk)'], ['check', 'mengecek'], ['my', 'milik saya'], ['logic', 'logika']],
       phrases: [['walk through an example', 'menelusuri sebuah contoh langkah demi langkah']],
       pattern: 'D111-P4'
@@ -69,7 +71,8 @@ E90.registerDay({
       id: 'D111-S08',
       english: "I'm stuck on this part, so let me go back to the requirements.",
       pronunciation: 'aim stak on dis part, sou let mi gou bek tu de ri-kwai-er-ments',
-      translation: 'Saya buntu di bagian ini, jadi saya kembali ke kebutuhan soalnya dulu.',
+      translation: 'Saya buntu di bagian ini, jadi biar saya kembali ke kebutuhannya.',
+      naturalTranslation: 'Saya buntu di bagian ini, jadi saya kembali ke kebutuhan soalnya dulu.',
       words: [["I'm", 'saya (I am)', 'be'], ['stuck', 'buntu / tertahan'], ['on', 'di / pada'], ['this', 'ini'], ['part', 'bagian'], ['so', 'jadi'], ['let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['go', 'pergi / kembali (dengan back)'], ['back', 'kembali'], ['to', 'ke'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['requirements', 'kebutuhan / persyaratan', 'requirement']],
       phrases: [['stuck on', 'buntu di'], ['go back to', 'kembali ke']],
       pattern: 'D111-P4'
@@ -91,26 +94,26 @@ E90.registerDay({
     {
       id: 'D111-P1',
       formula: 'Clarify → Assumptions → Simple solution → Example → Improve → Edge cases',
-      meaning: 'How to think out loud in a problem-solving interview.',
+      meaning: 'Cara berpikir sambil bersuara di interview: perjelas → asumsi → solusi sederhana → contoh → perbaiki → edge case',
       examples: ['Before I start, can I ask a few clarifying questions?', "I'm assuming that each patient has a unique ID.", "My first idea is a simple solution, and then I'll improve it.", 'Let me walk through an example to check my logic.'],
       note: 'Diam lama saat berpikir terasa canggung di interview. Ucapkan apa yang sedang kamu pikirkan, walau belum yakin. Kalau buntu, katakan dengan tenang lalu kembali ke kebutuhan soal.'
     },
     {
       id: 'D111-P2',
       formula: "Before I start, can I ask + BENDA?  ·  I'm assuming that + KALIMAT",
-      meaning: 'Clarify the problem and state assumptions.',
+      meaning: 'Sebelum mulai, boleh saya bertanya ...?  ·  Saya berasumsi bahwa ...',
       examples: ['Before I start, can I ask how big the data is?', "I'm assuming that the list fits in memory.", "Let me think out loud for a moment. I'm assuming that two patients can have the same name."]
     },
     {
       id: 'D111-P3',
       formula: 'This works, but + KALIMAT  ·  A better approach would be to + KATA KERJA',
-      meaning: 'Start simple, then improve.',
+      meaning: 'Ini berhasil, tetapi ...  ·  Pendekatan yang lebih baik adalah ...',
       examples: ['This works, but it checks every pair, so it is too slow.', 'A better approach would be to sort the list first.', 'My first idea is to loop through the list twice.']
     },
     {
       id: 'D111-P4',
       formula: "Let me walk through an example to + KATA KERJA  ·  I'm stuck on this part, so let me + KATA KERJA",
-      meaning: 'Check your logic and recover when stuck.',
+      meaning: 'Biar saya jalankan satu contoh untuk ...  ·  Saya buntu di bagian ini, jadi biar saya ...',
       examples: ['Let me walk through an example with three patients.', "I'm stuck on this part, so let me try a smaller example.", 'What happens if the list is empty? Then we just return an empty result.']
     }
   ],

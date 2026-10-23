@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D110-S01',
       english: 'Let me tell you about a situation from my last project.',
       pronunciation: 'let mi tel yu e-baut e si-chu-ei-shen from mai last pro-jekt',
-      translation: 'Saya ceritakan satu situasi dari proyek terakhir saya.',
+      translation: 'Biar saya menceritakan kepada Anda sebuah situasi dari proyek terakhir saya.',
+      naturalTranslation: 'Saya ceritakan satu situasi dari proyek terakhir saya.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['tell', 'menceritakan'], ['you', 'Anda'], ['about', 'tentang'], ['a', 'sebuah (tidak diterjemahkan)'], ['situation', 'situasi'], ['from', 'dari'], ['my', 'milik saya'], ['last', 'terakhir'], ['project', 'proyek']],
       pattern: 'D110-P2'
     },
@@ -92,26 +93,26 @@ E90.registerDay({
     {
       id: 'D110-P1',
       formula: 'Situation → Task → Action → Result (+ Lesson)',
-      meaning: 'The STAR method for behavioral questions.',
+      meaning: 'Metode STAR: situasi → tugas → tindakan → hasil (+ pelajaran)',
       examples: ['The situation was that the go-live date was only two weeks away.', 'My task was to finish the pharmacy integration in time.', 'The action I took was to split the work into daily goals.', 'In the end, we went live on time with no critical bugs.'],
       note: 'Proporsi yang baik: Situation + Task singkat (±20%), Action paling panjang (±60%), Result + Lesson (±20%). Pakai "I" untuk tindakanmu sendiri; jangan hanya "we".'
     },
     {
       id: 'D110-P2',
       formula: 'The situation was that + KALIMAT  ·  My task was to + KATA KERJA',
-      meaning: 'Set the scene quickly.',
+      meaning: 'Situasinya adalah bahwa ...  ·  Tugas saya adalah ...',
       examples: ['The situation was that two senior developers left in the same month.', 'My task was to take over their module and keep the release on track.', 'Let me tell you about a situation from my first year.']
     },
     {
       id: 'D110-P3',
       formula: 'The action I took was to + KATA KERJA  ·  I also + KATA KERJA-ed',
-      meaning: 'Explain what YOU did, step by step.',
+      meaning: 'Tindakan yang saya ambil adalah ...  ·  Saya juga ...',
       examples: ['The action I took was to talk to the colleague privately first.', 'I also wrote down the options and the risks.', 'First, I reproduced the bug. Then, I asked the QA engineer to confirm it.']
     },
     {
       id: 'D110-P4',
       formula: 'In the end, + KALIMAT  ·  Looking back, I would have + KATA KERJA bentuk ke-3',
-      meaning: 'Give the result and reflect.',
+      meaning: 'Akhirnya, ...  ·  Kalau dipikir lagi, seharusnya saya ...',
       examples: ['In the end, the nurses started using the new screen within a week.', 'Looking back, I would have involved the users earlier.', 'That experience showed me the value of clear written agreements.']
     }
   ],

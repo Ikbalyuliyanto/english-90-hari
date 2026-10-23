@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D102-S01',
       english: "I think there's been a misunderstanding.",
       pronunciation: 'ai thingk derz bin e mis-an-der-sten-ding',
-      translation: 'Sepertinya ada salah paham.',
+      translation: 'Saya pikir sudah terjadi salah paham.',
+      naturalTranslation: 'Sepertinya ada salah paham.',
       words: [['I', 'saya'], ['think', 'rasa / pikir'], ["there's", 'ada / telah ada (there has)', 'there'], ['been', '(bagian dari "there has been": telah terjadi)', 'be'], ['a', 'sebuah (tidak diterjemahkan)'], ['misunderstanding', 'salah paham']],
       phrases: [["there's been a misunderstanding", 'ada salah paham']],
       pattern: 'D102-P1'
@@ -26,7 +27,8 @@ E90.registerDay({
       id: 'D102-S03',
       english: 'Sorry for the confusion. Let me clarify.',
       pronunciation: 'so-ri for de ken-fyu-zhen. let mi kle-re-fai',
-      translation: 'Maaf atas kebingungannya. Saya jelaskan.',
+      translation: 'Maaf atas kebingungannya. Biar saya perjelas.',
+      naturalTranslation: 'Maaf atas kebingungannya. Saya jelaskan.',
       words: [['Sorry', 'maaf'], ['for', 'atas'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['confusion', 'kebingungan'], ['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['clarify', 'mengklarifikasi / memperjelas']],
       phrases: [['sorry for the confusion', 'maaf atas kebingungannya'], ['let me clarify', 'saya perjelas']],
       pattern: 'D102-P1'
@@ -44,7 +46,8 @@ E90.registerDay({
       id: 'D102-S05',
       english: 'Could you tell me what you understood?',
       pronunciation: 'kud yu tel mi wat yu an-der-stud',
-      translation: 'Bisakah Anda ceritakan apa yang Anda pahami?',
+      translation: 'Bisakah Anda memberi tahu saya apa yang Anda pahami?',
+      naturalTranslation: 'Bisakah Anda ceritakan apa yang Anda pahami?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'Anda'], ['tell', 'memberi tahu / menceritakan'], ['me', 'saya (sebagai objek)'], ['what', 'apa yang'], ['understood', 'pahami (lampau)', 'understand']],
       pattern: 'D102-P1'
     },
@@ -92,20 +95,20 @@ E90.registerDay({
     {
       id: 'D102-P1',
       formula: "I think there's been a misunderstanding  ·  Sorry for the confusion. Let me clarify.",
-      meaning: 'Name the misunderstanding calmly.',
+      meaning: 'Saya pikir sudah terjadi salah paham  ·  Maaf atas kebingungannya. Biar saya perjelas.',
       examples: ["I think there's been a misunderstanding about the deadline.", 'Sorry for the confusion. Let me clarify what the report includes.', 'Could you tell me what you understood? Then I can explain better.'],
       note: 'Salah paham jarang disebabkan satu orang saja. "Sorry for the confusion" menurunkan ketegangan tanpa menyalahkan siapa pun.'
     },
     {
       id: 'D102-P2',
       formula: 'When I said + KATA, I meant + KALIMAT  ·  What I meant was that + KALIMAT',
-      meaning: 'Explain what you really meant.',
+      meaning: 'Waktu saya bilang ..., maksud saya ...  ·  Yang saya maksud adalah bahwa ...',
       examples: ['When I said "next week", I meant the test version, not the live version.', 'What I meant was that we can fix it, but not today.', 'When I said "all patients", I meant outpatients only.']
     },
     {
       id: 'D102-P3',
       formula: "It sounds like + KALIMAT  ·  To avoid this next time, let's + KATA KERJA",
-      meaning: 'Find the cause and prevent it next time.',
+      meaning: 'Kedengarannya ...  ·  Supaya tidak terulang, ayo kita ...',
       examples: ['It sounds like we used the word "urgent" differently.', "To avoid this next time, let's confirm dates in writing.", "I'll send a written summary so we're on the same page."]
     }
   ],

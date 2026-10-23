@@ -16,7 +16,8 @@ E90.registerDay({
       id: 'D117-S02',
       english: 'Should the system support multiple clinics and time zones?',
       pronunciation: 'shud de sis-tem se-port mal-ti-pel kli-niks en taim zounz',
-      translation: 'Apakah sistem perlu mendukung banyak klinik dan zona waktu?',
+      translation: 'Apakah sistem seharusnya mendukung banyak klinik dan zona waktu?',
+      naturalTranslation: 'Apakah sistem perlu mendukung banyak klinik dan zona waktu?',
       words: [['Should', 'apakah perlu / seharusnya'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['system', 'sistem'], ['support', 'mendukung'], ['multiple', 'banyak / lebih dari satu'], ['clinics', 'klinik', 'clinic'], ['and', 'dan'], ['time', 'waktu'], ['zones', 'zona', 'zone']],
       phrases: [['time zones', 'zona waktu']],
       pattern: 'D117-P2'
@@ -90,26 +91,26 @@ E90.registerDay({
     {
       id: 'D117-P1',
       formula: 'Clarify → Requirements → Estimate → High-level design → Deep dive → Bottlenecks → Wrap up',
-      meaning: 'A complete system design discussion.',
+      meaning: 'Diskusi system design lengkap: perjelas → kebutuhan → perkiraan → desain garis besar → pendalaman → bottleneck → penutup',
       examples: ["Before designing, I'd like to clarify the scope.", 'The core flow is search, book, confirm, and remind.', 'To prevent double booking, we lock the slot for a few minutes.', "Given more time, I'd go deeper into the data model."],
       note: 'Sering cek dengan interviewer: "Does this make sense so far?", "Should I go deeper into this part?". Mereka mungkin ingin mengarahkan diskusi ke bagian tertentu.'
     },
     {
       id: 'D117-P2',
       formula: "Before designing, I'd like to clarify + BENDA  ·  Should the system support + BENDA?  ·  How many + BENDA do we expect?",
-      meaning: 'Ask clarifying questions.',
+      meaning: 'Sebelum merancang, saya ingin memperjelas ...  ·  Apakah sistem seharusnya mendukung ...?  ·  Berapa banyak ... yang kita perkirakan?',
       examples: ['Should the system support online payments?', 'How many doctors do we expect per clinic?', "Before designing, I'd like to clarify who the main users are."]
     },
     {
       id: 'D117-P3',
       formula: 'The core flow is + ...  ·  To prevent + BENDA, we + KATA KERJA',
-      meaning: 'Describe the main flow and how you handle a key problem.',
+      meaning: 'Alur intinya adalah ...  ·  Untuk mencegah ..., kami ...',
       examples: ['The core flow is order, collect sample, test, and report.', 'To prevent lost reminders, we store them in a queue.', 'To prevent slow searches, we pre-calculate the free slots.']
     },
     {
       id: 'D117-P4',
       formula: "If + KALIMAT, the first bottleneck will probably be + BENDA  ·  Given more time, I'd go deeper into + BENDA",
-      meaning: 'Discuss bottlenecks and wrap up.',
+      meaning: 'Kalau ..., bottleneck pertama kemungkinan besar ada di ...  ·  Kalau ada waktu lebih, saya akan membahas ... lebih dalam',
       examples: ['If more clinics join, the first bottleneck will probably be the database writes.', "Given more time, I'd go deeper into security and privacy.", "To wrap up, I'd start with one service and one database, and split it later."]
     }
   ],

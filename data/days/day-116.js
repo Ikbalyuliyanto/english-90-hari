@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D116-S01',
       english: "Let's start with the functional requirements.",
       pronunciation: 'lets start with de fank-she-nel ri-kwai-er-ments',
-      translation: 'Mari kita mulai dari kebutuhan fungsional.',
+      translation: 'Ayo kita mulai dengan kebutuhan fungsional.',
+      naturalTranslation: 'Mari kita mulai dari kebutuhan fungsional.',
       words: [["Let's", 'mari kita (let us)', 'let'], ['start', 'mulai'], ['with', 'dengan / dari'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['functional', 'fungsional: apa yang harus bisa dilakukan sistem'], ['requirements', 'kebutuhan / persyaratan', 'requirement']],
       phrases: [['functional requirements', 'kebutuhan fungsional (fitur yang harus ada)']],
       pattern: 'D116-P2'
@@ -26,7 +27,8 @@ E90.registerDay({
       id: 'D116-S03',
       english: 'Let me estimate the scale: about five thousand appointments per day.',
       pronunciation: 'let mi es-ti-meit de skeil: e-baut faiv thau-zend e-point-ments per dei',
-      translation: 'Saya perkirakan skalanya: sekitar lima ribu janji temu per hari.',
+      translation: 'Biar saya perkirakan skalanya: sekitar lima ribu janji temu per hari.',
+      naturalTranslation: 'Saya perkirakan skalanya: sekitar lima ribu janji temu per hari.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['estimate', 'memperkirakan'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['scale', 'skala / besarnya beban'], ['about', 'sekitar'], ['five', 'lima'], ['thousand', 'ribu'], ['appointments', 'janji temu', 'appointment'], ['per', 'per'], ['day', 'hari']],
       phrases: [['estimate the scale', 'memperkirakan besarnya beban sistem']],
       pattern: 'D116-P3'
@@ -93,27 +95,27 @@ E90.registerDay({
     {
       id: 'D116-P1',
       formula: 'Requirements → Scale → High-level design → Data → Bottlenecks → Trade-offs',
-      meaning: 'The usual order of a system design discussion.',
+      meaning: 'Urutan diskusi system design: kebutuhan → skala → desain garis besar → data → bottleneck → trade-off',
       examples: ["Let's start with the functional requirements.", 'Let me estimate the scale: about five thousand appointments per day.', 'A load balancer spreads the traffic across several servers.', "I'd start simple and add complexity only when we need it."],
       note: 'System design interview bukan tes jawaban benar. Yang dinilai: kamu bertanya dulu, memperkirakan skala, menjelaskan pilihan, dan tahu trade-off-nya.'
     },
     {
       id: 'D116-P2',
       formula: "Let's start with + BENDA  ·  BENDA include + BENDA",
-      meaning: 'List requirements clearly.',
+      meaning: 'Ayo kita mulai dengan ...  ·  ... mencakup ...',
       examples: ["Let's start with what patients and doctors need to do.", 'Functional requirements include booking, cancelling, and reminders.', 'Non-functional requirements include privacy and 99.9 percent uptime.']
     },
     {
       id: 'D116-P3',
       formula: 'Let me estimate the scale: + ANGKA + BENDA per + WAKTU',
-      meaning: 'Estimate numbers out loud.',
+      meaning: 'Biar saya perkirakan skalanya: ... per ...',
       examples: ['Let me estimate the scale: about two thousand lab results per day.', "That's roughly one request per second on average, maybe ten at peak.", 'Let me estimate the storage: one million records per year.'],
       note: 'Angka kasar sudah cukup. Katakan asumsinya: "Assuming each clinic has ...".'
     },
     {
       id: 'D116-P4',
       formula: 'BENDA + KATA KERJA ...  ·  For + BENDA, we\'d + KATA KERJA  ·  I\'d start simple and add + BENDA only when + KALIMAT',
-      meaning: 'Name components and explain what they do.',
+      meaning: '... (komponen) + melakukan ...  ·  Untuk ..., kami akan ...  ·  Saya akan mulai sederhana dan menambah ... hanya ketika ...',
       examples: ['A cache stores frequent results so the database does less work.', "For high availability, we'd run at least two instances of each service.", "I'd start simple and add a message queue only when the reminders slow down the main system."]
     }
   ],

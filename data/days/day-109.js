@@ -93,26 +93,26 @@ E90.registerDay({
     {
       id: 'D109-P1',
       formula: 'Strength → Example → Result  ·  Weakness → Impact → Action → Progress',
-      meaning: 'Structures for strengths and weaknesses.',
+      meaning: 'Kelebihan → contoh → hasil  ·  Kekurangan → dampak → tindakan → kemajuan',
       examples: ['One of my strengths is staying calm under pressure.', 'For example, during a production incident last year, I led the investigation.', "A weakness I'm working on is saying no to extra requests.", "It's getting better, but I'm still improving."],
       note: 'Hindari kekurangan palsu seperti "I\'m a perfectionist" atau "I work too hard". Pilih kekurangan nyata yang tidak inti untuk pekerjaan itu, lalu tunjukkan langkah konkret yang sedang kamu lakukan.'
     },
     {
       id: 'D109-P2',
       formula: 'One of my strengths is + KATA KERJA-ing  ·  For example, + KALIMAT',
-      meaning: 'Give a strength with a concrete example.',
+      meaning: 'Salah satu kelebihan saya adalah ...  ·  Contohnya, ...',
       examples: ['One of my strengths is learning new domains quickly.', 'For example, I learned the insurance claim process in two weeks.', 'My colleagues often come to me when a bug is hard to reproduce.']
     },
     {
       id: 'D109-P3',
       formula: "A weakness I'm working on is + KATA KERJA-ing  ·  In the past, + KALIMAT  ·  Now I + KATA KERJA",
-      meaning: 'Describe a weakness and what you do about it.',
+      meaning: 'Kekurangan yang sedang saya perbaiki adalah ...  ·  Dulu, ...  ·  Sekarang saya ...',
       examples: ["A weakness I'm working on is writing documentation.", 'In the past, I explained too many details in meetings.', 'Now I prepare three key points before every meeting.']
     },
     {
       id: 'D109-P4',
       formula: "BENDA used to be hard for me  ·  It's getting better, but I'm still improving",
-      meaning: 'Show progress honestly.',
+      meaning: 'Dulu ... sulit bagi saya  ·  Sudah semakin baik, tapi saya masih terus memperbaikinya',
       examples: ['Giving feedback to seniors used to be hard for me.', "It's getting better, but I'm still improving.", 'Estimating tasks used to be hard for me, but now I compare with similar tasks.']
     }
   ],

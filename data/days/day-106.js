@@ -93,26 +93,26 @@ E90.registerDay({
     {
       id: 'D106-P1',
       formula: 'Present → Highlights → Why this role',
-      meaning: 'A 1–2 minute answer to "Tell me about yourself".',
+      meaning: 'Jawaban 1–2 menit untuk "Ceritakan tentang diri Anda": sekarang → sorotan → kenapa posisi ini',
       examples: ["Sure. I'm a backend engineer focused on healthcare systems.", "A project I'm proud of is the lab results integration.", "I'm now looking for a role where I can work on larger systems.", "I'm happy to go into more detail on any of that."],
       note: 'Beda dengan perkenalan di Day 91: di interview, pilih hanya pengalaman yang relevan dengan posisi yang dilamar, lalu tutup dengan alasan kenapa posisi ini. Jangan ceritakan riwayat hidup.'
     },
     {
       id: 'D106-P2',
       formula: "For the past + WAKTU, I've been + KATA KERJA-ing  ·  Most of my work is on + BENDA",
-      meaning: 'Describe your recent experience.',
+      meaning: 'Selama ... terakhir, saya sudah ...  ·  Sebagian besar pekerjaan saya ada di ...',
       examples: ["For the past two years, I've been leading a small frontend team.", 'Most of my work is on the patient portal and the mobile app.', "For the past year, I've been working on billing and insurance claims."]
     },
     {
       id: 'D106-P3',
       formula: "A project I'm proud of is + BENDA  ·  What I enjoy most is + KATA KERJA-ing",
-      meaning: 'Give one highlight and what motivates you.',
+      meaning: 'Proyek yang saya banggakan adalah ...  ·  Yang paling saya nikmati adalah ...',
       examples: ["A project I'm proud of is the new discharge checklist.", 'What I enjoy most is working closely with users.', 'What I enjoy most is making slow systems fast.']
     },
     {
       id: 'D106-P4',
       formula: "I'm now looking for a role where I can + KATA KERJA  ·  That's why this position caught my attention",
-      meaning: 'Connect your story to the job.',
+      meaning: 'Sekarang saya mencari posisi di mana saya bisa ...  ·  Itulah kenapa posisi ini menarik perhatian saya',
       examples: ["I'm now looking for a role where I can grow into system design.", "I'm now looking for a role where I can work with an international team.", "That's why this position caught my attention."]
     }
   ],

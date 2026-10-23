@@ -92,26 +92,26 @@ E90.registerDay({
     {
       id: 'D108-P1',
       formula: 'Company & mission → Product → Your match → Your contribution',
-      meaning: 'A structure for "Why do you want to work here?"',
+      meaning: 'Struktur untuk "Kenapa Anda ingin bekerja di sini?": perusahaan & misi → produk → kecocokan → kontribusi',
       examples: ['Your mission to make healthcare easier to access really speaks to me.', "I read that you're expanding to more clinics in the region.", "My experience with hospital systems matches what you're building.", 'I think I could contribute from day one on the integration side.'],
       note: 'Sebelum interview, siapkan 2–3 fakta nyata tentang perusahaan (produk, misi, berita terbaru, blog engineering). Jangan mengarang fakta; kalau belum tahu, katakan "I\'d like to learn more about ...".'
     },
     {
       id: 'D108-P2',
       formula: "I've been following + BENDA  ·  I read that + KALIMAT  ·  BENDA really speaks to me",
-      meaning: 'Show that you researched the company.',
+      meaning: 'Saya sudah mengikuti ...  ·  Saya membaca bahwa ...  ·  ... benar-benar sesuai dengan nilai saya',
       examples: ["I've been following your engineering blog for a while.", 'I read that your app now supports online consultations.', 'Your focus on patient privacy really speaks to me.']
     },
     {
       id: 'D108-P3',
       formula: 'My experience with + BENDA matches + BENDA  ·  I could contribute + ... on the + BENDA side',
-      meaning: 'Connect your experience to their needs.',
+      meaning: 'Pengalaman saya dengan ... cocok dengan ...  ·  Saya bisa berkontribusi ... di bagian ...',
       examples: ['My experience with insurance claims matches what the billing team needs.', 'I could contribute quickly on the backend side.', 'My experience with lab integrations matches the job description.']
     },
     {
       id: 'D108-P4',
       formula: 'It feels like a place where I can + KATA KERJA  ·  What does success look like in this role?',
-      meaning: 'Close with motivation and a smart question.',
+      meaning: 'Rasanya ini tempat di mana saya bisa ...  ·  Seperti apa keberhasilan di posisi ini?',
       examples: ['It feels like a place where I can grow into a senior role.', 'What does success look like in this role after three months?', 'I also like that your team works closely with doctors.']
     }
   ],

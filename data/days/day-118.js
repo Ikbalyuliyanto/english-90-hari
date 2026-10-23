@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D118-S01',
       english: "That's a good question. Let me think about it for a second.",
       pronunciation: 'dets e gud kwes-chen. let mi thingk e-baut it for e se-kend',
-      translation: 'Pertanyaan yang bagus. Saya pikirkan sebentar.',
+      translation: 'Itu pertanyaan yang bagus. Biar saya memikirkannya sebentar.',
+      naturalTranslation: 'Pertanyaan yang bagus. Saya pikirkan sebentar.',
       words: [["That's", 'itu adalah (that is)', 'that'], ['a', 'sebuah (tidak diterjemahkan)'], ['good', 'bagus'], ['question', 'pertanyaan'], ['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['think', 'berpikir'], ['about', 'tentang'], ['it', 'itu'], ['for', 'selama'], ['second', 'detik']],
       phrases: [['for a second', 'sebentar']],
       pattern: 'D118-P2'
@@ -90,26 +91,26 @@ E90.registerDay({
     {
       id: 'D118-P1',
       formula: 'Pause → Be honest → Be brief → Turn to a positive',
-      meaning: 'A calm way to answer difficult questions.',
+      meaning: 'Cara tenang menjawab pertanyaan sulit: jeda → jujur → singkat → arahkan ke hal positif',
       examples: ["That's a good question. Let me think about it for a second.", 'To be transparent, I took a year off to take care of my family.', 'During that time, I kept learning with online courses.', "I'm now fully ready to come back to work."],
       note: 'Pertanyaan sulit sering menguji sikap, bukan jawaban sempurna. Jangan berbohong, jangan membela diri terlalu panjang, dan jangan menjelekkan siapa pun.'
     },
     {
       id: 'D118-P2',
       formula: "That's a good question. Let me think about it for a second.  ·  To be transparent, + KALIMAT",
-      meaning: 'Buy thinking time and answer honestly.',
+      meaning: 'Itu pertanyaan yang bagus. Biar saya memikirkannya sebentar.  ·  Terus terang, ...',
       examples: ["That's a good question. Let me think about it for a second.", 'To be transparent, my last project was cancelled.', "To be transparent, I haven't led a team officially, but I've mentored two juniors."]
     },
     {
       id: 'D118-P3',
       formula: "I don't have + BENDA yet, but + KALIMAT  ·  BENDA isn't perfect, but + KALIMAT",
-      meaning: 'Admit a gap and show what you do about it.',
+      meaning: 'Saya belum punya ..., tetapi ...  ·  ... belum sempurna, tetapi ...',
       examples: ["I don't have experience with Kubernetes yet, but I've used Docker for three years.", "My English isn't perfect, but I've presented to international clients.", "I don't know the answer, but here's how I would find out."]
     },
     {
       id: 'D118-P4',
       formula: "I'd like to learn more about + BENDA before + KATA KERJA-ing  ·  I see myself + KATA KERJA-ing  ·  I'm in the process with + BENDA, but + KALIMAT",
-      meaning: 'Handle salary, future, and other offers politely.',
+      meaning: 'Saya ingin tahu lebih banyak tentang ... sebelum ...  ·  Saya membayangkan diri saya ...  ·  Saya sedang dalam proses dengan ..., tetapi ...',
       examples: ["I'd like to learn more about the responsibilities before discussing a specific number.", 'In five years, I see myself mentoring other engineers.', "I'm in the process with two other companies, but I'm most excited about this role."]
     }
   ],
