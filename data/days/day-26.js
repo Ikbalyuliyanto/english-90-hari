@@ -25,7 +25,8 @@ E90.registerDay({
       id: 'D26-S03',
       english: 'Would you like some coffee?',
       pronunciation: 'wud yu laik sam ko-fi?',
-      translation: 'Mau kopi?',
+      translation: 'Apakah Anda mau kopi?',
+      naturalTranslation: 'Mau kopi?',
       words: [['Would', '(kata bantu untuk tawaran sopan, tidak diterjemahkan langsung)', 'will'], ['you', 'Anda'], ['like', 'mau (dalam "would like")'], ['some', 'sedikit / beberapa (tidak selalu diterjemahkan)'], ['coffee', 'kopi']],
       phrases: [['would you like ...?', 'mau ...? (menawarkan dengan sopan)']],
       pattern: 'D26-P2'
@@ -52,7 +53,8 @@ E90.registerDay({
       id: 'D26-S06',
       english: 'Would you like to join us for lunch?',
       pronunciation: 'wud yu laik tu join as for lanch?',
-      translation: 'Mau ikut makan siang bersama kami?',
+      translation: 'Apakah kamu mau ikut makan siang bersama kami?',
+      naturalTranslation: 'Mau ikut makan siang bersama kami?',
       words: [['Would', '(kata bantu untuk tawaran sopan, tidak diterjemahkan langsung)', 'will'], ['you', 'kamu'], ['like', 'mau (dalam "would like")'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['join', 'bergabung / ikut'], ['us', 'kami (sebagai objek)'], ['for', 'untuk'], ['lunch', 'makan siang']],
       phrases: [['join us', 'ikut bersama kami']],
       pattern: 'D26-P2'
@@ -61,7 +63,8 @@ E90.registerDay({
       id: 'D26-S07',
       english: 'Let me help you.',
       pronunciation: 'let mi help yu',
-      translation: 'Sini saya bantu.',
+      translation: 'Biar saya membantumu.',
+      naturalTranslation: 'Sini saya bantu.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['help', 'membantu'], ['you', 'kamu']],
       phrases: [['let me + kata kerja', 'biar saya ...']],
       pattern: 'D26-P3'
@@ -78,7 +81,8 @@ E90.registerDay({
       id: 'D26-S09',
       english: 'Can you do me a favor?',
       pronunciation: 'ken yu du mi e fei-ver?',
-      translation: 'Bisa minta tolong?',
+      translation: 'Bisakah kamu membantu saya?',
+      naturalTranslation: 'Bisa minta tolong?',
       words: [['Can', 'bisakah'], ['you', 'kamu'], ['do', 'melakukan'], ['me', 'untuk saya'], ['a', 'sebuah'], ['favor', 'bantuan / pertolongan']],
       phrases: [['do someone a favor', 'menolong seseorang']],
       pattern: 'D19-P2'
@@ -114,7 +118,8 @@ E90.registerDay({
       id: 'D26-S13',
       english: "I'll send you the details later.",
       pronunciation: 'ail send yu de di-teilz lei-ter',
-      translation: 'Nanti saya kirimkan detailnya.',
+      translation: 'Saya akan mengirimkan detailnya ke kamu nanti.',
+      naturalTranslation: 'Nanti saya kirimkan detailnya.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['send', 'mengirim'], ['you', 'kepada kamu'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['details', 'rincian / detail', 'detail'], ['later', 'nanti']],
       pattern: 'D18-P2'
     },
@@ -122,7 +127,8 @@ E90.registerDay({
       id: 'D26-S14',
       english: 'Do you want to take a break?',
       pronunciation: 'du yu want tu teik e breik?',
-      translation: 'Kamu mau istirahat sebentar?',
+      translation: 'Apakah kamu mau istirahat sebentar?',
+      naturalTranslation: 'Kamu mau istirahat sebentar?',
       words: [['Do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu'], ['want', 'mau'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['take', 'mengambil (dalam "take a break")'], ['a', 'sebuah'], ['break', 'jeda / istirahat']],
       phrases: [['take a break', 'istirahat sebentar']],
       pattern: 'D03-P4'

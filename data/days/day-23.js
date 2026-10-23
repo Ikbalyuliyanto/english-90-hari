@@ -40,7 +40,8 @@ E90.registerDay({
       id: 'D23-S05',
       english: 'Where did you go?',
       pronunciation: 'wer did yu gou?',
-      translation: 'Kamu pergi ke mana?',
+      translation: 'Ke mana kamu pergi?',
+      naturalTranslation: 'Kamu pergi ke mana?',
       words: [['Where', 'ke mana'], ['did', '(kata bantu pertanyaan bentuk lampau, tidak diterjemahkan)', 'do'], ['you', 'kamu'], ['go', 'pergi']],
       pattern: 'D23-P1'
     },
@@ -48,7 +49,8 @@ E90.registerDay({
       id: 'D23-S06',
       english: 'Which company do you work for?',
       pronunciation: 'wich kam-pe-ni du yu werk for?',
-      translation: 'Kamu bekerja di perusahaan apa?',
+      translation: 'Untuk perusahaan mana kamu bekerja?',
+      naturalTranslation: 'Kamu bekerja di perusahaan apa?',
       words: [['Which', 'yang mana / apa'], ['company', 'perusahaan'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu'], ['work', 'bekerja'], ['for', 'untuk']],
       phrases: [['work for + perusahaan', 'bekerja untuk / di perusahaan ...']],
       pattern: 'D23-P3'
@@ -66,7 +68,8 @@ E90.registerDay({
       id: 'D23-S08',
       english: 'How was it?',
       pronunciation: 'hau woz it?',
-      translation: 'Bagaimana (rasanya/hasilnya)?',
+      translation: 'Bagaimana itu?',
+      naturalTranslation: 'Bagaimana (rasanya/hasilnya)?',
       words: [['How', 'bagaimana'], ['was', '(to be bentuk lampau, tidak diterjemahkan)', 'be'], ['it', 'hal itu']],
       pattern: 'D15-P1'
     },
@@ -74,7 +77,8 @@ E90.registerDay({
       id: 'D23-S09',
       english: 'Can you tell me more about it?',
       pronunciation: 'ken yu tel mi mor e-baut it?',
-      translation: 'Bisa ceritakan lebih banyak tentang itu?',
+      translation: 'Bisakah kamu memberi tahu saya lebih banyak tentang itu?',
+      naturalTranslation: 'Bisa ceritakan lebih banyak tentang itu?',
       words: [['Can', 'bisakah'], ['you', 'kamu'], ['tell', 'memberi tahu / menceritakan'], ['me', 'kepada saya'], ['more', 'lebih banyak'], ['about', 'tentang'], ['it', 'hal itu']],
       phrases: [['tell me more', 'ceritakan lebih banyak']],
       pattern: 'D23-P5'
@@ -83,7 +87,8 @@ E90.registerDay({
       id: 'D23-S10',
       english: "That's interesting. What did you do next?",
       pronunciation: 'dets in-tres-ting. wat did yu du nekst?',
-      translation: 'Menarik. Lalu apa yang kamu lakukan?',
+      translation: 'Itu menarik. Apa yang kamu lakukan selanjutnya?',
+      naturalTranslation: 'Menarik. Lalu apa yang kamu lakukan?',
       words: [["That's", 'itu (that is)', 'that'], ['interesting', 'menarik'], ['What', 'apa'], ['did', '(kata bantu pertanyaan bentuk lampau, tidak diterjemahkan)', 'do'], ['you', 'kamu'], ['do', 'melakukan'], ['next', 'selanjutnya']],
       phrases: [["that's interesting", 'menarik (reaksi untuk menunjukkan kamu mendengarkan)']],
       pattern: 'D23-P1'
@@ -95,7 +100,8 @@ E90.registerDay({
       id: 'D23-S11',
       english: 'Did you finish your task?',
       pronunciation: 'did yu fi-nish yor task?',
-      translation: 'Kamu sudah menyelesaikan tugasmu?',
+      translation: 'Apakah kamu sudah menyelesaikan tugasmu?',
+      naturalTranslation: 'Kamu sudah menyelesaikan tugasmu?',
       words: [['Did', '(kata bantu pertanyaan bentuk lampau, tidak diterjemahkan)', 'do'], ['you', 'kamu'], ['finish', 'menyelesaikan'], ['your', '-mu / milikmu'], ['task', 'tugas']],
       pattern: 'D17-P3'
     },
@@ -111,7 +117,8 @@ E90.registerDay({
       id: 'D23-S13',
       english: 'Where are you working now?',
       pronunciation: 'wer ar yu wer-king nau?',
-      translation: 'Sekarang kamu bekerja di mana?',
+      translation: 'Di mana kamu bekerja sekarang?',
+      naturalTranslation: 'Sekarang kamu bekerja di mana?',
       words: [['Where', 'di mana'], ['are', '(kata bantu "are + -ing", tidak diterjemahkan)', 'be'], ['you', 'kamu'], ['working', 'bekerja', 'work'], ['now', 'sekarang']],
       pattern: 'D06-P3'
     },

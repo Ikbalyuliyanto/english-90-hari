@@ -41,7 +41,8 @@ E90.registerDay({
       id: 'D33-S05',
       english: 'It will take about two days.',
       pronunciation: 'it wil teik e-baut tu deiz',
-      translation: 'Kira-kira butuh dua hari.',
+      translation: 'Itu akan memakan waktu sekitar dua hari.',
+      naturalTranslation: 'Kira-kira butuh dua hari.',
       words: [['It', '(subjek, tidak diterjemahkan)'], ['will', 'akan'], ['take', 'memakan (waktu)'], ['about', 'sekitar / kira-kira'], ['two', 'dua'], ['days', 'hari (jamak)', 'day']],
       phrases: [['it will take + waktu', 'akan memakan waktu ...']],
       pattern: 'D33-P3'
@@ -58,7 +59,8 @@ E90.registerDay({
       id: 'D33-S07',
       english: 'Can we move the deadline?',
       pronunciation: 'ken wi muv de ded-lain?',
-      translation: 'Bisa deadline-nya diundur?',
+      translation: 'Bisakah kita mengundur deadline-nya?',
+      naturalTranslation: 'Bisa deadline-nya diundur?',
       words: [['Can', 'bisakah'], ['we', 'kita'], ['move', 'memindahkan / mengundur'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['deadline', 'tenggat waktu / deadline']],
       phrases: [['move the deadline', 'mengubah / mengundur deadline']],
       pattern: 'D33-P4'
@@ -75,7 +77,8 @@ E90.registerDay({
       id: 'D33-S09',
       english: 'How long will it take?',
       pronunciation: 'hau long wil it teik?',
-      translation: 'Kira-kira butuh berapa lama?',
+      translation: 'Berapa lama itu akan memakan waktu?',
+      naturalTranslation: 'Kira-kira butuh berapa lama?',
       words: [['How', 'seberapa'], ['long', 'lama'], ['will', 'akan'], ['it', '(subjek, tidak diterjemahkan)'], ['take', 'memakan (waktu)']],
       pattern: 'D33-P3'
     },

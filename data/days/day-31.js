@@ -78,7 +78,8 @@ E90.registerDay({
       id: 'D31-S09',
       english: 'I report to the project manager.',
       pronunciation: 'ai ri-port tu de pro-jekt me-ne-jer',
-      translation: 'Atasan langsung saya adalah project manager.',
+      translation: 'Saya melapor kepada project manager.',
+      naturalTranslation: 'Atasan langsung saya adalah project manager.',
       words: [['I', 'saya'], ['report', 'melapor'], ['to', 'kepada'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['project', 'proyek'], ['manager', 'manajer / atasan']],
       phrases: [['report to + orang', 'melapor ke / atasan langsungnya adalah ...']],
       pattern: 'D31-P4'
@@ -87,7 +88,8 @@ E90.registerDay({
       id: 'D31-S10',
       english: 'What do you do at your company?',
       pronunciation: 'wat du yu du et yor kam-pe-ni?',
-      translation: 'Apa pekerjaanmu di perusahaanmu?',
+      translation: 'Apa yang kamu kerjakan di perusahaanmu?',
+      naturalTranslation: 'Apa pekerjaanmu di perusahaanmu?',
       words: [['What', 'apa'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu'], ['do', 'kerjakan'], ['at', 'di'], ['your', 'milikmu'], ['company', 'perusahaan']],
       pattern: 'D13-P1'
     }

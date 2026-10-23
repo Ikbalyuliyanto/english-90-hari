@@ -34,7 +34,8 @@ E90.registerDay({
       id: 'D29-S04',
       english: "I'll call you back.",
       pronunciation: 'ail kol yu bek',
-      translation: 'Nanti saya telepon balik.',
+      translation: 'Saya akan meneleponmu balik.',
+      naturalTranslation: 'Nanti saya telepon balik.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['call', 'menelepon'], ['you', 'kamu'], ['back', 'kembali / balik']],
       phrases: [['call someone back', 'menelepon balik']],
       pattern: 'D29-P3'
@@ -51,7 +52,8 @@ E90.registerDay({
       id: 'D29-S06',
       english: 'I just sent it.',
       pronunciation: 'ai jast sent it',
-      translation: 'Baru saja saya kirim.',
+      translation: 'Saya baru saja mengirimnya.',
+      naturalTranslation: 'Baru saja saya kirim.',
       words: [['I', 'saya'], ['just', 'baru saja'], ['sent', 'mengirim (lampau)', 'send'], ['it', 'itu / -nya']],
       phrases: [['just + kata kerja lampau', 'baru saja ...']],
       pattern: 'D29-P5'
@@ -60,7 +62,8 @@ E90.registerDay({
       id: 'D29-S07',
       english: 'Did you get my message?',
       pronunciation: 'did yu get mai me-sij?',
-      translation: 'Pesan saya sudah sampai?',
+      translation: 'Apakah kamu sudah menerima pesan saya?',
+      naturalTranslation: 'Pesan saya sudah sampai?',
       words: [['Did', '(kata bantu pertanyaan bentuk lampau, tidak diterjemahkan)', 'do'], ['you', 'kamu'], ['get', 'menerima'], ['my', 'milik saya'], ['message', 'pesan']],
       pattern: 'D17-P3'
     },
@@ -77,7 +80,8 @@ E90.registerDay({
       id: 'D29-S09',
       english: 'Let me share my screen.',
       pronunciation: 'let mi sher mai skrin',
-      translation: 'Saya bagikan layar saya, ya.',
+      translation: 'Biar saya bagikan layar saya.',
+      naturalTranslation: 'Saya bagikan layar saya, ya.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['share', 'membagikan'], ['my', 'milik saya'], ['screen', 'layar']],
       phrases: [['share my screen', 'berbagi layar']],
       pattern: 'D26-P3'
@@ -86,7 +90,8 @@ E90.registerDay({
       id: 'D29-S10',
       english: "I'll text you when I arrive.",
       pronunciation: 'ail tekst yu wen ai e-raiv',
-      translation: 'Saya kirim pesan ke kamu kalau sudah sampai.',
+      translation: 'Saya akan mengirim pesan ke kamu ketika saya sampai.',
+      naturalTranslation: 'Saya kirim pesan ke kamu kalau sudah sampai.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['text', 'mengirim pesan singkat / chat'], ['you', 'kepada kamu'], ['when', 'ketika / kalau'], ['I', 'saya'], ['arrive', 'tiba / sampai']],
       phrases: [['text someone', 'mengirim pesan singkat ke seseorang']],
       pattern: 'D29-P3'

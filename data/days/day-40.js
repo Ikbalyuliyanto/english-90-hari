@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D40-S01',
       english: 'I think we should start with the easy tasks.',
       pronunciation: 'ai thingk wi shud start with di i-zi tasks',
-      translation: 'Menurut saya kita sebaiknya mulai dari tugas-tugas yang mudah.',
+      translation: 'Saya pikir kita sebaiknya mulai dengan tugas-tugas yang mudah.',
+      naturalTranslation: 'Menurut saya kita sebaiknya mulai dari tugas-tugas yang mudah.',
       words: [['I', 'saya'], ['think', 'berpendapat / rasa'], ['we', 'kita'], ['should', 'sebaiknya'], ['start', 'mulai'], ['with', 'dengan / dari'], ['the', '(dibaca "di" sebelum vokal, tidak diterjemahkan)'], ['easy', 'mudah'], ['tasks', 'tugas (jamak)', 'task']],
       phrases: [['start with', 'mulai dari']],
       pattern: 'D40-P1'
@@ -65,7 +66,8 @@ E90.registerDay({
       id: 'D40-S08',
       english: 'The main advantage is that it saves time.',
       pronunciation: 'de mein ed-ven-tij iz det it seivz taim',
-      translation: 'Kelebihan utamanya adalah menghemat waktu.',
+      translation: 'Kelebihan utamanya adalah bahwa itu menghemat waktu.',
+      naturalTranslation: 'Kelebihan utamanya adalah menghemat waktu.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['main', 'utama'], ['advantage', 'kelebihan / keuntungan'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ['it', 'hal itu'], ['saves', 'menghemat; -s karena "it"', 'save'], ['time', 'waktu']],
       phrases: [['save time', 'menghemat waktu']],
       pattern: 'D40-P5'
@@ -82,7 +84,8 @@ E90.registerDay({
       id: 'D40-S10',
       english: "What's your opinion?",
       pronunciation: 'wats yor e-pi-nyen?',
-      translation: 'Bagaimana pendapatmu?',
+      translation: 'Apa pendapatmu?',
+      naturalTranslation: 'Bagaimana pendapatmu?',
       words: [["What's", 'apa (what is)', 'what'], ['your', 'milikmu / -mu'], ['opinion', 'pendapat']]
     }
   ],
@@ -92,7 +95,8 @@ E90.registerDay({
       id: 'D40-S11',
       english: "I don't think we need another meeting.",
       pronunciation: 'ai dount thingk wi nid e-na-der mi-ting',
-      translation: 'Menurut saya kita tidak perlu rapat lagi.',
+      translation: 'Saya rasa kita tidak perlu rapat lagi.',
+      naturalTranslation: 'Menurut saya kita tidak perlu rapat lagi.',
       words: [['I', 'saya'], ["don't", 'tidak (do not)'], ['think', 'berpendapat'], ['we', 'kita'], ['need', 'perlu'], ['another', 'satu lagi / lain'], ['meeting', 'rapat']],
       pattern: 'D27-P2'
     },
@@ -121,7 +125,8 @@ E90.registerDay({
     {
       id: 'D40-P1',
       formula: 'I think we should + KATA KERJA',
-      meaning: 'Menurut saya kita sebaiknya ...',
+      meaning: 'Saya pikir kita sebaiknya ...',
+      naturalMeaning: 'Menurut saya kita sebaiknya ...',
       examples: ['I think we should test it first.', 'I think we should talk to the client.', 'I think we should wait until Monday.']
     },
     {

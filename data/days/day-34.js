@@ -33,7 +33,8 @@ E90.registerDay({
       id: 'D34-S04',
       english: "It's almost done.",
       pronunciation: 'its ol-moust dan',
-      translation: 'Sudah hampir selesai.',
+      translation: 'Itu hampir selesai.',
+      naturalTranslation: 'Sudah hampir selesai.',
       words: [["It's", 'itu (it is)', 'be'], ['almost', 'hampir'], ['done', 'selesai', 'do']],
       pattern: 'D34-P2'
     },
@@ -50,7 +51,8 @@ E90.registerDay({
       id: 'D34-S06',
       english: "We're making good progress.",
       pronunciation: 'wir mei-king gud pro-gres',
-      translation: 'Progres kami cukup bagus.',
+      translation: 'Kami sedang membuat kemajuan yang bagus.',
+      naturalTranslation: 'Progres kami cukup bagus.',
       words: [["We're", 'kami sedang (we are)', 'be'], ['making', 'membuat (dalam "make progress")', 'make'], ['good', 'bagus / baik'], ['progress', 'kemajuan / progres']],
       phrases: [['make progress', 'mengalami kemajuan']],
       pattern: 'D34-P2'
@@ -59,7 +61,8 @@ E90.registerDay({
       id: 'D34-S07',
       english: 'I finished most of it.',
       pronunciation: 'ai fi-nisht moust ov it',
-      translation: 'Sebagian besar sudah saya selesaikan.',
+      translation: 'Saya menyelesaikan sebagian besar darinya.',
+      naturalTranslation: 'Sebagian besar sudah saya selesaikan.',
       words: [['I', 'saya'], ['finished', 'menyelesaikan (lampau)', 'finish'], ['most', 'sebagian besar'], ['of', 'dari'], ['it', 'itu / -nya']],
       phrases: [['most of', 'sebagian besar dari']],
       pattern: 'D17-P1'
@@ -85,7 +88,8 @@ E90.registerDay({
       id: 'D34-S10',
       english: 'Have you finished the report?',
       pronunciation: 'hev yu fi-nisht de ri-port?',
-      translation: 'Laporannya sudah selesai?',
+      translation: 'Apakah kamu sudah menyelesaikan laporannya?',
+      naturalTranslation: 'Laporannya sudah selesai?',
       words: [['Have', '(kata bantu pertanyaan "sudah ...?", tidak diterjemahkan)'], ['you', 'kamu'], ['finished', 'menyelesaikan', 'finish'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['report', 'laporan']],
       pattern: 'D34-P3'
     }
@@ -112,7 +116,8 @@ E90.registerDay({
       id: 'D34-S13',
       english: "I'll send you an update tomorrow.",
       pronunciation: 'ail send yu en ap-deit tu-mo-rou',
-      translation: 'Besok saya kirimkan kabar terbarunya.',
+      translation: 'Saya akan mengirimkan kabar terbaru ke kamu besok.',
+      naturalTranslation: 'Besok saya kirimkan kabar terbarunya.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['send', 'mengirim'], ['you', 'kepada kamu'], ['an', 'sebuah (sebelum bunyi vokal, tidak diterjemahkan)'], ['update', 'kabar terbaru / update'], ['tomorrow', 'besok']],
       pattern: 'D18-P2'
     },

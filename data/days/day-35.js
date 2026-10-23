@@ -84,7 +84,8 @@ E90.registerDay({
       id: 'D35-S10',
       english: 'Who wants to go next?',
       pronunciation: 'hu wonts tu gou nekst?',
-      translation: 'Siapa yang mau giliran berikutnya?',
+      translation: 'Siapa yang mau maju berikutnya?',
+      naturalTranslation: 'Siapa yang mau giliran berikutnya?',
       words: [['Who', 'siapa'], ['wants', 'mau; -s karena "who"', 'want'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['go', 'maju / dapat giliran'], ['next', 'berikutnya']],
       phrases: [['go next', 'giliran berikutnya']]
     }
@@ -95,7 +96,8 @@ E90.registerDay({
       id: 'D35-S11',
       english: "I didn't finish the testing yesterday.",
       pronunciation: 'ai di-dent fi-nish de tes-ting yes-ter-dei',
-      translation: 'Kemarin saya belum menyelesaikan pengujiannya.',
+      translation: 'Saya tidak menyelesaikan pengujiannya kemarin.',
+      naturalTranslation: 'Kemarin saya belum menyelesaikan pengujiannya.',
       words: [['I', 'saya'], ["didn't", 'tidak (lampau) — did not', 'do'], ['finish', 'menyelesaikan'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['testing', 'pengujian / testing', 'test'], ['yesterday', 'kemarin']],
       pattern: 'D17-P2'
     },

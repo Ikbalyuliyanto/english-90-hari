@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D22-S01',
       english: 'What time does the meeting start?',
       pronunciation: 'wat taim daz de mi-ting start?',
-      translation: 'Rapatnya mulai jam berapa?',
+      translation: 'Jam berapa rapatnya mulai?',
+      naturalTranslation: 'Rapatnya mulai jam berapa?',
       words: [['What', 'apa / berapa'], ['time', 'jam / waktu'], ['does', '(kata bantu pertanyaan untuk he/she/it, tidak diterjemahkan)', 'do'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['meeting', 'rapat'], ['start', 'mulai']],
       phrases: [['what time', 'jam berapa']],
       pattern: 'D22-P1'
@@ -42,7 +43,8 @@ E90.registerDay({
       id: 'D22-S05',
       english: 'How long is the meeting?',
       pronunciation: 'hau long iz de mi-ting?',
-      translation: 'Rapatnya berapa lama?',
+      translation: 'Berapa lama rapatnya?',
+      naturalTranslation: 'Rapatnya berapa lama?',
       words: [['How', 'seberapa'], ['long', 'lama'], ['is', '(to be, tidak diterjemahkan)', 'be'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['meeting', 'rapat']],
       phrases: [['how long', 'berapa lama']]
     },
@@ -50,7 +52,8 @@ E90.registerDay({
       id: 'D22-S06',
       english: 'It takes about thirty minutes.',
       pronunciation: 'it teiks e-baut ther-ti mi-nits',
-      translation: 'Kira-kira tiga puluh menit.',
+      translation: 'Itu memakan waktu sekitar tiga puluh menit.',
+      naturalTranslation: 'Kira-kira tiga puluh menit.',
       words: [['It', 'hal itu'], ['takes', 'memakan (waktu); -s karena "it"', 'take'], ['about', 'sekitar / kira-kira'], ['thirty', 'tiga puluh'], ['minutes', 'menit (jamak)', 'minute']],
       phrases: [['it takes + waktu', 'memakan waktu ...']],
       pattern: 'D22-P3'
@@ -84,7 +87,8 @@ E90.registerDay({
       id: 'D22-S10',
       english: "Sorry, I'm running late.",
       pronunciation: 'so-ri, aim ra-ning leit',
-      translation: 'Maaf, saya bakal telat.',
+      translation: 'Maaf, saya akan terlambat.',
+      naturalTranslation: 'Maaf, saya bakal telat.',
       words: [['Sorry', 'maaf'], ["I'm", 'saya sedang (I am)', 'be'], ['running', '(bagian dari "run late", bukan "berlari")', 'run'], ['late', 'terlambat']],
       phrases: [['be running late', 'sedang telat / sepertinya akan terlambat']],
       pattern: 'D22-P5'
@@ -105,7 +109,8 @@ E90.registerDay({
       id: 'D22-S12',
       english: 'Are you free on Thursday?',
       pronunciation: 'ar yu fri on therz-dei?',
-      translation: 'Kamu luang hari Kamis?',
+      translation: 'Apakah kamu luang pada hari Kamis?',
+      naturalTranslation: 'Kamu luang hari Kamis?',
       words: [['Are', '(kata bantu pertanyaan "are you ...?", tidak diterjemahkan)', 'be'], ['you', 'kamu'], ['free', 'luang'], ['on', 'pada (hari)'], ['Thursday', 'Kamis']],
       pattern: 'D05-P2'
     },

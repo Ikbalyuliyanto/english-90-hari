@@ -65,7 +65,8 @@ E90.registerDay({
       id: 'D32-S08',
       english: 'We can do that later.',
       pronunciation: 'wi ken du det lei-ter',
-      translation: 'Itu bisa kita kerjakan nanti.',
+      translation: 'Kita bisa mengerjakan itu nanti.',
+      naturalTranslation: 'Itu bisa kita kerjakan nanti.',
       words: [['We', 'kita'], ['can', 'bisa'], ['do', 'mengerjakan'], ['that', 'itu'], ['later', 'nanti']],
       pattern: 'D32-P4'
     },
@@ -81,7 +82,8 @@ E90.registerDay({
       id: 'D32-S10',
       english: "It's not urgent, so it can wait.",
       pronunciation: 'its not er-jent, sou it ken weit',
-      translation: 'Itu tidak mendesak, jadi bisa ditunda.',
+      translation: 'Itu tidak mendesak, jadi itu bisa menunggu.',
+      naturalTranslation: 'Itu tidak mendesak, jadi bisa ditunda.',
       words: [["It's", 'itu (it is)', 'be'], ['not', 'tidak'], ['urgent', 'mendesak'], ['so', 'jadi'], ['it', 'itu'], ['can', 'bisa'], ['wait', 'menunggu / ditunda']],
       phrases: [['it can wait', 'bisa ditunda / tidak perlu sekarang']],
       pattern: 'D32-P4'

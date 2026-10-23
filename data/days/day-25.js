@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D25-S01',
       english: 'How do I get to the train station?',
       pronunciation: 'hau du ai get tu de trein stei-shen?',
-      translation: 'Bagaimana cara ke stasiun kereta?',
+      translation: 'Bagaimana saya sampai ke stasiun kereta?',
+      naturalTranslation: 'Bagaimana cara ke stasiun kereta?',
       words: [['How', 'bagaimana'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['I', 'saya'], ['get', 'sampai / tiba'], ['to', 'ke'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['train', 'kereta'], ['station', 'stasiun']],
       phrases: [['get to', 'sampai ke / menuju'], ['train station', 'stasiun kereta']],
       pattern: 'D07-P2'
@@ -60,7 +61,8 @@ E90.registerDay({
       id: 'D25-S07',
       english: 'Is it far from here?',
       pronunciation: 'iz it far from hir?',
-      translation: 'Apakah jauh dari sini?',
+      translation: 'Apakah itu jauh dari sini?',
+      naturalTranslation: 'Apakah jauh dari sini?',
       words: [['Is', '(kata bantu pertanyaan "is it ...?", tidak diterjemahkan)', 'be'], ['it', 'tempat itu'], ['far', 'jauh'], ['from', 'dari'], ['here', 'sini']],
       phrases: [['far from', 'jauh dari']],
       pattern: 'D25-P3'
@@ -69,7 +71,8 @@ E90.registerDay({
       id: 'D25-S08',
       english: "It's about ten minutes on foot.",
       pronunciation: 'its e-baut ten mi-nits on fut',
-      translation: 'Kira-kira sepuluh menit jalan kaki.',
+      translation: 'Itu sekitar sepuluh menit dengan jalan kaki.',
+      naturalTranslation: 'Kira-kira sepuluh menit jalan kaki.',
       words: [["It's", 'itu (it is)', 'be'], ['about', 'sekitar / kira-kira'], ['ten', 'sepuluh'], ['minutes', 'menit (jamak)', 'minute'], ['on', '(bagian dari "on foot")'], ['foot', 'kaki']],
       phrases: [['on foot', 'jalan kaki']],
       pattern: 'D25-P3'
@@ -78,7 +81,8 @@ E90.registerDay({
       id: 'D25-S09',
       english: "You can't miss it.",
       pronunciation: 'yu kent mis it',
-      translation: 'Pasti kelihatan (tidak mungkin terlewat).',
+      translation: 'Kamu tidak mungkin melewatkannya.',
+      naturalTranslation: 'Pasti kelihatan (tidak mungkin terlewat).',
       words: [['You', 'kamu'], ["can't", 'tidak mungkin / tidak bisa (cannot)', 'can'], ['miss', 'melewatkan / tidak melihat'], ['it', 'itu']],
       phrases: [["you can't miss it", 'pasti kelihatan, mudah ditemukan']]
     },
@@ -97,7 +101,8 @@ E90.registerDay({
       id: 'D25-S11',
       english: 'Could you show me on the map?',
       pronunciation: 'kud yu shou mi on de mep?',
-      translation: 'Bisakah kamu tunjukkan di peta?',
+      translation: 'Bisakah kamu menunjukkan kepada saya di peta?',
+      naturalTranslation: 'Bisakah kamu tunjukkan di peta?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu'], ['show', 'menunjukkan'], ['me', 'kepada saya'], ['on', 'di (permukaan)'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['map', 'peta']],
       pattern: 'D19-P2'
     },
@@ -114,7 +119,8 @@ E90.registerDay({
       id: 'D25-S13',
       english: 'How long does it take to walk there?',
       pronunciation: 'hau long daz it teik tu wok der?',
-      translation: 'Berapa lama kalau jalan kaki ke sana?',
+      translation: 'Berapa lama waktu yang dibutuhkan untuk berjalan kaki ke sana?',
+      naturalTranslation: 'Berapa lama kalau jalan kaki ke sana?',
       words: [['How', 'seberapa'], ['long', 'lama'], ['does', '(kata bantu pertanyaan untuk it, tidak diterjemahkan)', 'do'], ['it', '(subjek, tidak diterjemahkan)'], ['take', 'memakan (waktu)'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['walk', 'berjalan kaki'], ['there', 'ke sana']],
       pattern: 'D05-P4'
     },

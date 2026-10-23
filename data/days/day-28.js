@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D28-S01',
       english: 'I have a problem with my laptop.',
       pronunciation: 'ai hev e prob-lem with mai lep-top',
-      translation: 'Laptop saya bermasalah.',
+      translation: 'Saya punya masalah dengan laptop saya.',
+      naturalTranslation: 'Laptop saya bermasalah.',
       words: [['I', 'saya'], ['have', 'mengalami / punya'], ['a', 'sebuah (tidak diterjemahkan)'], ['problem', 'masalah'], ['with', 'dengan'], ['my', 'milik saya'], ['laptop', 'laptop']],
       phrases: [['have a problem with', 'bermasalah dengan / ada masalah pada']],
       pattern: 'D28-P1'
@@ -26,7 +27,8 @@ E90.registerDay({
       id: 'D28-S03',
       english: "It doesn't work.",
       pronunciation: 'it da-zent werk',
-      translation: 'Tidak berfungsi.',
+      translation: 'Itu tidak berfungsi.',
+      naturalTranslation: 'Tidak berfungsi.',
       words: [['It', 'itu (alatnya)'], ["doesn't", 'tidak (does not, untuk it/he/she)', 'do'], ['work', 'berfungsi (untuk alat/program, bukan "bekerja")']],
       phrases: [["it doesn't work", 'tidak jalan / rusak']],
       pattern: 'D28-P2'
@@ -71,7 +73,8 @@ E90.registerDay({
       id: 'D28-S08',
       english: 'Let me check.',
       pronunciation: 'let mi cek',
-      translation: 'Saya cek dulu.',
+      translation: 'Biar saya cek.',
+      naturalTranslation: 'Saya cek dulu.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['check', 'memeriksa']],
       pattern: 'D26-P3'
     },
@@ -79,7 +82,8 @@ E90.registerDay({
       id: 'D28-S09',
       english: 'Did you try restarting it?',
       pronunciation: 'did yu trai ri-star-ting it?',
-      translation: 'Sudah coba dinyalakan ulang?',
+      translation: 'Apakah kamu sudah mencoba menyalakannya ulang?',
+      naturalTranslation: 'Sudah coba dinyalakan ulang?',
       words: [['Did', '(kata bantu pertanyaan bentuk lampau, tidak diterjemahkan)', 'do'], ['you', 'kamu'], ['try', 'mencoba'], ['restarting', 'menyalakan ulang', 'restart'], ['it', 'itu / -nya']],
       phrases: [['try + kata kerja-ing', 'mencoba (sebuah cara) ...']],
       pattern: 'D28-P4'

@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D38-S01',
       english: 'Could you give me an example?',
       pronunciation: 'kud yu giv mi en eg-zem-pel?',
-      translation: 'Bisa beri saya contoh?',
+      translation: 'Bisakah kamu memberi saya contoh?',
+      naturalTranslation: 'Bisa beri saya contoh?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu / Anda'], ['give', 'memberi'], ['me', 'kepada saya'], ['an', 'sebuah (sebelum bunyi vokal, tidak diterjemahkan)'], ['example', 'contoh']],
       pattern: 'D19-P2'
     },
@@ -25,7 +26,8 @@ E90.registerDay({
       id: 'D38-S03',
       english: 'Do you mean the client meeting or the team meeting?',
       pronunciation: 'du yu min de klai-ent mi-ting or de tim mi-ting?',
-      translation: 'Maksudnya rapat dengan klien atau rapat tim?',
+      translation: 'Apakah maksudmu rapat klien atau rapat tim?',
+      naturalTranslation: 'Maksudnya rapat dengan klien atau rapat tim?',
       words: [['Do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu / Anda'], ['mean', 'maksudkan'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['client', 'klien'], ['meeting', 'rapat'], ['or', 'atau'], ['team', 'tim']],
       pattern: 'D20-P2'
     },
@@ -33,7 +35,8 @@ E90.registerDay({
       id: 'D38-S04',
       english: 'If I understand correctly, we need to finish it this week.',
       pronunciation: 'if ai an-der-stend ko-rekt-li, wi nid tu fi-nish it dis wik',
-      translation: 'Kalau saya tidak salah paham, kita perlu menyelesaikannya minggu ini.',
+      translation: 'Kalau saya memahami dengan benar, kita perlu menyelesaikannya minggu ini.',
+      naturalTranslation: 'Kalau saya tidak salah paham, kita perlu menyelesaikannya minggu ini.',
       words: [['If', 'kalau / jika'], ['I', 'saya'], ['understand', 'paham'], ['correctly', 'dengan benar', 'correct'], ['we', 'kita'], ['need', 'perlu'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['finish', 'menyelesaikan'], ['it', 'itu / -nya'], ['this', 'ini'], ['week', 'minggu']],
       phrases: [['if I understand correctly', 'kalau saya tidak salah paham']],
       pattern: 'D38-P2'
@@ -50,7 +53,8 @@ E90.registerDay({
       id: 'D38-S06',
       english: 'Let me make sure I understand.',
       pronunciation: 'let mi meik shur ai an-der-stend',
-      translation: 'Saya pastikan dulu bahwa saya paham.',
+      translation: 'Biar saya memastikan bahwa saya paham.',
+      naturalTranslation: 'Saya pastikan dulu bahwa saya paham.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['make', '(bagian dari "make sure")'], ['sure', '(bagian dari "make sure")'], ['I', 'saya'], ['understand', 'paham']],
       phrases: [['make sure', 'memastikan']],
       pattern: 'D38-P3'
@@ -59,7 +63,8 @@ E90.registerDay({
       id: 'D38-S07',
       english: 'Let me repeat that to make sure.',
       pronunciation: 'let mi ri-pit det tu meik shur',
-      translation: 'Saya ulangi untuk memastikan.',
+      translation: 'Biar saya ulangi itu untuk memastikan.',
+      naturalTranslation: 'Saya ulangi untuk memastikan.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['repeat', 'mengulangi'], ['that', 'itu'], ['to', 'untuk (penanda tujuan)'], ['make', '(bagian dari "make sure")'], ['sure', '(bagian dari "make sure")']],
       pattern: 'D38-P3'
     },
@@ -67,7 +72,8 @@ E90.registerDay({
       id: 'D38-S08',
       english: 'What exactly do you need?',
       pronunciation: 'wat eg-zekt-li du yu nid?',
-      translation: 'Tepatnya Anda butuh apa?',
+      translation: 'Apa tepatnya yang Anda butuhkan?',
+      naturalTranslation: 'Tepatnya Anda butuh apa?',
       words: [['What', 'apa'], ['exactly', 'tepatnya / persisnya', 'exact'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'Anda'], ['need', 'butuh']],
       pattern: 'D38-P4'
     },
@@ -102,7 +108,8 @@ E90.registerDay({
       id: 'D38-S12',
       english: 'Could you send me the details in writing?',
       pronunciation: 'kud yu send mi de di-teilz in rai-ting?',
-      translation: 'Bisa kirimkan detailnya secara tertulis?',
+      translation: 'Bisakah kamu mengirimkan detailnya kepada saya secara tertulis?',
+      naturalTranslation: 'Bisa kirimkan detailnya secara tertulis?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu / Anda'], ['send', 'mengirim'], ['me', 'kepada saya'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['details', 'rincian / detail', 'detail'], ['in', '(bagian dari "in writing")'], ['writing', 'tulisan', 'write']],
       phrases: [['in writing', 'secara tertulis']],
       pattern: 'D19-P2'

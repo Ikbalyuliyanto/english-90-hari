@@ -25,7 +25,8 @@ E90.registerDay({
       id: 'D39-S03',
       english: 'Can we discuss the budget?',
       pronunciation: 'ken wi dis-kas de ba-jet?',
-      translation: 'Bisa kita bahas anggarannya?',
+      translation: 'Bisakah kita membahas anggarannya?',
+      naturalTranslation: 'Bisa kita bahas anggarannya?',
       words: [['Can', 'bisakah'], ['we', 'kita'], ['discuss', 'membahas (tanpa "about")'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['budget', 'anggaran']],
       phrases: [['discuss something', 'membahas sesuatu — bukan "discuss about"']],
       pattern: 'D39-P2'
@@ -50,7 +51,8 @@ E90.registerDay({
       id: 'D39-S06',
       english: 'Can I say something?',
       pronunciation: 'ken ai sei sam-thing?',
-      translation: 'Boleh saya bicara?',
+      translation: 'Boleh saya mengatakan sesuatu?',
+      naturalTranslation: 'Boleh saya bicara?',
       words: [['Can', 'bolehkah'], ['I', 'saya'], ['say', 'mengatakan'], ['something', 'sesuatu']],
       pattern: 'D39-P4'
     },
@@ -58,7 +60,8 @@ E90.registerDay({
       id: 'D39-S07',
       english: "Let's come back to that later.",
       pronunciation: 'lets kam bek tu det lei-ter',
-      translation: 'Nanti kita bahas lagi soal itu.',
+      translation: 'Ayo kita kembali ke hal itu nanti.',
+      naturalTranslation: 'Nanti kita bahas lagi soal itu.',
       words: [["Let's", 'mari kita (let us)', 'let'], ['come', 'datang'], ['back', 'kembali'], ['to', 'ke'], ['that', 'itu / hal itu'], ['later', 'nanti']],
       phrases: [['come back to', 'kembali membahas']],
       pattern: 'D39-P1'
@@ -75,7 +78,8 @@ E90.registerDay({
       id: 'D39-S09',
       english: 'That makes sense.',
       pronunciation: 'det meiks sens',
-      translation: 'Masuk akal.',
+      translation: 'Itu masuk akal.',
+      naturalTranslation: 'Masuk akal.',
       words: [['That', 'itu'], ['makes', 'membuat; -s karena "that"', 'make'], ['sense', 'akal / makna']],
       phrases: [['make sense', 'masuk akal / bisa dipahami']]
     },
@@ -102,7 +106,8 @@ E90.registerDay({
       id: 'D39-S12',
       english: 'Can everyone hear me?',
       pronunciation: 'ken ev-ri-wan hir mi?',
-      translation: 'Semua bisa dengar suara saya?',
+      translation: 'Bisakah semua orang mendengar saya?',
+      naturalTranslation: 'Semua bisa dengar suara saya?',
       words: [['Can', 'bisakah'], ['everyone', 'semua orang'], ['hear', 'mendengar'], ['me', 'saya (sebagai objek)']],
       pattern: 'D19-P2'
     },
@@ -110,7 +115,8 @@ E90.registerDay({
       id: 'D39-S13',
       english: 'What do you think about this plan?',
       pronunciation: 'wat du yu thingk e-baut dis plen?',
-      translation: 'Bagaimana pendapatmu tentang rencana ini?',
+      translation: 'Apa pendapatmu tentang rencana ini?',
+      naturalTranslation: 'Bagaimana pendapatmu tentang rencana ini?',
       words: [['What', 'apa'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu'], ['think', 'berpendapat'], ['about', 'tentang'], ['this', 'ini'], ['plan', 'rencana']],
       pattern: 'D27-P4'
     },

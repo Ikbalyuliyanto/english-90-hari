@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D36-S01',
       english: 'Do you have a minute?',
       pronunciation: 'du yu hev e mi-nit?',
-      translation: 'Ada waktu sebentar?',
+      translation: 'Apakah kamu punya waktu sebentar?',
+      naturalTranslation: 'Ada waktu sebentar?',
       words: [['Do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu'], ['have', 'punya'], ['a', 'sebuah (tidak diterjemahkan)'], ['minute', 'menit (di sini: waktu sebentar)']],
       phrases: [['do you have a minute?', 'ada waktu sebentar?']],
       pattern: 'D36-P1'
@@ -26,7 +27,8 @@ E90.registerDay({
       id: 'D36-S03',
       english: 'Could you take a look at this?',
       pronunciation: 'kud yu teik e luk et dis?',
-      translation: 'Bisa tolong lihat ini sebentar?',
+      translation: 'Bisakah kamu melihat ini sebentar?',
+      naturalTranslation: 'Bisa tolong lihat ini sebentar?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu'], ['take', '(bagian dari "take a look")'], ['a', '(bagian dari "take a look")'], ['look', 'lihat / tinjauan'], ['at', 'pada'], ['this', 'ini']],
       phrases: [['take a look at', 'melihat / memeriksa sebentar']],
       pattern: 'D36-P2'
@@ -44,7 +46,8 @@ E90.registerDay({
       id: 'D36-S05',
       english: 'Can you show me how to do it?',
       pronunciation: 'ken yu shou mi hau tu du it?',
-      translation: 'Bisa tunjukkan caranya?',
+      translation: 'Bisakah kamu menunjukkan kepada saya cara melakukannya?',
+      naturalTranslation: 'Bisa tunjukkan caranya?',
       words: [['Can', 'bisakah'], ['you', 'kamu'], ['show', 'menunjukkan'], ['me', 'kepada saya'], ['how', 'cara / bagaimana'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['do', 'melakukan'], ['it', 'itu / -nya']],
       pattern: 'D36-P4'
     },
@@ -84,7 +87,8 @@ E90.registerDay({
       id: 'D36-S10',
       english: 'Is now a good time?',
       pronunciation: 'iz nau e gud taim?',
-      translation: 'Sekarang waktu yang tepat?',
+      translation: 'Apakah sekarang waktu yang tepat?',
+      naturalTranslation: 'Sekarang waktu yang tepat?',
       words: [['Is', '(kata bantu pertanyaan "is ...?", tidak diterjemahkan)', 'be'], ['now', 'sekarang'], ['a', 'sebuah (tidak diterjemahkan)'], ['good', 'tepat / baik'], ['time', 'waktu']],
       pattern: 'D36-P1'
     }
@@ -95,7 +99,8 @@ E90.registerDay({
       id: 'D36-S11',
       english: 'I need to ask you something.',
       pronunciation: 'ai nid tu esk yu sam-thing',
-      translation: 'Ada yang perlu saya tanyakan.',
+      translation: 'Saya perlu menanyakan sesuatu kepadamu.',
+      naturalTranslation: 'Ada yang perlu saya tanyakan.',
       words: [['I', 'saya'], ['need', 'perlu'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['ask', 'bertanya kepada'], ['you', 'kamu'], ['something', 'sesuatu']],
       pattern: 'D11-P2'
     },
@@ -103,7 +108,8 @@ E90.registerDay({
       id: 'D36-S12',
       english: 'Could you explain how it works?',
       pronunciation: 'kud yu eks-plein hau it werks?',
-      translation: 'Bisa jelaskan cara kerjanya?',
+      translation: 'Bisakah kamu menjelaskan bagaimana itu bekerja?',
+      naturalTranslation: 'Bisa jelaskan cara kerjanya?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu'], ['explain', 'menjelaskan'], ['how', 'bagaimana'], ['it', 'itu / -nya'], ['works', 'berfungsi / bekerja; -s karena "it"', 'work']],
       phrases: [['how it works', 'cara kerjanya']],
       pattern: 'D19-P2'

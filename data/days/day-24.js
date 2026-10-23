@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D24-S01',
       english: 'What does he look like?',
       pronunciation: 'wat daz hi luk laik?',
-      translation: 'Dia (laki-laki) seperti apa penampilannya?',
+      translation: 'Seperti apa dia (laki-laki) terlihat?',
+      naturalTranslation: 'Dia (laki-laki) seperti apa penampilannya?',
       words: [['What', 'apa (dalam "what ... look like")'], ['does', '(kata bantu pertanyaan untuk he/she/it, tidak diterjemahkan)', 'do'], ['he', 'dia (laki-laki)'], ['look', 'terlihat'], ['like', 'seperti']],
       phrases: [['what does ... look like?', 'seperti apa penampilannya? (bukan "suka")']],
       pattern: 'D24-P1'
@@ -17,7 +18,8 @@ E90.registerDay({
       id: 'D24-S02',
       english: "He's tall and has short hair.",
       pronunciation: 'hiz tol en hez short her',
-      translation: 'Dia tinggi dan berambut pendek.',
+      translation: 'Dia tinggi dan punya rambut pendek.',
+      naturalTranslation: 'Dia tinggi dan berambut pendek.',
       words: [["He's", 'dia (laki-laki) — he is', 'be'], ['tall', 'tinggi (badan)'], ['and', 'dan'], ['has', 'punya (have untuk he/she)', 'have'], ['short', 'pendek'], ['hair', 'rambut']],
       phrases: [['has short hair', 'berambut pendek']],
       pattern: 'D24-P1'

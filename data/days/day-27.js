@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D27-S01',
       english: "I think it's a good idea.",
       pronunciation: 'ai thingk its e gud ai-di-e',
-      translation: 'Menurut saya itu ide bagus.',
+      translation: 'Saya pikir itu ide yang bagus.',
+      naturalTranslation: 'Menurut saya itu ide bagus.',
       words: [['I', 'saya'], ['think', 'berpendapat / rasa'], ["it's", 'itu (it is)', 'be'], ['a', 'sebuah'], ['good', 'bagus'], ['idea', 'ide / gagasan']],
       phrases: [['I think + kalimat', 'menurut saya ...']],
       pattern: 'D27-P1'
@@ -17,7 +18,8 @@ E90.registerDay({
       id: 'D27-S02',
       english: "I don't think it's necessary.",
       pronunciation: 'ai dount thingk its ne-se-se-ri',
-      translation: 'Menurut saya itu tidak perlu.',
+      translation: 'Saya rasa itu tidak perlu.',
+      naturalTranslation: 'Menurut saya itu tidak perlu.',
       words: [['I', 'saya'], ["don't", 'tidak (do not)'], ['think', 'berpendapat / rasa'], ["it's", 'itu (it is)', 'be'], ['necessary', 'perlu / diperlukan']],
       phrases: [["I don't think + kalimat", 'menurut saya tidak ... (lebih natural daripada "I think it\'s not")']],
       pattern: 'D27-P2'
@@ -52,7 +54,8 @@ E90.registerDay({
       id: 'D27-S06',
       english: 'What do you think?',
       pronunciation: 'wat du yu thingk?',
-      translation: 'Bagaimana menurutmu?',
+      translation: 'Apa pendapatmu?',
+      naturalTranslation: 'Bagaimana menurutmu?',
       words: [['What', 'apa'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu'], ['think', 'pikirkan / berpendapat']],
       phrases: [['what do you think?', 'bagaimana menurutmu? (bukan "apa yang kamu pikirkan" secara harfiah)']],
       pattern: 'D27-P4'
@@ -61,7 +64,8 @@ E90.registerDay({
       id: 'D27-S07',
       english: 'What do you think about the new office?',
       pronunciation: 'wat du yu thingk e-baut de nyu o-fis?',
-      translation: 'Bagaimana pendapatmu tentang kantor baru?',
+      translation: 'Apa pendapatmu tentang kantor baru?',
+      naturalTranslation: 'Bagaimana pendapatmu tentang kantor baru?',
       words: [['What', 'apa'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu'], ['think', 'berpendapat'], ['about', 'tentang'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['new', 'baru'], ['office', 'kantor']],
       pattern: 'D27-P4'
     },
@@ -87,7 +91,8 @@ E90.registerDay({
       id: 'D27-S10',
       english: 'Which one do you prefer?',
       pronunciation: 'wich wan du yu pri-fer?',
-      translation: 'Kamu lebih suka yang mana?',
+      translation: 'Yang mana yang kamu lebih suka?',
+      naturalTranslation: 'Kamu lebih suka yang mana?',
       words: [['Which', 'yang mana'], ['one', 'yang (satu)'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu'], ['prefer', 'lebih suka']],
       pattern: 'D27-P3'
     },
@@ -114,7 +119,8 @@ E90.registerDay({
       id: 'D27-S13',
       english: 'That sounds like a good plan.',
       pronunciation: 'det saundz laik e gud plen',
-      translation: 'Kedengarannya rencana yang bagus.',
+      translation: 'Itu terdengar seperti rencana yang bagus.',
+      naturalTranslation: 'Kedengarannya rencana yang bagus.',
       words: [['That', 'itu'], ['sounds', 'terdengar', 'sound'], ['like', 'seperti'], ['a', 'sebuah'], ['good', 'bagus'], ['plan', 'rencana']],
       phrases: [['sound like + benda', 'kedengarannya seperti ...']],
       pattern: 'D09-P3'
@@ -142,7 +148,8 @@ E90.registerDay({
     {
       id: 'D27-P2',
       formula: "I don't think + KALIMAT",
-      meaning: 'Menurut saya tidak ...',
+      meaning: 'Saya rasa ... tidak ...',
+      naturalMeaning: 'Menurut saya tidak ...',
       examples: ["I don't think it's a bug.", "I don't think he's ready.", "I don't think we need a meeting."],
       note: 'Lebih natural daripada "I think it\'s not ...".'
     },
@@ -155,7 +162,8 @@ E90.registerDay({
     {
       id: 'D27-P4',
       formula: 'What do you think about + BENDA?',
-      meaning: 'Bagaimana pendapatmu tentang ...?',
+      meaning: 'Apa pendapatmu tentang ...?',
+      naturalMeaning: 'Bagaimana pendapatmu tentang ...?',
       examples: ['What do you think about this idea?', 'What do you think about the new app?', 'What do you think about working remotely?']
     },
     {

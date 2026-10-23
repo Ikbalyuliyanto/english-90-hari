@@ -74,7 +74,8 @@ E90.registerDay({
       id: 'D37-S09',
       english: "Let me know when you're done.",
       pronunciation: 'let mi nou wen yor dan',
-      translation: 'Kabari saya kalau sudah selesai.',
+      translation: 'Beri tahu saya ketika kamu sudah selesai.',
+      naturalTranslation: 'Kabari saya kalau sudah selesai.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['know', 'tahu'], ['when', 'kalau / ketika'], ["you're", 'kamu (you are)', 'be'], ['done', 'selesai', 'do']],
       phrases: [['let me know', 'kabari saya']],
       pattern: 'D37-P5'
@@ -83,7 +84,8 @@ E90.registerDay({
       id: 'D37-S10',
       english: 'Could you send me the final version?',
       pronunciation: 'kud yu send mi de fai-nel ver-shen?',
-      translation: 'Bisa kirimkan versi finalnya ke saya?',
+      translation: 'Bisakah kamu mengirimkan versi finalnya kepada saya?',
+      naturalTranslation: 'Bisa kirimkan versi finalnya ke saya?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu'], ['send', 'mengirim'], ['me', 'kepada saya'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['final', 'final / terakhir'], ['version', 'versi']],
       pattern: 'D19-P2'
     },
@@ -103,7 +105,8 @@ E90.registerDay({
       id: 'D37-S12',
       english: "I'll let you know when it's ready.",
       pronunciation: 'ail let yu nou wen its re-di',
-      translation: 'Saya kabari kalau sudah siap.',
+      translation: 'Saya akan memberi tahu kamu ketika itu sudah siap.',
+      naturalTranslation: 'Saya kabari kalau sudah siap.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['let', 'membiarkan'], ['you', 'kamu'], ['know', 'tahu'], ['when', 'kalau / ketika'], ["it's", 'itu (it is)', 'be'], ['ready', 'siap']],
       phrases: [['let you know', 'mengabari kamu']],
       pattern: 'D18-P3'
@@ -112,7 +115,8 @@ E90.registerDay({
       id: 'D37-S13',
       english: 'Can you turn on your camera, please?',
       pronunciation: 'ken yu tern on yor ke-me-ra, pliz?',
-      translation: 'Bisa nyalakan kameranya?',
+      translation: 'Bisakah kamu menyalakan kameramu?',
+      naturalTranslation: 'Bisa nyalakan kameranya?',
       words: [['Can', 'bisakah'], ['you', 'kamu'], ['turn', '(bagian dari "turn on")'], ['on', 'menyalakan (dalam "turn on")'], ['your', 'milikmu'], ['camera', 'kamera'], ['please', 'tolong']],
       phrases: [['turn on', 'menyalakan']],
       pattern: 'D19-P2'
