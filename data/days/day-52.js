@@ -25,7 +25,8 @@ E90.registerDay({
       id: 'D52-S03',
       english: "Should this include last month's data?",
       pronunciation: 'shud dis in-klud last manths dei-ta?',
-      translation: 'Apakah ini perlu mencakup data bulan lalu?',
+      translation: 'Apakah ini seharusnya mencakup data bulan lalu?',
+      naturalTranslation: 'Apakah ini perlu mencakup data bulan lalu?',
       words: [['Should', 'apakah seharusnya / perlu'], ['this', 'ini'], ['include', 'mencakup / memasukkan'], ['last', 'lalu / terakhir'], ["month's", "bulan (month's = milik bulan)", 'month'], ['data', 'data']],
       phrases: [["last month's", 'bulan lalu (punya bulan lalu)']],
       pattern: 'D52-P3'
@@ -42,7 +43,8 @@ E90.registerDay({
       id: 'D52-S05',
       english: 'Is this required, or is it optional?',
       pronunciation: 'iz dis ri-kwai-erd, or iz it op-she-nel?',
-      translation: 'Ini wajib atau opsional?',
+      translation: 'Apakah ini wajib, atau apakah ini opsional?',
+      naturalTranslation: 'Ini wajib atau opsional?',
       words: [['Is', '(kata bantu pertanyaan "is ...?", tidak diterjemahkan)', 'be'], ['this', 'ini'], ['required', 'wajib / diharuskan', 'require'], ['or', 'atau'], ['it', 'itu'], ['optional', 'opsional / tidak wajib']],
       pattern: 'D52-P4'
     },
@@ -50,7 +52,8 @@ E90.registerDay({
       id: 'D52-S06',
       english: 'What is the expected result?',
       pronunciation: 'wat iz di ek-spek-tid ri-zalt?',
-      translation: 'Hasil yang diharapkan seperti apa?',
+      translation: 'Apa hasil yang diharapkan?',
+      naturalTranslation: 'Hasil yang diharapkan seperti apa?',
       words: [['What', 'apa'], ['is', '(to be, tidak diterjemahkan)', 'be'], ['the', '(dibaca "di" sebelum vokal, tidak diterjemahkan)'], ['expected', 'yang diharapkan', 'expect'], ['result', 'hasil']],
       pattern: 'D52-P5'
     },
@@ -58,7 +61,8 @@ E90.registerDay({
       id: 'D52-S07',
       english: 'What does "done" look like for this task?',
       pronunciation: 'wat daz dan luk laik for dis task?',
-      translation: 'Tugas ini dianggap selesai kalau seperti apa?',
+      translation: 'Seperti apa "selesai" untuk tugas ini?',
+      naturalTranslation: 'Tugas ini dianggap selesai kalau seperti apa?',
       words: [['What', 'apa'], ['does', '(kata bantu pertanyaan untuk it, tidak diterjemahkan)', 'do'], ['done', 'selesai', 'do'], ['look', 'terlihat'], ['like', 'seperti'], ['for', 'untuk'], ['this', 'ini'], ['task', 'tugas']],
       phrases: [['what does done look like?', 'kapan / seperti apa sesuatu dianggap selesai?']],
       pattern: 'D52-P5'
@@ -67,7 +71,8 @@ E90.registerDay({
       id: 'D52-S08',
       english: 'Is there anything else we should include?',
       pronunciation: 'iz der e-ni-thing els wi shud in-klud?',
-      translation: 'Ada hal lain yang perlu kita masukkan?',
+      translation: 'Apakah ada hal lain yang seharusnya kita masukkan?',
+      naturalTranslation: 'Ada hal lain yang perlu kita masukkan?',
       words: [['Is', '(bagian dari "is there", apakah ada)', 'be'], ['there', 'ada (dalam "is there")'], ['anything', 'sesuatu / apa pun'], ['else', 'lain'], ['we', 'kita'], ['should', 'sebaiknya / perlu'], ['include', 'memasukkan / mencakup']],
       pattern: 'D49-P4'
     },
@@ -82,7 +87,8 @@ E90.registerDay({
       id: 'D52-S10',
       english: 'Can you share an example of what you want?',
       pronunciation: 'ken yu sher en eg-zem-pel ov wat yu wont?',
-      translation: 'Bisa bagikan contoh hasil yang kamu inginkan?',
+      translation: 'Bisakah kamu membagikan contoh dari apa yang kamu inginkan?',
+      naturalTranslation: 'Bisa bagikan contoh hasil yang kamu inginkan?',
       words: [['Can', 'bisakah'], ['you', 'kamu / Anda'], ['share', 'membagikan'], ['an', 'sebuah (sebelum bunyi vokal, tidak diterjemahkan)'], ['example', 'contoh'], ['of', 'dari'], ['what', 'apa yang'], ['want', 'inginkan']],
       pattern: 'D19-P2'
     }
@@ -122,32 +128,32 @@ E90.registerDay({
     {
       id: 'D52-P1',
       formula: 'Just to confirm, + KALIMAT?',
-      meaning: 'Check a detail before you start.',
+      meaning: 'Sekadar memastikan, ...?',
       examples: ['Just to confirm, the deadline is the 15th?', 'Just to confirm, you need two versions?', 'Just to confirm, the meeting is online?'],
       note: 'confirm = memastikan hal yang sudah kamu kira benar · clarify (Day 38) = minta penjelasan hal yang belum jelas.'
     },
     {
       id: 'D52-P2',
       formula: 'The requirement is + BENDA / to + KATA KERJA',
-      meaning: 'State what is needed.',
+      meaning: 'Kebutuhannya adalah ...',
       examples: ['The requirement is to support two languages.', 'The main requirement is a simple design.', 'One requirement is fast delivery.']
     },
     {
       id: 'D52-P3',
       formula: 'Should this + KATA KERJA?  ·  Does this need to + KATA KERJA?',
-      meaning: 'Ask what the result must do.',
+      meaning: 'Apakah ini seharusnya ...?  ·  Apakah ini perlu ...?',
       examples: ['Should this be sent every week?', 'Does this need to be approved?', 'Should the report include photos?']
     },
     {
       id: 'D52-P4',
       formula: 'Is this required, or is it optional?',
-      meaning: 'Check if something is necessary.',
+      meaning: 'Apakah ini wajib, atau opsional?',
       examples: ['Is a cover page required?', 'Is this field optional?', 'Is the English version required?']
     },
     {
       id: 'D52-P5',
       formula: 'What is the expected result?  ·  What does "done" look like?',
-      meaning: 'Understand the goal before working.',
+      meaning: 'Apa hasil yang diharapkan?  ·  Seperti apa "selesai" itu?',
       examples: ['What is the expected result of this task?', 'What does done look like for the report?', "How will we know it's finished?"]
     }
   ],

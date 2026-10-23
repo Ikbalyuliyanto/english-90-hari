@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D51-S01',
       english: "I'll handle this.",
       pronunciation: 'ail hen-del dis',
-      translation: 'Biar saya yang tangani ini.',
+      translation: 'Saya akan menangani ini.',
+      naturalTranslation: 'Biar saya yang tangani ini.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['handle', 'menangani'], ['this', 'ini']],
       pattern: 'D51-P1'
     },
@@ -16,7 +17,8 @@ E90.registerDay({
       id: 'D51-S02',
       english: 'Can you take care of the client email?',
       pronunciation: 'ken yu teik ker ov de klai-ent i-meil?',
-      translation: 'Bisa kamu urus email ke klien?',
+      translation: 'Bisakah kamu mengurus email ke klien?',
+      naturalTranslation: 'Bisa kamu urus email ke klien?',
       words: [['Can', 'bisakah'], ['you', 'kamu'], ['take', '(bagian dari "take care of")'], ['care', '(bagian dari "take care of")'], ['of', '(bagian dari "take care of")'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['client', 'klien'], ['email', 'email / surel']],
       phrases: [['take care of', 'mengurus / menangani']],
       pattern: 'D51-P2'
@@ -33,7 +35,8 @@ E90.registerDay({
       id: 'D51-S04',
       english: "I'll assign this task to Maya.",
       pronunciation: 'ail e-sain dis task tu mai-a',
-      translation: 'Tugas ini akan saya berikan ke Maya.',
+      translation: 'Saya akan memberikan tugas ini ke Maya.',
+      naturalTranslation: 'Tugas ini akan saya berikan ke Maya.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['assign', 'menugaskan / memberikan tugas'], ['this', 'ini'], ['task', 'tugas'], ['to', 'kepada'], ['Maya', 'Maya']],
       phrases: [['assign something to someone', 'menugaskan sesuatu kepada seseorang']],
       pattern: 'D51-P4'
@@ -42,7 +45,8 @@ E90.registerDay({
       id: 'D51-S05',
       english: 'Can you own this task?',
       pronunciation: 'ken yu oun dis task?',
-      translation: 'Bisa kamu pegang penuh tugas ini?',
+      translation: 'Bisakah kamu memegang penuh tugas ini?',
+      naturalTranslation: 'Bisa kamu pegang penuh tugas ini?',
       words: [['Can', 'bisakah'], ['you', 'kamu'], ['own', 'memegang / bertanggung jawab penuh atas'], ['this', 'ini'], ['task', 'tugas']],
       phrases: [['own a task', 'bertanggung jawab penuh atas tugas sampai selesai (bukan "memiliki barang")']],
       pattern: 'D51-P2'
@@ -68,7 +72,8 @@ E90.registerDay({
       id: 'D51-S08',
       english: "I'll take responsibility for the delay.",
       pronunciation: 'ail teik ri-spon-se-bi-le-ti for de di-lei',
-      translation: 'Saya yang bertanggung jawab atas keterlambatan ini.',
+      translation: 'Saya akan bertanggung jawab atas keterlambatan ini.',
+      naturalTranslation: 'Saya yang bertanggung jawab atas keterlambatan ini.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['take', 'mengambil'], ['responsibility', 'tanggung jawab'], ['for', 'atas'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['delay', 'keterlambatan']],
       phrases: [['take responsibility for', 'bertanggung jawab atas']],
       pattern: 'D51-P1'
@@ -105,7 +110,8 @@ E90.registerDay({
       id: 'D51-S12',
       english: 'Could you send me an update when you finish?',
       pronunciation: 'kud yu send mi en ap-deit wen yu fi-nish?',
-      translation: 'Bisa kirim kabar ke saya kalau sudah selesai?',
+      translation: 'Bisakah kamu mengirimi saya kabar ketika kamu selesai?',
+      naturalTranslation: 'Bisa kirim kabar ke saya kalau sudah selesai?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu'], ['send', 'mengirim'], ['me', 'kepada saya'], ['an', 'sebuah (sebelum bunyi vokal, tidak diterjemahkan)'], ['update', 'kabar terbaru / update'], ['when', 'kalau / ketika'], ['finish', 'selesai']],
       pattern: 'D19-P2'
     },
@@ -113,7 +119,8 @@ E90.registerDay({
       id: 'D51-S13',
       english: "I'll get back to you by tomorrow.",
       pronunciation: 'ail get bek tu yu bai tu-mo-rou',
-      translation: 'Saya kabari kamu paling lambat besok.',
+      translation: 'Saya akan mengabari kamu paling lambat besok.',
+      naturalTranslation: 'Saya kabari kamu paling lambat besok.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['get', '(bagian dari "get back to")'], ['back', '(bagian dari "get back to")'], ['to', 'kepada'], ['you', 'kamu'], ['by', 'paling lambat'], ['tomorrow', 'besok']],
       pattern: 'D44-P1'
     },
@@ -125,32 +132,32 @@ E90.registerDay({
     {
       id: 'D51-P1',
       formula: "I'll handle + BENDA  ·  I'll take responsibility for + BENDA",
-      meaning: 'Take ownership of a task or problem.',
+      meaning: 'Saya akan menangani ...  ·  Saya akan bertanggung jawab atas ...',
       examples: ["I'll handle the customer call.", "I'll take care of the booking.", "I'll take responsibility for the mistake."]
     },
     {
       id: 'D51-P2',
       formula: 'Can you take care of / own + BENDA?',
-      meaning: 'Ask someone to take a task.',
+      meaning: 'Bisakah kamu mengurus / memegang ...?',
       examples: ['Can you take care of the slides?', 'Can you own the testing this week?', 'Could you handle the invoice?'],
       note: '"own a task" = bertanggung jawab penuh sampai selesai.'
     },
     {
       id: 'D51-P3',
       formula: "Who's responsible for + BENDA?  ·  We need someone to + KATA KERJA",
-      meaning: 'Find the right person for a task.',
+      meaning: 'Siapa yang bertanggung jawab atas ...?  ·  Kita butuh seseorang untuk ...',
       examples: ["Who's responsible for the meeting notes?", 'We need someone to update the website.', "Who's in charge of the event?"]
     },
     {
       id: 'D51-P4',
       formula: "I'll assign + BENDA + to + ORANG  ·  ORANG + will be the main contact",
-      meaning: 'Give a task or a role to someone.',
+      meaning: 'Saya akan memberikan ... kepada ...  ·  ... akan menjadi kontak utama',
       examples: ["I'll assign the report to Sarah.", 'Tom will handle the client side.', 'Rina will be the main contact for this project.']
     },
     {
       id: 'D51-P5',
       formula: "I'll follow up with + ORANG (+ on + HAL)",
-      meaning: 'Say you will check again with someone.',
+      meaning: 'Saya akan menindaklanjuti dengan ... (soal ...)',
       examples: ["I'll follow up with the finance team.", "I'll follow up with him on Monday.", 'Can you follow up with the client?']
     }
   ],

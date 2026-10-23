@@ -32,7 +32,8 @@ E90.registerDay({
       id: 'D54-S04',
       english: "I hadn't thought about that.",
       pronunciation: 'ai he-dent thot e-baut det',
-      translation: 'Saya belum kepikiran soal itu.',
+      translation: 'Saya belum memikirkan hal itu.',
+      naturalTranslation: 'Saya belum kepikiran soal itu.',
       words: [['I', 'saya'], ["hadn't", 'belum (had not)', 'have'], ['thought', 'memikirkan', 'think'], ['about', 'tentang / soal'], ['that', 'itu']],
       phrases: [["I hadn't thought about that", 'saya belum kepikiran itu (menghargai masukan)']],
       pattern: 'D54-P1'
@@ -41,7 +42,8 @@ E90.registerDay({
       id: 'D54-S05',
       english: "I'll update it today.",
       pronunciation: 'ail ap-deit it tu-dei',
-      translation: 'Hari ini saya perbarui.',
+      translation: 'Saya akan memperbaruinya hari ini.',
+      naturalTranslation: 'Hari ini saya perbarui.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['update', 'memperbarui'], ['it', 'itu / -nya'], ['today', 'hari ini']],
       pattern: 'D54-P2'
     },
@@ -58,7 +60,8 @@ E90.registerDay({
       id: 'D54-S07',
       english: 'Let me fix that.',
       pronunciation: 'let mi fiks det',
-      translation: 'Biar saya perbaiki.',
+      translation: 'Biar saya memperbaiki itu.',
+      naturalTranslation: 'Biar saya perbaiki.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['fix', 'memperbaiki'], ['that', 'itu']],
       pattern: 'D26-P3'
     },
@@ -66,7 +69,8 @@ E90.registerDay({
       id: 'D54-S08',
       english: 'Could you show me which part?',
       pronunciation: 'kud yu shou mi wich part?',
-      translation: 'Bisa tunjukkan bagian yang mana?',
+      translation: 'Bisakah kamu menunjukkan kepada saya bagian yang mana?',
+      naturalTranslation: 'Bisa tunjukkan bagian yang mana?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu'], ['show', 'menunjukkan'], ['me', 'kepada saya'], ['which', 'yang mana'], ['part', 'bagian']],
       pattern: 'D54-P3'
     },
@@ -74,7 +78,8 @@ E90.registerDay({
       id: 'D54-S09',
       english: "I'll keep that in mind.",
       pronunciation: 'ail kip det in maind',
-      translation: 'Akan saya ingat.',
+      translation: 'Saya akan mengingat itu.',
+      naturalTranslation: 'Akan saya ingat.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['keep', 'menyimpan / menjaga'], ['that', 'itu'], ['in', 'di dalam'], ['mind', 'pikiran']],
       phrases: [['keep something in mind', 'mengingat sesuatu (untuk nanti)']],
       pattern: 'D54-P4'
@@ -94,7 +99,8 @@ E90.registerDay({
       id: 'D54-S11',
       english: "I've already updated the first page.",
       pronunciation: 'aiv ol-re-di ap-dei-tid de ferst peij',
-      translation: 'Halaman pertama sudah saya perbarui.',
+      translation: 'Saya sudah memperbarui halaman pertama.',
+      naturalTranslation: 'Halaman pertama sudah saya perbarui.',
       words: [["I've", 'saya sudah (I have)', 'have'], ['already', 'sudah'], ['updated', 'memperbarui', 'update'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['first', 'pertama'], ['page', 'halaman']],
       pattern: 'D46-P2'
     },
@@ -102,7 +108,8 @@ E90.registerDay({
       id: 'D54-S12',
       english: "I'll send you the new version by five.",
       pronunciation: 'ail send yu de nyu ver-shen bai faiv',
-      translation: 'Versi barunya saya kirim paling lambat jam lima.',
+      translation: 'Saya akan mengirimkan versi barunya ke kamu paling lambat jam lima.',
+      naturalTranslation: 'Versi barunya saya kirim paling lambat jam lima.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['send', 'mengirim'], ['you', 'kepada kamu'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['new', 'baru'], ['version', 'versi'], ['by', 'paling lambat'], ['five', 'lima (jam lima)']],
       pattern: 'D18-P2'
     },
@@ -122,31 +129,31 @@ E90.registerDay({
     {
       id: 'D54-P1',
       formula: "Good point  ·  I hadn't thought about that  ·  That's helpful",
-      meaning: 'Show that you accept the feedback.',
+      meaning: 'Poin yang bagus  ·  Saya belum memikirkan itu  ·  Itu membantu',
       examples: ["That's a fair point.", "I hadn't thought about the users.", "That's really helpful."]
     },
     {
       id: 'D54-P2',
       formula: "I'll update it  ·  I'll take another look at + BENDA",
-      meaning: 'Say what you will do after the feedback.',
+      meaning: 'Saya akan memperbaruinya  ·  Saya akan melihat lagi ...',
       examples: ["I'll update the slides this afternoon.", "I'll take another look at the design.", "I'll change the title."]
     },
     {
       id: 'D54-P3',
       formula: 'Could you show me which part?  ·  Could you give me an example?',
-      meaning: 'Ask for specific feedback.',
+      meaning: 'Bisakah kamu menunjukkan bagian yang mana?  ·  Bisakah kamu memberi saya contoh?',
       examples: ['Could you show me which sentence is unclear?', 'Which part should I change first?', 'Could you give me an example of a better title?']
     },
     {
       id: 'D54-P4',
       formula: "I'll keep that in mind (next time)",
-      meaning: 'Promise to remember the advice.',
+      meaning: 'Saya akan mengingat itu (lain kali)',
       examples: ["I'll keep that in mind for the next report.", "Thanks, I'll remember that.", "Next time, I'll check it before sending."]
     },
     {
       id: 'D54-P5',
       formula: 'I see your point, but + ALASAN',
-      meaning: "Explain your choice politely when you don't fully agree.",
+      meaning: 'Saya paham maksudmu, tetapi + ALASAN',
       examples: ['I see your point, but we had very little time.', 'I understand, but the client asked for it.', 'That makes sense, but can we keep this part?'],
       note: 'Menerima feedback tidak berarti selalu setuju. Dengarkan dulu, lalu jelaskan alasanmu dengan tenang.'
     }

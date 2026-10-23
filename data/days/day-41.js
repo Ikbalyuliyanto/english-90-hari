@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D41-S01',
       english: "That's a good point.",
       pronunciation: 'dets e gud point',
-      translation: 'Poin yang bagus.',
+      translation: 'Itu poin yang bagus.',
+      naturalTranslation: 'Poin yang bagus.',
       words: [["That's", 'itu (that is)', 'that'], ['a', 'sebuah (tidak diterjemahkan)'], ['good', 'bagus'], ['point', 'poin / pendapat']],
       pattern: 'D41-P1'
     },
@@ -24,7 +25,8 @@ E90.registerDay({
       id: 'D41-S03',
       english: 'I agree with you on that.',
       pronunciation: 'ai e-gri with yu on det',
-      translation: 'Soal itu, saya setuju denganmu.',
+      translation: 'Saya setuju denganmu soal itu.',
+      naturalTranslation: 'Soal itu, saya setuju denganmu.',
       words: [['I', 'saya'], ['agree', 'setuju'], ['with', 'dengan'], ['you', 'kamu'], ['on', 'soal / dalam hal'], ['that', 'itu']],
       phrases: [['agree with someone on something', 'setuju dengan seseorang soal sesuatu']],
       pattern: 'D41-P2'
@@ -33,7 +35,8 @@ E90.registerDay({
       id: 'D41-S04',
       english: "I'm not sure I agree.",
       pronunciation: 'aim not shur ai e-gri',
-      translation: 'Saya kurang setuju.',
+      translation: 'Saya tidak yakin saya setuju.',
+      naturalTranslation: 'Saya kurang setuju.',
       words: [["I'm", 'saya (I am)', 'be'], ['not', 'tidak'], ['sure', 'yakin'], ['I', 'saya'], ['agree', 'setuju']],
       phrases: [["I'm not sure I agree", 'cara halus bilang tidak setuju']],
       pattern: 'D41-P3'
@@ -51,7 +54,8 @@ E90.registerDay({
       id: 'D41-S06',
       english: 'I think we should consider the cost too.',
       pronunciation: 'ai thingk wi shud ken-si-der de kost tu',
-      translation: 'Menurut saya kita juga perlu mempertimbangkan biayanya.',
+      translation: 'Saya pikir kita juga sebaiknya mempertimbangkan biayanya.',
+      naturalTranslation: 'Menurut saya kita juga perlu mempertimbangkan biayanya.',
       words: [['I', 'saya'], ['think', 'berpendapat'], ['we', 'kita'], ['should', 'sebaiknya'], ['consider', 'mempertimbangkan'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['cost', 'biaya'], ['too', 'juga']],
       pattern: 'D41-P4'
     },
@@ -94,7 +98,8 @@ E90.registerDay({
       id: 'D41-S11',
       english: "I don't think that's the best approach.",
       pronunciation: "ai dount thingk dets de best e-prouch",
-      translation: 'Menurut saya itu bukan cara terbaik.',
+      translation: 'Saya rasa itu bukan pendekatan terbaik.',
+      naturalTranslation: 'Menurut saya itu bukan cara terbaik.',
       words: [['I', 'saya'], ["don't", 'tidak (do not)'], ['think', 'berpendapat'], ["that's", 'itu (that is)', 'that'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['best', 'terbaik', 'good'], ['approach', 'pendekatan / cara']],
       pattern: 'D27-P2'
     },
@@ -110,7 +115,8 @@ E90.registerDay({
       id: 'D41-S13',
       english: 'Could you explain why?',
       pronunciation: 'kud yu eks-plein wai?',
-      translation: 'Bisa jelaskan alasannya?',
+      translation: 'Bisakah kamu menjelaskan mengapa?',
+      naturalTranslation: 'Bisa jelaskan alasannya?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu'], ['explain', 'menjelaskan'], ['why', 'kenapa / alasannya']],
       pattern: 'D19-P2'
     },

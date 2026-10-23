@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D44-S01',
       english: 'Did you see my message?',
       pronunciation: 'did yu si mai me-sij?',
-      translation: 'Sudah lihat pesan saya?',
+      translation: 'Apakah kamu sudah melihat pesan saya?',
+      naturalTranslation: 'Sudah lihat pesan saya?',
       words: [['Did', '(kata bantu pertanyaan bentuk lampau, tidak diterjemahkan)', 'do'], ['you', 'kamu'], ['see', 'melihat'], ['my', 'milik saya'], ['message', 'pesan']],
       pattern: 'D17-P3'
     },
@@ -16,7 +17,8 @@ E90.registerDay({
       id: 'D44-S02',
       english: "I'll send it shortly.",
       pronunciation: 'ail send it short-li',
-      translation: 'Sebentar lagi saya kirim.',
+      translation: 'Saya akan mengirimnya sebentar lagi.',
+      naturalTranslation: 'Sebentar lagi saya kirim.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['send', 'mengirim'], ['it', 'itu / -nya'], ['shortly', 'sebentar lagi']],
       pattern: 'D44-P1'
     },
@@ -24,7 +26,8 @@ E90.registerDay({
       id: 'D44-S03',
       english: "I'll check and get back to you.",
       pronunciation: 'ail cek en get bek tu yu',
-      translation: 'Saya cek dulu, nanti saya kabari lagi.',
+      translation: 'Saya akan memeriksa dan mengabari kamu lagi.',
+      naturalTranslation: 'Saya cek dulu, nanti saya kabari lagi.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['check', 'memeriksa'], ['and', 'dan'], ['get', '(bagian dari "get back to")'], ['back', '(bagian dari "get back to")'], ['to', 'kepada'], ['you', 'kamu']],
       phrases: [['get back to someone', 'mengabari / membalas seseorang nanti']],
       pattern: 'D44-P1'
@@ -50,7 +53,8 @@ E90.registerDay({
       id: 'D44-S06',
       english: 'Sorry for the late reply.',
       pronunciation: 'so-ri for de leit ri-plai',
-      translation: 'Maaf baru membalas.',
+      translation: 'Maaf atas balasan yang terlambat.',
+      naturalTranslation: 'Maaf baru membalas.',
       words: [['Sorry', 'maaf'], ['for', 'atas'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['late', 'terlambat'], ['reply', 'balasan']],
       pattern: 'D44-P4'
     },
@@ -66,7 +70,8 @@ E90.registerDay({
       id: 'D44-S08',
       english: "I'll keep you posted.",
       pronunciation: 'ail kip yu pous-tid',
-      translation: 'Nanti saya kabari terus.',
+      translation: 'Saya akan terus mengabari kamu.',
+      naturalTranslation: 'Nanti saya kabari terus.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['keep', 'terus membuat / menjaga'], ['you', 'kamu'], ['posted', 'tetap mendapat kabar', 'post']],
       phrases: [['keep someone posted', 'terus mengabari seseorang']],
       pattern: 'D44-P1'
@@ -83,7 +88,8 @@ E90.registerDay({
       id: 'D44-S10',
       english: 'Could you reply by the end of the day?',
       pronunciation: 'kud yu ri-plai bai di end ov de dei?',
-      translation: 'Bisa dibalas paling lambat akhir hari ini?',
+      translation: 'Bisakah kamu membalas paling lambat akhir hari ini?',
+      naturalTranslation: 'Bisa dibalas paling lambat akhir hari ini?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu'], ['reply', 'membalas'], ['by', 'paling lambat'], ['the', '(penanda kata benda; "di" sebelum vokal)'], ['end', 'akhir'], ['of', 'dari'], ['day', 'hari']],
       phrases: [['by the end of the day', 'paling lambat akhir jam kerja hari ini']],
       pattern: 'D19-P2'

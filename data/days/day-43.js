@@ -16,7 +16,8 @@ E90.registerDay({
       id: 'D43-S02',
       english: "Let's do that.",
       pronunciation: 'lets du det',
-      translation: 'Oke, kita lakukan itu.',
+      translation: 'Ayo kita lakukan itu.',
+      naturalTranslation: 'Oke, kita lakukan itu.',
       words: [["Let's", 'mari kita (let us)', 'let'], ['do', 'melakukan'], ['that', 'itu']],
       pattern: 'D43-P2'
     },
@@ -24,7 +25,8 @@ E90.registerDay({
       id: 'D43-S03',
       english: "Let's go with this option.",
       pronunciation: 'lets gou with dis op-shen',
-      translation: 'Kita pilih opsi ini.',
+      translation: 'Ayo kita pilih opsi ini.',
+      naturalTranslation: 'Kita pilih opsi ini.',
       words: [["Let's", 'mari kita (let us)', 'let'], ['go', '(bagian dari "go with")'], ['with', 'memilih (dalam "go with")'], ['this', 'ini'], ['option', 'pilihan / opsi']],
       phrases: [['go with + pilihan', 'memilih ... (bukan "pergi dengan")']],
       pattern: 'D43-P2'
@@ -58,7 +60,8 @@ E90.registerDay({
       id: 'D43-S07',
       english: "I'll take care of it.",
       pronunciation: 'ail teik ker ov it',
-      translation: 'Biar saya yang urus.',
+      translation: 'Saya akan mengurusnya.',
+      naturalTranslation: 'Biar saya yang urus.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['take', '(bagian dari "take care of")'], ['care', '(bagian dari "take care of")'], ['of', '(bagian dari "take care of")'], ['it', 'itu / hal itu']],
       phrases: [['take care of', 'mengurus / menangani (bukan hanya "jaga diri")']],
       pattern: 'D43-P4'
@@ -85,7 +88,8 @@ E90.registerDay({
       id: 'D43-S10',
       english: 'Is everyone okay with that?',
       pronunciation: 'iz ev-ri-wan ou-kei with det?',
-      translation: 'Semua setuju dengan itu?',
+      translation: 'Apakah semua orang oke dengan itu?',
+      naturalTranslation: 'Semua setuju dengan itu?',
       words: [['Is', '(kata bantu pertanyaan "is ...?", tidak diterjemahkan)', 'be'], ['everyone', 'semua orang'], ['okay', 'oke / setuju'], ['with', 'dengan'], ['that', 'itu']],
       phrases: [['be okay with', 'setuju / tidak keberatan dengan']]
     }
@@ -104,7 +108,8 @@ E90.registerDay({
       id: 'D43-S12',
       english: 'I think we should ask the manager first.',
       pronunciation: 'ai thingk wi shud esk de me-ne-jer ferst',
-      translation: 'Menurut saya kita sebaiknya tanya manajer dulu.',
+      translation: 'Saya pikir kita sebaiknya bertanya ke manajer dulu.',
+      naturalTranslation: 'Menurut saya kita sebaiknya tanya manajer dulu.',
       words: [['I', 'saya'], ['think', 'berpendapat'], ['we', 'kita'], ['should', 'sebaiknya'], ['ask', 'bertanya kepada'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['manager', 'manajer / atasan'], ['first', 'dulu']],
       pattern: 'D40-P1'
     },
@@ -112,7 +117,8 @@ E90.registerDay({
       id: 'D43-S13',
       english: 'Could you send me the action items?',
       pronunciation: 'kud yu send mi di ek-shen ai-temz?',
-      translation: 'Bisa kirimkan daftar tindak lanjutnya?',
+      translation: 'Bisakah kamu mengirimkan daftar tindak lanjutnya kepada saya?',
+      naturalTranslation: 'Bisa kirimkan daftar tindak lanjutnya?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu'], ['send', 'mengirim'], ['me', 'kepada saya'], ['the', '(dibaca "di" sebelum vokal, tidak diterjemahkan)'], ['action', 'tindakan'], ['items', 'butir / item (jamak)', 'item']],
       phrases: [['action items', 'daftar tugas tindak lanjut dari rapat']],
       pattern: 'D19-P2'

@@ -33,7 +33,8 @@ E90.registerDay({
       id: 'D50-S04',
       english: "If we do this first, we'll save time later.",
       pronunciation: 'if wi du dis ferst, wil seiv taim lei-ter',
-      translation: 'Kalau kita kerjakan ini dulu, nanti kita hemat waktu.',
+      translation: 'Kalau kita mengerjakan ini dulu, kita akan menghemat waktu nanti.',
+      naturalTranslation: 'Kalau kita kerjakan ini dulu, nanti kita hemat waktu.',
       words: [['If', 'kalau / jika'], ['we', 'kita'], ['do', 'mengerjakan'], ['this', 'ini'], ['first', 'dulu / terlebih dahulu'], ["we'll", 'kita akan (we will)', 'will'], ['save', 'menghemat'], ['time', 'waktu'], ['later', 'nanti']],
       pattern: 'D50-P3'
     },
@@ -41,7 +42,8 @@ E90.registerDay({
       id: 'D50-S05',
       english: 'The downside is that it costs more.',
       pronunciation: 'de daun-said iz det it kosts mor',
-      translation: 'Kekurangannya, biayanya lebih mahal.',
+      translation: 'Kekurangannya adalah bahwa itu lebih mahal.',
+      naturalTranslation: 'Kekurangannya, biayanya lebih mahal.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['downside', 'kekurangan / sisi negatif'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ['it', 'hal itu'], ['costs', 'memakan biaya; -s karena "it"', 'cost'], ['more', 'lebih banyak']],
       pattern: 'D50-P4'
     },
@@ -49,7 +51,8 @@ E90.registerDay({
       id: 'D50-S06',
       english: 'The risk is that we might miss the deadline.',
       pronunciation: 'de risk iz det wi mait mis de ded-lain',
-      translation: 'Risikonya, kita mungkin tidak memenuhi deadline.',
+      translation: 'Risikonya adalah bahwa kita mungkin tidak memenuhi deadline.',
+      naturalTranslation: 'Risikonya, kita mungkin tidak memenuhi deadline.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['risk', 'risiko'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ['we', 'kita'], ['might', 'mungkin (akan)'], ['miss', 'melewatkan / tidak memenuhi'], ['deadline', 'tenggat waktu / deadline']],
       pattern: 'D50-P4'
     },
@@ -101,7 +104,8 @@ E90.registerDay({
       id: 'D50-S12',
       english: 'We can do the documentation later.',
       pronunciation: 'wi ken du de do-kyu-men-tei-shen lei-ter',
-      translation: 'Dokumentasinya bisa kita kerjakan nanti.',
+      translation: 'Kita bisa mengerjakan dokumentasinya nanti.',
+      naturalTranslation: 'Dokumentasinya bisa kita kerjakan nanti.',
       words: [['We', 'kita'], ['can', 'bisa'], ['do', 'mengerjakan'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['documentation', 'dokumentasi'], ['later', 'nanti']],
       pattern: 'D32-P4'
     },
@@ -121,32 +125,32 @@ E90.registerDay({
     {
       id: 'D50-P1',
       formula: "We can't do everything at once  ·  We have to choose between A and B",
-      meaning: 'Say that you must make a choice.',
+      meaning: 'Kita tidak bisa mengerjakan semuanya sekaligus  ·  Kita harus memilih antara A dan B',
       examples: ['We have to choose between cost and speed.', "We can't fix every issue this week.", 'We need to pick one option.']
     },
     {
       id: 'D50-P2',
       formula: 'We should prioritize + BENDA',
-      meaning: 'Say what should come first.',
+      meaning: 'Kita sebaiknya mendahulukan ...',
       examples: ['We should prioritize the urgent bugs.', 'We should prioritize customer requests.', "Let's prioritize the tasks for this week."]
     },
     {
       id: 'D50-P3',
       formula: "If we + KATA KERJA, we'll + KATA KERJA",
-      meaning: 'Explain the result of a choice.',
+      meaning: 'Kalau kita ..., kita akan ...',
       examples: ["If we start now, we'll finish on Friday.", "If we skip testing, we'll have more problems later.", "If we wait, we'll lose the client."],
       note: '"if" + bentuk sekarang, lalu "we\'ll" untuk hasilnya.'
     },
     {
       id: 'D50-P4',
       formula: 'The advantage / downside / risk is (that) + KALIMAT',
-      meaning: 'Name the good side, the bad side, and the risk.',
+      meaning: 'Kelebihan / kekurangan / risikonya adalah (bahwa) ...',
       examples: ["The advantage is that it's cheaper.", 'The downside is that it takes longer.', "The risk is that users won't like it."]
     },
     {
       id: 'D50-P5',
       formula: "I'd rather + KATA KERJA (+ than + KATA KERJA)",
-      meaning: 'Say which choice you prefer.',
+      meaning: 'Saya lebih memilih ... (daripada ...)',
       examples: ["I'd rather finish one feature well.", "I'd rather ask now than fix it later.", "I'd rather not change the plan."],
       note: '"I\'d rather" = I would rather; setelahnya kata kerja bentuk dasar.'
     }

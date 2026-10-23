@@ -17,7 +17,8 @@ E90.registerDay({
       id: 'D45-S02',
       english: 'Let me give you a quick update on my task.',
       pronunciation: 'let mi giv yu e kwik ap-deit on mai task',
-      translation: 'Saya beri update singkat tentang tugas saya.',
+      translation: 'Biar saya memberi kalian update singkat tentang tugas saya.',
+      naturalTranslation: 'Saya beri update singkat tentang tugas saya.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['give', 'memberi'], ['you', 'kepada kalian'], ['a', 'sebuah (tidak diterjemahkan)'], ['quick', 'singkat'], ['update', 'kabar terbaru / update'], ['on', 'tentang'], ['my', 'milik saya'], ['task', 'tugas']],
       pattern: 'D26-P3'
     },
@@ -60,7 +61,8 @@ E90.registerDay({
       id: 'D45-S07',
       english: 'Does that sound okay?',
       pronunciation: 'daz det saund ou-kei?',
-      translation: 'Bagaimana, oke?',
+      translation: 'Apakah itu terdengar oke?',
+      naturalTranslation: 'Bagaimana, oke?',
       words: [['Does', '(kata bantu pertanyaan untuk it/that, tidak diterjemahkan)', 'do'], ['that', 'itu'], ['sound', 'terdengar'], ['okay', 'oke / baik']],
       phrases: [['does that sound okay?', 'bagaimana, setuju? (minta tanggapan dengan sopan)']]
     }

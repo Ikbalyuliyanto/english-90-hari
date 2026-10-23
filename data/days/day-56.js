@@ -24,7 +24,8 @@ E90.registerDay({
       id: 'D56-S03',
       english: 'What if we used a shared checklist?',
       pronunciation: 'wat if wi yuzd e sherd chek-list?',
-      translation: 'Bagaimana kalau kita pakai checklist bersama?',
+      translation: 'Bagaimana kalau kita memakai checklist bersama?',
+      naturalTranslation: 'Bagaimana kalau kita pakai checklist bersama?',
       words: [['What', 'bagaimana (dalam "what if")'], ['if', 'kalau'], ['we', 'kita'], ['used', 'memakai (bentuk lampau untuk usulan)', 'use'], ['a', 'sebuah (tidak diterjemahkan)'], ['shared', 'bersama / dipakai bersama', 'share'], ['checklist', 'daftar periksa']],
       phrases: [['what if we ...?', 'bagaimana kalau kita ...? (mengusulkan ide)']],
       pattern: 'D56-P2'
@@ -33,7 +34,8 @@ E90.registerDay({
       id: 'D56-S04',
       english: 'My suggestion is to have shorter meetings.',
       pronunciation: 'mai sag-jes-chen iz tu hev shor-ter mi-tingz',
-      translation: 'Saran saya, rapatnya dibuat lebih singkat.',
+      translation: 'Saran saya adalah mengadakan rapat yang lebih singkat.',
+      naturalTranslation: 'Saran saya, rapatnya dibuat lebih singkat.',
       words: [['My', 'milik saya'], ['suggestion', 'saran / usulan'], ['is', 'adalah', 'be'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['have', 'mengadakan'], ['shorter', 'lebih singkat', 'short'], ['meetings', 'rapat (jamak)', 'meeting']],
       pattern: 'D56-P3'
     },
@@ -49,7 +51,8 @@ E90.registerDay({
       id: 'D56-S06',
       english: 'The main benefit is that everyone can see the progress.',
       pronunciation: 'de mein be-ne-fit iz det ev-ri-wan ken si de pro-gres',
-      translation: 'Manfaat utamanya, semua orang bisa melihat progresnya.',
+      translation: 'Manfaat utamanya adalah bahwa semua orang bisa melihat progresnya.',
+      naturalTranslation: 'Manfaat utamanya, semua orang bisa melihat progresnya.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['main', 'utama'], ['benefit', 'manfaat'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ['everyone', 'semua orang'], ['can', 'bisa'], ['see', 'melihat'], ['progress', 'kemajuan / progres']],
       pattern: 'D56-P4'
     },
@@ -66,7 +69,8 @@ E90.registerDay({
       id: 'D56-S08',
       english: "Here's how it would work.",
       pronunciation: 'hirz hau it wud werk',
-      translation: 'Begini cara kerjanya nanti.',
+      translation: 'Ini cara itu akan bekerja.',
+      naturalTranslation: 'Begini cara kerjanya nanti.',
       words: [["Here's", 'ini dia (here is)', 'be'], ['how', 'bagaimana / cara'], ['it', 'hal itu'], ['would', 'akan (pengandaian)', 'will'], ['work', 'berjalan / bekerja']],
       pattern: 'D56-P5'
     },
@@ -82,7 +86,8 @@ E90.registerDay({
       id: 'D56-S10',
       english: 'What do you all think?',
       pronunciation: 'wat du yu ol thingk?',
-      translation: 'Bagaimana menurut kalian semua?',
+      translation: 'Apa pendapat kalian semua?',
+      naturalTranslation: 'Bagaimana menurut kalian semua?',
       words: [['What', 'apa'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kalian'], ['all', 'semua'], ['think', 'berpendapat']],
       phrases: [['you all', 'kalian semua']],
       pattern: 'D27-P4'
@@ -94,7 +99,8 @@ E90.registerDay({
       id: 'D56-S11',
       english: 'I think we should try it with one team first.',
       pronunciation: 'ai thingk wi shud trai it with wan tim ferst',
-      translation: 'Menurut saya kita coba dulu dengan satu tim.',
+      translation: 'Saya pikir kita sebaiknya mencobanya dengan satu tim dulu.',
+      naturalTranslation: 'Menurut saya kita coba dulu dengan satu tim.',
       words: [['I', 'saya'], ['think', 'berpendapat'], ['we', 'kita'], ['should', 'sebaiknya'], ['try', 'mencoba'], ['it', 'itu / -nya'], ['with', 'dengan'], ['one', 'satu'], ['team', 'tim'], ['first', 'dulu']],
       pattern: 'D40-P1'
     },
@@ -110,7 +116,8 @@ E90.registerDay({
       id: 'D56-S13',
       english: 'One option is to try it for two weeks.',
       pronunciation: 'wan op-shen iz tu trai it for tu wiks',
-      translation: 'Salah satu pilihannya, kita coba selama dua minggu.',
+      translation: 'Satu pilihan adalah mencobanya selama dua minggu.',
+      naturalTranslation: 'Salah satu pilihannya, kita coba selama dua minggu.',
       words: [['One', 'salah satu'], ['option', 'pilihan / opsi'], ['is', 'adalah', 'be'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['try', 'mencoba'], ['it', 'itu / -nya'], ['for', 'selama'], ['two', 'dua'], ['weeks', 'minggu (jamak)', 'week']],
       pattern: 'D40-P4'
     },
@@ -122,32 +129,32 @@ E90.registerDay({
     {
       id: 'D56-P1',
       formula: "I have an idea  ·  I'd like to suggest + BENDA",
-      meaning: 'Introduce your idea politely.',
+      meaning: 'Saya punya ide  ·  Saya ingin mengusulkan ...',
       examples: ['I have an idea for the team meeting.', "I'd like to suggest a new way to track tasks.", 'I have a quick idea. Can I share it?']
     },
     {
       id: 'D56-P2',
       formula: 'What if we + KATA KERJA (bentuk lampau)?',
-      meaning: 'Suggest an idea as a question.',
+      meaning: 'Bagaimana kalau kita ...?',
       examples: ['What if we met every morning for ten minutes?', 'What if we asked the customers first?', 'What if we started with a small test?'],
       note: '"What if we used ...?" (bentuk lampau) terdengar lebih lembut; "What if we use ...?" juga umum dipakai.'
     },
     {
       id: 'D56-P3',
       formula: 'My suggestion is to + KATA KERJA  ·  The idea is to + KATA KERJA',
-      meaning: 'Say your idea clearly in one sentence.',
+      meaning: 'Saran saya adalah ...  ·  Idenya adalah ...',
       examples: ['My suggestion is to use one shared calendar.', 'The idea is to reduce manual work.', 'My suggestion is to test it for two weeks.']
     },
     {
       id: 'D56-P4',
       formula: 'The main benefit is (that) + KALIMAT  ·  This could help us + KATA KERJA',
-      meaning: 'Explain why the idea is good.',
+      meaning: 'Manfaat utamanya adalah (bahwa) ...  ·  Ini bisa membantu kita ...',
       examples: ['The main benefit is fewer mistakes.', 'This could help us finish faster.', 'This could help new members learn quickly.']
     },
     {
       id: 'D56-P5',
       formula: "Here's how it would work: First, ... Then, ...",
-      meaning: 'Explain the steps of your idea.',
+      meaning: 'Ini cara kerjanya: Pertama, ... Lalu, ...',
       examples: ["Here's how it would work.", 'First, everyone updates the list.', 'Then, we review it together on Friday.']
     }
   ],

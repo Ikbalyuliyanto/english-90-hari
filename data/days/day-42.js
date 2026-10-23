@@ -33,7 +33,8 @@ E90.registerDay({
       id: 'D42-S04',
       english: "I'm blocked by the missing data.",
       pronunciation: 'aim blokt bai de mi-sing dei-ta',
-      translation: 'Pekerjaan saya terhambat karena datanya belum ada.',
+      translation: 'Saya terhambat oleh data yang belum ada.',
+      naturalTranslation: 'Pekerjaan saya terhambat karena datanya belum ada.',
       words: [["I'm", 'saya (I am)', 'be'], ['blocked', 'terhambat / tertahan', 'block'], ['by', 'oleh'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['missing', 'yang belum ada / hilang', 'miss'], ['data', 'data']],
       phrases: [['be blocked by', 'terhambat oleh']],
       pattern: 'D42-P2'
@@ -66,7 +67,8 @@ E90.registerDay({
       id: 'D42-S08',
       english: "I'm looking into it.",
       pronunciation: 'aim lu-king in-tu it',
-      translation: 'Sedang saya selidiki.',
+      translation: 'Saya sedang menyelidikinya.',
+      naturalTranslation: 'Sedang saya selidiki.',
       words: [["I'm", 'saya sedang (I am)', 'be'], ['looking', '(bagian dari "look into")', 'look'], ['into', '(bagian dari "look into")'], ['it', 'itu / hal itu']],
       phrases: [['look into', 'menyelidiki / memeriksa lebih dalam']],
       pattern: 'D42-P4'
@@ -75,7 +77,8 @@ E90.registerDay({
       id: 'D42-S09',
       english: "I'll update you when I know more.",
       pronunciation: 'ail ap-deit yu wen ai nou mor',
-      translation: 'Saya kabari lagi kalau sudah tahu lebih banyak.',
+      translation: 'Saya akan mengabari kamu ketika saya tahu lebih banyak.',
+      naturalTranslation: 'Saya kabari lagi kalau sudah tahu lebih banyak.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['update', 'mengabari / memberi update'], ['you', 'kamu'], ['when', 'kalau / ketika'], ['I', 'saya'], ['know', 'tahu'], ['more', 'lebih banyak']],
       pattern: 'D42-P4'
     },
@@ -83,7 +86,8 @@ E90.registerDay({
       id: 'D42-S10',
       english: 'It only happens on some phones.',
       pronunciation: 'it oun-li he-penz on sam founz',
-      translation: 'Masalahnya hanya terjadi di beberapa ponsel.',
+      translation: 'Itu hanya terjadi di beberapa ponsel.',
+      naturalTranslation: 'Masalahnya hanya terjadi di beberapa ponsel.',
       words: [['It', 'hal itu / masalahnya'], ['only', 'hanya'], ['happens', 'terjadi; -s karena "it"', 'happen'], ['on', 'pada / di'], ['some', 'beberapa'], ['phones', 'ponsel (jamak)', 'phone']],
       pattern: 'D42-P5'
     }

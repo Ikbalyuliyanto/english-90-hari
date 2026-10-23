@@ -34,7 +34,8 @@ E90.registerDay({
       id: 'D47-S04',
       english: "The reason is that the data wasn't ready.",
       pronunciation: 'de ri-zen iz det de dei-ta wo-zent re-di',
-      translation: 'Alasannya karena datanya belum siap.',
+      translation: 'Alasannya adalah bahwa datanya belum siap.',
+      naturalTranslation: 'Alasannya karena datanya belum siap.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['reason', 'alasan'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ['data', 'data'], ["wasn't", 'tidak / belum (was not)', 'be'], ['ready', 'siap']],
       pattern: 'D47-P4'
     },
@@ -123,32 +124,32 @@ E90.registerDay({
     {
       id: 'D47-P1',
       formula: 'KALIMAT + because + KALIMAT',
-      meaning: 'Give a reason with a full sentence.',
+      meaning: '... karena ... (alasan berupa kalimat)',
       examples: ['I was late because the train was delayed.', 'We changed the plan because the budget was small.', "I couldn't reply because I was in a meeting."]
     },
     {
       id: 'D47-P2',
       formula: 'because of + BENDA',
-      meaning: 'Give a reason with a noun.',
+      meaning: 'karena ... (alasan berupa kata benda)',
       examples: ['The flight was delayed because of the weather.', 'The meeting was moved because of the holiday.', 'We stopped because of a technical problem.'],
       note: 'because + kalimat (ada subjek dan kata kerja) · because of + kata benda.'
     },
     {
       id: 'D47-P3',
       formula: "That's why + KALIMAT",
-      meaning: 'Connect a reason to its result.',
+      meaning: 'Itulah sebabnya ...',
       examples: ["The data is late. That's why we're behind schedule.", "We had many bugs. That's why we added more testing.", "She's on leave. That's why I'm handling her tasks."]
     },
     {
       id: 'D47-P4',
       formula: 'The reason is (that) + KALIMAT  ·  One reason is + BENDA',
-      meaning: 'Explain a reason clearly.',
+      meaning: 'Alasannya adalah (bahwa) ...  ·  Salah satu alasannya adalah ...',
       examples: ["The reason is that we didn't have enough people.", 'One reason is the high cost.', 'The main reason is time.']
     },
     {
       id: 'D47-P5',
       formula: 'It was caused by + BENDA  ·  As a result, + KALIMAT',
-      meaning: 'Explain a cause and its effect.',
+      meaning: 'Itu disebabkan oleh ...  ·  Akibatnya, ...',
       examples: ['The problem was caused by a wrong setting.', "As a result, some users couldn't log in.", 'The delay was caused by missing approval.']
     }
   ],

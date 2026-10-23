@@ -40,7 +40,8 @@ E90.registerDay({
       id: 'D49-S05',
       english: 'What should we do next?',
       pronunciation: 'wat shud wi du nekst?',
-      translation: 'Sebaiknya kita melakukan apa selanjutnya?',
+      translation: 'Apa yang seharusnya kita lakukan selanjutnya?',
+      naturalTranslation: 'Sebaiknya kita melakukan apa selanjutnya?',
       words: [['What', 'apa'], ['should', 'sebaiknya'], ['we', 'kita'], ['do', 'melakukan'], ['next', 'selanjutnya']],
       pattern: 'D28-P3'
     },
@@ -48,7 +49,8 @@ E90.registerDay({
       id: 'D49-S06',
       english: 'Is there anything else we should know?',
       pronunciation: 'iz der e-ni-thing els wi shud nou?',
-      translation: 'Ada hal lain yang perlu kita ketahui?',
+      translation: 'Apakah ada hal lain yang seharusnya kita ketahui?',
+      naturalTranslation: 'Ada hal lain yang perlu kita ketahui?',
       words: [['Is', '(bagian dari "is there", apakah ada)', 'be'], ['there', 'ada (dalam "is there")'], ['anything', 'sesuatu / apa pun'], ['else', 'lain'], ['we', 'kita'], ['should', 'sebaiknya / perlu'], ['know', 'tahu / ketahui']],
       pattern: 'D49-P4'
     },
@@ -56,7 +58,8 @@ E90.registerDay({
       id: 'D49-S07',
       english: 'Can you give me more details?',
       pronunciation: 'ken yu giv mi mor di-teilz?',
-      translation: 'Bisa beri saya detail lebih lanjut?',
+      translation: 'Bisakah kamu memberi saya detail lebih lanjut?',
+      naturalTranslation: 'Bisa beri saya detail lebih lanjut?',
       words: [['Can', 'bisakah'], ['you', 'kamu / Anda'], ['give', 'memberi'], ['me', 'kepada saya'], ['more', 'lebih banyak'], ['details', 'detail (jamak)', 'detail']],
       pattern: 'D19-P2'
     },
@@ -64,7 +67,8 @@ E90.registerDay({
       id: 'D49-S08',
       english: 'How will this affect the schedule?',
       pronunciation: 'hau wil dis e-fekt de ske-jul?',
-      translation: 'Bagaimana pengaruhnya terhadap jadwal?',
+      translation: 'Bagaimana ini akan memengaruhi jadwal?',
+      naturalTranslation: 'Bagaimana pengaruhnya terhadap jadwal?',
       words: [['How', 'bagaimana'], ['will', 'akan'], ['this', 'ini / hal ini'], ['affect', 'memengaruhi'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['schedule', 'jadwal']],
       pattern: 'D49-P2'
     },
@@ -93,7 +97,8 @@ E90.registerDay({
       id: 'D49-S11',
       english: 'What did the client say?',
       pronunciation: 'wat did de klai-ent sei?',
-      translation: 'Klien bilang apa?',
+      translation: 'Apa yang klien katakan?',
+      naturalTranslation: 'Klien bilang apa?',
       words: [['What', 'apa'], ['did', '(kata bantu pertanyaan bentuk lampau, tidak diterjemahkan)', 'do'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['client', 'klien'], ['say', 'mengatakan']],
       pattern: 'D23-P1'
     },
@@ -101,7 +106,8 @@ E90.registerDay({
       id: 'D49-S12',
       english: 'Do you mean the budget or the timeline?',
       pronunciation: 'du yu min de ba-jet or de taim-lain?',
-      translation: 'Maksudnya anggaran atau jadwalnya?',
+      translation: 'Apakah maksudmu anggaran atau jadwalnya?',
+      naturalTranslation: 'Maksudnya anggaran atau jadwalnya?',
       words: [['Do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu / Anda'], ['mean', 'maksudkan'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['budget', 'anggaran'], ['or', 'atau'], ['timeline', 'linimasa / jadwal pengerjaan']],
       pattern: 'D20-P2'
     },
@@ -109,7 +115,8 @@ E90.registerDay({
       id: 'D49-S13',
       english: 'Which option do you prefer?',
       pronunciation: 'wich op-shen du yu pri-fer?',
-      translation: 'Kamu lebih pilih opsi yang mana?',
+      translation: 'Opsi mana yang kamu lebih suka?',
+      naturalTranslation: 'Kamu lebih pilih opsi yang mana?',
       words: [['Which', 'yang mana'], ['option', 'pilihan / opsi'], ['do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu'], ['prefer', 'lebih suka / pilih']],
       pattern: 'D27-P3'
     },
@@ -121,32 +128,32 @@ E90.registerDay({
     {
       id: 'D49-P1',
       formula: 'Why do you think + that / KALIMAT?  ·  Can you explain why?',
-      meaning: "Ask for someone's reason.",
+      meaning: 'Kenapa kamu berpendapat ...?  ·  Bisakah kamu menjelaskan mengapa?',
       examples: ["Why do you think it's too risky?", 'Why do you think we need more people?', 'Can you explain why the cost went up?']
     },
     {
       id: 'D49-P2',
       formula: 'What happens if + KALIMAT?  ·  How will this affect + BENDA?',
-      meaning: 'Ask about results and impact.',
+      meaning: 'Apa yang terjadi kalau ...?  ·  Bagaimana ini akan memengaruhi ...?',
       examples: ['What happens if the client says no?', 'What happens if we launch late?', 'How will this affect the budget?'],
       note: 'Setelah "if" pakai bentuk sekarang: What happens if we miss it? (bukan "will miss").'
     },
     {
       id: 'D49-P3',
       formula: 'What do we need + first / for + BENDA?  ·  When do we need it?',
-      meaning: 'Ask about needs and timing.',
+      meaning: 'Apa yang kita butuhkan lebih dulu / untuk ...?  ·  Kapan kita membutuhkannya?',
       examples: ['What do we need for the demo?', 'When do we need the final version?', 'What do we need from the client?']
     },
     {
       id: 'D49-P4',
       formula: 'Is there anything else + KALIMAT?  ·  Who else + KALIMAT?',
-      meaning: 'Check that nothing is missing.',
+      meaning: 'Apakah ada hal lain ...?  ·  Siapa lagi ...?',
       examples: ['Is there anything else I should prepare?', 'Who else needs to join the call?', 'Is there anything else you need from me?']
     },
     {
       id: 'D49-P5',
       formula: 'Short response + follow-up question',
-      meaning: 'Keep the conversation going: respond, then ask the next question.',
+      meaning: 'Tanggapan singkat + pertanyaan lanjutan (supaya percakapan terus berjalan)',
       examples: ['That sounds good. When do we need it?', 'I agree. What should we do next?', 'Okay. Who will send the email?'],
       note: 'Rumus: tanggapi singkat → tanyakan satu hal berikutnya.'
     }

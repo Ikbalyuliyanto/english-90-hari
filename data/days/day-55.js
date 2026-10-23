@@ -33,7 +33,8 @@ E90.registerDay({
       id: 'D55-S04',
       english: 'I missed that part.',
       pronunciation: 'ai mist det part',
-      translation: 'Bagian itu terlewat oleh saya.',
+      translation: 'Saya melewatkan bagian itu.',
+      naturalTranslation: 'Bagian itu terlewat oleh saya.',
       words: [['I', 'saya'], ['missed', 'terlewat / melewatkan (lampau)', 'miss'], ['that', 'itu'], ['part', 'bagian']],
       pattern: 'D55-P2'
     },
@@ -49,7 +50,8 @@ E90.registerDay({
       id: 'D55-S06',
       english: 'Let me correct it.',
       pronunciation: 'let mi ko-rekt it',
-      translation: 'Biar saya perbaiki.',
+      translation: 'Biar saya membetulkannya.',
+      naturalTranslation: 'Biar saya perbaiki.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['correct', 'membetulkan / memperbaiki (kata kerja)'], ['it', 'itu / -nya']],
       pattern: 'D26-P3'
     },
@@ -57,7 +59,8 @@ E90.registerDay({
       id: 'D55-S07',
       english: "I've fixed it, and I've sent the new version.",
       pronunciation: 'aiv fikst it, en aiv sent de nyu ver-shen',
-      translation: 'Sudah saya perbaiki, dan versi barunya sudah saya kirim.',
+      translation: 'Saya sudah memperbaikinya, dan saya sudah mengirim versi barunya.',
+      naturalTranslation: 'Sudah saya perbaiki, dan versi barunya sudah saya kirim.',
       words: [["I've", 'saya sudah (I have)', 'have'], ['fixed', 'memperbaiki', 'fix'], ['it', 'itu / -nya'], ['and', 'dan'], ['sent', 'mengirim', 'send'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['new', 'baru'], ['version', 'versi']],
       pattern: 'D55-P3'
     },
@@ -73,7 +76,8 @@ E90.registerDay({
       id: 'D55-S09',
       english: "It won't happen again.",
       pronunciation: 'it wount he-pen e-gen',
-      translation: 'Tidak akan terulang lagi.',
+      translation: 'Itu tidak akan terjadi lagi.',
+      naturalTranslation: 'Tidak akan terulang lagi.',
       words: [['It', 'hal itu'], ["won't", 'tidak akan (will not)', 'will'], ['happen', 'terjadi'], ['again', 'lagi']],
       pattern: 'D55-P4'
     },
@@ -81,7 +85,8 @@ E90.registerDay({
       id: 'D55-S10',
       english: "I'll double-check next time.",
       pronunciation: 'ail da-bel-cek nekst taim',
-      translation: 'Lain kali saya akan cek ulang.',
+      translation: 'Saya akan mengecek ulang lain kali.',
+      naturalTranslation: 'Lain kali saya akan cek ulang.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['double-check', 'memeriksa ulang'], ['next', 'berikutnya'], ['time', 'kali / waktu']],
       phrases: [['next time', 'lain kali']],
       pattern: 'D55-P4'
@@ -121,25 +126,25 @@ E90.registerDay({
     {
       id: 'D55-P1',
       formula: 'I made a mistake (in + BENDA)  ·  That was my mistake',
-      meaning: 'Admit a mistake clearly.',
+      meaning: 'Saya membuat kesalahan (di ...)  ·  Itu kesalahan saya',
       examples: ['I made a mistake in the email.', "That was my mistake, not the team's.", 'I made a small mistake with the date.']
     },
     {
       id: 'D55-P2',
       formula: 'I misunderstood / missed / used the wrong + BENDA',
-      meaning: 'Say exactly what went wrong.',
+      meaning: 'Saya salah memahami / melewatkan / memakai ... yang salah',
       examples: ['I misunderstood the deadline.', 'I missed one important detail.', 'I sent the wrong version.']
     },
     {
       id: 'D55-P3',
       formula: "I've fixed it  ·  Here's the corrected version",
-      meaning: 'Show that the problem is solved.',
+      meaning: 'Saya sudah memperbaikinya  ·  Ini versi yang sudah diperbaiki',
       examples: ["I've corrected the numbers.", "Here's the updated file.", "I've sent the right version to everyone."]
     },
     {
       id: 'D55-P4',
       formula: 'Sorry about that. + PERBAIKAN + Next time, ...',
-      meaning: 'Apologize once, then focus on the solution.',
+      meaning: 'Maaf soal itu. + PERBAIKAN + Lain kali, ...',
       examples: ["Sorry about that. I've fixed it.", "It won't happen again.", "Next time, I'll check it before sending."],
       note: 'Cukup minta maaf sekali, lalu jelaskan perbaikan dan pencegahannya. Itu terdengar profesional, bukan lemah.'
     }

@@ -9,7 +9,8 @@ E90.registerDay({
       id: 'D60-S01',
       english: "Thanks, everyone. Let me start with a quick status update.",
       pronunciation: 'thengks, ev-ri-wan. let mi start with e kwik stei-tes ap-deit',
-      translation: 'Terima kasih semuanya. Saya mulai dengan update status singkat.',
+      translation: 'Terima kasih, semuanya. Biar saya mulai dengan update status singkat.',
+      naturalTranslation: 'Terima kasih semuanya. Saya mulai dengan update status singkat.',
       words: [['Thanks', 'terima kasih', 'thank'], ['everyone', 'semua orang'], ['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['start', 'mulai'], ['with', 'dengan'], ['a', 'sebuah (tidak diterjemahkan)'], ['quick', 'singkat'], ['status', 'status / keadaan'], ['update', 'kabar terbaru / update']],
       pattern: 'D60-P1'
     },
@@ -25,7 +26,8 @@ E90.registerDay({
       id: 'D60-S03',
       english: "There's one thing I'd like to raise.",
       pronunciation: 'derz wan thing aid laik tu reiz',
-      translation: 'Ada satu hal yang ingin saya sampaikan.',
+      translation: 'Ada satu hal yang ingin saya angkat.',
+      naturalTranslation: 'Ada satu hal yang ingin saya sampaikan.',
       words: [["There's", 'ada (there is)', 'be'], ['one', 'satu'], ['thing', 'hal'], ["I'd", 'saya ingin (I would, dalam "I\'d like")', 'will'], ['like', 'ingin (dalam "would like")'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['raise', 'menyampaikan / mengangkat (masalah)']],
       phrases: [['raise an issue', 'menyampaikan masalah di rapat (bukan "menaikkan")']],
       pattern: 'D60-P3'
@@ -50,7 +52,8 @@ E90.registerDay({
       id: 'D60-S06',
       english: 'Does everyone agree with this plan?',
       pronunciation: 'daz ev-ri-wan e-gri with dis plen?',
-      translation: 'Semua setuju dengan rencana ini?',
+      translation: 'Apakah semua orang setuju dengan rencana ini?',
+      naturalTranslation: 'Semua setuju dengan rencana ini?',
       words: [['Does', '(kata bantu pertanyaan untuk he/she/it/everyone, tidak diterjemahkan)', 'do'], ['everyone', 'semua orang'], ['agree', 'setuju'], ['with', 'dengan'], ['this', 'ini'], ['plan', 'rencana']],
       phrases: [['everyone + does', '"everyone" dianggap tunggal, jadi pakai "does"']]
     },
@@ -58,7 +61,8 @@ E90.registerDay({
       id: 'D60-S07',
       english: 'Let me quickly go over the next steps.',
       pronunciation: 'let mi kwik-li gou ou-ver de nekst steps',
-      translation: 'Saya rangkum cepat langkah-langkah berikutnya.',
+      translation: 'Biar saya membahas cepat langkah-langkah berikutnya.',
+      naturalTranslation: 'Saya rangkum cepat langkah-langkah berikutnya.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['quickly', 'dengan cepat', 'quick'], ['go', '(bagian dari "go over")'], ['over', '(bagian dari "go over")'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['next', 'berikutnya'], ['steps', 'langkah (jamak)', 'step']],
       phrases: [['go over', 'membahas ulang / merangkum']],
       pattern: 'D60-P5'
@@ -84,33 +88,33 @@ E90.registerDay({
     {
       id: 'D60-P1',
       formula: 'Status → Done → Remaining → Delay & reason → Requirement → Options → Risk → Solution → Deadline → Owner → Next steps',
-      meaning: 'A structure for a longer project update.',
+      meaning: 'Struktur update proyek yang lebih panjang',
       examples: ['Let me start with a quick status update.', "So far, we've finished the main pages.", "There's been a delay because we needed more information.", 'Let me quickly go over the action items.'],
       note: 'Tidak harus urut sempurna. Pakai penghubung supaya pendengar bisa mengikuti.'
     },
     {
       id: 'D60-P2',
       formula: "We're about + ANGKA + percent done",
-      meaning: 'Give progress as a simple number.',
+      meaning: 'Kami sudah sekitar ... persen selesai',
       examples: ["We're about half done.", "We're about ninety percent done.", "We're almost there."],
       note: '"half done" = setengah selesai.'
     },
     {
       id: 'D60-P3',
       formula: "There's one thing I'd like to raise  ·  My main concern is + BENDA",
-      meaning: 'Bring up a risk or a concern.',
+      meaning: 'Ada satu hal yang ingin saya angkat  ·  Kekhawatiran utama saya adalah ...',
       examples: ["There's one issue I'd like to raise.", 'My main concern is the budget.', "I'm a little worried about the timeline."]
     },
     {
       id: 'D60-P4',
       formula: 'To solve this, I suggest we + KATA KERJA',
-      meaning: 'Connect a problem to a solution.',
+      meaning: 'Untuk mengatasi ini, saya sarankan kita ...',
       examples: ['To solve this, I suggest we add one more tester.', 'To avoid delays, I suggest we start earlier.', 'To save time, I suggest we skip this step.']
     },
     {
       id: 'D60-P5',
       formula: 'Let me go over + BENDA  ·  So, to sum up, ...',
-      meaning: 'Summarize at the end of a meeting.',
+      meaning: 'Biar saya membahas ...  ·  Jadi, kesimpulannya, ...',
       examples: ['Let me go over the action items.', "So, to sum up, we'll launch on the 20th.", 'Let me recap what we agreed.']
     }
   ],

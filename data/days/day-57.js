@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D57-S01',
       english: 'The first option is cheaper, but it takes longer.',
       pronunciation: 'de ferst op-shen iz chi-per, bat it teiks long-ger',
-      translation: 'Pilihan pertama lebih murah, tapi butuh waktu lebih lama.',
+      translation: 'Pilihan pertama lebih murah, tapi itu memakan waktu lebih lama.',
+      naturalTranslation: 'Pilihan pertama lebih murah, tapi butuh waktu lebih lama.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['first', 'pertama'], ['option', 'pilihan / opsi'], ['is', '(to be, tidak diterjemahkan)', 'be'], ['cheaper', 'lebih murah', 'cheap'], ['but', 'tetapi'], ['it', 'hal itu'], ['takes', 'memakan (waktu); -s karena "it"', 'take'], ['longer', 'lebih lama', 'long']],
       pattern: 'D57-P1'
     },
@@ -32,7 +33,8 @@ E90.registerDay({
       id: 'D57-S04',
       english: 'This option costs more.',
       pronunciation: 'dis op-shen kosts mor',
-      translation: 'Pilihan ini biayanya lebih mahal.',
+      translation: 'Pilihan ini lebih mahal.',
+      naturalTranslation: 'Pilihan ini biayanya lebih mahal.',
       words: [['This', 'ini'], ['option', 'pilihan / opsi'], ['costs', 'memakan biaya; -s karena "this option"', 'cost'], ['more', 'lebih banyak']],
       pattern: 'D57-P2'
     },
@@ -40,7 +42,8 @@ E90.registerDay({
       id: 'D57-S05',
       english: 'It takes less time.',
       pronunciation: 'it teiks les taim',
-      translation: 'Waktunya lebih sedikit.',
+      translation: 'Itu memakan waktu lebih sedikit.',
+      naturalTranslation: 'Waktunya lebih sedikit.',
       words: [['It', 'hal itu'], ['takes', 'memakan (waktu); -s karena "it"', 'take'], ['less', 'lebih sedikit'], ['time', 'waktu']],
       pattern: 'D57-P2'
     },
@@ -48,7 +51,8 @@ E90.registerDay({
       id: 'D57-S06',
       english: "The advantage of this option is that it's more flexible.",
       pronunciation: "di ed-ven-tij ov dis op-shen iz det its mor flek-si-bel",
-      translation: 'Kelebihan pilihan ini, lebih fleksibel.',
+      translation: 'Kelebihan dari pilihan ini adalah bahwa itu lebih fleksibel.',
+      naturalTranslation: 'Kelebihan pilihan ini, lebih fleksibel.',
       words: [['The', '(dibaca "di" sebelum vokal, tidak diterjemahkan)'], ['advantage', 'kelebihan / keuntungan'], ['of', 'dari'], ['this', 'ini'], ['option', 'pilihan / opsi'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ["it's", 'itu (it is)', 'be'], ['more', 'lebih'], ['flexible', 'fleksibel / mudah disesuaikan']],
       pattern: 'D57-P3'
     },
@@ -56,7 +60,8 @@ E90.registerDay({
       id: 'D57-S07',
       english: 'The disadvantage is that we need extra training.',
       pronunciation: 'de dis-ed-ven-tij iz det wi nid eks-tra trei-ning',
-      translation: 'Kekurangannya, kita butuh pelatihan tambahan.',
+      translation: 'Kekurangannya adalah bahwa kita butuh pelatihan tambahan.',
+      naturalTranslation: 'Kekurangannya, kita butuh pelatihan tambahan.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['disadvantage', 'kekurangan / kerugian'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ['we', 'kita'], ['need', 'butuh'], ['extra', 'tambahan'], ['training', 'pelatihan', 'train']],
       pattern: 'D57-P3'
     },
@@ -80,7 +85,8 @@ E90.registerDay({
       id: 'D57-S10',
       english: 'I think this is the better option.',
       pronunciation: 'ai thingk dis iz de be-ter op-shen',
-      translation: 'Menurut saya ini pilihan yang lebih baik.',
+      translation: 'Saya pikir ini pilihan yang lebih baik.',
+      naturalTranslation: 'Menurut saya ini pilihan yang lebih baik.',
       words: [['I', 'saya'], ['think', 'berpendapat'], ['this', 'ini'], ['is', 'adalah', 'be'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['better', 'lebih baik', 'good'], ['option', 'pilihan / opsi']],
       pattern: 'D57-P5'
     }
@@ -107,7 +113,8 @@ E90.registerDay({
       id: 'D57-S13',
       english: "Let's go with the cheaper option.",
       pronunciation: 'lets gou with de chi-per op-shen',
-      translation: 'Kita pilih opsi yang lebih murah.',
+      translation: 'Ayo kita pilih opsi yang lebih murah.',
+      naturalTranslation: 'Kita pilih opsi yang lebih murah.',
       words: [["Let's", 'mari kita (let us)', 'let'], ['go', '(bagian dari "go with")'], ['with', 'memilih (dalam "go with")'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['cheaper', 'lebih murah', 'cheap'], ['option', 'pilihan / opsi']],
       pattern: 'D43-P2'
     },
@@ -119,32 +126,32 @@ E90.registerDay({
     {
       id: 'D57-P1',
       formula: 'Option A / This one + is + KATA SIFAT-er (than ...)',
-      meaning: 'Compare one feature of two options.',
+      meaning: 'Pilihan A / Yang ini + lebih ... (daripada ...)',
       examples: ['Option A is faster.', 'Option B is cheaper than option A.', 'This one is easier for new users.']
     },
     {
       id: 'D57-P2',
       formula: 'This costs more / less  ·  This takes more / less time',
-      meaning: 'Compare cost and time.',
+      meaning: 'Ini lebih mahal / lebih murah  ·  Ini memakan waktu lebih banyak / lebih sedikit',
       examples: ['The second option costs less.', 'The first option takes more time.', 'This one needs fewer people.'],
       note: 'less = lebih sedikit (untuk yang tidak dihitung: time, money) · fewer = lebih sedikit (untuk yang dihitung: people, steps).'
     },
     {
       id: 'D57-P3',
       formula: 'The advantage / disadvantage of + BENDA + is (that) ...',
-      meaning: 'Name the good and bad points of an option.',
+      meaning: 'Kelebihan / kekurangan dari ... adalah (bahwa) ...',
       examples: ['The advantage of option A is the low price.', 'The disadvantage of option B is the long setup.', 'The advantage of working remotely is flexibility.']
     },
     {
       id: 'D57-P4',
       formula: 'Compared with + BENDA, + KALIMAT',
-      meaning: 'Compare with something else.',
+      meaning: 'Dibandingkan dengan ..., ...',
       examples: ['Compared with last year, sales are higher.', 'Compared with option A, option B is safer.', 'Compared with email, chat is faster.']
     },
     {
       id: 'D57-P5',
       formula: 'I think + BENDA + is the better option because ...',
-      meaning: 'Give your final choice with a reason.',
+      meaning: 'Saya pikir ... adalah pilihan yang lebih baik karena ...',
       examples: ["I think option B is the better option because it's safer.", 'I think the first plan is better for us.', "Overall, I'd choose option A."]
     }
   ],

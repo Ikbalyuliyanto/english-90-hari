@@ -49,7 +49,8 @@ E90.registerDay({
       id: 'D46-S06',
       english: 'I expect to finish everything by Thursday.',
       pronunciation: 'ai ek-spekt tu fi-nish ev-ri-thing bai therz-dei',
-      translation: 'Saya perkirakan semuanya selesai paling lambat hari Kamis.',
+      translation: 'Saya perkirakan akan menyelesaikan semuanya paling lambat hari Kamis.',
+      naturalTranslation: 'Saya perkirakan semuanya selesai paling lambat hari Kamis.',
       words: [['I', 'saya'], ['expect', 'memperkirakan'], ['to', '(penanda kata kerja, tidak diterjemahkan)'], ['finish', 'menyelesaikan'], ['everything', 'semuanya'], ['by', 'paling lambat'], ['Thursday', 'Kamis']],
       pattern: 'D46-P4'
     },
@@ -75,7 +76,8 @@ E90.registerDay({
       id: 'D46-S09',
       english: "I'll keep you updated.",
       pronunciation: 'ail kip yu ap-dei-tid',
-      translation: 'Saya akan terus mengabari.',
+      translation: 'Saya akan terus mengabari kamu.',
+      naturalTranslation: 'Saya akan terus mengabari.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['keep', 'terus membuat / menjaga'], ['you', 'kamu / Anda'], ['updated', 'mendapat kabar terbaru', 'update']],
       phrases: [['keep someone updated', 'terus mengabari seseorang']],
       pattern: 'D44-P1'
@@ -124,32 +126,32 @@ E90.registerDay({
     {
       id: 'D46-P1',
       formula: "Here's a quick update on + BENDA",
-      meaning: 'Use this to start a status update.',
+      meaning: 'Ini update singkat tentang ...',
       examples: ["Here's a quick update on the website.", "Here's a quick update on my tasks.", "Here's where we are right now."]
     },
     {
       id: 'D46-P2',
       formula: "So far, I've + KATA KERJA-ed  ·  I've already + KATA KERJA-ed",
-      meaning: 'Say what is already done.',
+      meaning: 'Sejauh ini, saya sudah ...  ·  Saya sudah ...',
       examples: ["So far, I've talked to three customers.", "I've already fixed the main issue.", 'So far, everything looks good.'],
       note: '"already" = sudah (lebih cepat dari yang mungkin diharapkan).'
     },
     {
       id: 'D46-P3',
       formula: "I'm currently + KATA KERJA-ing",
-      meaning: 'Say what you are doing now.',
+      meaning: 'Saat ini saya sedang ...',
       examples: ["I'm currently updating the report.", "I'm currently waiting for approval.", "We're currently testing the new version."]
     },
     {
       id: 'D46-P4',
       formula: 'The remaining work is + BENDA  ·  I expect to finish + WAKTU',
-      meaning: 'Say what is left and when it will be done.',
+      meaning: 'Pekerjaan yang tersisa adalah ...  ·  Saya perkirakan selesai ...',
       examples: ['The remaining work is the final check.', 'I expect to finish it by tomorrow.', 'I expect to send it on Monday.']
     },
     {
       id: 'D46-P5',
       formula: "Everything is on track  ·  We're slightly behind schedule",
-      meaning: 'Say if the plan is on time or late.',
+      meaning: 'Semuanya sesuai rencana  ·  Kami sedikit terlambat dari jadwal',
       examples: ["We're on track for Friday.", "We're a bit behind schedule.", "We're ahead of schedule."],
       note: 'on track = sesuai rencana · behind schedule = terlambat dari jadwal · ahead of schedule = lebih cepat.'
     }

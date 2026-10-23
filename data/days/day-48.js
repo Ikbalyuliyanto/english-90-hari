@@ -58,7 +58,8 @@ E90.registerDay({
       id: 'D48-S07',
       english: 'Can we move this to tomorrow?',
       pronunciation: 'ken wi muv dis tu tu-mo-rou?',
-      translation: 'Bisa ini kita pindah ke besok?',
+      translation: 'Bisakah kita memindahkan ini ke besok?',
+      naturalTranslation: 'Bisa ini kita pindah ke besok?',
       words: [['Can', 'bisakah'], ['we', 'kita'], ['move', 'memindahkan'], ['this', 'ini'], ['to', 'ke'], ['tomorrow', 'besok']],
       pattern: 'D33-P4'
     },
@@ -66,7 +67,8 @@ E90.registerDay({
       id: 'D48-S08',
       english: "I'll let you know if anything changes.",
       pronunciation: 'ail let yu nou if e-ni-thing cheinj-iz',
-      translation: 'Saya kabari kalau ada perubahan.',
+      translation: 'Saya akan memberi tahu kamu kalau ada yang berubah.',
+      naturalTranslation: 'Saya kabari kalau ada perubahan.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['let', 'membiarkan'], ['you', 'kamu / Anda'], ['know', 'tahu'], ['if', 'kalau / jika'], ['anything', 'apa pun / sesuatu'], ['changes', 'berubah; -s karena "anything"', 'change']],
       phrases: [['let you know', 'mengabari kamu']],
       pattern: 'D48-P5'
@@ -109,7 +111,8 @@ E90.registerDay({
       id: 'D48-S13',
       english: 'Could we move the meeting to Thursday?',
       pronunciation: 'kud wi muv de mi-ting tu therz-dei?',
-      translation: 'Bisakah rapatnya kita pindah ke hari Kamis?',
+      translation: 'Bisakah kita memindahkan rapatnya ke hari Kamis?',
+      naturalTranslation: 'Bisakah rapatnya kita pindah ke hari Kamis?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['we', 'kita'], ['move', 'memindahkan'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['meeting', 'rapat'], ['to', 'ke'], ['Thursday', 'Kamis']],
       pattern: 'D19-P2'
     },
@@ -121,32 +124,32 @@ E90.registerDay({
     {
       id: 'D48-P1',
       formula: "We're running behind  ·  There's been a delay (with + BENDA)",
-      meaning: 'Say that something is late.',
+      meaning: 'Kami tertinggal dari jadwal  ·  Ada keterlambatan (pada ...)',
       examples: ["We're running a little behind today.", "There's been a delay with the approval.", "There's been a change in the plan."]
     },
     {
       id: 'D48-P2',
       formula: 'We need to postpone / reschedule + BENDA',
-      meaning: 'Say that an event must move to another time.',
+      meaning: 'Kita perlu menunda / menjadwalkan ulang ...',
       examples: ['We need to postpone the launch.', "We need to reschedule tomorrow's meeting.", 'Can we reschedule for next week?'],
       note: 'delay = terlambat / tertunda (sering tidak direncanakan) · postpone = sengaja menunda (tanggal baru bisa belum ada) · reschedule = menentukan jadwal baru.'
     },
     {
       id: 'D48-P3',
       formula: 'The plan has changed  ·  We should adjust + BENDA',
-      meaning: 'Talk about a new plan.',
+      meaning: 'Rencananya sudah berubah  ·  Kita sebaiknya menyesuaikan ...',
       examples: ['The timeline has changed.', 'We should adjust the budget.', 'We should update the plan.']
     },
     {
       id: 'D48-P4',
       formula: 'We may need + BENDA / to + KATA KERJA',
-      meaning: 'Say something is possible, not certain.',
+      meaning: 'Kita mungkin butuh ... (belum pasti)',
       examples: ['We may need more time.', 'We may need to change the date.', 'I may be a little late.']
     },
     {
       id: 'D48-P5',
       formula: "I'll let you know if + KALIMAT",
-      meaning: 'Promise to tell someone about changes.',
+      meaning: 'Saya akan memberi tahu kamu kalau ...',
       examples: ["I'll let you know if anything changes.", "Let me know if you can't make it.", "I'll tell you if we need more help."]
     }
   ],

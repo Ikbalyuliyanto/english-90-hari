@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D53-S01',
       english: 'This looks good.',
       pronunciation: 'dis luks gud',
-      translation: 'Ini kelihatan bagus.',
+      translation: 'Ini terlihat bagus.',
+      naturalTranslation: 'Ini kelihatan bagus.',
       words: [['This', 'ini'], ['looks', 'terlihat; -s karena "this"', 'look'], ['good', 'bagus']],
       pattern: 'D53-P1'
     },
@@ -24,7 +25,8 @@ E90.registerDay({
       id: 'D53-S03',
       english: 'I think this could be improved.',
       pronunciation: 'ai thingk dis kud bi im-pruvd',
-      translation: 'Menurut saya ini masih bisa ditingkatkan.',
+      translation: 'Saya pikir ini bisa ditingkatkan.',
+      naturalTranslation: 'Menurut saya ini masih bisa ditingkatkan.',
       words: [['I', 'saya'], ['think', 'berpendapat'], ['this', 'ini'], ['could', 'bisa (lebih lembut dari "can")', 'can'], ['be', '(to be, tidak diterjemahkan)'], ['improved', 'ditingkatkan / diperbaiki', 'improve']],
       phrases: [['could be improved', 'masih bisa ditingkatkan (cara halus mengatakan belum bagus)']],
       pattern: 'D53-P2'
@@ -33,7 +35,8 @@ E90.registerDay({
       id: 'D53-S04',
       english: 'Maybe we can make this clearer.',
       pronunciation: 'mei-bi wi ken meik dis kli-rer',
-      translation: 'Mungkin ini bisa kita buat lebih jelas.',
+      translation: 'Mungkin kita bisa membuat ini lebih jelas.',
+      naturalTranslation: 'Mungkin ini bisa kita buat lebih jelas.',
       words: [['Maybe', 'mungkin'], ['we', 'kita'], ['can', 'bisa'], ['make', 'membuat'], ['this', 'ini'], ['clearer', 'lebih jelas', 'clear']],
       pattern: 'D53-P2'
     },
@@ -41,7 +44,8 @@ E90.registerDay({
       id: 'D53-S05',
       english: "One thing I'd suggest is adding a short summary.",
       pronunciation: 'wan thing aid sag-jest iz e-ding e short sa-me-ri',
-      translation: 'Satu saran saya: tambahkan ringkasan singkat.',
+      translation: 'Satu hal yang saya sarankan adalah menambahkan ringkasan singkat.',
+      naturalTranslation: 'Satu saran saya: tambahkan ringkasan singkat.',
       words: [['One', 'satu'], ['thing', 'hal'], ["I'd", 'saya akan (I would)', 'will'], ['suggest', 'menyarankan'], ['is', 'adalah', 'be'], ['adding', 'menambahkan', 'add'], ['a', 'sebuah (tidak diterjemahkan)'], ['short', 'singkat / pendek'], ['summary', 'ringkasan']],
       pattern: 'D53-P3'
     },
@@ -67,7 +71,8 @@ E90.registerDay({
       id: 'D53-S08',
       english: "Overall, I think it's great work.",
       pronunciation: "ou-ve-rol, ai thingk its greit werk",
-      translation: 'Secara keseluruhan, menurut saya hasilnya bagus sekali.',
+      translation: 'Secara keseluruhan, saya pikir ini pekerjaan yang bagus sekali.',
+      naturalTranslation: 'Secara keseluruhan, menurut saya hasilnya bagus sekali.',
       words: [['Overall', 'secara keseluruhan'], ['I', 'saya'], ['think', 'berpendapat'], ["it's", 'itu (it is)', 'be'], ['great', 'bagus sekali / hebat'], ['work', 'hasil kerja / pekerjaan']],
       pattern: 'D53-P1'
     },
@@ -83,7 +88,8 @@ E90.registerDay({
       id: 'D53-S10',
       english: 'Could you add the date to the title?',
       pronunciation: 'kud yu ed de deit tu de tai-tel?',
-      translation: 'Bisa tambahkan tanggal di judulnya?',
+      translation: 'Bisakah kamu menambahkan tanggal ke judulnya?',
+      naturalTranslation: 'Bisa tambahkan tanggal di judulnya?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu'], ['add', 'menambahkan'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['date', 'tanggal'], ['to', 'ke'], ['title', 'judul']],
       pattern: 'D19-P2'
     }
@@ -102,7 +108,8 @@ E90.registerDay({
       id: 'D53-S12',
       english: 'I suggest we remove this slide.',
       pronunciation: 'ai sag-jest wi ri-muv dis slaid',
-      translation: 'Saya sarankan slide ini kita hapus.',
+      translation: 'Saya sarankan kita menghapus slide ini.',
+      naturalTranslation: 'Saya sarankan slide ini kita hapus.',
       words: [['I', 'saya'], ['suggest', 'menyarankan'], ['we', 'kita'], ['remove', 'menghapus / membuang'], ['this', 'ini'], ['slide', 'slide presentasi']],
       pattern: 'D40-P3'
     },
@@ -122,32 +129,32 @@ E90.registerDay({
     {
       id: 'D53-P1',
       formula: 'This looks + KATA SIFAT  ·  I like + BENDA',
-      meaning: 'Start with something positive and specific.',
+      meaning: 'Ini terlihat ...  ·  Saya suka ... (mulai dari hal positif)',
       examples: ['This looks very clean.', 'I like the way you explained the problem.', 'I like the colors you chose.']
     },
     {
       id: 'D53-P2',
       formula: 'This could be improved  ·  Maybe we can make this + KATA SIFAT-er',
-      meaning: 'Suggest an improvement gently.',
+      meaning: 'Ini bisa ditingkatkan  ·  Mungkin kita bisa membuat ini lebih ...',
       examples: ['Maybe we can make the title shorter.', 'This section could be simpler.', 'Maybe we can make it easier to read.']
     },
     {
       id: 'D53-P3',
       formula: "One thing I'd suggest is + KATA KERJA-ing",
-      meaning: 'Give one clear suggestion.',
+      meaning: 'Satu hal yang saya sarankan adalah ...',
       examples: ["One thing I'd suggest is adding page numbers.", "One thing I'd suggest is using bigger text.", "One thing I'd change is the order of the slides."]
     },
     {
       id: 'D53-P4',
       formula: 'It would be better if + KALIMAT (bentuk lampau)',
-      meaning: 'Say what would make the work better.',
+      meaning: 'Akan lebih baik kalau ...',
       examples: ['It would be better if we added a chart.', 'It would be better if the email were shorter.', 'It would be clearer if you used bullet points.'],
       note: 'Setelah "It would be better if", kata kerja memakai bentuk lampau (added, were) walaupun maksudnya sekarang.'
     },
     {
       id: 'D53-P5',
       formula: 'Positive + but + suggestion  ·  This part is a little + KATA SIFAT',
-      meaning: 'Balance praise and suggestion.',
+      meaning: 'Pujian + tetapi + saran  ·  Bagian ini agak ...',
       examples: ['The design is nice, but the text is too small.', 'The idea is great, but this part is a little confusing.', "Overall, it's good work."],
       note: 'Kritik pekerjaannya, bukan orangnya: "This part is confusing", bukan "You are confusing".'
     }

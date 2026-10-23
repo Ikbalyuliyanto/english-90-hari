@@ -50,7 +50,8 @@ E90.registerDay({
       id: 'D59-S06',
       english: "I've added the details in the document.",
       pronunciation: 'aiv e-did de di-teilz in de do-kyu-ment',
-      translation: 'Detailnya sudah saya tambahkan di dokumen.',
+      translation: 'Saya sudah menambahkan detailnya di dokumen.',
+      naturalTranslation: 'Detailnya sudah saya tambahkan di dokumen.',
       words: [["I've", 'saya sudah (I have)', 'have'], ['added', 'menambahkan (-ed dibaca "id")', 'add'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['details', 'detail (jamak)', 'detail'], ['in', 'di dalam'], ['document', 'dokumen']],
       pattern: 'D59-P4'
     },
@@ -66,7 +67,8 @@ E90.registerDay({
       id: 'D59-S08',
       english: 'Let me know if you have any questions.',
       pronunciation: 'let mi nou if yu hev e-ni kwes-chenz',
-      translation: 'Kabari saya kalau ada pertanyaan.',
+      translation: 'Beri tahu saya kalau kamu punya pertanyaan.',
+      naturalTranslation: 'Kabari saya kalau ada pertanyaan.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['know', 'tahu'], ['if', 'kalau / jika'], ['you', 'kamu'], ['have', 'punya'], ['any', '(dalam kalimat "if": ada ... apa pun)'], ['questions', 'pertanyaan (jamak)', 'question']],
       pattern: 'D37-P5'
     },
@@ -74,7 +76,8 @@ E90.registerDay({
       id: 'D59-S09',
       english: "I'll be available if you need help.",
       pronunciation: 'ail bi e-vei-le-bel if yu nid help',
-      translation: 'Saya bisa dihubungi kalau kamu butuh bantuan.',
+      translation: 'Saya akan ada (bisa dihubungi) kalau kamu butuh bantuan.',
+      naturalTranslation: 'Saya bisa dihubungi kalau kamu butuh bantuan.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['be', '(to be, tidak diterjemahkan)'], ['available', 'bisa dihubungi / tersedia'], ['if', 'kalau / jika'], ['you', 'kamu'], ['need', 'butuh'], ['help', 'bantuan']],
       pattern: 'D59-P5'
     },
@@ -122,32 +125,32 @@ E90.registerDay({
     {
       id: 'D59-P1',
       formula: "Here's what I've done  ·  This part is finished",
-      meaning: 'Explain the finished work.',
+      meaning: 'Ini yang sudah saya kerjakan  ·  Bagian ini sudah selesai',
       examples: ["Here's what I've done this week.", 'The first part is finished.', 'The design is completely finished.']
     },
     {
       id: 'D59-P2',
       formula: 'This still needs to be + KATA KERJA-ed',
-      meaning: 'Explain what is not done yet.',
+      meaning: 'Ini masih perlu di... (dikerjakan, diperiksa, dll.)',
       examples: ['The report still needs to be checked.', 'These emails still need to be sent.', 'The numbers still need to be updated.'],
       note: '"needs to be done" = masih harus dikerjakan (fokus pada pekerjaannya, bukan pada siapa yang mengerjakan).'
     },
     {
       id: 'D59-P3',
       formula: "Please continue from + BENDA  ·  You'll need to + KATA KERJA",
-      meaning: 'Tell the next person what to do.',
+      meaning: 'Tolong lanjutkan dari ...  ·  Kamu perlu ...',
       examples: ['Please continue from page three.', "You'll need to call the supplier on Monday.", "You'll need to send the final file to Sarah."]
     },
     {
       id: 'D59-P4',
       formula: "I've added + BENDA + in / to + TEMPAT  ·  BENDA + is / are in + TEMPAT",
-      meaning: 'Tell people where to find information.',
+      meaning: 'Saya sudah menambahkan ... di ...  ·  ... ada di ...',
       examples: ["I've added the notes to the shared document.", 'The latest version is in the project folder.', 'The meeting notes are in the team drive.']
     },
     {
       id: 'D59-P5',
       formula: "I'll be available if + KALIMAT  ·  Let's confirm the action items",
-      meaning: 'Close the handover clearly.',
+      meaning: 'Saya bisa dihubungi kalau ...  ·  Ayo kita pastikan daftar tindak lanjutnya',
       examples: ["I'll be available on chat if you need me.", "Let's confirm the action items before we finish.", 'Rina will send the invoice by Friday.']
     }
   ],

@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D58-S01',
       english: 'Can we reduce the scope?',
       pronunciation: 'ken wi ri-dyus de skoup?',
-      translation: 'Bisa cakupan pekerjaannya kita kurangi?',
+      translation: 'Bisakah kita mengurangi cakupannya?',
+      naturalTranslation: 'Bisa cakupan pekerjaannya kita kurangi?',
       words: [['Can', 'bisakah'], ['we', 'kita'], ['reduce', 'mengurangi'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['scope', 'cakupan pekerjaan / scope']],
       pattern: 'D58-P1'
     },
@@ -16,7 +17,8 @@ E90.registerDay({
       id: 'D58-S02',
       english: 'We may not have enough time for everything.',
       pronunciation: 'wi mei not hev i-naf taim for ev-ri-thing',
-      translation: 'Waktu kita mungkin tidak cukup untuk semuanya.',
+      translation: 'Kita mungkin tidak punya cukup waktu untuk semuanya.',
+      naturalTranslation: 'Waktu kita mungkin tidak cukup untuk semuanya.',
       words: [['We', 'kita'], ['may', 'mungkin'], ['not', 'tidak'], ['have', 'punya'], ['enough', 'cukup'], ['time', 'waktu'], ['for', 'untuk'], ['everything', 'semuanya']],
       pattern: 'D58-P2'
     },
@@ -24,7 +26,8 @@ E90.registerDay({
       id: 'D58-S03',
       english: 'What if we do the most important part first?',
       pronunciation: 'wat if wi du de moust im-por-tent part ferst?',
-      translation: 'Bagaimana kalau kita kerjakan bagian paling penting dulu?',
+      translation: 'Bagaimana kalau kita mengerjakan bagian paling penting dulu?',
+      naturalTranslation: 'Bagaimana kalau kita kerjakan bagian paling penting dulu?',
       words: [['What', 'bagaimana (dalam "what if")'], ['if', 'kalau'], ['we', 'kita'], ['do', 'mengerjakan'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['most', 'paling'], ['important', 'penting'], ['part', 'bagian'], ['first', 'dulu / terlebih dahulu']],
       phrases: [['the most + sifat', 'paling ...']],
       pattern: 'D58-P3'
@@ -33,7 +36,8 @@ E90.registerDay({
       id: 'D58-S04',
       english: 'We can finish this part by Friday.',
       pronunciation: 'wi ken fi-nish dis part bai frai-dei',
-      translation: 'Bagian ini bisa kami selesaikan paling lambat hari Jumat.',
+      translation: 'Kami bisa menyelesaikan bagian ini paling lambat hari Jumat.',
+      naturalTranslation: 'Bagian ini bisa kami selesaikan paling lambat hari Jumat.',
       words: [['We', 'kami'], ['can', 'bisa'], ['finish', 'menyelesaikan'], ['this', 'ini'], ['part', 'bagian'], ['by', 'paling lambat'], ['Friday', 'Jumat']],
       pattern: 'D58-P4'
     },
@@ -50,7 +54,8 @@ E90.registerDay({
       id: 'D58-S06',
       english: 'Would tomorrow work for you?',
       pronunciation: 'wud tu-mo-rou werk for yu?',
-      translation: 'Kalau besok, cocok untuk Anda?',
+      translation: 'Apakah besok cocok untuk Anda?',
+      naturalTranslation: 'Kalau besok, cocok untuk Anda?',
       words: [['Would', '(kata bantu pertanyaan sopan, tidak diterjemahkan langsung)', 'will'], ['tomorrow', 'besok'], ['work', 'cocok (dalam "work for you")'], ['for', 'untuk'], ['you', 'Anda']],
       phrases: [['would ... work for you?', 'apakah ... cocok untuk Anda?']],
       pattern: 'D58-P5'
@@ -59,7 +64,8 @@ E90.registerDay({
       id: 'D58-S07',
       english: 'Can we agree on the first version?',
       pronunciation: 'ken wi e-gri on de ferst ver-shen?',
-      translation: 'Bisa kita sepakati versi pertama dulu?',
+      translation: 'Bisakah kita sepakat pada versi pertama?',
+      naturalTranslation: 'Bisa kita sepakati versi pertama dulu?',
       words: [['Can', 'bisakah'], ['we', 'kita'], ['agree', 'sepakat'], ['on', 'tentang (dalam "agree on")'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['first', 'pertama'], ['version', 'versi']],
       phrases: [['agree on + benda', 'menyepakati ... (beda dengan "agree with + orang")']],
       pattern: 'D58-P5'
@@ -68,7 +74,8 @@ E90.registerDay({
       id: 'D58-S08',
       english: 'That sounds reasonable.',
       pronunciation: 'det saundz ri-zo-ne-bel',
-      translation: 'Kedengarannya wajar.',
+      translation: 'Itu terdengar wajar.',
+      naturalTranslation: 'Kedengarannya wajar.',
       words: [['That', 'itu'], ['sounds', 'terdengar', 'sound'], ['reasonable', 'wajar / masuk akal']],
       pattern: 'D09-P3'
     },
@@ -85,7 +92,8 @@ E90.registerDay({
       id: 'D58-S10',
       english: 'If we remove the reports page, we can launch on time.',
       pronunciation: 'if wi ri-muv de ri-ports peij, wi ken lonch on taim',
-      translation: 'Kalau halaman laporan kita keluarkan, kita bisa rilis tepat waktu.',
+      translation: 'Kalau kita menghapus halaman laporan, kita bisa rilis tepat waktu.',
+      naturalTranslation: 'Kalau halaman laporan kita keluarkan, kita bisa rilis tepat waktu.',
       words: [['If', 'kalau / jika'], ['we', 'kita'], ['remove', 'mengeluarkan / menghapus'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['reports', 'laporan (jamak)', 'report'], ['page', 'halaman'], ['can', 'bisa'], ['launch', 'meluncurkan / merilis'], ['on', '(bagian dari "on time")'], ['time', 'waktu']],
       phrases: [['on time', 'tepat waktu']],
       pattern: 'D50-P3'
@@ -113,7 +121,8 @@ E90.registerDay({
       id: 'D58-S13',
       english: "I'll check with the team and get back to you.",
       pronunciation: 'ail cek with de tim en get bek tu yu',
-      translation: 'Saya cek dengan tim dulu, nanti saya kabari.',
+      translation: 'Saya akan mengecek dengan tim dan mengabari kamu.',
+      naturalTranslation: 'Saya cek dengan tim dulu, nanti saya kabari.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['check', 'memeriksa / menanyakan'], ['with', 'dengan'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['team', 'tim'], ['and', 'dan'], ['get', '(bagian dari "get back to")'], ['back', '(bagian dari "get back to")'], ['to', 'kepada'], ['you', 'kamu / Anda']],
       pattern: 'D44-P1'
     },
@@ -125,32 +134,32 @@ E90.registerDay({
     {
       id: 'D58-P1',
       formula: 'Can we reduce the scope?  ·  Can we move the deadline (to + WAKTU)?',
-      meaning: 'Ask to change the scope or the deadline.',
+      meaning: 'Bisakah kita mengurangi cakupannya?  ·  Bisakah kita mengundur deadline (ke ...)?',
       examples: ['Can we reduce the scope for the first version?', 'Can we move the deadline to next Wednesday?', 'Could we remove one feature?'],
       note: 'scope = cakupan pekerjaan (apa saja yang harus dikerjakan).'
     },
     {
       id: 'D58-P2',
       formula: 'We may not have enough + BENDA (for / to ...)',
-      meaning: 'Explain the limit politely.',
+      meaning: 'Kita mungkin tidak punya cukup ... (untuk ...)',
       examples: ['We may not have enough people for this.', 'We may not have enough time to test everything.', 'We may not have enough budget.']
     },
     {
       id: 'D58-P3',
       formula: 'What if we + KATA KERJA + first?',
-      meaning: 'Offer a compromise.',
+      meaning: 'Bagaimana kalau kita ... dulu?',
       examples: ['What if we launch the basic version first?', 'What if we do the design first and the rest later?', 'What if we deliver it in two parts?']
     },
     {
       id: 'D58-P4',
       formula: 'We can finish + BENDA + by + WAKTU. The rest can wait.',
-      meaning: 'Split the work into now and later.',
+      meaning: 'Kita bisa menyelesaikan ... paling lambat .... Sisanya bisa menunggu.',
       examples: ['We can finish the main page by Friday.', 'The rest can wait until next month.', 'We can do the English version later.']
     },
     {
       id: 'D58-P5',
       formula: "Would + WAKTU + work for you?  ·  Can we agree on + BENDA?  ·  Let's find a middle ground.",
-      meaning: 'Reach an agreement.',
+      meaning: 'Apakah ... cocok untuk Anda?  ·  Bisakah kita sepakat pada ...?  ·  Ayo cari jalan tengah.',
       examples: ['Would Thursday work for you?', 'Can we agree on two weeks?', "That sounds fair. Let's go with that."]
     }
   ],
