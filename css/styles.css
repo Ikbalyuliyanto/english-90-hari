@@ -323,6 +323,10 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 14px 0; }
 .pattern-formula { font-weight: 700; font-size: 1.02rem; }
 .slot { display: inline-block; padding: 0 6px; border-radius: 6px; background: var(--primary); color: var(--on-primary); font-size: .85em; }
 .pattern-meaning { color: var(--muted); font-size: .88rem; margin: 2px 0 6px; }
+.pattern-natural { color: var(--muted); font-size: .8rem; font-style: italic; margin: -4px 0 6px; }
+.pattern-ex-id { display: block; color: var(--muted); font-size: .82rem; }
+.tr-label { display: block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; opacity: .8; }
+.tr-natural { display: block; margin-top: 6px; font-size: .88em; font-style: italic; opacity: .85; }
 .pattern-examples { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
 .pattern-examples li { display: flex; align-items: center; gap: 8px; }
 .pattern-note { font-size: .84rem; margin-top: 8px; color: var(--muted); }

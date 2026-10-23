@@ -57,6 +57,11 @@ function checkSentence(s, day, where) {
   for (const f of ['english', 'pronunciation', 'translation']) {
     if (!s[f] || !String(s[f]).trim()) err(`${tag}: field ${f} kosong`);
   }
+  // naturalTranslation opsional (arti percakapan); bila ada harus teks dan berbeda dari terjemahan utama.
+  if (s.naturalTranslation !== undefined) {
+    if (typeof s.naturalTranslation !== 'string' || !s.naturalTranslation.trim()) err(`${tag}: naturalTranslation harus teks`);
+    else if (s.naturalTranslation.trim() === String(s.translation).trim()) warn(`${tag}: naturalTranslation sama dengan translation`);
+  }
   if (!Array.isArray(s.words) || !s.words.length) { err(`${tag}: words kosong`); return; }
   const glossed = new Set(s.words.map(([w]) => String(w).toLowerCase()));
   for (const [w, m] of s.words) {
@@ -93,6 +98,7 @@ for (const d of days.sort((a, b) => a.day - b.day)) {
     patternIds.add(p.id);
     if (!p.formula || !p.meaning) err(`${tag}: pattern ${p.id} butuh formula dan meaning`);
     if (!Array.isArray(p.examples) || p.examples.length < 3) err(`${tag}: pattern ${p.id} minimal 3 examples`);
+    if (p.exampleMeanings !== undefined && (!Array.isArray(p.exampleMeanings) || p.exampleMeanings.length !== (p.examples || []).length)) err(`${tag}: pattern ${p.id} exampleMeanings harus sejajar dengan examples`);
   }
   if (!(d.patterns || []).length) err(`${tag}: minimal 1 pattern`);
   const total = d.learn.length + (d.review || []).length;

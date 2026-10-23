@@ -61,9 +61,10 @@ E90.registerDay({
       id: 'D28-S07',
       english: 'What should I do?',
       pronunciation: 'wat shud ai du?',
-      translation: 'Saya harus bagaimana?',
-      words: [['What', 'apa'], ['should', 'sebaiknya / seharusnya'], ['I', 'saya'], ['do', 'lakukan']],
-      phrases: [['what should I do?', 'saya harus bagaimana? / sebaiknya saya melakukan apa?']],
+      translation: 'Apa yang seharusnya saya lakukan?',
+      naturalTranslation: 'Saya harus bagaimana?',
+      words: [['What', 'apa'], ['should', 'seharusnya'], ['I', 'saya'], ['do', 'lakukan']],
+      phrases: [['what should I do?', 'apa yang seharusnya saya lakukan? (natural: saya harus bagaimana?)']],
       pattern: 'D28-P3'
     },
     {
@@ -140,8 +141,11 @@ E90.registerDay({
     {
       id: 'D28-P3',
       formula: 'What should I + KATA KERJA?',
-      meaning: 'Sebaiknya saya ... apa?',
-      examples: ['What should I do now?', 'What should I say to the client?', 'What should I check first?']
+      meaning: 'Apa yang seharusnya saya + KATA KERJA?',
+      naturalMeaning: 'Saya harus ... apa? / Sebaiknya saya ... apa?',
+      examples: ['What should I do?', 'What should I eat?', 'What should I buy?', 'What should I say?', 'What should I say to the client?', 'What should I check first?'],
+      exampleMeanings: ['Apa yang seharusnya saya lakukan?', 'Apa yang seharusnya saya makan?', 'Apa yang seharusnya saya beli?', 'Apa yang seharusnya saya katakan?', 'Apa yang seharusnya saya katakan kepada klien?', 'Apa yang seharusnya saya periksa dulu?'],
+      note: '"What should I" tetap; hanya kata kerjanya yang berganti: do → lakukan, eat → makan, buy → beli, say → katakan.'
     },
     {
       id: 'D28-P4',

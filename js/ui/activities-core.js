@@ -68,7 +68,7 @@ E90.activities = E90.activities || {};
           <div class="answer" hidden>
             <div class="answer-en">${esc(ui.personalize(s.english))}</div>
             <div class="s-pron">(${esc(s.pronunciation)})</div>
-            <div class="answer-id">${esc(ui.personalize(s.translation))}</div>
+            <div class="answer-id">${ui.meaningBlock(s)}</div>
             <div class="btn-row">
               <button class="chip-btn" data-act="speak" data-text="${esc(s.english)}">🔊 Listen</button>
               <button class="chip-btn" data-act="speak-slow" data-text="${esc(s.english)}">🐢 Slow</button>
@@ -139,7 +139,7 @@ E90.activities = E90.activities || {};
             <div class="s-pron">(${esc(s.pronunciation)})</div>
           </div>
           <div class="reveal-id" hidden>
-            <div class="answer-id">${esc(ui.personalize(s.translation))}</div>
+            <div class="answer-id">${ui.meaningBlock(s)}</div>
             <details class="s-more"><summary>Arti per kata</summary>${ui.wordsPanel(s)}</details>
           </div>
           <div class="btn-row">

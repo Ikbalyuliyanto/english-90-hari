@@ -23,7 +23,7 @@ Konten **lengkap Day 1–120**. Phase 4 terdiri dari Day 91–105 (komunikasi di
   - Normal (±2 jam): Vocabulary Review → Learn → Active Recall → Listening → Shadowing → Sentence Variation → Speaking Challenge → Review. 3-2-1 Speaking hanya muncul di Day yang punya `talk321` (mulai sekitar Day 31, 2–3 kali per minggu), bersifat opsional, dan tidak memengaruhi Daily Completion.
   - Quick (±30 menit) dan Emergency (±10 menit): tetap dihitung sebagai hari aktif agar tidak ada zero-day.
 - **Daily completion**: Day selesai jika Learn, Recall, Listening, Shadowing, dan Speaking sudah dikerjakan.
-- **Sentence card**: English, cara baca ala Indonesia, arti natural, arti per kata sesuai konteks, frasa, pola, 🔊 Listen / 🐢 Slow, sembunyikan English/arti, ⭐ Mastered, ↺ Reset progress.
+- **Sentence card**: English, cara baca ala Indonesia, **terjemahan utama** (`translation`, mengikuti struktur English; dipakai Active Recall & Review), **arti natural** opsional (`naturalTranslation`, gaya percakapan, hanya informasi tambahan), arti per kata sesuai konteks, frasa, pola, 🔊 Listen / 🐢 Slow, sembunyikan English/arti, ⭐ Mastered, ↺ Reset progress.
 - **SRS sederhana** (Again / Hard / Good / Easy) untuk kalimat dan kosakata.
 - **Review**: Random, Due, Weak, Mastered, Listening, Indonesia → English, English → Indonesia (5/10/20).
 - **Vocabulary Bank** otomatis dari kalimat yang dipelajari, dengan arti per konteks (mis. *cold* = pilek / dingin); latihan EN→ID, ID→EN, fill in the blank.

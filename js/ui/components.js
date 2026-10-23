@@ -34,12 +34,15 @@ E90.ui = (() => {
 
   function patternBlock(pattern, { open = false } = {}) {
     if (!pattern) return '';
+    // exampleMeanings (opsional) sejajar dengan examples: arti utama tiap contoh pola.
+    const meanings = pattern.exampleMeanings || [];
     const examples = pattern.examples
-      .map((ex) => `<li><button class="mini-btn" data-act="speak" data-text="${esc(ex)}" aria-label="Dengarkan">🔊</button><span>${esc(ex)}</span></li>`)
+      .map((ex, i) => `<li><button class="mini-btn" data-act="speak" data-text="${esc(ex)}" aria-label="Dengarkan">🔊</button><span>${esc(ex)}${meanings[i] ? `<span class="pattern-ex-id">= ${esc(meanings[i])}</span>` : ''}</span></li>`)
       .join('');
     return `<div class="pattern ${open ? '' : 'pattern-compact'}">
       <div class="pattern-formula">${formatFormula(pattern.formula)}</div>
       <div class="pattern-meaning">${esc(pattern.meaning)}</div>
+      ${pattern.naturalMeaning ? `<div class="pattern-natural">Arti natural: ${esc(pattern.naturalMeaning)}</div>` : ''}
       <ul class="pattern-examples">${examples}</ul>
       ${pattern.note ? `<div class="pattern-note">💡 ${esc(pattern.note)}</div>` : ''}
     </div>`;
@@ -49,6 +52,16 @@ E90.ui = (() => {
   function formatFormula(formula) {
     // Slot = kata kapital 2+ huruf (boleh beberapa kata); tanda hubung setelahnya (mis. "-ing") tidak ikut disorot.
     return esc(formula).replace(/\b[A-Z]{2,}(?:\s[A-Z]{2,})*\b/g, (m) => `<span class="slot">${m}</span>`);
+  }
+
+  /*
+   * Arti kalimat. translation = terjemahan utama (mengikuti struktur English, dipakai Active Recall/Review);
+   * naturalTranslation (opsional) = arti percakapan, informasi tambahan. Tanpa naturalTranslation tampilan lama tetap.
+   */
+  function meaningBlock(s) {
+    const main = esc(personalize(s.translation));
+    if (!s.naturalTranslation) return main;
+    return `<span class="tr-label">Terjemahan utama</span>${main}<span class="tr-natural"><span class="tr-label">Arti natural</span>${esc(personalize(s.naturalTranslation))}</span>`;
   }
 
   /*
@@ -69,7 +82,7 @@ E90.ui = (() => {
       <div class="s-body">
         <div class="s-en" data-mask="Tap 🙈 EN untuk menampilkan">${esc(personalize(s.english))}</div>
         <div class="s-pron">(${esc(s.pronunciation)})</div>
-        <div class="s-id-text" data-mask="Arti disembunyikan">${esc(personalize(s.translation))}</div>
+        <div class="s-id-text" data-mask="Arti disembunyikan">${meaningBlock(s)}</div>
       </div>
       <div class="s-actions">
         <button class="chip-btn" data-act="speak" data-text="${esc(s.english)}">🔊 Listen</button>
@@ -194,7 +207,7 @@ E90.ui = (() => {
   }
 
   return {
-    personalize, dayLabel, sentenceCard, wordsPanel, patternBlock, formatFormula,
+    personalize, dayLabel, sentenceCard, meaningBlock, wordsPanel, patternBlock, formatFormula,
     ratingButtons, pageHead, progressBar, toast, speechNotice, pronHelp, bindGlobalActions
   };
 })();

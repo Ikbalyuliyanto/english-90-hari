@@ -26,6 +26,7 @@ E90.views = E90.views || {};
         <a class="result card" href="#/day/${s.day}/learn?focus=${encodeURIComponent(s.id)}">
           <div class="result-en">${mark(ui.personalize(s.english))}</div>
           <div class="result-id">${mark(ui.personalize(s.translation))}</div>
+          ${s.naturalTranslation ? `<div class="result-id small">Natural: ${mark(ui.personalize(s.naturalTranslation))}</div>` : ''}
           <div class="result-meta">${ui.dayLabel(s.day)} · ${esc(content.titleOf(s.day))}</div>
         </a>`).join('')}</div>`;
   }

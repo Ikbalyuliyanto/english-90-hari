@@ -107,7 +107,7 @@ window.E90 = window.E90 || {};
     const hits = [];
     for (const s of sentences.values()) {
       const inEnglish = s.english.toLowerCase().includes(q);
-      const inMeaning = s.translation.toLowerCase().includes(q);
+      const inMeaning = s.translation.toLowerCase().includes(q) || (s.naturalTranslation || '').toLowerCase().includes(q);
       const inWords = s.words.some(([w, m]) => w.toLowerCase() === q || m.toLowerCase().includes(q));
       const inTopic = titleOf(s.day).toLowerCase().includes(q);
       if (inEnglish || inMeaning || inWords || inTopic) {
