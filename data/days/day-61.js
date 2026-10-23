@@ -33,7 +33,8 @@ E90.registerDay({
       id: 'D61-S04',
       english: 'It has three main parts: a frontend, a backend, and a database.',
       pronunciation: 'it hez thri mein parts: e front-end, e bek-end, en e dei-te-beis',
-      translation: 'Sistemnya punya tiga bagian utama: frontend, backend, dan database.',
+      translation: 'Itu punya tiga bagian utama: frontend, backend, dan database.',
+      naturalTranslation: 'Sistemnya punya tiga bagian utama: frontend, backend, dan database.',
       words: [['It', 'itu (sistemnya)'], ['has', 'punya (have untuk it)', 'have'], ['three', 'tiga'], ['main', 'utama'], ['parts', 'bagian (jamak)', 'part'], ['a', 'sebuah (tidak diterjemahkan)'], ['frontend', 'frontend: bagian aplikasi yang dilihat dan dipakai user'], ['backend', 'backend: bagian server yang memproses data dan aturan'], ['and', 'dan'], ['database', 'database: tempat data disimpan']],
       pattern: 'D61-P3'
     },
@@ -122,31 +123,31 @@ E90.registerDay({
     {
       id: 'D61-P1',
       formula: 'The system helps + ORANG + KATA KERJA',
-      meaning: 'Explain what the software does for people.',
+      meaning: 'Sistem ini membantu ... (orang) ... (melakukan sesuatu)',
       examples: ['The app helps customers track their orders.', 'The system helps teachers create reports.', 'This tool helps developers find errors faster.']
     },
     {
       id: 'D61-P2',
       formula: 'The main goal (of the project) is to + KATA KERJA',
-      meaning: 'Explain why the project exists.',
+      meaning: 'Tujuan utama (proyek ini) adalah ...',
       examples: ['The main goal is to save time for the admin team.', 'The goal of this feature is to reduce manual work.', 'We built it to replace an old spreadsheet process.']
     },
     {
       id: 'D61-P3',
       formula: 'It has + ANGKA + main parts: A, B, and C',
-      meaning: 'Describe the structure simply.',
+      meaning: 'Itu punya ... bagian utama: A, B, dan C',
       examples: ['It has two main parts: a mobile app and a backend.', 'The system has three modules.', 'The project includes a web app and an admin dashboard.']
     },
     {
       id: 'D61-P4',
       formula: 'Users / Admins + can + KATA KERJA',
-      meaning: 'Explain what each type of user can do.',
+      meaning: 'User / admin + bisa ...',
       examples: ['Customers can pay online.', 'Admins can create new accounts.', 'Managers can export reports.']
     },
     {
       id: 'D61-P5',
       formula: "We started + BENDA + ... ago  ·  It's used by + ORANG",
-      meaning: 'Give background and scale.',
+      meaning: 'Kami memulai ... yang lalu  ·  Itu dipakai oleh ...',
       examples: ['We started the project last year.', "It's used by about fifty companies.", 'Around two hundred people use it every day.']
     }
   ],

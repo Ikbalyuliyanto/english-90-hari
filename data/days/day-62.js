@@ -58,7 +58,8 @@ E90.registerDay({
       id: 'D62-S07',
       english: "The layout doesn't work well on small screens.",
       pronunciation: 'de lei-aut da-zent werk wel on smol skrinz',
-      translation: 'Tata letaknya tidak tampil dengan baik di layar kecil.',
+      translation: 'Tata letaknya tidak bekerja dengan baik di layar kecil.',
+      naturalTranslation: 'Tata letaknya tidak tampil dengan baik di layar kecil.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['layout', 'tata letak tampilan'], ["doesn't", 'tidak (does not)', 'do'], ['work', 'berfungsi / tampil'], ['well', 'dengan baik'], ['on', 'di'], ['small', 'kecil'], ['screens', 'layar (jamak)', 'screen']],
       pattern: 'D28-P2'
     },
@@ -74,7 +75,8 @@ E90.registerDay({
       id: 'D62-S09',
       english: 'While the data is loading, we show a spinner.',
       pronunciation: 'wail de dei-ta iz lou-ding, wi shou e spi-ner',
-      translation: 'Selama datanya dimuat, kami tampilkan ikon loading.',
+      translation: 'Selama datanya sedang dimuat, kami menampilkan spinner.',
+      naturalTranslation: 'Selama datanya dimuat, kami tampilkan ikon loading.',
       words: [['While', 'selama / sementara'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['data', 'data'], ['is', '(kata bantu "is + -ing", tidak diterjemahkan)', 'be'], ['loading', 'sedang dimuat', 'load'], ['we', 'kami'], ['show', 'menampilkan'], ['a', 'sebuah (tidak diterjemahkan)'], ['spinner', 'ikon loading yang berputar']],
       pattern: 'D62-P5'
     },
@@ -109,7 +111,8 @@ E90.registerDay({
       id: 'D62-S13',
       english: 'Could you check the page on your phone?',
       pronunciation: 'kud yu cek de peij on yor foun?',
-      translation: 'Bisa cek halamannya di ponselmu?',
+      translation: 'Bisakah kamu mengecek halamannya di ponselmu?',
+      naturalTranslation: 'Bisa cek halamannya di ponselmu?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu'], ['check', 'memeriksa / cek'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['page', 'halaman'], ['on', 'di'], ['your', 'milikmu'], ['phone', 'ponsel']],
       pattern: 'D19-P2'
     },
@@ -121,31 +124,31 @@ E90.registerDay({
     {
       id: 'D62-P1',
       formula: 'The page / This component + shows + BENDA',
-      meaning: 'Describe what the user sees.',
+      meaning: 'Halaman / komponen ini + menampilkan ...',
       examples: ["The dashboard shows today's orders.", "This component shows the user's profile.", 'The table shows the latest ten records.']
     },
     {
       id: 'D62-P2',
       formula: 'When the user + KATA KERJA-s, + KALIMAT',
-      meaning: 'Describe what happens after a user action.',
+      meaning: 'Saat user ..., ...',
       examples: ['When the user clicks Submit, the data is saved.', 'When the user logs in, the home page opens.', 'When the user types a name, the list updates.']
     },
     {
       id: 'D62-P3',
       formula: 'The page displays + BENDA + if + KALIMAT  ·  The button is disabled until + KALIMAT',
-      meaning: 'Describe conditions on the screen.',
+      meaning: 'Halamannya menampilkan ... kalau ...  ·  Tombolnya nonaktif sampai ...',
       examples: ['The page shows a warning if the password is too short.', 'The button is disabled until all fields are filled.', 'A message appears if the upload fails.']
     },
     {
       id: 'D62-P4',
       formula: 'The page loads / sends + BENDA + from / to + the API',
-      meaning: 'Connect the screen to the backend.',
+      meaning: 'Halamannya mengambil / mengirim ... dari / ke API',
       examples: ['The page loads the orders from the API.', 'The form sends the data to the API.', "The app gets the user's name from the backend."]
     },
     {
       id: 'D62-P5',
       formula: 'While + KALIMAT, we show + BENDA',
-      meaning: 'Describe a loading or waiting state.',
+      meaning: 'Selama ..., kami menampilkan ...',
       examples: ['While the file is uploading, we show a progress bar.', 'While the page is loading, we show a placeholder.', 'While we wait for the response, the button is disabled.']
     }
   ],

@@ -9,7 +9,8 @@ E90.registerDay({
       id: 'D75-S01',
       english: 'Let me walk you through the system.',
       pronunciation: 'let mi wok yu thru de sis-tem',
-      translation: 'Saya jelaskan sistemnya langkah demi langkah.',
+      translation: 'Biar saya menjelaskan sistemnya langkah demi langkah kepadamu.',
+      naturalTranslation: 'Saya jelaskan sistemnya langkah demi langkah.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['walk', '(bagian dari "walk through")'], ['you', 'kamu / Anda'], ['through', '(bagian dari "walk through")'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['system', 'sistem']],
       phrases: [['walk someone through something', 'menjelaskan sesuatu langkah demi langkah']],
       pattern: 'D75-P1'
@@ -36,7 +37,8 @@ E90.registerDay({
       id: 'D75-S04',
       english: 'Let me give you an example.',
       pronunciation: 'let mi giv yu en eg-zem-pel',
-      translation: 'Saya beri contoh.',
+      translation: 'Biar saya memberi kamu contoh.',
+      naturalTranslation: 'Saya beri contoh.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['give', 'memberi'], ['you', 'kepada kamu / Anda'], ['an', 'sebuah (sebelum bunyi vokal, tidak diterjemahkan)'], ['example', 'contoh']],
       pattern: 'D75-P3'
     },
@@ -53,7 +55,8 @@ E90.registerDay({
       id: 'D75-S06',
       english: 'Does that make sense so far?',
       pronunciation: 'daz det meik sens sou far?',
-      translation: 'Sejauh ini bisa dipahami?',
+      translation: 'Apakah itu masuk akal sejauh ini?',
+      naturalTranslation: 'Sejauh ini bisa dipahami?',
       words: [['Does', '(kata bantu pertanyaan untuk it/that, tidak diterjemahkan)', 'do'], ['that', 'itu'], ['make', 'membuat (dalam "make sense")'], ['sense', 'makna / akal'], ['so', '(bagian dari "so far")'], ['far', '(bagian dari "so far")']],
       phrases: [['make sense', 'masuk akal / bisa dipahami'], ['so far', 'sejauh ini']],
       pattern: 'D75-P5'
@@ -81,32 +84,32 @@ E90.registerDay({
     {
       id: 'D75-P1',
       formula: 'Application → Feature → Frontend → Backend → Endpoint → Database → Login → Git → Bug → Debugging → Testing → Deployment → Production → Next steps',
-      meaning: 'A structure for explaining a system.',
+      meaning: 'Struktur untuk menjelaskan sebuah sistem',
       examples: ['Let me walk you through the system.', 'The system helps staff manage appointments.', 'Behind the scenes, the backend validates every request.', "In short, it's a web app with a REST API."],
       note: 'Urutan tidak harus sempurna. Mulai dari gambaran besar, lalu turun ke detail.'
     },
     {
       id: 'D75-P2',
       formula: "From a user's point of view, ...  ·  Behind the scenes, ...",
-      meaning: 'Switch between what users see and what the system does.',
+      meaning: 'Dari sudut pandang user, ...  ·  Di balik layar, ...',
       examples: ["From a user's point of view, it's just one button.", 'Behind the scenes, three services work together.', "From the admin's point of view, it saves a lot of time."]
     },
     {
       id: 'D75-P3',
       formula: 'Let me give you an example  ·  For example, ...',
-      meaning: 'Make a technical explanation concrete.',
+      meaning: 'Biar saya memberi contoh  ·  Misalnya, ...',
       examples: ['Let me give you an example from last week.', 'For example, when a nurse books an appointment, the doctor gets a notification.', "Here's a real example."]
     },
     {
       id: 'D75-P4',
       formula: 'In short, + KALIMAT',
-      meaning: 'Summarize a long technical explanation.',
+      meaning: 'Singkatnya, ...',
       examples: ["In short, it's a simple REST API.", 'In short, the problem was the cache.', 'In short, we need two more days.']
     },
     {
       id: 'D75-P5',
       formula: 'Does that make sense so far?  ·  Any questions so far?',
-      meaning: 'Check that the listener is following you.',
+      meaning: 'Apakah itu masuk akal sejauh ini?  ·  Ada pertanyaan sejauh ini?',
       examples: ['Does that make sense?', 'Any questions so far?', 'Should I go into more detail?']
     }
   ],

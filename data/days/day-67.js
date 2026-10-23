@@ -49,7 +49,8 @@ E90.registerDay({
       id: 'D67-S06',
       english: "I'll merge my branch into main after the review.",
       pronunciation: 'ail merj mai brench in-tu mein ef-ter de ri-vyu',
-      translation: 'Branch saya akan saya merge ke main setelah direview.',
+      translation: 'Saya akan merge branch saya ke main setelah review.',
+      naturalTranslation: 'Branch saya akan saya merge ke main setelah direview.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['merge', 'merge: menggabungkan perubahan dari satu branch ke branch lain'], ['my', 'milik saya'], ['branch', 'branch: cabang pengembangan di Git'], ['into', 'ke dalam'], ['main', 'main: branch utama'], ['after', 'setelah'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['review', 'review: pemeriksaan kode']],
       pattern: 'D67-P3'
     },
@@ -93,7 +94,8 @@ E90.registerDay({
       id: 'D67-S11',
       english: "I've already pushed my changes.",
       pronunciation: 'aiv ol-re-di pusht mai cheinj-iz',
-      translation: 'Perubahan saya sudah saya push.',
+      translation: 'Saya sudah push perubahan saya.',
+      naturalTranslation: 'Perubahan saya sudah saya push.',
       words: [["I've", 'saya sudah (I have)', 'have'], ['already', 'sudah'], ['pushed', 'push: mengirim commit ke server Git', 'push'], ['my', 'milik saya'], ['changes', 'perubahan (jamak)', 'change']],
       pattern: 'D46-P2'
     },
@@ -122,32 +124,32 @@ E90.registerDay({
     {
       id: 'D67-P1',
       formula: 'I created a new branch for + BENDA',
-      meaning: 'Explain where you are working in Git.',
+      meaning: 'Saya membuat branch baru untuk ...',
       examples: ['I created a branch for the login bug.', 'Each developer works on their own branch.', 'The branch name starts with "feature".']
     },
     {
       id: 'D67-P2',
       formula: 'I committed / pushed + BENDA',
-      meaning: 'Describe what you did in Git.',
+      meaning: 'Saya commit / push ...',
       examples: ['I committed the changes this morning.', 'I pushed my branch to GitHub.', 'I pushed a small fix for the typo.'],
       note: 'Cara baca: commit = ke-mit · merge = merj · repository = ri-pa-ze-to-ri.'
     },
     {
       id: 'D67-P3',
       formula: "Please pull the latest changes  ·  I'll merge + BENDA + into + BENDA",
-      meaning: 'Coordinate your Git work with the team.',
+      meaning: 'Tolong pull perubahan terbaru  ·  Saya akan merge ... ke ...',
       examples: ['Please pull the latest changes from main.', "I'll merge the feature branch into develop.", "Don't merge it before the review."]
     },
     {
       id: 'D67-P4',
       formula: "There's a conflict in + BENDA  ·  I need to resolve + BENDA",
-      meaning: 'Talk about merge problems.',
+      meaning: 'Ada conflict di ...  ·  Saya perlu menyelesaikan ...',
       examples: ["There's a conflict in the config file.", 'I need to resolve two conflicts.', 'I resolved the conflict and pushed again.']
     },
     {
       id: 'D67-P5',
       formula: 'This commit + fixes / adds / removes + BENDA',
-      meaning: 'Describe a commit clearly.',
+      meaning: 'Commit ini + memperbaiki / menambahkan / menghapus ...',
       examples: ['This commit adds validation to the form.', 'This commit removes unused code.', 'This commit updates the setup guide.']
     }
   ],

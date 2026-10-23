@@ -123,32 +123,32 @@ E90.registerDay({
     {
       id: 'D66-P1',
       formula: 'Users log in with + BENDA',
-      meaning: 'Explain how users sign in.',
+      meaning: 'User login dengan ...',
       examples: ['Users log in with their Google account.', 'Staff log in with their employee ID.', 'We also support login with a one-time code.']
     },
     {
       id: 'D66-P2',
       formula: 'The token expires / The session ends + after / when + ...',
-      meaning: 'Explain how long access lasts.',
+      meaning: 'Token-nya kedaluwarsa / sesinya berakhir + setelah / saat ...',
       examples: ['The token expires after 30 minutes.', 'The session ends when the browser is closed.', 'Users have to log in again after 24 hours.']
     },
     {
       id: 'D66-P3',
       formula: 'Authentication checks who ...  ·  Authorization checks what ...',
-      meaning: 'Explain the difference in simple words.',
+      meaning: 'Authentication memastikan siapa ...  ·  Authorization memastikan apa ...',
       examples: ['Authentication checks if the password is correct.', 'Authorization checks if the user can open this page.', 'First we authenticate the user, then we check the permissions.'],
       note: 'authentication (o-then-ti-kei-shen) = siapa kamu · authorization (o-the-re-zei-shen) = kamu boleh melakukan apa.'
     },
     {
       id: 'D66-P4',
       formula: 'Only + ORANG + have permission to + KATA KERJA  ·  ORANG + can only + KATA KERJA',
-      meaning: 'Explain access rules.',
+      meaning: 'Hanya ... yang punya izin untuk ...  ·  ... hanya bisa ...',
       examples: ['Only managers have permission to approve payments.', "Cashiers can only see today's transactions.", 'Guests can only read, not edit.']
     },
     {
       id: 'D66-P5',
       formula: "If the user doesn't have + BENDA, the API returns + BENDA",
-      meaning: 'Explain what happens without access.',
+      meaning: 'Kalau user tidak punya ..., API mengembalikan ...',
       examples: ["If the user doesn't have a valid token, the API returns 401.", "If the user doesn't have the admin role, we hide the button.", 'If the session is expired, we redirect the user to the login page.'],
       note: '401 = belum login / token tidak valid · 403 = sudah login, tapi tidak punya izin.'
     }

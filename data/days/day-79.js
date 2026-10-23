@@ -122,32 +122,32 @@ E90.registerDay({
     {
       id: 'D79-P1',
       formula: 'If + BENDA + fails, we + KATA KERJA',
-      meaning: 'Describe what happens when something fails.',
+      meaning: 'Kalau ... gagal, kami ...',
       examples: ['If the upload fails, we keep the file and let the user try again.', 'If the payment fails, the order is not created.', 'If the email fails, we try again later.']
     },
     {
       id: 'D79-P2',
       formula: 'We catch the error and + KATA KERJA',
-      meaning: 'Explain how the code handles errors.',
+      meaning: 'Kami menangkap error-nya dan ...',
       examples: ['We catch the error and return a 400 response.', 'We catch the exception and log it.', 'A global handler catches all unexpected errors.'],
       note: 'catch an error / exception = menangkap error supaya aplikasi tidak crash dan bisa ditangani.'
     },
     {
       id: 'D79-P3',
       formula: 'It retries + BENDA + up to + ANGKA + times',
-      meaning: 'Explain retry logic.',
+      meaning: 'Itu mencoba ulang ... maksimal ... kali',
       examples: ['The worker retries failed jobs up to five times.', 'It waits two seconds before each retry.', 'After three failed attempts, it gives up.']
     },
     {
       id: 'D79-P4',
       formula: "We don't show + BENDA + to the user  ·  The user only sees + BENDA",
-      meaning: 'Separate user messages from technical logs.',
+      meaning: 'Kami tidak menampilkan ... ke user  ·  User hanya melihat ...',
       examples: ["We don't show the stack trace to the user.", 'The user only sees "Something went wrong. Please try again."', 'We log the details for the developers.']
     },
     {
       id: 'D79-P5',
       formula: 'If A is down, we use B instead',
-      meaning: 'Describe a fallback.',
+      meaning: 'Kalau A mati, kami memakai B sebagai gantinya',
       examples: ['If the main server is down, traffic goes to the backup server.', 'If the map service is down, we show the address as text instead.', 'If the cache is empty, we read from the database.']
     }
   ],

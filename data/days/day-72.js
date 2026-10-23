@@ -83,7 +83,8 @@ E90.registerDay({
       id: 'D72-S10',
       english: 'It works on my machine, but not on the server.',
       pronunciation: 'it werks on mai me-shin, bat not on de ser-ver',
-      translation: 'Di komputer saya jalan, tapi di server tidak.',
+      translation: 'Itu berfungsi di komputer saya, tapi tidak di server.',
+      naturalTranslation: 'Di komputer saya jalan, tapi di server tidak.',
       words: [['It', 'itu (aplikasinya)'], ['works', 'berfungsi / jalan; -s karena "it"', 'work'], ['on', 'di'], ['my', 'milik saya'], ['machine', 'komputer / mesin'], ['but', 'tetapi'], ['not', 'tidak'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['server', 'server: komputer yang menjalankan aplikasi']]
     }
   ],
@@ -93,7 +94,8 @@ E90.registerDay({
       id: 'D72-S11',
       english: "I've already deployed the fix to staging.",
       pronunciation: 'aiv ol-re-di di-ploid de fiks tu stei-jing',
-      translation: 'Perbaikannya sudah saya deploy ke staging.',
+      translation: 'Saya sudah men-deploy perbaikannya ke staging.',
+      naturalTranslation: 'Perbaikannya sudah saya deploy ke staging.',
       words: [["I've", 'saya sudah (I have)', 'have'], ['already', 'sudah'], ['deployed', 'men-deploy (lampau)', 'deploy'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['fix', 'perbaikan (kata benda)'], ['to', 'ke'], ['staging', 'staging: server uji yang mirip production']],
       pattern: 'D46-P2'
     },
@@ -121,32 +123,32 @@ E90.registerDay({
     {
       id: 'D72-P1',
       formula: 'We deploy to + ENVIRONMENT + every / on + WAKTU',
-      meaning: 'Describe your release schedule.',
+      meaning: 'Kami deploy ke ... setiap / pada ...',
       examples: ['We deploy to production twice a week.', 'We deploy small changes every day.', 'We usually release on Tuesday mornings.']
     },
     {
       id: 'D72-P2',
       formula: 'We have + ANGKA + environments  ·  We test it on staging before + KALIMAT',
-      meaning: 'Explain your environments.',
+      meaning: 'Kami punya ... environment  ·  Kami mengetesnya di staging sebelum ...',
       examples: ['We have a test server and a production server.', 'We test everything on staging before we release.', 'Developers use the development environment.'],
       note: 'development = untuk developer · staging = uji yang mirip production · production = dipakai user asli. "environment" dibaca in-vai-ren-ment.'
     },
     {
       id: 'D72-P3',
       formula: 'The deployment failed because + KALIMAT',
-      meaning: 'Explain a failed deployment.',
+      meaning: 'Deploy-nya gagal karena ...',
       examples: ['The deployment failed because a test was broken.', 'The build failed because of a missing package.', 'The release failed because the server was out of disk space.']
     },
     {
       id: 'D72-P4',
       formula: 'The pipeline + builds / runs / deploys + BENDA',
-      meaning: 'Describe CI/CD in simple words.',
+      meaning: 'Pipeline-nya + mem-build / menjalankan / men-deploy ...',
       examples: ['The pipeline builds the app.', 'It runs all the tests.', 'If everything passes, it deploys to production.']
     },
     {
       id: 'D72-P5',
       formula: 'We rolled back to + BENDA  ·  We can roll back quickly',
-      meaning: 'Talk about undoing a release.',
+      meaning: 'Kami rollback ke ...  ·  Kami bisa rollback dengan cepat',
       examples: ['We rolled back to version 2.3.', 'We had to roll back the release.', "If the error rate goes up, we'll roll back."],
       note: '"roll back" (kata kerja, dua kata) · "rollback" (kata benda, satu kata).'
     }

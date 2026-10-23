@@ -102,7 +102,8 @@ E90.registerDay({
       id: 'D63-S12',
       english: 'It takes about two seconds to process the request.',
       pronunciation: 'it teiks e-baut tu se-kendz tu pro-ses de ri-kwest',
-      translation: 'Butuh sekitar dua detik untuk memproses request-nya.',
+      translation: 'Itu memakan waktu sekitar dua detik untuk memproses request-nya.',
+      naturalTranslation: 'Butuh sekitar dua detik untuk memproses request-nya.',
       words: [['It', '(subjek, tidak diterjemahkan)'], ['takes', 'memakan (waktu); -s karena "it"', 'take'], ['about', 'sekitar'], ['two', 'dua'], ['seconds', 'detik (jamak)', 'second'], ['to', 'untuk (penanda kata kerja)'], ['process', 'memproses'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['request', 'request: permintaan ke server']],
       pattern: 'D22-P3'
     },
@@ -123,31 +124,31 @@ E90.registerDay({
     {
       id: 'D63-P1',
       formula: 'The backend / This service + receives / validates / saves / calculates + BENDA',
-      meaning: 'Describe what the backend does.',
+      meaning: 'Backend / service ini + menerima / memvalidasi / menyimpan / menghitung ...',
       examples: ["The backend checks the user's permissions.", 'This service creates the invoice.', 'The API saves the order in the database.']
     },
     {
       id: 'D63-P2',
       formula: '... before / after + KATA KERJA-ing / KALIMAT',
-      meaning: 'Describe the order of backend steps.',
+      meaning: '... sebelum / setelah ...',
       examples: ['The backend checks the token before processing the request.', 'We send a notification after the order is created.', 'It updates the stock after saving the payment.']
     },
     {
       id: 'D63-P3',
       formula: 'If + KALIMAT, it + KATA KERJA-s',
-      meaning: 'Describe the success path and the failure path.',
+      meaning: 'Kalau ..., itu ... (jalur berhasil dan gagal)',
       examples: ['If the user exists, it returns the profile.', 'If the token is expired, it returns an error.', 'If the item is out of stock, it cancels the order.']
     },
     {
       id: 'D63-P4',
       formula: 'BENDA + is in + LAYER  ·  The backend is written in + BAHASA',
-      meaning: 'Explain where the code is and what it uses.',
+      meaning: '... ada di ... (layer)  ·  Backend-nya ditulis dengan ...',
       examples: ['The validation is in the controller.', 'The main logic is in the service layer.', 'The backend is written in C#.']
     },
     {
       id: 'D63-P5',
       formula: 'We run + BENDA + every + WAKTU',
-      meaning: 'Describe scheduled or background processes.',
+      meaning: 'Kami menjalankan ... setiap ...',
       examples: ['We run a cleanup job every day at midnight.', 'The system sends reminders every morning.', 'A script backs up the database every hour.']
     }
   ],

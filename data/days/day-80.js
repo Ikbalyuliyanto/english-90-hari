@@ -102,7 +102,8 @@ E90.registerDay({
       id: 'D80-S12',
       english: 'Should this rule also apply to old orders?',
       pronunciation: 'shud dis rul ol-sou e-plai tu ould or-derz?',
-      translation: 'Apakah aturan ini juga berlaku untuk pesanan lama?',
+      translation: 'Apakah aturan ini seharusnya juga berlaku untuk pesanan lama?',
+      naturalTranslation: 'Apakah aturan ini juga berlaku untuk pesanan lama?',
       words: [['Should', 'apakah seharusnya'], ['this', 'ini'], ['rule', 'aturan'], ['also', 'juga'], ['apply', 'berlaku (dalam "apply to")'], ['to', 'untuk'], ['old', 'lama'], ['orders', 'pesanan (jamak)', 'order']],
       phrases: [['apply to', 'berlaku untuk']],
       pattern: 'D52-P3'
@@ -123,32 +124,32 @@ E90.registerDay({
     {
       id: 'D80-P1',
       formula: 'The + FIELD + is required  ·  ... must be + KONDISI',
-      meaning: 'Describe a validation rule.',
+      meaning: 'Kolom ... wajib diisi  ·  ... harus ...',
       examples: ['The name field is required.', 'The password must be at least eight characters.', 'The date must be in the future.']
     },
     {
       id: 'D80-P2',
       formula: 'We validate + BENDA + on both the frontend and the backend',
-      meaning: 'Explain where validation happens.',
+      meaning: 'Kami memvalidasi ... di frontend dan juga di backend',
       examples: ['We validate the form on both sides.', 'The frontend checks the format, and the backend checks the rules again.', 'Never trust data from the client.'],
       note: 'Validasi di frontend = pengalaman user lebih baik · validasi di backend = keamanan (data dari luar tidak boleh langsung dipercaya).'
     },
     {
       id: 'D80-P3',
       formula: "A + ORANG + can't + KATA KERJA  ·  BENDA + can only be + KATA KERJA-ed + ...",
-      meaning: 'Describe a business rule in plain words.',
+      meaning: 'Seorang ... tidak boleh ...  ·  ... hanya bisa di... (dibatalkan, diubah, dll.)',
       examples: ["A user can't have two active subscriptions.", 'A discount code can only be used once.', 'Invoices can only be edited before they are sent.']
     },
     {
       id: 'D80-P4',
       formula: 'The business rule says that + KALIMAT',
-      meaning: 'Refer to an agreed rule.',
+      meaning: 'Aturan bisnisnya menyebutkan bahwa ...',
       examples: ['The business rule says that large orders need approval.', 'According to the policy, data is kept for five years.', 'This rule is different for corporate clients.']
     },
     {
       id: 'D80-P5',
       formula: 'If the rule is broken, the API returns + BENDA  ·  The error tells the user + BENDA',
-      meaning: 'Explain what happens when a rule is not met.',
+      meaning: 'Kalau aturannya dilanggar, API mengembalikan ...  ·  Error-nya memberi tahu user ...',
       examples: ['If the rule is broken, we return a 422 error.', 'The error message tells the user what to fix.', 'The response lists all invalid fields.']
     }
   ],

@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D77-S01',
       english: 'Let me explain how the data flows through the system.',
       pronunciation: 'let mi eks-plein hau de dei-ta flouz thru de sis-tem',
-      translation: 'Saya jelaskan bagaimana data mengalir di dalam sistem.',
+      translation: 'Biar saya menjelaskan bagaimana data mengalir di dalam sistem.',
+      naturalTranslation: 'Saya jelaskan bagaimana data mengalir di dalam sistem.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['explain', 'menjelaskan'], ['how', 'bagaimana'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['data', 'data'], ['flows', 'mengalir / berpindah; -s karena "the data"', 'flow'], ['through', 'melalui / di dalam'], ['system', 'sistem']],
       phrases: [['data flow', 'alur perpindahan data']],
       pattern: 'D77-P1'
@@ -103,7 +104,8 @@ E90.registerDay({
       id: 'D77-S12',
       english: 'Where does this data come from?',
       pronunciation: 'wer daz dis dei-ta kam from?',
-      translation: 'Data ini asalnya dari mana?',
+      translation: 'Dari mana data ini berasal?',
+      naturalTranslation: 'Data ini asalnya dari mana?',
       words: [['Where', 'di mana / dari mana'], ['does', '(kata bantu pertanyaan untuk it, tidak diterjemahkan)', 'do'], ['this', 'ini'], ['data', 'data'], ['come', 'datang (dalam "come from")'], ['from', 'dari']],
       phrases: [['come from', 'berasal dari']]
     },
@@ -123,31 +125,31 @@ E90.registerDay({
     {
       id: 'D77-P1',
       formula: 'Let me explain how the data flows through + BENDA',
-      meaning: 'Introduce a data flow explanation.',
+      meaning: 'Biar saya menjelaskan bagaimana data mengalir di ...',
       examples: ['Let me explain how an order moves through the system.', "Here's how the data flows from the app to the database.", "Let's follow one request from start to finish."]
     },
     {
       id: 'D77-P2',
       formula: "The data starts in A  ·  Then it's sent to B  ·  At the end, ...",
-      meaning: 'Describe each step of the flow.',
+      meaning: 'Datanya berawal di A  ·  Lalu dikirim ke B  ·  Pada akhirnya, ...',
       examples: ['The data starts in the mobile app.', "Then it's sent to the API.", "At the end, it's stored in the database."]
     },
     {
       id: 'D77-P3',
       formula: 'The backend + transforms / encrypts + BENDA + before + KATA KERJA-ing',
-      meaning: 'Explain what happens to the data on the way.',
+      meaning: 'Backend + mengubah / mengenkripsi ... sebelum ...',
       examples: ['The backend converts the dates to UTC before saving them.', "Passwords are hashed before they're stored.", 'The service removes personal data before sending it.']
     },
     {
       id: 'D77-P4',
       formula: 'When A happens, an event is published  ·  B listens to this event',
-      meaning: 'Explain event-based communication.',
+      meaning: 'Saat A terjadi, sebuah event dikirim  ·  B menunggu event ini',
       examples: ['When a payment is completed, an event is published.', 'The invoice service listens to this event.', 'When a user signs up, the email service sends a welcome message.']
     },
     {
       id: 'D77-P5',
       formula: 'The data is copied / synced to + BENDA + every + WAKTU',
-      meaning: 'Explain data moving between systems.',
+      meaning: 'Datanya disalin / disinkronkan ke ... setiap ...',
       examples: ['The data is synced to the data warehouse every night.', 'Changes are copied to the backup server.', 'The mobile app reads the same data from the API.']
     }
   ],

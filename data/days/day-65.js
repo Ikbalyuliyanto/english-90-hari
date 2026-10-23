@@ -100,7 +100,8 @@ E90.registerDay({
       id: 'D65-S12',
       english: "I've already created the new table.",
       pronunciation: 'aiv ol-re-di kri-ei-tid de nyu tei-bel',
-      translation: 'Tabel barunya sudah saya buat.',
+      translation: 'Saya sudah membuat tabel barunya.',
+      naturalTranslation: 'Tabel barunya sudah saya buat.',
       words: [["I've", 'saya sudah (I have)', 'have'], ['already', 'sudah'], ['created', 'membuat (-ed dibaca "id")', 'create'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['new', 'baru'], ['table', 'tabel di database']],
       pattern: 'D46-P2'
     },
@@ -108,7 +109,8 @@ E90.registerDay({
       id: 'D65-S13',
       english: 'Should this column allow empty values?',
       pronunciation: 'shud dis ko-lem e-lau em-ti vel-yuz?',
-      translation: 'Apakah kolom ini boleh kosong?',
+      translation: 'Apakah kolom ini seharusnya mengizinkan nilai kosong?',
+      naturalTranslation: 'Apakah kolom ini boleh kosong?',
       words: [['Should', 'apakah seharusnya'], ['this', 'ini'], ['column', 'kolom (di tabel)'], ['allow', 'mengizinkan / membolehkan'], ['empty', 'kosong'], ['values', 'nilai (jamak)', 'value']],
       pattern: 'D52-P3'
     },
@@ -120,32 +122,32 @@ E90.registerDay({
     {
       id: 'D65-P1',
       formula: 'The data is stored in + the + NAMA + table',
-      meaning: 'Explain where the data is stored.',
+      meaning: 'Datanya disimpan di tabel ...',
       examples: ['User data is stored in the users table.', 'The images are stored in cloud storage.', 'Payment history is stored in a separate table.']
     },
     {
       id: 'D65-P2',
       formula: 'Each row is + BENDA  ·  This column stores + BENDA',
-      meaning: 'Explain the structure of a table.',
+      meaning: 'Setiap baris adalah ...  ·  Kolom ini menyimpan ...',
       examples: ['Each row is one order.', 'This column stores the created date.', 'The status column stores the current state of the order.']
     },
     {
       id: 'D65-P3',
       formula: 'I wrote a query to + KATA KERJA  ·  The query joins A with B',
-      meaning: 'Describe a query in words.',
+      meaning: 'Saya menulis query untuk ...  ·  Query-nya menggabungkan A dengan B',
       examples: ['I wrote a query to count the orders per day.', 'The query joins users with their roles.', 'This query filters out deleted records.'],
       note: 'Cara baca: query = kwi-ri · database = dei-te-beis · SQL = es-kyu-el (sebagian orang bilang "si-kwel").'
     },
     {
       id: 'D65-P4',
       formula: 'We added + BENDA + to make it + KATA SIFAT-er',
-      meaning: 'Explain an improvement and its purpose.',
+      meaning: 'Kami menambahkan ... supaya lebih ...',
       examples: ['We added an index to make the search faster.', 'We added a new column to store the phone number.', 'We removed duplicate rows to make the data cleaner.']
     },
     {
       id: 'D65-P5',
       formula: 'Every A can have many B  ·  Each B belongs to one A',
-      meaning: 'Explain relationships between data.',
+      meaning: 'Setiap A bisa punya banyak B  ·  Setiap B terkait dengan satu A',
       examples: ['A customer can have many orders.', 'Each order belongs to one customer.', 'One doctor can have many appointments.']
     }
   ],

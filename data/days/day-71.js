@@ -67,7 +67,8 @@ E90.registerDay({
       id: 'D71-S08',
       english: 'I tested it manually, and it works.',
       pronunciation: 'ai tes-tid it me-nyu-e-li, en it werks',
-      translation: 'Saya sudah mengetesnya secara manual, dan berfungsi.',
+      translation: 'Saya mengetesnya secara manual, dan itu berfungsi.',
+      naturalTranslation: 'Saya sudah mengetesnya secara manual, dan berfungsi.',
       words: [['I', 'saya'], ['tested', 'mengetes (lampau)', 'test'], ['it', 'itu / -nya'], ['manually', 'secara manual', 'manual'], ['and', 'dan'], ['works', 'berfungsi; -s karena "it"', 'work']],
       pattern: 'D71-P5'
     },
@@ -83,7 +84,8 @@ E90.registerDay({
       id: 'D71-S10',
       english: "I'll add a test to make sure the bug doesn't come back.",
       pronunciation: 'ail ed e test tu meik shur de bag da-zent kam bek',
-      translation: 'Saya akan menambahkan test supaya bug-nya tidak muncul lagi.',
+      translation: 'Saya akan menambahkan test untuk memastikan bug-nya tidak kembali.',
+      naturalTranslation: 'Saya akan menambahkan test supaya bug-nya tidak muncul lagi.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['add', 'menambahkan'], ['a', 'sebuah (tidak diterjemahkan)'], ['test', 'test: kode untuk menguji kode lain'], ['to', 'untuk (penanda tujuan)'], ['make', '(bagian dari "make sure")'], ['sure', '(bagian dari "make sure")'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['bug', 'bug: kesalahan dalam program'], ["doesn't", 'tidak (does not)', 'do'], ['come', '(bagian dari "come back")'], ['back', 'kembali (dalam "come back")']],
       phrases: [['come back', 'muncul / kembali lagi']],
       pattern: 'D37-P2'
@@ -103,7 +105,8 @@ E90.registerDay({
       id: 'D71-S12',
       english: 'Did you try it with a different account?',
       pronunciation: 'did yu trai it with e di-fe-rent e-kaunt?',
-      translation: 'Sudah dicoba dengan akun lain?',
+      translation: 'Apakah kamu sudah mencobanya dengan akun lain?',
+      naturalTranslation: 'Sudah dicoba dengan akun lain?',
       words: [['Did', '(kata bantu pertanyaan bentuk lampau, tidak diterjemahkan)', 'do'], ['you', 'kamu'], ['try', 'mencoba'], ['it', 'itu / -nya'], ['with', 'dengan'], ['a', 'sebuah (tidak diterjemahkan)'], ['different', 'lain / berbeda'], ['account', 'akun']],
       pattern: 'D17-P3'
     },
@@ -123,32 +126,32 @@ E90.registerDay({
     {
       id: 'D71-P1',
       formula: 'I wrote + unit / integration tests for + BENDA',
-      meaning: 'Describe the tests you wrote.',
+      meaning: 'Saya menulis unit / integration test untuk ...',
       examples: ['I wrote unit tests for the price calculation.', 'We have integration tests for the payment API.', 'I added end-to-end tests for the login flow.'],
       note: 'unit test = uji bagian kecil · integration test = uji beberapa bagian bersama · end-to-end test = uji alur lengkap seperti user.'
     },
     {
       id: 'D71-P2',
       formula: 'All the tests passed  ·  Two tests are failing',
-      meaning: 'Report test results.',
+      meaning: 'Semua test lulus  ·  Dua test gagal',
       examples: ['All the tests passed on my machine.', 'One test failed in the pipeline.', 'The tests are green now.']
     },
     {
       id: 'D71-P3',
       formula: 'This test checks that + KALIMAT',
-      meaning: 'Explain what a test verifies.',
+      meaning: 'Test ini memastikan bahwa ...',
       examples: ['This test checks that the user can log in.', 'This test checks that an error is shown for a wrong email.', 'The test makes sure the order is saved.']
     },
     {
       id: 'D71-P4',
       formula: 'We need to test + BENDA  ·  What happens if + KALIMAT?',
-      meaning: 'Think about edge cases.',
+      meaning: 'Kita perlu mengetes ...  ·  Apa yang terjadi kalau ...?',
       examples: ['We need to test very long names.', 'What happens if the file is too big?', 'What happens if the user clicks twice?']
     },
     {
       id: 'D71-P5',
       formula: 'I tested it manually / on + BENDA, and + HASIL',
-      meaning: 'Explain manual testing.',
+      meaning: 'Saya mengetesnya secara manual / di ..., dan + HASIL',
       examples: ['I tested it manually in Chrome and Firefox.', 'The QA team tested it on Android.', 'I tested it on staging, and it works.']
     }
   ],

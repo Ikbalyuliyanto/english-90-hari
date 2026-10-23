@@ -58,7 +58,8 @@ E90.registerDay({
       id: 'D74-S07',
       english: 'We could cache the result to make it faster.',
       pronunciation: 'wi kud kesh de ri-zalt tu meik it fes-ter',
-      translation: 'Kita bisa menyimpan hasilnya di cache supaya lebih cepat.',
+      translation: 'Kita bisa men-cache hasilnya untuk membuatnya lebih cepat.',
+      naturalTranslation: 'Kita bisa menyimpan hasilnya di cache supaya lebih cepat.',
       words: [['We', 'kita'], ['could', 'bisa (sebagai usulan)', 'can'], ['cache', 'cache: menyimpan sementara agar tidak dihitung ulang (dibaca "kesh")'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['result', 'hasil'], ['to', 'supaya / untuk'], ['make', 'membuat'], ['it', 'itu / -nya'], ['faster', 'lebih cepat', 'fast']],
       pattern: 'D74-P4'
     },
@@ -83,7 +84,8 @@ E90.registerDay({
       id: 'D74-S10',
       english: "It's fast with a few users, but slow under heavy load.",
       pronunciation: 'its fest with e fyu yu-zerz, bat slou an-der he-vi loud',
-      translation: 'Cepat kalau user-nya sedikit, tapi lambat saat bebannya tinggi.',
+      translation: 'Itu cepat dengan sedikit user, tapi lambat di bawah beban berat.',
+      naturalTranslation: 'Cepat kalau user-nya sedikit, tapi lambat saat bebannya tinggi.',
       words: [["It's", 'itu (it is)', 'be'], ['fast', 'cepat'], ['with', 'dengan / saat ada'], ['a', '(bagian dari "a few")'], ['few', 'sedikit / beberapa'], ['users', 'pengguna (jamak)', 'user'], ['but', 'tetapi'], ['slow', 'lambat'], ['under', 'di bawah (dalam "under load")'], ['heavy', 'berat / tinggi'], ['load', 'beban (jumlah pemakaian)']],
       phrases: [['under heavy load', 'saat banyak sekali request / pemakaian']],
       pattern: 'D74-P1'
@@ -95,7 +97,8 @@ E90.registerDay({
       id: 'D74-S11',
       english: 'The main disadvantage is that it uses more memory.',
       pronunciation: 'de mein dis-ed-ven-tij iz det it yu-ziz mor me-mo-ri',
-      translation: 'Kekurangan utamanya, cara ini memakai lebih banyak memori.',
+      translation: 'Kekurangan utamanya adalah bahwa itu memakai lebih banyak memori.',
+      naturalTranslation: 'Kekurangan utamanya, cara ini memakai lebih banyak memori.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['main', 'utama'], ['disadvantage', 'kekurangan'], ['is', 'adalah', 'be'], ['that', 'bahwa'], ['it', 'hal itu'], ['uses', 'memakai; -s karena "it"', 'use'], ['more', 'lebih banyak'], ['memory', 'memori (RAM)']],
       pattern: 'D57-P3'
     },
@@ -103,7 +106,8 @@ E90.registerDay({
       id: 'D74-S12',
       english: 'How long does the query take?',
       pronunciation: 'hau long daz de kwi-ri teik?',
-      translation: 'Query-nya butuh waktu berapa lama?',
+      translation: 'Berapa lama query-nya memakan waktu?',
+      naturalTranslation: 'Query-nya butuh waktu berapa lama?',
       words: [['How', 'seberapa'], ['long', 'lama'], ['does', '(kata bantu pertanyaan untuk it, tidak diterjemahkan)', 'do'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['query', 'query: perintah ke database'], ['take', 'memakan (waktu)']],
       pattern: 'D05-P4'
     },
@@ -123,33 +127,33 @@ E90.registerDay({
     {
       id: 'D74-P1',
       formula: 'BENDA + is slow when + KALIMAT',
-      meaning: 'Describe when performance is bad.',
+      meaning: '... lambat ketika ...',
       examples: ['The search is slow when the user types quickly.', 'The app is slow in the morning.', 'It gets slower when there are many users.']
     },
     {
       id: 'D74-P2',
       formula: 'The response time went up  ·  BENDA + usage is too high',
-      meaning: 'Describe performance numbers.',
+      meaning: 'Waktu responsnya naik  ·  Penggunaan ... terlalu tinggi',
       examples: ['The response time went up to three seconds.', 'Memory usage is too high.', 'The error rate went down after the fix.']
     },
     {
       id: 'D74-P3',
       formula: 'The bottleneck is + BENDA',
-      meaning: 'Name the slowest part.',
+      meaning: 'Bottleneck-nya adalah ... (bagian yang paling lambat)',
       examples: ['The bottleneck is the image processing.', 'The main bottleneck is the external API.', 'We found the bottleneck in the report query.'],
       note: 'bottleneck (bo-tel-nek) = "leher botol": bagian paling sempit/lambat yang menahan seluruh proses.'
     },
     {
       id: 'D74-P4',
       formula: 'We could + KATA KERJA + to make it faster',
-      meaning: 'Suggest a performance improvement.',
+      meaning: 'Kita bisa ... untuk membuatnya lebih cepat',
       examples: ['We could cache the data for five minutes.', 'We could load the images later.', 'We could add pagination to make the page faster.'],
       note: '"cache" dibaca "kesh" — bunyinya sama dengan "cash".'
     },
     {
       id: 'D74-P5',
       formula: 'We reduced + BENDA + from X to Y',
-      meaning: 'Report the result of an improvement.',
+      meaning: 'Kami mengurangi ... dari X jadi Y',
       examples: ['We reduced the load time from five seconds to one second.', 'We reduced the database calls from fifty to three.', 'The page size went down by sixty percent.']
     }
   ],

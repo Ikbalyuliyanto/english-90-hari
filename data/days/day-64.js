@@ -56,7 +56,8 @@ E90.registerDay({
       id: 'D64-S07',
       english: 'You can filter the results with a query parameter.',
       pronunciation: 'yu ken fil-ter de ri-zalts with e kwi-ri pe-re-mi-ter',
-      translation: 'Hasilnya bisa disaring memakai query parameter.',
+      translation: 'Kamu bisa menyaring hasilnya dengan query parameter.',
+      naturalTranslation: 'Hasilnya bisa disaring memakai query parameter.',
       words: [['You', 'kamu (siapa pun)'], ['can', 'bisa'], ['filter', 'menyaring'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['results', 'hasil (jamak)', 'result'], ['with', 'dengan / memakai'], ['a', 'sebuah (tidak diterjemahkan)'], ['query', 'query: bagian URL setelah tanda "?" (dibaca "kwi-ri")'], ['parameter', 'parameter: nilai yang dikirim ke API']],
       phrases: [['query parameter', 'nilai di URL, misalnya ?page=2']],
       pattern: 'D64-P3'
@@ -92,7 +93,8 @@ E90.registerDay({
       id: 'D64-S11',
       english: 'Could you send me the API documentation?',
       pronunciation: 'kud yu send mi di ei-pi-ai do-kyu-men-tei-shen?',
-      translation: 'Bisa kirimkan dokumentasi API-nya ke saya?',
+      translation: 'Bisakah kamu mengirimkan dokumentasi API-nya kepada saya?',
+      naturalTranslation: 'Bisa kirimkan dokumentasi API-nya ke saya?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu'], ['send', 'mengirim'], ['me', 'kepada saya'], ['the', '(dibaca "di" sebelum vokal, tidak diterjemahkan)'], ['API', 'API: pintu komunikasi antar aplikasi'], ['documentation', 'dokumentasi']],
       pattern: 'D19-P2'
     },
@@ -100,7 +102,8 @@ E90.registerDay({
       id: 'D64-S12',
       english: 'Do you mean the old endpoint or the new one?',
       pronunciation: 'du yu min di ould end-point or de nyu wan?',
-      translation: 'Maksudnya endpoint lama atau yang baru?',
+      translation: 'Apakah maksudmu endpoint lama atau yang baru?',
+      naturalTranslation: 'Maksudnya endpoint lama atau yang baru?',
       words: [['Do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu / Anda'], ['mean', 'maksudkan'], ['the', '(penanda kata benda; "di" sebelum vokal)'], ['old', 'lama'], ['endpoint', 'endpoint: alamat URL tertentu di API'], ['or', 'atau'], ['new', 'baru'], ['one', 'yang (menggantikan kata benda)']],
       pattern: 'D20-P2'
     },
@@ -120,26 +123,26 @@ E90.registerDay({
     {
       id: 'D64-P1',
       formula: 'The frontend sends a + GET / POST + request to + BENDA',
-      meaning: 'Describe a request.',
+      meaning: 'Frontend mengirim request GET / POST ke ...',
       examples: ['The app sends a GET request to the orders endpoint.', 'We send a POST request to create a user.', 'The page sends a PUT request to update the profile.'],
       note: 'GET = ambil data · POST = buat data baru · PUT / PATCH = ubah data · DELETE = hapus data.'
     },
     {
       id: 'D64-P2',
       formula: 'This endpoint returns / creates / updates + BENDA',
-      meaning: 'Explain what an endpoint does.',
+      meaning: 'Endpoint ini mengembalikan / membuat / memperbarui ...',
       examples: ['This endpoint returns all active users.', 'This endpoint creates a new invoice.', 'The API returns the result in JSON.']
     },
     {
       id: 'D64-P3',
       formula: 'The request body / header / query parameter + contains + BENDA',
-      meaning: 'Explain what is inside a request.',
+      meaning: 'Body / header / query parameter request + berisi ...',
       examples: ["The body contains the user's name and email.", 'The header contains the access token.', 'The page number is sent as a query parameter.']
     },
     {
       id: 'D64-P4',
       formula: 'A + STATUS CODE + response means + KALIMAT',
-      meaning: 'Explain status codes in words.',
+      meaning: 'Response ... (kode status) berarti ...',
       examples: ['A 200 response means everything is OK.', 'A 401 error means the user is not logged in.', 'A 500 error means something went wrong on the server.'],
       note: '2xx = berhasil · 4xx = masalah di request (data salah, belum login, tidak ditemukan) · 5xx = masalah di server.'
     }

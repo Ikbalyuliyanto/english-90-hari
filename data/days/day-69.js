@@ -67,7 +67,8 @@ E90.registerDay({
       id: 'D69-S08',
       english: 'It affects all users who pay by card.',
       pronunciation: 'it e-fekts ol yu-zerz hu pei bai kard',
-      translation: 'Bug ini berdampak ke semua user yang bayar pakai kartu.',
+      translation: 'Itu berdampak ke semua user yang membayar dengan kartu.',
+      naturalTranslation: 'Bug ini berdampak ke semua user yang bayar pakai kartu.',
       words: [['It', 'itu (bug-nya)'], ['affects', 'memengaruhi / berdampak ke; -s karena "it"', 'affect'], ['all', 'semua'], ['users', 'pengguna (jamak)', 'user'], ['who', 'yang'], ['pay', 'membayar'], ['by', 'dengan (cara)'], ['card', 'kartu']],
       pattern: 'D69-P5'
     },
@@ -83,7 +84,8 @@ E90.registerDay({
       id: 'D69-S10',
       english: "It's a minor bug, so it can wait.",
       pronunciation: 'its e mai-ner bag, sou it ken weit',
-      translation: 'Ini bug kecil, jadi bisa ditunda.',
+      translation: 'Itu bug kecil, jadi itu bisa menunggu.',
+      naturalTranslation: 'Ini bug kecil, jadi bisa ditunda.',
       words: [["It's", 'ini (it is)', 'be'], ['a', 'sebuah (tidak diterjemahkan)'], ['minor', 'kecil / tidak serius'], ['bug', 'bug: kesalahan dalam program'], ['so', 'jadi'], ['it', 'itu'], ['can', 'bisa'], ['wait', 'menunggu / ditunda']],
       pattern: 'D69-P5'
     }
@@ -122,32 +124,32 @@ E90.registerDay({
     {
       id: 'D69-P1',
       formula: 'I found a bug in + BENDA',
-      meaning: 'Start a bug report.',
+      meaning: 'Saya menemukan bug di ...',
       examples: ['I found a bug in the login form.', "There's a bug in the export feature.", 'A user reported a bug on the profile page.']
     },
     {
       id: 'D69-P2',
       formula: 'When I + KATA KERJA, + HASIL',
-      meaning: 'Describe what goes wrong.',
+      meaning: 'Saat saya ..., + HASIL',
       examples: ['When I upload a PDF, the page freezes.', 'When I change the language, the menu disappears.', 'When I refresh the page, I get logged out.']
     },
     {
       id: 'D69-P3',
       formula: 'The expected result is ...  ·  The actual result is ...',
-      meaning: 'Compare what should happen with what really happens.',
+      meaning: 'Hasil yang seharusnya adalah ...  ·  Hasil yang sebenarnya adalah ...',
       examples: ['The expected result is a success message.', 'The actual result is a 500 error.', 'Expected: the total is updated. Actual: the total stays the same.']
     },
     {
       id: 'D69-P4',
       formula: "I can / can't reproduce it + ...  ·  Here are the steps to reproduce it",
-      meaning: 'Talk about reproducing a bug.',
+      meaning: 'Saya bisa / tidak bisa memunculkannya lagi ...  ·  Ini langkah-langkah untuk memunculkannya',
       examples: ['I can reproduce it on my laptop.', "I can't reproduce it locally.", "It only happens sometimes, so it's hard to reproduce."],
       note: 'reproduce (ri-pre-dyus) = memunculkan bug lagi dengan langkah yang sama.'
     },
     {
       id: 'D69-P5',
       formula: "It affects + ORANG + who + ...  ·  It's a critical / minor bug",
-      meaning: 'Explain the impact and how serious it is.',
+      meaning: 'Itu berdampak ke ... yang ...  ·  Itu bug kritis / kecil',
       examples: ['It affects users who log in with Google.', "It's a critical bug because nobody can check out.", "It's a minor bug. It's only a typo."]
     }
   ],

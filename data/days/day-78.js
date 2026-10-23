@@ -58,7 +58,8 @@ E90.registerDay({
       id: 'D78-S07',
       english: 'Can you share an example response?',
       pronunciation: 'ken yu sher en eg-zem-pel ri-spons?',
-      translation: 'Bisa bagikan contoh response-nya?',
+      translation: 'Bisakah kamu membagikan contoh response?',
+      naturalTranslation: 'Bisa bagikan contoh response-nya?',
       words: [['Can', 'bisakah'], ['you', 'kamu'], ['share', 'membagikan'], ['an', 'sebuah (sebelum bunyi vokal, tidak diterjemahkan)'], ['example', 'contoh'], ['response', 'response: jawaban dari server']],
       pattern: 'D19-P2'
     },
@@ -93,7 +94,8 @@ E90.registerDay({
       id: 'D78-S11',
       english: 'Do you mean the field name or the value?',
       pronunciation: 'du yu min de fild neim or de vel-yu?',
-      translation: 'Maksudnya nama field-nya atau nilainya?',
+      translation: 'Apakah maksudmu nama field-nya atau nilainya?',
+      naturalTranslation: 'Maksudnya nama field-nya atau nilainya?',
       words: [['Do', '(kata bantu pertanyaan, tidak diterjemahkan)'], ['you', 'kamu / Anda'], ['mean', 'maksudkan'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['field', 'field: nama data di request atau response'], ['name', 'nama'], ['or', 'atau'], ['value', 'nilai']],
       pattern: 'D20-P2'
     },
@@ -109,7 +111,8 @@ E90.registerDay({
       id: 'D78-S13',
       english: "Let's agree on the response format first.",
       pronunciation: 'lets e-gri on de ri-spons for-met ferst',
-      translation: 'Ayo sepakati format response-nya dulu.',
+      translation: 'Ayo kita sepakati format response-nya dulu.',
+      naturalTranslation: 'Ayo sepakati format response-nya dulu.',
       words: [["Let's", 'mari kita (let us)', 'let'], ['agree', 'sepakat'], ['on', 'tentang (dalam "agree on")'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['response', 'response: jawaban dari server'], ['format', 'format / bentuk data'], ['first', 'dulu / terlebih dahulu']],
       pattern: 'D58-P5'
     },
@@ -121,31 +124,31 @@ E90.registerDay({
     {
       id: 'D78-P1',
       formula: 'We agreed on + BENDA  ·  The API contract defines + BENDA',
-      meaning: 'Talk about the agreement between frontend and backend.',
+      meaning: 'Kami sudah menyepakati ...  ·  Kontrak API menentukan ...',
       examples: ['We agreed on the request format last week.', 'The contract defines all the required fields.', 'The documentation shows every endpoint and response.']
     },
     {
       id: 'D78-P2',
       formula: "A changed + BENDA, so B broke  ·  BENDA + doesn't match + BENDA",
-      meaning: 'Explain an integration problem.',
+      meaning: 'A mengganti ..., jadi B rusak  ·  ... tidak cocok dengan ...',
       examples: ['The API changed the date format, so the app crashed.', "The field names don't match.", 'The frontend expects a number, but the API returns a string.']
     },
     {
       id: 'D78-P3',
       formula: "I'm integrating + BENDA + into / with + BENDA",
-      meaning: 'Describe integration work.',
+      meaning: 'Saya sedang mengintegrasikan ... ke / dengan ...',
       examples: ["I'm integrating the maps API into the delivery page.", 'We integrated the login with Google.', "I'm connecting the new form to the backend."]
     },
     {
       id: 'D78-P4',
       formula: "We're using mock data until + KALIMAT",
-      meaning: 'Work in parallel when the API is not ready.',
+      meaning: 'Kami memakai data tiruan sampai ...',
       examples: ['The mobile team is using mock data until Friday.', 'We created a fake API for testing.', "I'll switch to the real API when it's ready."]
     },
     {
       id: 'D78-P5',
       formula: 'We need to handle the case when + KALIMAT',
-      meaning: 'Think about failures between systems.',
+      meaning: 'Kita perlu menangani kondisi ketika ...',
       examples: ['We need to handle the case when the API is slow.', 'We need to handle empty responses.', 'This field can be null, so we need a default value.']
     }
   ],

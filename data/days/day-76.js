@@ -8,7 +8,8 @@ E90.registerDay({
       id: 'D76-S01',
       english: 'The system has a layered architecture.',
       pronunciation: 'de sis-tem hez e lei-erd ar-ki-tek-cher',
-      translation: 'Sistemnya memakai arsitektur berlapis.',
+      translation: 'Sistemnya punya arsitektur berlapis.',
+      naturalTranslation: 'Sistemnya memakai arsitektur berlapis.',
       words: [['The', '(penanda kata benda, tidak diterjemahkan)'], ['system', 'sistem'], ['has', 'punya / memakai (have untuk it)', 'have'], ['a', 'sebuah (tidak diterjemahkan)'], ['layered', 'berlapis', 'layer'], ['architecture', 'arsitektur: struktur besar sebuah sistem (dibaca "ar-ki-tek-cher")']],
       pattern: 'D76-P1'
     },
@@ -16,7 +17,8 @@ E90.registerDay({
       id: 'D76-S02',
       english: 'It consists of three main components.',
       pronunciation: 'it ken-sists ov thri mein kem-pou-nents',
-      translation: 'Sistemnya terdiri dari tiga komponen utama.',
+      translation: 'Itu terdiri dari tiga komponen utama.',
+      naturalTranslation: 'Sistemnya terdiri dari tiga komponen utama.',
       words: [['It', 'itu (sistemnya)'], ['consists', 'terdiri (dalam "consist of"); -s karena "it"', 'consist'], ['of', 'dari'], ['three', 'tiga'], ['main', 'utama'], ['components', 'komponen: bagian dari sistem (jamak)', 'component']],
       phrases: [['consist of', 'terdiri dari']],
       pattern: 'D76-P1'
@@ -102,7 +104,8 @@ E90.registerDay({
       id: 'D76-S12',
       english: 'Let me give you an example of a request.',
       pronunciation: 'let mi giv yu en eg-zem-pel ov e ri-kwest',
-      translation: 'Saya beri contoh sebuah request.',
+      translation: 'Biar saya memberi kamu contoh sebuah request.',
+      naturalTranslation: 'Saya beri contoh sebuah request.',
       words: [['Let', 'biarkan'], ['me', 'saya (sebagai objek)'], ['give', 'memberi'], ['you', 'kepada kamu / Anda'], ['an', 'sebuah (sebelum bunyi vokal, tidak diterjemahkan)'], ['example', 'contoh'], ['of', 'dari'], ['a', 'sebuah (tidak diterjemahkan)'], ['request', 'request: permintaan ke server']],
       pattern: 'D75-P3'
     },
@@ -110,7 +113,8 @@ E90.registerDay({
       id: 'D76-S13',
       english: 'Could you draw the architecture on the whiteboard?',
       pronunciation: 'kud yu dro di ar-ki-tek-cher on de wait-bord?',
-      translation: 'Bisa gambarkan arsitekturnya di papan tulis?',
+      translation: 'Bisakah kamu menggambar arsitekturnya di papan tulis?',
+      naturalTranslation: 'Bisa gambarkan arsitekturnya di papan tulis?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu / Anda'], ['draw', 'menggambar'], ['the', '(penanda kata benda; "di" sebelum vokal)'], ['architecture', 'arsitektur: struktur besar sebuah sistem'], ['on', 'di'], ['whiteboard', 'papan tulis putih']],
       pattern: 'D19-P2'
     },
@@ -122,33 +126,33 @@ E90.registerDay({
     {
       id: 'D76-P1',
       formula: 'The system has a + JENIS + architecture  ·  It consists of + BENDA',
-      meaning: 'Give a high-level view of the architecture.',
+      meaning: 'Sistemnya punya arsitektur ...  ·  Itu terdiri dari ...',
       examples: ['The system has a microservice architecture.', 'It consists of a web app, an API, and a database.', 'The platform is made up of four services.'],
       note: 'Cara baca: architecture = ar-ki-tek-cher · component = kem-pou-nent · queue = kyu.'
     },
     {
       id: 'D76-P2',
       formula: 'The request goes through A before it reaches B',
-      meaning: 'Describe the path of a request.',
+      meaning: 'Request-nya melewati A sebelum sampai ke B',
       examples: ['The request goes through the load balancer before it reaches the server.', 'The data goes through validation before it reaches the database.', 'Every call goes through the API gateway first.']
     },
     {
       id: 'D76-P3',
       formula: 'LAPISAN + contains / is responsible for + BENDA',
-      meaning: 'Explain the responsibility of each part.',
+      meaning: 'Lapisan ... + berisi / bertanggung jawab atas ...',
       examples: ['The controller is responsible for handling HTTP requests.', 'The service layer contains the business rules.', 'The data layer is responsible for database queries.'],
       note: '"repository layer" = bagian kode yang mengakses database — berbeda dengan Git repository.'
     },
     {
       id: 'D76-P4',
       formula: 'We use + BENDA + to + KATA KERJA',
-      meaning: 'Explain why a component exists.',
+      meaning: 'Kami memakai ... untuk ...',
       examples: ['We use Redis to cache frequent queries.', 'We use a queue to send emails in the background.', 'We use a CDN to deliver images faster.']
     },
     {
       id: 'D76-P5',
       formula: 'BENDA + is a separate + BENDA  ·  The services communicate through + BENDA',
-      meaning: 'Explain how the parts connect.',
+      meaning: '... adalah ... yang terpisah  ·  Service-service itu berkomunikasi lewat ...',
       examples: ['The notification service is a separate application.', 'The services communicate through events.', 'The mobile app talks to the same API as the web app.']
     }
   ],

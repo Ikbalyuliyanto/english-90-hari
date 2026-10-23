@@ -109,7 +109,8 @@ E90.registerDay({
       id: 'D73-S13',
       english: "I'll send an update every thirty minutes.",
       pronunciation: 'ail send en ap-deit ev-ri ther-ti mi-nits',
-      translation: 'Saya akan kirim update setiap tiga puluh menit.',
+      translation: 'Saya akan mengirim update setiap tiga puluh menit.',
+      naturalTranslation: 'Saya akan kirim update setiap tiga puluh menit.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['send', 'mengirim'], ['an', 'sebuah (sebelum bunyi vokal, tidak diterjemahkan)'], ['update', 'kabar terbaru / update'], ['every', 'setiap'], ['thirty', 'tiga puluh'], ['minutes', 'menit (jamak)', 'minute']],
       pattern: 'D18-P2'
     },
@@ -121,26 +122,26 @@ E90.registerDay({
     {
       id: 'D73-P1',
       formula: "Users are getting + BENDA  ·  Some users can't + KATA KERJA",
-      meaning: 'Describe what users experience.',
+      meaning: 'User mendapat ...  ·  Sebagian user tidak bisa ...',
       examples: ['Users are getting a timeout on the payment page.', "Some users can't upload files.", 'Customers are seeing the wrong prices.']
     },
     {
       id: 'D73-P2',
       formula: "We're investigating + BENDA  ·  We've identified + BENDA",
-      meaning: 'Show progress during an incident.',
+      meaning: 'Kami sedang menyelidiki ...  ·  Kami sudah menemukan ...',
       examples: ["We're investigating the login issue.", "We've identified the cause.", "We've found the server that is failing."]
     },
     {
       id: 'D73-P3',
       formula: 'We applied a temporary fix  ·  The permanent fix will be + KATA KERJA-ed + WAKTU',
-      meaning: 'Explain the fix.',
+      meaning: 'Kami sudah menerapkan perbaikan sementara  ·  Perbaikan permanennya akan di... (pada waktu tertentu)',
       examples: ['We restarted the service as a temporary fix.', 'We turned off the new feature for now.', 'The permanent fix will be released next week.'],
       note: 'temporary fix = solusi sementara (sering disebut workaround) · permanent fix = perbaikan tuntas.'
     },
     {
       id: 'D73-P4',
       formula: "The system is back to normal  ·  The issue lasted + WAKTU  ·  We're monitoring + BENDA",
-      meaning: 'Close an incident update.',
+      meaning: 'Sistemnya sudah kembali normal  ·  Masalahnya berlangsung ...  ·  Kami sedang memantau ...',
       examples: ['Everything is back to normal.', 'The outage lasted fifteen minutes.', "We're monitoring the error rate."]
     }
   ],

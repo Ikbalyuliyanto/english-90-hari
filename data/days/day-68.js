@@ -17,7 +17,8 @@ E90.registerDay({
       id: 'D68-S02',
       english: 'Could you review my pull request when you have time?',
       pronunciation: 'kud yu ri-vyu mai pul ri-kwest wen yu hev taim?',
-      translation: 'Bisa review pull request saya kalau sempat?',
+      translation: 'Bisakah kamu mereview pull request saya ketika kamu punya waktu?',
+      naturalTranslation: 'Bisa review pull request saya kalau sempat?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['you', 'kamu'], ['review', 'mereview / memeriksa (kode)'], ['my', 'milik saya'], ['pull', '(bagian dari "pull request")'], ['request', '(bagian dari "pull request")'], ['when', 'kalau / ketika'], ['have', 'punya'], ['time', 'waktu']],
       phrases: [['when you have time', 'kalau sempat']],
       pattern: 'D68-P2'
@@ -52,7 +53,8 @@ E90.registerDay({
       id: 'D68-S06',
       english: "I've addressed all the comments.",
       pronunciation: 'aiv e-drest ol de ko-ments',
-      translation: 'Semua komentar sudah saya tindak lanjuti.',
+      translation: 'Saya sudah menindaklanjuti semua komentar.',
+      naturalTranslation: 'Semua komentar sudah saya tindak lanjuti.',
       words: [["I've", 'saya sudah (I have)', 'have'], ['addressed', 'menindaklanjuti / menangani', 'address'], ['all', 'semua'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['comments', 'komentar (jamak)', 'comment']],
       phrases: [['address a comment', 'menindaklanjuti komentar (bukan "alamat")']],
       pattern: 'D68-P5'
@@ -61,7 +63,8 @@ E90.registerDay({
       id: 'D68-S07',
       english: 'Can you take another look at the changes?',
       pronunciation: 'ken yu teik e-na-der luk et de cheinj-iz?',
-      translation: 'Bisa dicek lagi perubahannya?',
+      translation: 'Bisakah kamu melihat lagi perubahannya?',
+      naturalTranslation: 'Bisa dicek lagi perubahannya?',
       words: [['Can', 'bisakah'], ['you', 'kamu'], ['take', '(bagian dari "take a look")'], ['another', 'sekali lagi'], ['look', 'lihat / tinjauan'], ['at', 'pada'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['changes', 'perubahan (jamak)', 'change']],
       pattern: 'D68-P2'
     },
@@ -77,7 +80,8 @@ E90.registerDay({
       id: 'D68-S09',
       english: 'Why did you use a loop here instead of a map?',
       pronunciation: 'wai did yu yuz e lup hir in-sted ov e mep?',
-      translation: 'Kenapa di sini pakai loop, bukan map?',
+      translation: 'Kenapa kamu memakai loop di sini, bukan map?',
+      naturalTranslation: 'Kenapa di sini pakai loop, bukan map?',
       words: [['Why', 'kenapa'], ['did', '(kata bantu pertanyaan bentuk lampau, tidak diterjemahkan)', 'do'], ['you', 'kamu'], ['use', 'memakai'], ['a', 'sebuah (tidak diterjemahkan)'], ['loop', 'loop: perulangan dalam kode'], ['here', 'di sini'], ['instead', '(bagian dari "instead of")'], ['of', '(bagian dari "instead of")'], ['map', 'map: fungsi untuk mengubah setiap item di daftar']],
       phrases: [['instead of', 'bukannya / sebagai ganti']],
       pattern: 'D23-P1'
@@ -86,7 +90,8 @@ E90.registerDay({
       id: 'D68-S10',
       english: 'This function is a bit too long. Maybe we can split it.',
       pronunciation: 'dis fangk-shen iz e bit tu long. mei-bi wi ken split it',
-      translation: 'Fungsi ini agak terlalu panjang. Mungkin bisa kita pecah.',
+      translation: 'Fungsi ini agak terlalu panjang. Mungkin kita bisa memecahnya.',
+      naturalTranslation: 'Fungsi ini agak terlalu panjang. Mungkin bisa kita pecah.',
       words: [['This', 'ini'], ['function', 'fungsi (dalam kode)'], ['is', '(to be, tidak diterjemahkan)', 'be'], ['a', '(bagian dari "a bit")'], ['bit', 'sedikit / agak'], ['too', 'terlalu'], ['long', 'panjang'], ['Maybe', 'mungkin'], ['we', 'kita'], ['can', 'bisa'], ['split', 'memecah / membagi'], ['it', 'itu / -nya']],
       pattern: 'D53-P2'
     }
@@ -97,7 +102,8 @@ E90.registerDay({
       id: 'D68-S11',
       english: "One thing I'd suggest is adding a test for this case.",
       pronunciation: 'wan thing aid sag-jest iz e-ding e test for dis keis',
-      translation: 'Satu saran saya: tambahkan test untuk kasus ini.',
+      translation: 'Satu hal yang saya sarankan adalah menambahkan test untuk kasus ini.',
+      naturalTranslation: 'Satu saran saya: tambahkan test untuk kasus ini.',
       words: [['One', 'satu'], ['thing', 'hal'], ["I'd", 'saya akan (I would)', 'will'], ['suggest', 'menyarankan'], ['is', 'adalah', 'be'], ['adding', 'menambahkan', 'add'], ['a', 'sebuah (tidak diterjemahkan)'], ['test', 'test: kode untuk menguji kode lain'], ['for', 'untuk'], ['this', 'ini'], ['case', 'kasus / kondisi']],
       pattern: 'D53-P3'
     },
@@ -105,7 +111,8 @@ E90.registerDay({
       id: 'D68-S12',
       english: "Thanks for the review. I'll fix it now.",
       pronunciation: 'thengks for de ri-vyu. ail fiks it nau',
-      translation: 'Terima kasih sudah direview. Saya perbaiki sekarang.',
+      translation: 'Terima kasih atas review-nya. Saya akan memperbaikinya sekarang.',
+      naturalTranslation: 'Terima kasih sudah direview. Saya perbaiki sekarang.',
       words: [['Thanks', 'terima kasih', 'thank'], ['for', 'atas'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['review', 'review: pemeriksaan kode'], ["I'll", 'saya akan (I will)', 'will'], ['fix', 'memperbaiki'], ['it', 'itu / -nya'], ['now', 'sekarang']],
       pattern: 'D44-P4'
     },
@@ -125,32 +132,32 @@ E90.registerDay({
     {
       id: 'D68-P1',
       formula: 'I opened a pull request for + BENDA',
-      meaning: 'Say that your code is ready for review.',
+      meaning: 'Saya membuat pull request untuk ...',
       examples: ['I opened a PR for the payment fix.', "I've created a draft pull request.", 'The PR is ready for review.']
     },
     {
       id: 'D68-P2',
       formula: 'Could you review + BENDA?  ·  Can you take another look at + BENDA?',
-      meaning: 'Ask for a code review.',
+      meaning: 'Bisakah kamu mereview ...?  ·  Bisakah kamu melihat lagi ...?',
       examples: ['Could you review my PR today?', 'Can you take another look after my changes?', 'Could you check the tests in this PR?']
     },
     {
       id: 'D68-P3',
       formula: 'This PR + adds / fixes / changes + BENDA',
-      meaning: 'Describe a pull request.',
+      meaning: 'PR ini + menambahkan / memperbaiki / mengubah ...',
       examples: ['This PR fixes the login redirect.', 'This PR changes the API response format.', 'This PR adds unit tests for the cart.']
     },
     {
       id: 'D68-P4',
       formula: 'I left a comment on + BENDA  ·  The reviewer requested changes',
-      meaning: 'Talk about review comments.',
+      meaning: 'Saya meninggalkan komentar di ...  ·  Reviewer-nya meminta perubahan',
       examples: ['I left a comment on line 42.', 'She requested a few small changes.', 'He approved it with one suggestion.'],
       note: '"request changes" = meminta perubahan (kata kerja), berbeda dengan "API request" (kata benda).'
     },
     {
       id: 'D68-P5',
       formula: "I've addressed + BENDA  ·  The PR was approved and merged",
-      meaning: 'Close the review process.',
+      meaning: 'Saya sudah menindaklanjuti ...  ·  PR-nya sudah disetujui dan di-merge',
       examples: ["I've addressed your comments.", "I've updated the PR.", 'The PR was merged this morning.']
     }
   ],

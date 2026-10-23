@@ -112,7 +112,8 @@ E90.registerDay({
       id: 'D70-S13',
       english: "I'll update you when I find something.",
       pronunciation: 'ail ap-deit yu wen ai faind sam-thing',
-      translation: 'Saya kabari kalau sudah menemukan sesuatu.',
+      translation: 'Saya akan mengabari kamu ketika saya menemukan sesuatu.',
+      naturalTranslation: 'Saya kabari kalau sudah menemukan sesuatu.',
       words: [["I'll", 'saya akan (I will)', 'will'], ['update', 'mengabari'], ['you', 'kamu / Anda'], ['when', 'kalau / ketika'], ['I', 'saya'], ['find', 'menemukan'], ['something', 'sesuatu']],
       pattern: 'D42-P4'
     },
@@ -124,31 +125,31 @@ E90.registerDay({
     {
       id: 'D70-P1',
       formula: "I'm checking + BENDA + to find + BENDA",
-      meaning: 'Say what you are investigating.',
+      meaning: 'Saya sedang memeriksa ... untuk mencari ...',
       examples: ["I'm checking the server logs to find the error.", "I'm checking the database to find the missing record.", "I'm comparing the two versions to find the difference."]
     },
     {
       id: 'D70-P2',
       formula: 'The logs show + BENDA  ·  I found + BENDA + in the stack trace',
-      meaning: 'Explain what you found.',
+      meaning: 'Log-nya menunjukkan ...  ·  Saya menemukan ... di stack trace',
       examples: ['The logs show many failed login attempts.', 'The stack trace points to the payment service.', 'The error message says the file is missing.']
     },
     {
       id: 'D70-P3',
       formula: 'I added + BENDA + to see + KALIMAT',
-      meaning: 'Explain your debugging steps.',
+      meaning: 'Saya menambahkan ... untuk melihat ...',
       examples: ['I added a log to see the request body.', 'I put a breakpoint to see the value of the variable.', 'I turned on debug mode to see more details.']
     },
     {
       id: 'D70-P4',
       formula: 'We think this may be related to + BENDA  ·  The possible cause is + BENDA',
-      meaning: 'Talk about a cause that is not confirmed yet.',
+      meaning: 'Kami pikir ini mungkin berhubungan dengan ...  ·  Kemungkinan penyebabnya adalah ...',
       examples: ['We think this may be related to the last deployment.', 'The possible cause is a network problem.', 'It might be caused by an old version of the library.']
     },
     {
       id: 'D70-P5',
       formula: "We haven't confirmed the root cause yet  ·  We found the root cause: + KALIMAT",
-      meaning: 'Talk about a confirmed cause.',
+      meaning: 'Kami belum memastikan akar penyebabnya  ·  Kami sudah menemukan akar penyebabnya: ...',
       examples: ['We found the root cause.', 'We confirmed that the problem was the time zone.', 'The root cause was a missing index.'],
       note: 'Pakai "root cause" hanya kalau penyebabnya sudah dipastikan. Kalau belum: "possible cause" atau "may be related to".'
     }
