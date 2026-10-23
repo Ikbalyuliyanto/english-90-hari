@@ -73,7 +73,7 @@
       "id": "C-WAKE-01",
       "context": "wake",
       "en": "Are you awake?",
-      "idn": "Kamu sudah bangun?",
+      "idn": "Apakah kamu sudah bangun?",
       "minDay": 2
     },
     {
@@ -94,7 +94,7 @@
       "id": "C-WAKE-04",
       "context": "wake",
       "en": "What time do you usually get up?",
-      "idn": "Biasanya kamu bangun jam berapa?",
+      "idn": "Jam berapa kamu biasanya bangun?",
       "minDay": 21
     },
     {
@@ -108,14 +108,14 @@
       "id": "C-BREAK-02",
       "context": "breakfast",
       "en": "What do you want to eat?",
-      "idn": "Kamu mau makan apa?",
+      "idn": "Apa yang ingin kamu makan?",
       "minDay": 3
     },
     {
       "id": "C-BREAK-03",
       "context": "breakfast",
       "en": "What did you eat this morning?",
-      "idn": "Tadi pagi kamu makan apa?",
+      "idn": "Apa yang kamu makan tadi pagi?",
       "minDay": 17
     },
     {
@@ -129,21 +129,21 @@
       "id": "C-PREP-01",
       "context": "prepare",
       "en": "Are you ready?",
-      "idn": "Kamu sudah siap?",
+      "idn": "Apakah kamu sudah siap?",
       "minDay": 6
     },
     {
       "id": "C-PREP-02",
       "context": "prepare",
       "en": "Do you have your bag?",
-      "idn": "Tasmu sudah dibawa?",
+      "idn": "Apakah kamu membawa tasmu?",
       "minDay": 6
     },
     {
       "id": "C-PREP-03",
       "context": "prepare",
       "en": "What are you doing now?",
-      "idn": "Kamu sedang apa sekarang?",
+      "idn": "Apa yang sedang kamu lakukan sekarang?",
       "minDay": 16
     },
     {
@@ -157,21 +157,21 @@
       "id": "C-STAT-01",
       "context": "station",
       "en": "Where are you going?",
-      "idn": "Kamu mau ke mana?",
+      "idn": "Ke mana kamu pergi?",
       "minDay": 6
     },
     {
       "id": "C-STAT-02",
       "context": "station",
       "en": "Where is the station?",
-      "idn": "Stasiunnya di mana?",
+      "idn": "Di mana stasiunnya?",
       "minDay": 7
     },
     {
       "id": "C-STAT-03",
       "context": "station",
       "en": "Where are you going now?",
-      "idn": "Kamu sedang menuju ke mana sekarang?",
+      "idn": "Ke mana kamu pergi sekarang?",
       "minDay": 16
     },
     {
@@ -185,7 +185,7 @@
       "id": "C-TRAIN-01",
       "context": "train",
       "en": "How long does it take?",
-      "idn": "Berapa lama perjalanannya?",
+      "idn": "Berapa lama waktu yang dibutuhkan?",
       "minDay": 5
     },
     {
@@ -199,7 +199,7 @@
       "id": "C-TRAIN-03",
       "context": "train",
       "en": "What are you doing on the train?",
-      "idn": "Kamu sedang apa di kereta?",
+      "idn": "Apa yang sedang kamu lakukan di kereta?",
       "minDay": 16
     },
     {
@@ -213,14 +213,14 @@
       "id": "C-WORK-00",
       "context": "work",
       "en": "Where do you work?",
-      "idn": "Kamu kerja di mana?",
+      "idn": "Di mana kamu bekerja?",
       "minDay": 1
     },
     {
       "id": "C-WORK-01",
       "context": "work",
       "en": "What time do you start work?",
-      "idn": "Kamu mulai kerja jam berapa?",
+      "idn": "Jam berapa kamu mulai bekerja?",
       "minDay": 2
     },
     {
@@ -241,49 +241,49 @@
       "id": "C-WORK-04",
       "context": "work",
       "en": "Are you busy right now?",
-      "idn": "Kamu sedang sibuk sekarang?",
+      "idn": "Apakah kamu sedang sibuk sekarang?",
       "minDay": 16
     },
     {
       "id": "C-WORK-05",
       "context": "work",
       "en": "What are you working on today?",
-      "idn": "Hari ini kamu mengerjakan apa?",
+      "idn": "Apa yang sedang kamu kerjakan hari ini?",
       "minDay": 32
     },
     {
       "id": "C-WORK-06",
       "context": "work",
       "en": "Can you speak English?",
-      "idn": "Kamu bisa bahasa Inggris?",
+      "idn": "Bisakah kamu berbicara bahasa Inggris?",
       "minDay": 19
     },
     {
       "id": "C-LUNCH-01",
       "context": "lunch",
       "en": "Are you hungry?",
-      "idn": "Kamu lapar?",
+      "idn": "Apakah kamu lapar?",
       "minDay": 3
     },
     {
       "id": "C-LUNCH-02",
       "context": "lunch",
       "en": "What do you want to eat for lunch?",
-      "idn": "Kamu mau makan siang apa?",
+      "idn": "Apa yang ingin kamu makan untuk makan siang?",
       "minDay": 3
     },
     {
       "id": "C-LUNCH-03",
       "context": "lunch",
       "en": "Is the food delicious?",
-      "idn": "Makanannya enak?",
+      "idn": "Apakah makanannya enak?",
       "minDay": 3
     },
     {
       "id": "C-LUNCH-04",
       "context": "lunch",
       "en": "Did you have lunch?",
-      "idn": "Kamu sudah makan siang?",
+      "idn": "Apakah kamu sudah makan siang?",
       "minDay": 17
     },
     {
@@ -297,42 +297,42 @@
       "id": "C-AFTER-02",
       "context": "afterwork",
       "en": "What did you do today?",
-      "idn": "Hari ini kamu ngapain saja?",
+      "idn": "Apa yang kamu lakukan hari ini?",
       "minDay": 15
     },
     {
       "id": "C-AFTER-03",
       "context": "afterwork",
       "en": "Did you finish your work?",
-      "idn": "Pekerjaanmu sudah selesai?",
+      "idn": "Apakah kamu sudah menyelesaikan pekerjaanmu?",
       "minDay": 17
     },
     {
       "id": "C-AFTER-04",
       "context": "afterwork",
       "en": "What is the status of your task?",
-      "idn": "Bagaimana status tugasmu?",
+      "idn": "Apa status tugasmu?",
       "minDay": 34
     },
     {
       "id": "C-HOME-01",
       "context": "home",
       "en": "Are you going home now?",
-      "idn": "Kamu sedang pulang sekarang?",
+      "idn": "Apakah kamu pulang sekarang?",
       "minDay": 16
     },
     {
       "id": "C-HOME-02",
       "context": "home",
       "en": "Are you tired?",
-      "idn": "Kamu capek?",
+      "idn": "Apakah kamu lelah?",
       "minDay": 11
     },
     {
       "id": "C-HOME-03",
       "context": "home",
       "en": "What time did you leave the office?",
-      "idn": "Jam berapa kamu pulang dari kantor?",
+      "idn": "Jam berapa kamu meninggalkan kantor?",
       "minDay": 17
     },
     {
@@ -346,98 +346,98 @@
       "id": "C-EVE-00",
       "context": "evening",
       "en": "Where do you live?",
-      "idn": "Kamu tinggal di mana?",
+      "idn": "Di mana kamu tinggal?",
       "minDay": 1
     },
     {
       "id": "C-EVE-01",
       "context": "evening",
       "en": "Do you want to eat dinner?",
-      "idn": "Kamu mau makan malam?",
+      "idn": "Apakah kamu mau makan malam?",
       "minDay": 3
     },
     {
       "id": "C-EVE-02",
       "context": "evening",
       "en": "What are you doing now?",
-      "idn": "Kamu sedang apa sekarang?",
+      "idn": "Apa yang sedang kamu lakukan sekarang?",
       "minDay": 16
     },
     {
       "id": "C-EVE-03",
       "context": "evening",
       "en": "Did you have a good day?",
-      "idn": "Harimu menyenangkan?",
+      "idn": "Apakah harimu menyenangkan?",
       "minDay": 17
     },
     {
       "id": "C-EVE-04",
       "context": "evening",
       "en": "Do you like watching movies?",
-      "idn": "Kamu suka nonton film?",
+      "idn": "Apakah kamu suka menonton film?",
       "minDay": 9
     },
     {
       "id": "C-EVE-05",
       "context": "evening",
       "en": "Can you cook?",
-      "idn": "Kamu bisa masak?",
+      "idn": "Bisakah kamu memasak?",
       "minDay": 19
     },
     {
       "id": "C-BED-01",
       "context": "bedtime",
       "en": "Are you sleepy?",
-      "idn": "Kamu mengantuk?",
+      "idn": "Apakah kamu mengantuk?",
       "minDay": 11
     },
     {
       "id": "C-BED-02",
       "context": "bedtime",
       "en": "What time do you go to bed?",
-      "idn": "Kamu tidur jam berapa?",
+      "idn": "Jam berapa kamu pergi tidur?",
       "minDay": 5
     },
     {
       "id": "C-BED-03",
       "context": "bedtime",
       "en": "What did you learn today?",
-      "idn": "Hari ini kamu belajar apa?",
+      "idn": "Apa yang kamu pelajari hari ini?",
       "minDay": 17
     },
     {
       "id": "C-BED-04",
       "context": "bedtime",
       "en": "What are you going to do tomorrow?",
-      "idn": "Besok kamu mau ngapain?",
+      "idn": "Apa yang akan kamu lakukan besok?",
       "minDay": 18
     },
     {
       "id": "C-WKND-01",
       "context": "weekend",
       "en": "Do you like sports?",
-      "idn": "Kamu suka olahraga?",
+      "idn": "Apakah kamu suka olahraga?",
       "minDay": 9
     },
     {
       "id": "C-WKND-02",
       "context": "weekend",
       "en": "What are you doing today?",
-      "idn": "Hari ini kamu sedang apa?",
+      "idn": "Apa yang sedang kamu lakukan hari ini?",
       "minDay": 16
     },
     {
       "id": "C-WKND-03",
       "context": "weekend",
       "en": "What did you do yesterday?",
-      "idn": "Kemarin kamu ngapain?",
+      "idn": "Apa yang kamu lakukan kemarin?",
       "minDay": 17
     },
     {
       "id": "C-WKND-04",
       "context": "weekend",
       "en": "What are you going to do this weekend?",
-      "idn": "Weekend ini kamu mau ngapain?",
+      "idn": "Apa yang akan kamu lakukan akhir pekan ini?",
       "minDay": 18
     },
     {

@@ -71,13 +71,31 @@ Format satu kalimat:
   id: 'D21-S01',                               // unik: D<hari>-S<nomor>
   english: "I'm currently working on the backend.",
   pronunciation: 'aim ker-ren-li wer-king on de bek-end',
-  translation: 'Saat ini saya sedang mengerjakan backend.',
+  translation: 'Saat ini saya sedang mengerjakan backend.', // terjemahan utama: ikuti struktur English selama wajar
+  naturalTranslation: 'Lagi ngerjain backend.',  // opsional: arti percakapan, ditampilkan sebagai info tambahan
   words: [["I'm", 'saya sedang', 'be'], ['currently', 'saat ini'], ...], // [kata, arti di konteks ini, bentuk dasar?]
   phrases: [['work on', 'mengerjakan']],
   pattern: 'D21-P1'                            // id pola di bagian patterns
 }
 ```
+`translation` dipakai sebagai prompt Active Recall (Indonesia → English) dan Review, jadi tulis sedekat mungkin dengan struktur English (contoh: *What should I do?* = "Apa yang seharusnya saya lakukan?"). Bentuk yang lebih natural ("Saya harus bagaimana?") masuk ke `naturalTranslation`. Idiom tetap diterjemahkan natural. Arti di `words` adalah arti pada kalimat itu, bukan arti universal.
+
+Format satu pola:
+```js
+{
+  id: 'D28-P3',
+  formula: 'What should I / we + KATA KERJA?',
+  meaning: 'Apa yang seharusnya saya / kita + KATA KERJA?',
+  naturalMeaning: 'Saya harus ... apa?',                       // opsional
+  examples: ['What should I do?', 'What should I eat?', 'What should I buy?'],
+  exampleMeanings: ['Apa yang seharusnya saya lakukan?', '...', '...'], // opsional, sejajar dengan examples
+  note: 'Hanya kata kerjanya yang berganti.'                    // opsional
+}
+```
+
 Setiap Day juga punya `review` (kalimat variasi baru atau `{ ref: 'D18-S05' }`), `patterns`, `shadowing` (3–5 id), `speaking` (3–5 pertanyaan, atau sampai 12 jika Day diberi `checkpoint: true`), dan `talk321` (opsional).
+
+Bank pertanyaan Conversation (`data/conversation/questions.js`, lokal tanpa AI): `idn` = terjemahan utama pertanyaan (dipakai notification, Worker, dan bot WhatsApp); `naturalIdn` opsional = arti natural, hanya ditampilkan saat membuka arti di halaman Conversation; `translations` = arti jawaban user dan sengaja tetap natural.
 
 Field pertanyaan speaking:
 ```js
@@ -93,7 +111,7 @@ Field pertanyaan speaking:
 ```
 Instruksi Speaking otomatis menyesuaikan bila ada soal bertimer atau follow-up.
 
-Mulai Phase 2, arti pertanyaan speaking dilipat secara default (`questionTranslation: 'collapsed'` di `data/curriculum.js`) agar latihan semakin English-oriented. Di Phase 4 terjemahan kalimat juga disembunyikan (`translation: 'hidden'`, tetap bisa dibuka dengan tombol ID), dan mulai Day 106 (`englishOnlyFrom`) bantuan pertanyaan hanya berupa petunjuk singkat berbahasa Indonesia. Mulai Day 46, kolom `meaning` pada pattern ditulis dalam English sederhana; catatan untuk hal yang mudah disalahpahami tetap berbahasa Indonesia.
+Mulai Phase 2, arti pertanyaan speaking dilipat secara default (`questionTranslation: 'collapsed'` di `data/curriculum.js`) agar latihan semakin English-oriented. Di Phase 4 terjemahan kalimat juga disembunyikan (`translation: 'hidden'`, tetap bisa dibuka dengan tombol ID), dan mulai Day 106 (`englishOnlyFrom`) bantuan pertanyaan hanya berupa petunjuk singkat berbahasa Indonesia. Kolom `meaning` pada pattern ditulis dalam bahasa Indonesia untuk semua Day (sebelumnya Day 46+ memakai English sederhana; diseragamkan pada audit terjemahan, lihat `docs/translation-audit.md`).
 
 Validator memeriksa: setiap kata punya arti, cara baca tidak kosong, id unik, kalimat tidak duplikat (pakai `{ ref }` untuk review), referensi valid, jumlah shadowing/speaking, dan memastikan 225 kalimat versi lama tidak ada yang hilang.
 

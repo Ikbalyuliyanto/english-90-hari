@@ -114,7 +114,7 @@ E90.registerDay({
       translation: 'Bisakah kita memindahkan rapatnya ke hari Kamis?',
       naturalTranslation: 'Bisakah rapatnya kita pindah ke hari Kamis?',
       words: [['Could', 'bisakah (sopan)', 'can'], ['we', 'kita'], ['move', 'memindahkan'], ['the', '(penanda kata benda, tidak diterjemahkan)'], ['meeting', 'rapat'], ['to', 'ke'], ['Thursday', 'Kamis']],
-      pattern: 'D19-P2'
+      pattern: 'D33-P4'
     },
     { ref: 'D05-S08' },
     { ref: 'D46-S08' }

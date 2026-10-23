@@ -144,12 +144,12 @@ E90.registerDay({
     },
     {
       id: 'D28-P3',
-      formula: 'What should I + KATA KERJA?',
-      meaning: 'Apa yang seharusnya saya + KATA KERJA?',
+      formula: 'What should I / we + KATA KERJA?',
+      meaning: 'Apa yang seharusnya saya / kita + KATA KERJA?',
       naturalMeaning: 'Saya harus ... apa? / Sebaiknya saya ... apa?',
-      examples: ['What should I do?', 'What should I eat?', 'What should I buy?', 'What should I say?', 'What should I say to the client?', 'What should I check first?'],
-      exampleMeanings: ['Apa yang seharusnya saya lakukan?', 'Apa yang seharusnya saya makan?', 'Apa yang seharusnya saya beli?', 'Apa yang seharusnya saya katakan?', 'Apa yang seharusnya saya katakan kepada klien?', 'Apa yang seharusnya saya periksa dulu?'],
-      note: '"What should I" tetap; hanya kata kerjanya yang berganti: do → lakukan, eat → makan, buy → beli, say → katakan.'
+      examples: ['What should I do?', 'What should I eat?', 'What should I buy?', 'What should I say?', 'What should I say to the client?', 'What should I check first?', 'What should we do next?'],
+      exampleMeanings: ['Apa yang seharusnya saya lakukan?', 'Apa yang seharusnya saya makan?', 'Apa yang seharusnya saya beli?', 'Apa yang seharusnya saya katakan?', 'Apa yang seharusnya saya katakan kepada klien?', 'Apa yang seharusnya saya periksa dulu?', 'Apa yang seharusnya kita lakukan selanjutnya?'],
+      note: '"What should I" tetap; hanya kata kerjanya yang berganti (untuk "kita", pakai "What should we"): do → lakukan, eat → makan, buy → beli, say → katakan.'
     },
     {
       id: 'D28-P4',

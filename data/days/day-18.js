@@ -12,7 +12,7 @@ E90.registerDay({
       naturalTranslation: 'Apa rencanamu akhir pekan ini?',
       words: [['What', 'apa'], ['are', '(bagian dari "are going to")', 'be'], ['you', 'kamu'], ['going', 'akan (dalam "going to")', 'go'], ['to', '(bagian dari "going to")'], ['do', 'melakukan'], ['this', 'ini'], ['weekend', 'akhir pekan']],
       phrases: [['be going to', 'akan (rencana)'], ['this weekend', 'akhir pekan ini']],
-      pattern: 'D18-P1'
+      pattern: 'D10-P3'
     },
     {
       id: 'D18-S02',

@@ -155,8 +155,8 @@ E90.registerDay({
     },
     {
       id: 'D27-P3',
-      formula: 'I prefer + BENDA / KATA KERJA-ing (+ to ...)',
-      meaning: 'Saya lebih suka ...',
+      formula: 'I prefer + BENDA / KATA KERJA-ing (+ to ...)  ·  Which + BENDA + do you prefer?',
+      meaning: 'Saya lebih suka ...  ·  ... mana yang kamu lebih suka?',
       examples: ['I prefer working from home.', 'I prefer email to phone calls.', 'I prefer the blue one.']
     },
     {

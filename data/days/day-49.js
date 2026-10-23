@@ -42,7 +42,7 @@ E90.registerDay({
       pronunciation: 'wat shud wi du nekst?',
       translation: 'Apa yang seharusnya kita lakukan selanjutnya?',
       naturalTranslation: 'Sebaiknya kita melakukan apa selanjutnya?',
-      words: [['What', 'apa'], ['should', 'sebaiknya'], ['we', 'kita'], ['do', 'melakukan'], ['next', 'selanjutnya']],
+      words: [['What', 'apa'], ['should', 'seharusnya / sebaiknya'], ['we', 'kita'], ['do', 'melakukan'], ['next', 'selanjutnya']],
       pattern: 'D28-P3'
     },
     {
@@ -51,7 +51,7 @@ E90.registerDay({
       pronunciation: 'iz der e-ni-thing els wi shud nou?',
       translation: 'Apakah ada hal lain yang seharusnya kita ketahui?',
       naturalTranslation: 'Ada hal lain yang perlu kita ketahui?',
-      words: [['Is', '(bagian dari "is there", apakah ada)', 'be'], ['there', 'ada (dalam "is there")'], ['anything', 'sesuatu / apa pun'], ['else', 'lain'], ['we', 'kita'], ['should', 'sebaiknya / perlu'], ['know', 'tahu / ketahui']],
+      words: [['Is', '(bagian dari "is there", apakah ada)', 'be'], ['there', 'ada (dalam "is there")'], ['anything', 'sesuatu / apa pun'], ['else', 'lain'], ['we', 'kita'], ['should', 'seharusnya / perlu'], ['know', 'tahu / ketahui']],
       pattern: 'D49-P4'
     },
     {

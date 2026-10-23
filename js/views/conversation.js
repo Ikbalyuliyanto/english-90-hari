@@ -95,7 +95,9 @@ window.E90 = window.E90 || {};
         ${blocked ? '<p class="chat-note">Jawab pertanyaan ini dulu ya. Pertanyaan baru muncul setelah yang ini selesai.</p>' : ''}
         ${left(`<small class="bubble-meta">${esc(ctx?.label || '')} · ${esc(ctx?.greeting || 'English Time')}</small>
           <span class="chat-q">${esc(q.en)}</span>
-          <span id="convIdn" class="bubble-sub" hidden>${esc(q.idn)}</span>
+          <span id="convIdn" class="bubble-sub" hidden>${q.naturalIdn
+            ? `<span class="tr-label">Terjemahan utama</span>${esc(q.idn)}<span class="tr-natural"><span class="tr-label">Arti natural</span>${esc(q.naturalIdn)}</span>`
+            : esc(q.idn)}</span>
           <div class="chips">${chip(`data-act="speak" data-text="${esc(q.en)}"`, '🔊 Dengar')}${chip('id="convShowIdn"', 'Arti')}</div>`, 'is-question')}
         ${attempts.map((t) => right(esc(t.answer)) + left(resultHtml(t.result), `is-${t.result.verdict}`)).join('')}
       </div>

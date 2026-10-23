@@ -73,7 +73,7 @@ E90.registerDay({
       pronunciation: 'iz der e-ni-thing els wi shud in-klud?',
       translation: 'Apakah ada hal lain yang seharusnya kita masukkan?',
       naturalTranslation: 'Ada hal lain yang perlu kita masukkan?',
-      words: [['Is', '(bagian dari "is there", apakah ada)', 'be'], ['there', 'ada (dalam "is there")'], ['anything', 'sesuatu / apa pun'], ['else', 'lain'], ['we', 'kita'], ['should', 'sebaiknya / perlu'], ['include', 'memasukkan / mencakup']],
+      words: [['Is', '(bagian dari "is there", apakah ada)', 'be'], ['there', 'ada (dalam "is there")'], ['anything', 'sesuatu / apa pun'], ['else', 'lain'], ['we', 'kita'], ['should', 'seharusnya / perlu'], ['include', 'memasukkan / mencakup']],
       pattern: 'D49-P4'
     },
     {

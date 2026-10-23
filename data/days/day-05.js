@@ -119,8 +119,8 @@ E90.registerDay({
     },
     {
       id: 'D05-P2',
-      formula: "I'm + free / busy / available + WAKTU",
-      meaning: 'Saya luang / sibuk / ada waktu ...',
+      formula: "I'm + free / busy / available + WAKTU  ·  Are you free + WAKTU?",
+      meaning: 'Saya luang / sibuk / ada waktu ...  ·  Apakah kamu luang ...?',
       examples: ["I'm free this afternoon.", "I'm busy today.", "I'm available on Monday.", "I'm not available tonight."]
     },
     {
